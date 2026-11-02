@@ -1,0 +1,19 @@
+---
+/** Progressive disclosure built on <details>: works without JavaScript and with keyboards. */
+interface Props {
+  label?: string;
+}
+const { label = 'Read more' } = Astro.props;
+---
+
+<details class="group mt-3 border-t border-dashed border-caramel pt-2">
+  <summary class="inline-flex min-h-11 cursor-pointer list-none items-center gap-2 font-sc text-[17px] text-burgundy marker:hidden [&::-webkit-details-marker]:hidden">
+    <span aria-hidden="true" class="transition-transform group-open:rotate-90">
+      ✥
+    </span>
+    {label}
+  </summary>
+  <div class="mt-1 text-[17px] leading-relaxed">
+    <slot />
+  </div>
+</details>

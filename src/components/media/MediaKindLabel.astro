@@ -1,0 +1,24 @@
+---
+import type { Media } from '../../lib/schema';
+import { MEDIA_KIND_LABEL } from '../../i18n/en';
+
+interface Props {
+  kind: Media['kind'];
+  posthumous?: boolean;
+  class?: string;
+}
+const { kind, posthumous = false, class: className } = Astro.props;
+const ai = kind === 'ai-generated';
+---
+
+<span
+  class:list={[
+    'inline-block px-2 py-0.5 font-ui text-[10px] font-semibold tracking-[0.08em] uppercase',
+    ai ? 'bg-burgundy text-parchment' : 'border border-sepia bg-cream text-umber',
+    kind === 'original-illustration' && 'border-dashed',
+    className,
+  ]}
+>
+  {MEDIA_KIND_LABEL[kind]}
+  {posthumous && ' · posthumous'}
+</span>

@@ -1,13 +1,18 @@
 ---
 import type { GetStaticPaths } from 'astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Divider from '../../components/ornaments/Divider.astro';
+import Portrait from '../../components/media/Portrait.astro';
+import ChapterNav from '../../components/story/ChapterNav.astro';
+import Chapter from '../../components/story/Chapter.astro';
+import Citations from '../../components/story/Citations.astro';
+import SectionHeading from '../../components/story/SectionHeading.astro';
+import VerificationBadge from '../../components/story/VerificationBadge.astro';
+import SmallDivider from '../../components/ornaments/SmallDivider.astro';
 import { getLegends, type LegendEntry } from '../../lib/content';
 import { lifespan } from '../../lib/legends';
 import { legendPath, withBase } from '../../lib/paths';
+import { CATEGORY_LABEL, VALUE_LABEL, centuryLabel } from '../../i18n/en';
 
-// Phase 1 skeleton: every section of the story template, rendered plainly.
-// Phase 2–3 replace these blocks with the dedicated story components.
 export const getStaticPaths = (async () => {
   const legends = await getLegends();
   return legends.map((legend, i) => ({
@@ -22,9 +27,20 @@ interface Props {
 }
 const { legend, next } = Astro.props;
 const d = legend.data;
-const sourceIndex = new Map(d.sources.map((s, i) => [s.id, i + 1]));
-const cite = (ids: string[]) => ids.map((id) => sourceIndex.get(id)).filter(Boolean);
-const ROMAN = ['I', 'II', 'III', 'IV', 'V'];
+const portrait = d.media.find((m) => m.id === d.portrait)!;
+
+// Sources are numbered in list order; every claim links to its numbers.
+const sourceNumber = new Map(d.sources.map((s, i) => [s.id, i + 1]));
+const cite = (ids: string[]) =>
+  ids.map((id) => sourceNumber.get(id)).filter((n): n is number => n !== undefined);
+
+const sections = [
+  d.facts.length > 0 && { id: 'facts', label: 'Key Facts' },
+  d.movie && { id: 'movie', label: 'Why This Deserves a Movie' },
+  d.myths.length > 0 && { id: 'myths', label: 'Legend or History?' },
+  { id: 'other-side', label: 'The Other Side of the Story' },
+  d.sources.length > 0 && { id: 'sources', label: 'Sources' },
+].filter((s): s is { id: string; label: string } => Boolean(s));
 ---
 
 <BaseLayout
@@ -33,148 +49,195 @@ const ROMAN = ['I', 'II', 'III', 'IV', 'V'];
   type="article"
   noindex={d.review.status === 'placeholder'}
 >
-  <article class="mx-auto max-w-3xl px-4 py-14 sm:px-6">
-    {d.review.status === 'placeholder' && (
-      <p class="mb-6 border border-burgundy bg-cream p-3 font-ui text-sm text-burgundy">
-        Template placeholder — this page shows the story structure, not a real biography.
-      </p>
-    )}
-    <header class="flex flex-col gap-4">
+  {d.review.status === 'placeholder' && (
+    <p class="m-0 border-b border-burgundy bg-cream px-4 py-2.5 text-center font-ui text-sm text-burgundy">
+      Placeholder chapter — the story structure is shown; the text has not been written yet.
+    </p>
+  )}
+
+  <section class="mx-auto flex max-w-6xl flex-wrap items-center gap-x-12 gap-y-8 px-4 pt-12 pb-10 sm:px-6 sm:pt-14">
+    <div class="w-full max-w-[380px] flex-[0_1_380px]">
+      <Portrait slug={legend.id} name={d.name.display} media={portrait} loading="eager" />
+    </div>
+    <header class="flex min-w-0 flex-[1_1_480px] flex-col gap-4">
       <p class="eyebrow m-0">
-        {d.role} · {lifespan(d.dates)} · {d.origin.place}
+        Chapter {d.order} of the Book · {lifespan(d.dates)}
       </p>
-      <h1 class="m-0 font-display text-[clamp(3rem,6vw,5rem)] leading-none font-normal text-umber">
+      <h1 class="m-0 font-display text-[clamp(2.75rem,6vw,5rem)] leading-none font-normal text-umber">
         {d.name.display}
       </h1>
-      <p class="m-0 font-display text-2xl leading-snug text-burgundy italic">{d.tagline}</p>
-      <p class="m-0 text-lg leading-relaxed">{d.hook}</p>
-    </header>
-
-    <Divider class="my-10" />
-
-    <section aria-labelledby="story" class="panel flex flex-col gap-8 p-6 sm:p-10">
-      <h2 id="story" class="sr-only">
-        The story
-      </h2>
-      {d.chapters.map((c, i) => (
-        <section id={c.key} aria-labelledby={`${c.key}-title`}>
-          <h3
-            id={`${c.key}-title`}
-            class="m-0 mb-2 font-[family-name:var(--font-display-sc)] text-3xl font-normal text-umber"
-          >
-            {ROMAN[i]} · {c.title}
-          </h3>
-          <p class="m-0 text-lg leading-relaxed">
-            {c.body}
-            {cite(c.sources).map((n) => (
-              <sup class="font-ui text-xs">
-                <a href={`#source-${n}`}>[{n}]</a>
-              </sup>
-            ))}
-          </p>
-          {c.more && (
-            <details class="mt-3 border-t border-dashed border-caramel pt-2">
-              <summary class="cursor-pointer font-[family-name:var(--font-display-sc)] text-burgundy">
-                Read more
-              </summary>
-              <p class="mt-2 leading-relaxed">{c.more}</p>
-            </details>
-          )}
-        </section>
-      ))}
-    </section>
-
-    {d.facts.length > 0 && (
-      <section aria-labelledby="facts-title" class="mt-12">
-        <h2 id="facts-title" class="font-display text-4xl font-normal text-umber">
-          Key Facts
-        </h2>
-        <dl class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4">
-          {d.facts.map((f) => (
-            <div class="panel p-5">
-              <dt class="eyebrow">{f.label}</dt>
-              <dd class="m-0 font-display text-5xl text-umber">
-                {f.value}
-                {f.unit && <span class="text-2xl"> {f.unit}</span>}
-              </dd>
-              <dd class="m-0 mt-1">{f.explanation}</dd>
-            </div>
-          ))}
-        </dl>
-      </section>
-    )}
-
-    {d.movie && (
-      <section
-        aria-labelledby="movie-title"
-        class="mt-12 border border-gold bg-ink p-6 text-parchment sm:p-10"
+      <p class="m-0 font-display text-[clamp(1.375rem,2.4vw,1.875rem)] leading-snug text-burgundy italic">
+        {d.tagline}
+      </p>
+      <p class="m-0 max-w-[620px] text-lg leading-relaxed sm:text-[19px]">{d.hook}</p>
+      <ul
+        class="m-0 flex list-none flex-wrap gap-2 p-0 font-ui text-[13px]"
+        role="list"
+        aria-label="At a glance"
       >
-        <p class="eyebrow m-0 text-gold">Cinematic interpretation</p>
-        <h2 id="movie-title" class="mt-1 font-display text-4xl font-normal">
-          Why This Deserves a Movie
-        </h2>
-        <p class="font-display text-2xl text-mist italic">
-          “{d.movie.title}” — {d.movie.premise}
-        </p>
-        <ol class="leading-relaxed">
-          {d.movie.moments.map((m) => (
-            <li>{m.text}</li>
-          ))}
-        </ol>
-      </section>
-    )}
+        {d.categories.map((c) => (
+          <li class="border border-sepia px-3 py-1.5 text-umber">{CATEGORY_LABEL[c]}</li>
+        ))}
+        <li class="border border-sepia px-3 py-1.5 text-umber">{centuryLabel(d.centuries)}</li>
+        <li class="bg-burgundy px-3 py-1.5 text-parchment">{VALUE_LABEL[d.values[0]!]}</li>
+        <li class="border border-sepia px-3 py-1.5 text-umber">{d.origin.place}</li>
+        <li class="px-1 py-1.5 text-burnt">2-minute read</li>
+      </ul>
+    </header>
+  </section>
 
-    {d.myths.length > 0 && (
-      <section aria-labelledby="myths-title" class="mt-12">
-        <h2 id="myths-title" class="font-display text-4xl font-normal text-umber">
-          Legend or History?
-        </h2>
-        {d.myths.map((m) => (
-          <div class="panel mb-4 p-5">
-            <p class="m-0 italic">“{m.claim}”</p>
-            <p class="mt-2 mb-0">{m.explanation}</p>
-          </div>
+  <div class="mx-auto flex max-w-6xl flex-wrap items-start gap-x-12 gap-y-8 px-4 pb-8 sm:px-6">
+    <aside class="hidden flex-[0_0_220px] lg:block">
+      <ChapterNav chapters={d.chapters} sections={sections} />
+    </aside>
+
+    <article class="flex min-w-0 flex-[999_1_600px] flex-col gap-14">
+      <section aria-label="The story" class="panel flex flex-col gap-9 p-6 sm:p-12">
+        {d.chapters.map((c, i) => (
+          <>
+            {i > 0 && <SmallDivider />}
+            <Chapter chapter={c} citations={cite(c.sources)} first={i === 0} />
+          </>
         ))}
       </section>
-    )}
 
-    <section aria-labelledby="other-title" class="mt-12">
-      <h2 id="other-title" class="font-display text-4xl font-normal text-burgundy">
-        The Other Side of the Story
-      </h2>
-      <p class="text-lg leading-relaxed">{d.otherSide.body}</p>
-    </section>
+      {d.facts.length > 0 && (
+        <section aria-labelledby="facts">
+          <SectionHeading id="facts">Key Facts</SectionHeading>
+          <dl
+            class="m-0 grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] border border-sepia bg-cream"
+            style="background-image:linear-gradient(rgb(139 90 43/.08) 1px,transparent 1px),linear-gradient(90deg,rgb(139 90 43/.08) 1px,transparent 1px);background-size:24px 24px"
+          >
+            {d.facts.map((f) => (
+              <div class="flex flex-col gap-1.5 border-b border-dashed border-caramel p-6 [&:not(:last-child)]:border-r">
+                <dt class="order-2 font-ui text-xs font-semibold tracking-[0.1em] text-burgundy uppercase">
+                  {f.label}
+                </dt>
+                <dd class="order-1 m-0 font-display text-[clamp(2.5rem,5vw,3.75rem)] leading-none text-umber">
+                  {f.value}
+                  {f.unit && <span class="text-2xl"> {f.unit}</span>}
+                </dd>
+                <dd class="order-3 m-0 text-[15px] leading-normal">
+                  {f.explanation}
+                  <Citations numbers={cite(f.sources)} />
+                </dd>
+                <dd class="order-4 m-0 mt-1">
+                  <VerificationBadge status={f.status} />
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )}
 
-    {d.sources.length > 0 && (
-      <section aria-labelledby="sources-title" class="mt-12 border-t border-sepia pt-6">
-        <h2 id="sources-title" class="font-display text-3xl font-normal text-umber">
-          Sources
-        </h2>
-        <ol class="leading-relaxed">
-          {d.sources.map((s, i) => (
-            <li id={`source-${i + 1}`}>
-              {s.url ? <a href={s.url}>{s.title}</a> : s.title}
-              {(s.author ?? s.institution) && <>. {s.author ?? s.institution}</>}
-              {s.year && <>, {s.year}</>}.
-            </li>
-          ))}
-        </ol>
-      </section>
-    )}
+      {d.movie && (
+        <section
+          aria-labelledby="movie"
+          class="flex flex-wrap gap-8 border border-gold bg-ink p-6 text-parchment outline outline-offset-4 outline-ink sm:p-12"
+        >
+          <div class="flex aspect-[2/3] w-full max-w-[220px] flex-[0_1_220px] flex-col items-center justify-end gap-1.5 border border-gold bg-gradient-to-b from-umber to-[#1a1411] p-5 text-center">
+            <span class="font-ui text-[9px] tracking-[0.2em] text-gold uppercase">
+              A cinematic interpretation
+            </span>
+            <span class="font-display text-[28px] leading-none text-parchment">
+              {d.movie.title}
+            </span>
+          </div>
+          <div class="flex min-w-0 flex-[1_1_360px] flex-col gap-3.5">
+            <div class="flex flex-wrap items-center gap-3">
+              <SectionHeading id="movie" tone="dark">
+                Why This Deserves a Movie
+              </SectionHeading>
+            </div>
+            <VerificationBadge status="dramatization" tone="dark" />
+            <p class="m-0 font-display text-[22px] leading-snug text-mist italic">
+              {d.movie.premise}
+            </p>
+            <dl class="m-0 grid gap-x-6 gap-y-2 font-ui text-sm sm:grid-cols-[auto_1fr]">
+              <dt class="text-gold">Conflict</dt>
+              <dd class="m-0 text-parchment">{d.movie.conflict}</dd>
+              <dt class="text-gold">Challenge</dt>
+              <dd class="m-0 text-parchment">{d.movie.challenge}</dd>
+            </dl>
+            <p class="eyebrow m-0 mt-2 text-gold">Three documented moments</p>
+            <ol class="m-0 flex flex-col gap-1.5 pl-5 text-base leading-relaxed">
+              {d.movie.moments.map((m) => (
+                <li>
+                  {m.text}
+                  <Citations numbers={cite(m.sources)} tone="dark" />
+                </li>
+              ))}
+            </ol>
+            <p class="m-0 font-ui text-[13px] text-mist">Theme: {d.movie.theme}</p>
+          </div>
+        </section>
+      )}
 
-    {next.id !== legend.id && (
-      <a href={legendPath(next.id)} class="panel mt-12 flex justify-between gap-4 p-6 no-underline">
-        <span>
-          <span class="eyebrow block">Turn the page</span>
-          <span class="font-display text-3xl text-umber">{next.data.name.display}</span>
-        </span>
-        <span class="self-center font-[family-name:var(--font-display-sc)] text-xl">
-          Next chapter →
-        </span>
-      </a>
-    )}
-    <p class="mt-10 font-ui text-sm">
-      <a href={withBase('legends/')}>← All legends</a>
-    </p>
-  </article>
+      <div class="flex flex-wrap gap-6">
+        {d.myths.length > 0 && (
+          <section
+            aria-labelledby="myths"
+            class="flex flex-[1_1_320px] flex-col gap-3 border border-dashed border-sepia bg-cream p-6"
+          >
+            <SectionHeading id="myths">Legend or History?</SectionHeading>
+            {d.myths.map((m) => (
+              <div class="flex flex-col gap-2.5">
+                <p class="m-0 text-[17px] text-burnt italic">“{m.claim}”</p>
+                <VerificationBadge status={m.status} />
+                <p class="m-0 text-base leading-relaxed">
+                  {m.explanation}
+                  <Citations numbers={cite(m.sources)} />
+                </p>
+              </div>
+            ))}
+          </section>
+        )}
+        <section
+          aria-labelledby="other-side"
+          class="flex flex-[1_1_320px] flex-col gap-3 border border-burgundy bg-cream p-6"
+        >
+          <SectionHeading id="other-side" tone="burgundy">
+            The Other Side of the Story
+          </SectionHeading>
+          <p class="m-0 text-base leading-relaxed">
+            {d.otherSide.body}
+            <Citations numbers={cite(d.otherSide.sources)} />
+          </p>
+        </section>
+      </div>
+
+      {d.sources.length > 0 && (
+        <section aria-labelledby="sources" class="border-t border-sepia pt-6">
+          <SectionHeading id="sources">Sources</SectionHeading>
+          <ol class="m-0 flex flex-col gap-1 pl-6 text-[15px] leading-relaxed">
+            {d.sources.map((s, i) => (
+              <li id={`source-${i + 1}`} class="target:bg-cream">
+                {s.url ? <a href={s.url}>{s.title}</a> : s.title}
+                {(s.author ?? s.institution) && <>. {s.author ?? s.institution}</>}
+                {s.publisher && <>, {s.publisher}</>}
+                {s.year && <>, {s.year}</>}.{' '}
+                <span class="font-ui text-[11px] tracking-wide text-burnt uppercase">{s.type}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
+
+      {next.id !== legend.id && (
+        <a
+          href={legendPath(next.id)}
+          class="flex items-center justify-between gap-4 border border-umber bg-cream p-6 text-umber no-underline hover:shadow-lift"
+        >
+          <span class="flex flex-col gap-1">
+            <span class="eyebrow">Turn the page</span>
+            <span class="font-display text-[32px] leading-tight">{next.data.name.display}</span>
+          </span>
+          <span class="font-sc text-[22px] text-burgundy">Next chapter →</span>
+        </a>
+      )}
+      <p class="m-0 font-ui text-sm">
+        <a href={withBase('legends/')}>← All legends</a>
+      </p>
+    </article>
+  </div>
 </BaseLayout>

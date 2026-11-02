@@ -1,0 +1,37 @@
+---
+import { CHAPTER_NUMERAL } from '../../i18n/en';
+import type { Chapter } from '../../lib/schema';
+
+interface Props {
+  chapters: Chapter[];
+  sections: { id: string; label: string }[];
+}
+const { chapters, sections } = Astro.props;
+---
+
+<nav aria-label="In this chapter" class="font-ui text-sm lg:sticky lg:top-6">
+  <p class="eyebrow mb-2">In this chapter</p>
+  <ol class="m-0 flex list-none flex-col border-l border-sepia p-0 pl-4" role="list">
+    {chapters.map((c) => (
+      <li>
+        <a
+          href={`#${c.key}`}
+          class="flex min-h-10 items-center text-umber no-underline hover:text-burgundy"
+        >
+          {CHAPTER_NUMERAL[c.key]} · {c.title}
+        </a>
+      </li>
+    ))}
+    <li aria-hidden="true" class="my-2 h-px bg-caramel"></li>
+    {sections.map((s) => (
+      <li>
+        <a
+          href={`#${s.id}`}
+          class="flex min-h-10 items-center text-umber no-underline hover:text-burgundy"
+        >
+          {s.label}
+        </a>
+      </li>
+    ))}
+  </ol>
+</nav>

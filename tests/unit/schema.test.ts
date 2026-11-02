@@ -5,7 +5,7 @@ import { parse } from 'yaml';
 import { legendSchema } from '../../src/lib/schema';
 
 const template = readFileSync(
-  join(import.meta.dirname, '../../src/content/legends/example-legend.yaml'),
+  join(import.meta.dirname, '../../docs/templates/legend.template.yaml'),
   'utf8',
 );
 

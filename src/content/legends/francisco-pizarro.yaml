@@ -1,0 +1,70 @@
+# PLACEHOLDER — only name, dates, place, role and achievement come from the research
+# dossier (docs/research/20261102_deep-research.md). Everything in [brackets] is still to be written.
+
+order: 4
+name:
+  display: 'Francisco Pizarro'
+dates:
+  born: { year: 1475, approx: true }
+  died: { year: 1541 }
+origin:
+  place: 'Trujillo'
+  region: 'Extremadura'
+role: 'Conquistador'
+categories: [land]
+centuries: [15, 16]
+values: [ambition]
+tagline: 'A small, Crown-sanctioned expedition entered an empire already torn by civil war.'
+hook: '[Hook — a documented moment of tension, 40–70 words. To be written.]'
+mainAchievement: 'Cajamarca, 1532; foundation of Lima, 1535'
+portrait: portrait
+
+chapters:
+  - key: beginning
+    title: The Beginning
+    body: '[Who they were and how the story began — to be written from verified sources.]'
+    sources: [research-dossier]
+    status: verified
+  - key: challenge
+    title: The Challenge
+    body: '[The extraordinary obstacle — to be written from verified sources.]'
+    sources: [research-dossier]
+    status: verified
+  - key: odds
+    title: Against the Odds
+    body: '[What made it so difficult — to be written from verified sources.]'
+    sources: [research-dossier]
+    status: verified
+  - key: moment
+    title: The Defining Moment
+    body: '[The most significant achievement — to be written from verified sources.]'
+    sources: [research-dossier]
+    status: verified
+  - key: legacy
+    title: The Legacy
+    body: '[Consequences, and why it matters today — to be written from verified sources.]'
+    sources: [research-dossier]
+    status: verified
+
+otherSide:
+  body: '[Controversies, human consequences and other perspectives — to be written from the dossier.]'
+  sources: [research-dossier]
+
+review:
+  status: placeholder
+
+sources:
+  - id: research-dossier
+    title: 'Spanish Explorers and Military Leaders Who Reshaped the Early Modern World (research dossier)'
+    institution: Legends of Spain
+    year: '2026'
+    type: reference
+    notes: 'Working dossier; to be replaced by the primary and scholarly sources it cites.'
+
+media:
+  - id: portrait
+    alt: 'Portrait of Francisco Pizarro — to be selected'
+    kind: historical
+    title: '[Portrait to be selected]'
+    license: '[To verify]'
+    attribution: '[To verify]'

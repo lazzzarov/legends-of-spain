@@ -4,7 +4,7 @@ How to write a legend. The schema in `src/lib/schema.ts` is the authority; this 
 
 ## One file per legend
 
-`src/content/legends/<slug>.yaml`. The slug is the URL (`/legends/<slug>/`), in lowercase-kebab-case, for example `juan-sebastian-elcano`. Start from `example-legend.yaml`.
+`src/content/legends/<slug>.yaml`. The slug is the URL (`/legends/<slug>/`), in lowercase-kebab-case, for example `juan-sebastian-elcano`. Start from `docs/templates/legend.template.yaml`.
 
 ## The 2-minute path
 

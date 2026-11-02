@@ -1,0 +1,48 @@
+---
+import type { VERIFICATION } from '../../lib/schema';
+import { VERIFICATION_HELP, VERIFICATION_LABEL } from '../../i18n/en';
+
+interface Props {
+  status: (typeof VERIFICATION)[number];
+  /** Dark grounds (movie section) invert the dramatization style. */
+  tone?: 'light' | 'dark';
+}
+const { status, tone = 'light' } = Astro.props;
+
+// Shape and symbol differ per status, so the label never relies on colour alone.
+const STYLE = {
+  verified: { mark: '✓', pill: 'border-umber text-umber', dot: 'bg-umber text-cream' },
+  disputed: { mark: '?', pill: 'border-burgundy text-burgundy', dot: 'bg-burgundy text-cream' },
+  legend: {
+    mark: '~',
+    pill: 'border-dashed border-sepia text-burnt',
+    dot: 'border border-sepia text-burnt',
+  },
+  dramatization: {
+    mark: '✦',
+    pill:
+      tone === 'dark'
+        ? 'border-gold bg-umber text-parchment'
+        : 'border-umber bg-umber text-parchment',
+    dot: 'bg-gold text-ink',
+  },
+} as const;
+const s = STYLE[status];
+---
+
+<span
+  class:list={[
+    'inline-flex shrink-0 items-center gap-1.5 self-start rounded-full border py-1 pr-2.5 pl-1 font-ui text-xs font-semibold',
+    s.pill,
+    status !== 'dramatization' && 'bg-cream',
+  ]}
+  title={VERIFICATION_HELP[status]}
+>
+  <span
+    class:list={['inline-flex h-4 w-4 items-center justify-center rounded-full text-[10px]', s.dot]}
+    aria-hidden="true"
+  >
+    {s.mark}
+  </span>
+  {VERIFICATION_LABEL[status]}
+</span>

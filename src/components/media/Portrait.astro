@@ -1,0 +1,73 @@
+---
+import { Image } from 'astro:assets';
+import MediaKindLabel from './MediaKindLabel.astro';
+import { initials, resolveImage } from '../../lib/media';
+import type { Media } from '../../lib/schema';
+
+interface Props {
+  slug: string;
+  name: string;
+  media: Media;
+  /** "hero" = framed with full credit line; "card" = compact thumbnail. */
+  variant?: 'hero' | 'card';
+  loading?: 'eager' | 'lazy';
+}
+const { slug, name, media, variant = 'hero', loading = 'lazy' } = Astro.props;
+const image = resolveImage(slug, media.file);
+const hero = variant === 'hero';
+const credit = [media.title, media.creator, media.date, media.institution]
+  .filter(Boolean)
+  .join(', ');
+---
+
+<figure class:list={['m-0 flex flex-col gap-2.5', hero && 'w-full']}>
+  <div
+    class:list={[
+      'relative flex items-center justify-center overflow-hidden',
+      hero
+        ? 'aspect-[4/5] border-[10px] border-cream shadow-[0_10px_30px_rgb(59_36_22/0.35)] outline outline-burnt'
+        : 'h-56 border border-burnt',
+      !image && 'plate',
+    ]}
+  >
+    {image ? (
+      <Image
+        src={image}
+        alt={media.alt}
+        widths={hero ? [360, 540, 720] : [320, 480]}
+        sizes={hero ? '(min-width: 1024px) 380px, 90vw' : '(min-width: 640px) 320px, 90vw'}
+        loading={loading}
+        class="h-full w-full object-cover"
+      />
+    ) : (
+      <span
+        class:list={['font-display text-burnt/55', hero ? 'text-8xl' : 'text-7xl']}
+        aria-hidden="true"
+      >
+        {initials(name)}
+      </span>
+    )}
+    {/* The kind label describes a real image, so it only appears once one exists. */}
+    {!hero && image && (
+      <MediaKindLabel
+        kind={media.kind}
+        posthumous={media.posthumous}
+        class="absolute bottom-2 left-2"
+      />
+    )}
+  </div>
+  {hero && (
+    <figcaption class="font-ui text-xs leading-relaxed text-burnt">
+      {image ? (
+        <>
+          <MediaKindLabel kind={media.kind} posthumous={media.posthumous} />
+          <span class="mt-1 block">
+            {credit} · {media.license}
+          </span>
+        </>
+      ) : (
+        'Portrait not yet selected — rights check pending.'
+      )}
+    </figcaption>
+  )}
+</figure>

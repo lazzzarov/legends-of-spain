@@ -8,7 +8,11 @@
 @import '@fontsource-variable/source-serif-4/wght-italic.css';
 @import '@fontsource-variable/inter/index.css';
 
-/* Design tokens — see docs/SPEC.md § Creative direction. */
+/*
+ * Design tokens — see docs/DESIGN_TOKENS.md for usage and contrast ratios.
+ * Text-safe on light grounds: ink, umber, burnt, burgundy (sepia only ≥ 18px).
+ * Decorative only on light grounds: caramel, gold.
+ */
 @theme {
   --color-parchment: #f3e9d2;
   --color-cream: #faf4e6;
@@ -23,26 +27,41 @@
 
   --font-display: 'IM Fell English', Georgia, serif;
   --font-display-sc: 'IM Fell English SC', Georgia, serif;
+  --font-sc: var(--font-display-sc);
   --font-serif: 'Source Serif 4 Variable', Georgia, serif;
   --font-ui: 'Inter Variable', system-ui, sans-serif;
+
+  --shadow-page: 0 4px 16px rgb(59 36 22 / 0.12);
+  --shadow-lift: 0 14px 28px rgb(59 36 22 / 0.24);
 }
 
 @layer base {
   html {
     color-scheme: light;
     -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 1.5rem;
   }
   body {
     @apply bg-parchment font-serif text-ink antialiased;
-    /* Aged-paper ground; texture stays at the edges, never behind text panels. */
-    background-image: radial-gradient(
-      ellipse at 50% 20%,
-      #f6eedb 0%,
-      #f3e9d2 50%,
-      #e9d8b5 85%,
-      #d2b282 100%
-    );
+    /* Aged paper: a warm wash plus a ~0.3 KB inline grain. Text always sits on flat panels. */
+    background-image:
+      radial-gradient(ellipse at 50% 15%, #f7f0de 0%, #f3e9d2 55%, #ecdfc3 100%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .23 0 0 0 0 .13 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-blend-mode: multiply;
     background-attachment: fixed;
+  }
+  /* Burnt page edges: a fixed vignette on wide screens only, above the ground, below content. */
+  @media (min-width: 768px) {
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      box-shadow:
+        inset 0 0 140px rgb(90 58 34 / 0.42),
+        inset 0 0 28px rgb(59 36 22 / 0.35);
+    }
   }
   a {
     @apply text-burgundy underline-offset-3 hover:text-umber;
@@ -58,17 +77,58 @@
 
 @layer components {
   .eyebrow {
-    @apply font-ui text-xs tracking-[0.18em] text-sepia uppercase;
+    @apply font-ui text-xs tracking-[0.18em] text-burnt uppercase;
   }
   .panel {
-    @apply border border-caramel bg-cream shadow-[0_4px_16px_rgba(59,36,22,0.12)];
+    @apply border border-caramel bg-cream shadow-page;
+  }
+  /* Hatched engraving-plate placeholder for images that are not produced yet. */
+  .plate {
+    background: repeating-linear-gradient(135deg, #e9d8b5 0 3px, #dcc59a 3px 4px);
+  }
+  /* Engraved drop cap on the first letter of a paragraph (no markup split, screen-reader safe). */
+  .dropcap::first-letter {
+    float: left;
+    margin: 0.35rem 0.75rem 0 0;
+    padding: 0.5rem 0.6rem 0.1rem;
+    border: 1px solid var(--color-gold);
+    background: var(--color-parchment);
+    color: var(--color-burgundy);
+    font-family: var(--font-display);
+    font-size: 4.25em;
+    line-height: 0.8;
+  }
+  .btn-primary {
+    @apply inline-flex min-h-12 items-center gap-2.5 border border-gold bg-umber px-7 font-sc text-lg tracking-wide text-parchment no-underline outline outline-offset-3 outline-umber hover:text-mist;
+  }
+  .btn-secondary {
+    @apply inline-flex min-h-12 items-center gap-2.5 border border-umber px-6 font-sc text-lg tracking-wide text-umber no-underline hover:bg-umber hover:text-parchment;
   }
 }
 
-/* Page-turn feel between pages (native View Transitions); disabled for reduced motion. */
+/* Page-turn feel between pages (native cross-document View Transitions). */
 @view-transition {
   navigation: auto;
 }
+::view-transition-old(root) {
+  animation: 260ms ease-in both page-out;
+}
+::view-transition-new(root) {
+  animation: 320ms ease-out both page-in;
+}
+@keyframes page-out {
+  to {
+    opacity: 0;
+    transform: translateX(-2%);
+  }
+}
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateX(2%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   @view-transition {
     navigation: none;

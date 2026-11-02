@@ -1,6 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Corners from '../components/ornaments/Corners.astro';
 import Divider from '../components/ornaments/Divider.astro';
+import { withBase } from '../lib/paths';
+
+const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'];
 
 // Draft copy — awaiting the author's approval (Phase 2, task 2.7).
 const reasons = [
@@ -48,15 +52,29 @@ const reasons = [
       Spain has produced extraordinary individuals whose stories deserve to be told — truthfully.
     </p>
     <Divider class="my-10" />
-    <div class="flex flex-col gap-8">
-      {reasons.map((r) => (
-        <section>
-          <h2 class="m-0 mb-2 font-[family-name:var(--font-display-sc)] text-3xl font-normal text-umber">
-            {r.title}
-          </h2>
-          <p class="m-0 text-lg leading-relaxed">{r.body}</p>
+    <div class="panel relative flex flex-col gap-8 p-6 sm:p-12">
+      <Corners />
+      {reasons.map((r, i) => (
+        <section class="flex gap-4 sm:gap-6">
+          <span
+            class="w-10 shrink-0 pt-1 text-right font-display text-3xl text-burgundy"
+            aria-hidden="true"
+          >
+            {ROMAN[i]}
+          </span>
+          <div>
+            <h2 class="m-0 mb-2 font-sc text-[28px] leading-tight font-normal text-umber">
+              {r.title}
+            </h2>
+            <p class="m-0 text-lg leading-relaxed">{r.body}</p>
+          </div>
         </section>
       ))}
     </div>
+    <p class="mt-10 text-center">
+      <a href={withBase('legends/')} class="btn-secondary">
+        Open the Book of Legends
+      </a>
+    </p>
   </article>
 </BaseLayout>

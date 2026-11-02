@@ -13,6 +13,13 @@ describe('legend content files', () => {
     expect(files.length).toBeGreaterThan(0);
   });
 
+  it('the contributor template matches the content schema', () => {
+    const template = parse(
+      readFileSync(join(import.meta.dirname, '../../docs/templates/legend.template.yaml'), 'utf8'),
+    );
+    expect(legendSchema.safeParse(template).error?.issues ?? []).toEqual([]);
+  });
+
   it.each(files)('%s matches the content schema', (file) => {
     const result = legendSchema.safeParse(load(file));
     expect(result.error?.issues ?? []).toEqual([]);

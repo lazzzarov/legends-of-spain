@@ -1,33 +1,37 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import MediaKindLabel from '../components/media/MediaKindLabel.astro';
 import { getLegends } from '../lib/content';
 import { legendPath } from '../lib/paths';
 
 // Generated from each legend's media registry, so credits can never drift from the assets used.
-const legends = await getLegends();
-const KIND_LABEL = {
-  historical: 'Historical artwork',
-  'original-illustration': 'Original illustration',
-  'ai-generated': 'AI-generated illustration',
-  photograph: 'Photograph',
-} as const;
+// Only media that has actually been produced (has a `file`) is listed.
+const legends = (await getLegends())
+  .map((legend) => ({ legend, media: legend.data.media.filter((m) => m.file) }))
+  .filter(({ media }) => media.length > 0);
 ---
 
 <BaseLayout
   title="Credits & Licenses"
   description="Every image and video used in Legends of Spain, with its creator, source and license, and our AI-disclosure policy."
 >
-  <div class="mx-auto max-w-4xl px-4 py-14 sm:px-6">
-    <h1 class="mt-0 mb-6 font-display text-5xl font-normal text-umber">Credits &amp; Licenses</h1>
+  <div class="mx-auto flex max-w-4xl flex-col gap-10 px-4 py-14 sm:px-6">
+    <header>
+      <p class="eyebrow m-0">Colophon</p>
+      <h1 class="mt-1 mb-0 font-display text-[clamp(2.75rem,6vw,3.75rem)] leading-none font-normal text-umber">
+        Credits &amp; Licenses
+      </h1>
+    </header>
 
-    <section aria-labelledby="ai-policy" class="panel mb-10 p-6">
-      <h2 id="ai-policy" class="mt-0 font-display text-3xl font-normal text-umber">
+    <section aria-labelledby="ai-policy" class="panel p-6 sm:p-8">
+      <h2 id="ai-policy" class="mt-0 mb-3 font-display text-3xl font-normal text-umber">
         Our AI-disclosure policy
       </h2>
-      <ul class="mb-0 leading-relaxed">
+      <ul class="m-0 flex flex-col gap-2 pl-5 leading-relaxed">
         <li>
-          Every image is labelled as historical artwork, original illustration, AI-generated
-          illustration or photograph.
+          Every image is labelled: <MediaKindLabel kind="historical" />{' '}
+          <MediaKindLabel kind="original-illustration" /> <MediaKindLabel kind="ai-generated" />{' '}
+          <MediaKindLabel kind="photograph" />
         </li>
         <li>An AI-generated image is never presented as an authentic historical portrait.</li>
         <li>
@@ -39,39 +43,62 @@ const KIND_LABEL = {
     </section>
 
     <section aria-labelledby="licenses">
-      <h2 id="licenses" class="font-display text-3xl font-normal text-umber">
+      <h2 id="licenses" class="mt-0 mb-3 font-display text-3xl font-normal text-umber">
         Licenses
       </h2>
-      <p class="leading-relaxed">
-        Source code is released under the MIT License. Original written content is released under
-        Creative Commons Attribution-ShareAlike 4.0. Images and videos keep their own licenses,
-        listed below.
-      </p>
+      <dl class="m-0 grid gap-x-6 gap-y-2 sm:grid-cols-[10rem_1fr]">
+        <dt class="font-ui text-sm font-semibold text-burnt">Source code</dt>
+        <dd class="m-0">MIT License</dd>
+        <dt class="font-ui text-sm font-semibold text-burnt">Written content</dt>
+        <dd class="m-0">
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> — Legends of
+          Spain contributors
+        </dd>
+        <dt class="font-ui text-sm font-semibold text-burnt">Images &amp; video</dt>
+        <dd class="m-0">Each asset keeps its own license, listed below.</dd>
+      </dl>
     </section>
 
-    {legends.map((legend) => (
-      <section class="mt-10" aria-labelledby={`credits-${legend.id}`}>
-        <h2 id={`credits-${legend.id}`} class="font-display text-2xl font-normal text-umber">
-          <a href={legendPath(legend.id)}>{legend.data.name.display}</a>
-        </h2>
-        <ul class="leading-relaxed">
-          {legend.data.media.map((m) => (
-            <li>
-              <strong>{m.title}</strong> — {KIND_LABEL[m.kind]}
-              {m.posthumous && ' (posthumous)'}
-              {m.creator && <>, {m.creator}</>}
-              {m.date && <>, {m.date}</>}
-              {m.institution && <>, {m.institution}</>}. License: {m.license}. {m.attribution}
-              {m.sourceUrl && (
-                <>
-                  {' '}
-                  <a href={m.sourceUrl}>Source</a>
-                </>
-              )}
-            </li>
-          ))}
-        </ul>
-      </section>
-    ))}
+    <section aria-labelledby="media">
+      <h2 id="media" class="mt-0 mb-3 font-display text-3xl font-normal text-umber">
+        Media
+      </h2>
+      {legends.length === 0 ? (
+        <p class="m-0 text-burnt italic">No images or videos have been published yet.</p>
+      ) : (
+        legends.map(({ legend, media }) => (
+          <section class="mb-8" aria-labelledby={`credits-${legend.id}`}>
+            <h3
+              id={`credits-${legend.id}`}
+              class="mb-3 font-display text-2xl font-normal text-umber"
+            >
+              <a href={legendPath(legend.id)}>{legend.data.name.display}</a>
+            </h3>
+            <ul class="m-0 flex list-none flex-col gap-3 p-0" role="list">
+              {media.map((m) => (
+                <li class="border-l-2 border-caramel pl-4 leading-relaxed">
+                  <MediaKindLabel kind={m.kind} posthumous={m.posthumous} />
+                  <p class="m-0 mt-1">
+                    <strong>{m.title}</strong>
+                    {m.creator && <>, {m.creator}</>}
+                    {m.date && <>, {m.date}</>}
+                    {m.institution && <>. {m.institution}</>}.
+                  </p>
+                  <p class="m-0 font-ui text-sm text-burnt">
+                    License: {m.license}. {m.attribution}
+                    {m.sourceUrl && (
+                      <>
+                        {' '}
+                        · <a href={m.sourceUrl}>Source</a>
+                      </>
+                    )}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))
+      )}
+    </section>
   </div>
 </BaseLayout>

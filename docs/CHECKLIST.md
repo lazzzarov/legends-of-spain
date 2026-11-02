@@ -22,24 +22,24 @@ P0 = must, P1 = should, P2 = nice to have.
 - [x] 1.9 README, CONTRIBUTING, CONTENT_GUIDE, MIT + CC BY-SA licenses, issue templates · P0
 - [ ] 1.10 Rename local folder `spanish-heros` → `legends-of-spain` (manual, when no tools are open) · P2
 
-## Phase 2 — Visual foundation
+## Phase 2 — Visual foundation (all but 2.7 done)
 
-- [ ] 2.1 Refine tokens and type scale; contrast table · P0
-- [ ] 2.2 Parchment ground + burnt-edge frame (texture ≤ 30 KB) · P0
-- [ ] 2.3 Complete SVG ornament set (corners, drop cap component) · P0
-- [ ] 2.4 Home cover to mockup fidelity · P0
-- [ ] 2.5 LegendCard to mockup fidelity (portrait slot, value seal) · P0
-- [ ] 2.6 Story primitives: Chapter, ReadMore, VerificationBadge, Figure+Credit, PullQuote · P0
-- [ ] 2.7 "Why We Tell These Stories" copy approved by the author · P0
-- [ ] 2.8 Credits page styling · P1
-- [ ] 2.9 Page-turn view transition polish; reduced-motion check · P1
-- [ ] 2.10 Responsive QA at 360 / 768 / 1280 · P0
-- [ ] 2.11 Placeholder entries for all 14 legends, so the gallery is complete during development · P1
+- [x] 2.1 Tokens, type scale, contrast table (`docs/DESIGN_TOKENS.md`) · P0
+- [x] 2.2 Parchment ground with inline grain (~0.3 KB) + burnt-edge vignette on ≥ 768px · P0
+- [x] 2.3 Ornaments: corners, small divider, CSS drop cap (`.dropcap`) · P0
+- [x] 2.4 Home cover, values band, promise section to mockup fidelity · P0
+- [x] 2.5 LegendCard: portrait slot, value ribbon (replaced the seal, which overflowed on long values) · P0
+- [x] 2.6 Story primitives: Chapter, ReadMore, VerificationBadge, Citations, Portrait + credit, MediaKindLabel, PullQuote, ChapterNav, SectionHeading · P0
+- [ ] 2.7 "Why We Tell These Stories" copy approved by the author · P0 · **waiting on you**
+- [x] 2.8 Credits page: lists only produced media; AI policy with live labels · P1
+- [x] 2.9 Page-turn view transition (slide + fade); disabled under reduced motion · P1
+- [x] 2.10 Responsive QA at 300 / 375 / 1280 in the browser; no horizontal overflow at 375 · P0
+- [x] 2.11 Placeholder entries for all 14 legends (book order = chronological); template moved to `docs/templates/` · P1
 
 ## Phase 3 — First complete legend (Elcano)
 
 - [ ] 3.1 Content YAML from the research file (draft, placeholders where unsourced) · P0
-- [ ] 3.2 HeroIntro with portrait + credit · P0
+- [x] 3.2 Story intro with portrait + credit (built in Phase 2) · P0
 - [ ] 3.3 FactsNotebook · P0
 - [ ] 3.4 Legend or History? + The Other Side components · P0
 - [ ] 3.5 Portrait rights check and media record · P0

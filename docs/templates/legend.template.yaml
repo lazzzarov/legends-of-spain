@@ -1,5 +1,5 @@
 # TEMPLATE — a structurally complete placeholder, not a real person.
-# Copy this file to <slug>.yaml to start a new legend. Text in [brackets] is a placeholder.
+# Copy this file to src/content/legends/<slug>.yaml to start a new legend. Text in [brackets] is a placeholder.
 # Every field is documented in docs/CONTENT_GUIDE.md and validated by src/lib/schema.ts.
 
 order: 99

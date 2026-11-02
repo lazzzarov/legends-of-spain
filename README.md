@@ -4,7 +4,7 @@
 
 Every legend gets one chapter: a cinematic hook, a five-part story, key facts, a comic, a film pitch, the documented controversies ("The Other Side of the Story") and its sources. Every claim is labelled _Verified_, _Disputed_, _Legend_ or _Dramatization_, and every AI-generated image is marked as such.
 
-> **Status:** early development (Phase 1 of 7). See [docs/CHECKLIST.md](docs/CHECKLIST.md).
+> **Status:** early development (Phase 2 of 7). See [docs/CHECKLIST.md](docs/CHECKLIST.md).
 
 ## Quick start
 
@@ -47,7 +47,7 @@ production/<slug>/              video briefs and comic scripts (not shipped)
 
 ## Adding a legend
 
-Copy `src/content/legends/example-legend.yaml` to `<slug>.yaml`, fill it in, and run `npm test`. See [docs/CONTENT_GUIDE.md](docs/CONTENT_GUIDE.md) and [CONTRIBUTING.md](CONTRIBUTING.md).
+Copy `docs/templates/legend.template.yaml` to `src/content/legends/<slug>.yaml`, fill it in, and run `npm test`. See [docs/CONTENT_GUIDE.md](docs/CONTENT_GUIDE.md) and [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Deployment
 

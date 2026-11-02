@@ -1,0 +1,36 @@
+---
+import Citations from './Citations.astro';
+import ReadMore from './ReadMore.astro';
+import VerificationBadge from './VerificationBadge.astro';
+import type { Chapter } from '../../lib/schema';
+import { CHAPTER_NUMERAL } from '../../i18n/en';
+
+interface Props {
+  chapter: Chapter;
+  citations: number[];
+  /** The first chapter opens with an engraved drop cap. */
+  first?: boolean;
+}
+const { chapter, citations, first = false } = Astro.props;
+---
+
+<section id={chapter.key} aria-labelledby={`${chapter.key}-title`} class="flex flex-col gap-3.5">
+  <div class="flex flex-wrap items-center justify-between gap-3">
+    <h3
+      id={`${chapter.key}-title`}
+      class="m-0 font-sc text-[28px] leading-tight font-normal text-umber sm:text-3xl"
+    >
+      {CHAPTER_NUMERAL[chapter.key]} · {chapter.title}
+    </h3>
+    <VerificationBadge status={chapter.status} />
+  </div>
+  <p class:list={['m-0 text-lg leading-[1.7] sm:text-[19px]', first && 'dropcap']}>
+    {chapter.body}
+    <Citations numbers={citations} />
+  </p>
+  {chapter.more && (
+    <ReadMore>
+      <p class="m-0">{chapter.more}</p>
+    </ReadMore>
+  )}
+</section>

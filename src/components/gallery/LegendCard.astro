@@ -1,50 +1,47 @@
 ---
+import Portrait from '../media/Portrait.astro';
 import type { LegendEntry } from '../../lib/content';
 import { legendPath } from '../../lib/paths';
 import { lifespan } from '../../lib/legends';
+import { VALUE_LABEL } from '../../i18n/en';
 
 interface Props {
   legend: LegendEntry;
 }
 const { legend } = Astro.props;
 const d = legend.data;
-const initials = d.name.display
-  .split(/\s+/)
-  .filter((w) => /^\p{Lu}/u.test(w))
-  .map((w) => w[0])
-  .join('')
-  .slice(0, 3);
+const portrait = d.media.find((m) => m.id === d.portrait)!;
+const value = VALUE_LABEL[d.values[0]!];
 ---
 
-<article class="panel flex h-full flex-col transition-transform hover:-translate-y-1">
-  <div
-    class="mx-3 mt-3 flex h-56 items-center justify-center border border-burnt"
-    style="background:repeating-linear-gradient(135deg,#E9D8B5 0 3px,#DCC59A 3px 4px)"
-    aria-hidden="true"
-  >
-    <span class="font-display text-7xl text-burnt/60">{initials}</span>
+<article class="group relative flex h-full flex-col border border-sepia bg-cream shadow-[0_4px_12px_rgb(59_36_22/0.16),inset_0_0_40px_rgb(192_138_77/0.18)] transition duration-300 hover:-translate-y-1 hover:shadow-lift focus-within:-translate-y-1 focus-within:shadow-lift">
+  <div class="relative mx-3 mt-3">
+    <Portrait slug={legend.id} name={d.name.display} media={portrait} variant="card" />
+    <!-- Value ribbon: sized by its text, so long values never overflow. -->
+    <span class="absolute top-3 -right-4 bg-burgundy py-1 pr-3 pl-3 font-ui text-[10px] font-semibold tracking-[0.1em] text-parchment uppercase shadow-[0_2px_4px_rgb(0_0_0/0.25)] after:absolute after:top-full after:right-0 after:border-t-[6px] after:border-r-[6px] after:border-t-[#3a0e15] after:border-r-transparent after:content-['']">
+      <span class="sr-only">Core value: </span>
+      {value}
+    </span>
   </div>
-  <div class="flex grow flex-col gap-2.5 p-5">
+  <div class="flex grow flex-col gap-2.5 px-5 pt-5 pb-5">
     <p class="eyebrow m-0">
       {d.role} · {lifespan(d.dates)}
     </p>
-    <h3 class="m-0 font-display text-3xl leading-tight font-normal text-umber">
-      <a href={legendPath(legend.id)} class="text-umber no-underline after:absolute after:inset-0">
+    <h3 class="m-0 font-display text-[30px] leading-[1.05] font-normal text-umber">
+      <a
+        href={legendPath(legend.id)}
+        class="text-umber no-underline after:absolute after:inset-0 after:content-['']"
+      >
         {d.name.display}
       </a>
     </h3>
     <p class="m-0 text-[17px] leading-normal text-umber italic">{d.tagline}</p>
-    <p class="m-0 border-t border-dashed border-caramel pt-2.5 font-ui text-[13px] text-burnt">
-      ◆ {d.mainAchievement}
+    <p class="m-0 border-t border-dashed border-caramel pt-2.5 font-ui text-[13px] leading-normal text-burnt">
+      <span aria-hidden="true">◆ </span>
+      {d.mainAchievement}
     </p>
-    {d.review.status === 'placeholder' && (
-      <p class="m-0 font-ui text-xs font-semibold text-burgundy">Template placeholder</p>
-    )}
+    <span class="mt-auto pt-1 font-sc text-[17px] tracking-wide text-burgundy" aria-hidden="true">
+      Read the chapter →
+    </span>
   </div>
 </article>
-
-<style>
-  article {
-    position: relative;
-  }
-</style>

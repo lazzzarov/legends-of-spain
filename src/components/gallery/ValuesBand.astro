@@ -1,0 +1,42 @@
+---
+import type { LegendEntry } from '../../lib/content';
+import { VALUE_LABEL } from '../../i18n/en';
+import type { VALUES } from '../../lib/schema';
+
+interface Props {
+  legends: LegendEntry[];
+}
+const { legends } = Astro.props;
+
+// Only values that appear in the published stories, most common first.
+const counts = new Map<(typeof VALUES)[number], number>();
+for (const l of legends) for (const v of l.data.values) counts.set(v, (counts.get(v) ?? 0) + 1);
+const values = [...counts.entries()].sort((a, b) => b[1] - a[1]);
+---
+
+{values.length > 0 && (
+  <section aria-labelledby="values-title" class="border-y-2 border-gold bg-umber text-parchment">
+    <div class="mx-auto flex max-w-6xl flex-wrap items-center gap-10 px-4 py-14 sm:px-6">
+      <div class="flex flex-[1_1_340px] flex-col gap-3">
+        <p class="eyebrow m-0 text-mist">Explore by value</p>
+        <h2 id="values-title" class="m-0 font-display text-[40px] leading-tight font-normal">
+          What did they have in common?
+        </h2>
+        <p class="m-0 text-lg leading-relaxed text-mist">
+          Adaptation under constraint. Each value comes from documented actions — never from
+          nationality alone.
+        </p>
+      </div>
+      <ul class="m-0 flex flex-[1_1_460px] list-none flex-wrap gap-3 p-0" role="list">
+        {values.map(([value, n]) => (
+          <li class="inline-flex min-h-12 items-center gap-2 border border-gold px-5 font-sc text-[19px]">
+            {VALUE_LABEL[value]}
+            <span class="font-ui text-xs text-mist" aria-label={`${n} legends`}>
+              {n}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
