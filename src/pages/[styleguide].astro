@@ -1,0 +1,77 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ComicViewer from '../components/media/ComicViewer.astro';
+import MediaKindLabel from '../components/media/MediaKindLabel.astro';
+import VideoPlayer from '../components/media/VideoPlayer.astro';
+import PullQuote from '../components/story/PullQuote.astro';
+import VerificationBadge from '../components/story/VerificationBadge.astro';
+import { showDrafts } from '../lib/legends';
+import type { Legend } from '../lib/schema';
+
+/**
+ * Component states the real content doesn't have yet (published video, comic dialogue…),
+ * for design review and e2e tests. Built only in development / draft builds — never in production.
+ * Everything here is a labelled TEST FIXTURE, not content.
+ */
+export const getStaticPaths = (() =>
+  showDrafts() ? [{ params: { styleguide: 'styleguide' } }] : []) satisfies GetStaticPaths;
+
+const video: NonNullable<Legend['video']> = {
+  status: 'published',
+  provider: 'youtube',
+  src: 'TESTFIXTURE',
+  description: 'Test fixture: a published YouTube video, shown as a click-to-load facade.',
+  transcript: 'Test fixture transcript.\nSecond line of the transcript.',
+  durationSec: 64,
+  aiGenerated: true,
+  tool: 'Higgsfield',
+};
+
+const comic: NonNullable<Legend['comic']> = {
+  status: 'reviewed',
+  panels: [
+    { caption: 'Test fixture panel one.', dialogue: [], sources: [] },
+    {
+      caption: 'Test fixture panel two, with dramatized dialogue.',
+      dialogue: [{ speaker: 'Narrator', text: 'A dramatized line.', kind: 'dramatized' }],
+      sources: [],
+    },
+    { caption: 'Test fixture panel three.', note: 'A historical note.', dialogue: [], sources: [] },
+  ],
+};
+---
+
+<BaseLayout title="Styleguide" description="Component states for review and tests." noindex>
+  <div class="mx-auto flex max-w-4xl flex-col gap-14 px-4 py-14 sm:px-6">
+    <header>
+      <p class="eyebrow m-0">Development only · test fixtures</p>
+      <h1 class="mt-1 mb-0 font-display text-5xl font-normal text-umber">Styleguide</h1>
+    </header>
+
+    <section aria-labelledby="sg-badges" class="flex flex-col gap-3">
+      <h2 id="sg-badges" class="m-0 font-display text-3xl font-normal">
+        Credibility labels
+      </h2>
+      <div class="flex flex-wrap gap-3">
+        <VerificationBadge status="verified" />
+        <VerificationBadge status="disputed" />
+        <VerificationBadge status="legend" />
+        <VerificationBadge status="dramatization" />
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <MediaKindLabel kind="historical" posthumous />
+        <MediaKindLabel kind="original-illustration" />
+        <MediaKindLabel kind="ai-generated" />
+        <MediaKindLabel kind="photograph" />
+      </div>
+    </section>
+
+    <PullQuote attribution="Test fixture attribution" sourceNumber={1}>
+      A sourced quotation would appear here.
+    </PullQuote>
+
+    <VideoPlayer slug="styleguide" name="Test Fixture" video={video} />
+    <ComicViewer slug="styleguide" comic={comic} media={[]} />
+  </div>
+</BaseLayout>

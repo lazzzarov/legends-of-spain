@@ -44,3 +44,13 @@ Both are optional. A video appears only when `status: published`, which requires
 ## Review
 
 `review.status` moves through `placeholder → draft → sourced → reviewed → published`. Only `reviewed` and `published` legends appear in production.
+
+## Video details
+
+- YouTube: `provider: youtube`, `src` = the 11-character video id (not a URL). The page shows a click-to-load facade; nothing loads from YouTube until the visitor presses play, and then it uses the privacy-enhanced `youtube-nocookie.com` embed with captions on.
+- Self-hosted: `provider: file`, `src` = a path under `public/` (e.g. `media/<slug>/video.mp4`), plus `captions` (`media/<slug>/video.en.vtt`).
+- `poster` refers to a `media` entry; `transcript` is plain text (line breaks are kept).
+
+## Previewing components
+
+`npm run dev` and open `/legends-of-spain/styleguide/` to see every component state (published video, comic dialogue, all labels) with test fixtures. The page is never built in production.

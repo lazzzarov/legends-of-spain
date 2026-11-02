@@ -36,21 +36,22 @@ P0 = must, P1 = should, P2 = nice to have.
 - [x] 2.10 Responsive QA at 300 / 375 / 1280 in the browser; no horizontal overflow at 375 · P0
 - [x] 2.11 Placeholder entries for all 14 legends (book order = chronological); template moved to `docs/templates/` · P1
 
-## Phase 3 — First complete legend (Elcano)
+## Phase 3 — First complete legend (Elcano) (built; content waits on research and review)
 
-- [ ] 3.1 Content YAML from the research file (draft, placeholders where unsourced) · P0
+- [x] 3.1 Elcano content written from the research dossier as a **draft** (5 chapters of 53–68 words, 3 facts, 1 myth, film pitch, 8 comic captions, 2 places) · P0
 - [x] 3.2 Story intro with portrait + credit (built in Phase 2) · P0
-- [ ] 3.3 FactsNotebook · P0
-- [ ] 3.4 Legend or History? + The Other Side components · P0
-- [ ] 3.5 Portrait rights check and media record · P0
-- [ ] 3.6 VideoPlayer (YouTube nocookie / file, captions, transcript, AI badge, hidden unless published) · P0
-- [ ] 3.7 Video production brief (`production/juan-sebastian-elcano/video-brief.md`) · P1
-- [ ] 3.8 ComicViewer + comic script and character sheet · P0
-- [ ] 3.9 Movie section styling · P0
-- [ ] 3.10 Places to visit (verified only) · P2
-- [ ] 3.11 Sources list with back-links from claims · P0
-- [ ] 3.12 Per-page OG image + JSON-LD (Person, Article) · P0
-- [ ] 3.13 Author review → `reviewed` · P0
+- [x] 3.3 FactsNotebook component · P0
+- [x] 3.4 LegendOrHistory + OtherSide components · P0
+- [ ] 3.5 Portrait rights check and media record · P0 · **deferred: research not started (by decision)**
+- [x] 3.6 VideoPlayer: click-to-load youtube-nocookie facade or native video + WebVTT; AI label, transcript, no autoplay; hidden unless published · P0
+- [x] 3.7 Video production brief (`production/juan-sebastian-elcano/video-brief.md`) · P1
+- [x] 3.8 ComicViewer (scroll-snap strip, works without JS, native swipe) + comic script and character sheet · P0
+- [x] 3.9 MovieSection component · P0
+- [x] 3.10 Places to visit (documented connections only) · P2
+- [x] 3.11 Sources list with "Cited in" back-links to every claim · P0
+- [x] 3.12 Build-time OG image per legend (satori + sharp, site fonts) + JSON-LD (Article about a Person; WebSite on home) · P0
+- [x] 3.13a Dev-only styleguide page with test fixtures for video and comic states · P1
+- [ ] 3.13 Research pass on Elcano (survivor numbers, distances, primary sources consulted directly), then author review → `reviewed` · P0 · **waiting on you**
 
 ## Phase 4 — Interactive features
 

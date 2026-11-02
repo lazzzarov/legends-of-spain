@@ -1,0 +1,22 @@
+---
+import type { ReviewStatus } from '../../lib/schema';
+
+/** Shown only in development/draft builds: production never renders unreviewed legends. */
+interface Props {
+  status: ReviewStatus;
+}
+const { status } = Astro.props;
+const MESSAGE: Partial<Record<ReviewStatus, string>> = {
+  placeholder:
+    'Placeholder chapter — the story structure is shown; the text has not been written yet.',
+  draft: 'Draft — written from the research dossier and not yet checked against primary sources.',
+  sourced: 'Sourced — awaiting the editor’s review before publication.',
+};
+const message = MESSAGE[status];
+---
+
+{message && (
+  <p class="m-0 border-b border-burgundy bg-cream px-4 py-2.5 text-center font-ui text-sm text-burgundy">
+    {message}
+  </p>
+)}

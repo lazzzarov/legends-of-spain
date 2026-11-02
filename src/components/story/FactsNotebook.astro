@@ -1,0 +1,40 @@
+---
+import Citations from './Citations.astro';
+import SectionHeading from './SectionHeading.astro';
+import VerificationBadge from './VerificationBadge.astro';
+import type { CitationIndex } from '../../lib/citations';
+import type { Legend } from '../../lib/schema';
+
+interface Props {
+  facts: Legend['facts'];
+  cite: CitationIndex['numbers'];
+}
+const { facts, cite } = Astro.props;
+---
+
+<section aria-labelledby="facts" class="scroll-mt-6">
+  <SectionHeading id="facts">Key Facts</SectionHeading>
+  <dl
+    class="m-0 grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] border border-sepia bg-cream"
+    style="background-image:linear-gradient(rgb(139 90 43/.08) 1px,transparent 1px),linear-gradient(90deg,rgb(139 90 43/.08) 1px,transparent 1px);background-size:24px 24px"
+  >
+    {facts.map((f, i) => (
+      <div class="-mr-px -mb-px flex flex-col gap-1.5 border-r border-b border-dashed border-caramel p-6">
+        <dt class="order-2 font-ui text-xs font-semibold tracking-[0.1em] text-burgundy uppercase">
+          {f.label}
+        </dt>
+        <dd class="order-1 m-0 font-display text-[clamp(2.5rem,5vw,3.5rem)] leading-none text-umber">
+          {f.value}
+          {f.unit && <span class="text-2xl"> {f.unit}</span>}
+        </dd>
+        <dd class="order-3 m-0 text-[15px] leading-normal">
+          {f.explanation}
+          <Citations numbers={cite(f.sources)} prefix={`fact-${i}`} />
+        </dd>
+        <dd class="order-4 m-0 mt-1">
+          <VerificationBadge status={f.status} />
+        </dd>
+      </div>
+    ))}
+  </dl>
+</section>

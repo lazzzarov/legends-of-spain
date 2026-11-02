@@ -4,7 +4,7 @@
 
 Every legend gets one chapter: a cinematic hook, a five-part story, key facts, a comic, a film pitch, the documented controversies ("The Other Side of the Story") and its sources. Every claim is labelled _Verified_, _Disputed_, _Legend_ or _Dramatization_, and every AI-generated image is marked as such.
 
-> **Status:** early development (Phase 2 of 7). See [docs/CHECKLIST.md](docs/CHECKLIST.md).
+> **Status:** early development (Phase 3 of 7). See [docs/CHECKLIST.md](docs/CHECKLIST.md).
 
 ## Quick start
 

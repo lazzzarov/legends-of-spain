@@ -1,0 +1,25 @@
+---
+import Citations from './Citations.astro';
+import SectionHeading from './SectionHeading.astro';
+import type { CitationIndex } from '../../lib/citations';
+import type { Legend } from '../../lib/schema';
+
+interface Props {
+  otherSide: Legend['otherSide'];
+  cite: CitationIndex['numbers'];
+}
+const { otherSide, cite } = Astro.props;
+---
+
+<section
+  aria-labelledby="other-side"
+  class="flex flex-[1_1_320px] scroll-mt-6 flex-col gap-3 border border-burgundy bg-cream p-6"
+>
+  <SectionHeading id="other-side" tone="burgundy">
+    The Other Side of the Story
+  </SectionHeading>
+  <p class="m-0 text-base leading-relaxed">
+    {otherSide.body}
+    <Citations numbers={cite(otherSide.sources)} prefix="other-side" />
+  </p>
+</section>

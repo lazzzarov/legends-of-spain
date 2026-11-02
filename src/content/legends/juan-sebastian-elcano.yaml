@@ -1,70 +1,209 @@
-# PLACEHOLDER — only name, dates, place, role and achievement come from the research
-# dossier (docs/research/20261102_deep-research.md). Everything in [brackets] is still to be written.
+# DRAFT — written only from the research dossier (docs/research/20261102_deep-research.md).
+# Primary records are listed as the dossier cites them; they have not yet been consulted directly.
+# Gaps to research before review: survivor and crew numbers, distances, portrait rights.
 
 order: 2
 name:
-  display: 'Juan Sebastián Elcano'
+  display: Juan Sebastián Elcano
+  aka: [Juan Sebastián del Cano]
 dates:
   born: { year: 1487 }
-  died: { year: 1526 }
+  died: { year: 1526, month: 8, day: 4, display: '1526' }
 origin:
-  place: 'Getaria'
-  region: 'Gipuzkoa'
-role: 'Navigator'
+  place: Getaria
+  region: Gipuzkoa, Basque Country
+role: Navigator
 categories: [exploration, naval]
 centuries: [15, 16]
-values: [resilience, exploration]
-tagline: 'He set out as a ship’s master and came home captain of the first vessel to sail around the world.'
-hook: '[Hook — a documented moment of tension, 40–70 words. To be written.]'
-mainAchievement: 'Completed the first recorded circumnavigation, 1522'
+values: [resilience, exploration, attempting-the-impossible]
+tagline: He set out as a ship’s master and came home captain of the first vessel to sail around the world.
+hook: >-
+  By December 1521 the expedition’s commander was dead and its leadership had collapsed. In command
+  of the Victoria, Elcano chose the most dangerous road home — west, through waters controlled by
+  Portugal — and in doing so closed the first recorded circle around the world.
+mainAchievement: Completed the first recorded circumnavigation, 1522
 portrait: portrait
 
 chapters:
   - key: beginning
     title: The Beginning
-    body: '[Who they were and how the story began — to be written from verified sources.]'
+    body: >-
+      Juan Sebastián Elcano was born in 1487 in Getaria, on the Basque coast. By 1519 he was an
+      experienced mariner, and he joined the fleet Ferdinand Magellan was leading towards the
+      Moluccas, the Spice Islands. He did not command it. He sailed as master of the Concepción —
+      the officer responsible for running the ship under its captain — one seaman in a crew drawn
+      from many nations.
     sources: [research-dossier]
     status: verified
   - key: challenge
     title: The Challenge
-    body: '[The extraordinary obstacle — to be written from verified sources.]'
+    body: >-
+      The fleet found its strait and crossed the Pacific. Then, in 1521, Magellan was killed at
+      Mactan, and the expedition’s leadership fell apart in a sequence of command changes. Out of
+      that turmoil Elcano — a master, not a captain — emerged in command of the Victoria, half a
+      world away from home.
     sources: [research-dossier]
     status: verified
   - key: odds
     title: Against the Odds
-    body: '[What made it so difficult — to be written from verified sources.]'
+    body: >-
+      By December 1521 Elcano was effectively leading the attempt to get home. He could have turned
+      back across the Pacific. Instead he chose the western route: across the Indian Ocean, around
+      the Cape of Good Hope and north to Spain — through waters controlled by Portugal, Spain’s
+      rival. It was the more dangerous road, and the only one that would complete the circle.
     sources: [research-dossier]
     status: verified
   - key: moment
     title: The Defining Moment
-    body: '[The most significant achievement — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      On 6 September 1522 the battered Victoria reached Sanlúcar, at the mouth of the Guadalquivir.
+      Its surviving crew had completed the first recorded circumnavigation of the Earth. Elcano wrote
+      to the emperor Charles V straight away, setting out what they had achieved: they had found the
+      strait, reached the Moluccas and sailed all the way around the globe.
+    sources: [research-dossier, elcano-letter-1522]
     status: verified
   - key: legacy
     title: The Legacy
-    body: '[Consequences, and why it matters today — to be written from verified sources.]'
+    body: >-
+      The voyage showed that a ship could complete a practicable oceanic circuit of the world, and it
+      transformed European geographical knowledge. Elcano went to sea again as pilot major of the
+      Loaísa expedition and died in the Pacific on 4 August 1526. His own letter makes his role
+      unusually tangible — but the achievement belonged to many, beginning with Magellan.
+    more: >-
+      Few figures of the age left such direct testimony. Elcano’s letter of 6 September 1522 and his
+      1526 testament both survive in the Archivo General de Indias in Seville, alongside the payroll
+      and expedition records of the Casa de la Contratación. Getaria and Spain’s naval collections
+      keep commemorative material about him.
+    sources: [research-dossier, elcano-letter-1522, elcano-testament-1526]
+    status: verified
+
+facts:
+  - value: '1519'
+    label: Joins the expedition
+    explanation: As master of the Concepción — not as its commander.
+    sources: [research-dossier]
+    status: verified
+  - value: 6 Sep 1522
+    label: The Victoria reaches Sanlúcar
+    explanation: Completing the first recorded circumnavigation of the Earth.
+    sources: [research-dossier, elcano-letter-1522]
+    status: verified
+  - value: 4 Aug 1526
+    label: Dies in the Pacific
+    explanation: At sea again, as pilot major of the Loaísa expedition.
     sources: [research-dossier]
     status: verified
 
+myths:
+  - claim: Elcano planned the first voyage around the world.
+    status: legend
+    explanation: >-
+      Magellan conceived the expedition and commanded most of it. Elcano completed it after
+      Magellan’s death. A fair account gives both men distinct credit.
+    sources: [research-dossier]
+
 otherSide:
-  body: '[Controversies, human consequences and other perspectives — to be written from the dossier.]'
+  body: >-
+    Spanish and Portuguese national narratives have each turned this multinational expedition into
+    a story of their own hero. The voyage depended on dozens of European, Asian and African sailors
+    whose labour made it possible — and many of them never came home.
   sources: [research-dossier]
 
+video:
+  status: planned
+  description: >-
+    A 60-second dramatization of the homeward voyage: the collapse of command after Mactan, the
+    choice to sail west, and the Victoria’s arrival at Sanlúcar.
+  aiGenerated: true
+  tool: Higgsfield
+
+comic:
+  status: draft
+  panels:
+    - caption: Getaria, on the Basque coast. Juan Sebastián Elcano is born here in 1487.
+      sources: [research-dossier]
+    - caption: 1519. He joins Magellan’s fleet as master of the Concepción — responsible for the ship, but not its commander.
+      context: The fleet is bound for the Moluccas, the Spice Islands.
+      sources: [research-dossier]
+    - caption: Mactan, 1521. Magellan is killed, and the expedition’s command passes from hand to hand.
+      sources: [research-dossier]
+    - caption: Elcano — who sailed as a master, not a captain — emerges in command of the Victoria.
+      sources: [research-dossier]
+    - caption: December 1521. Instead of retracing the Pacific, the Victoria turns west — towards the Indian Ocean.
+      note: This route ran through waters controlled by Portugal, Spain’s rival.
+      sources: [research-dossier]
+    - caption: Around the Cape of Good Hope and north, towards Spain.
+      sources: [research-dossier]
+    - caption: 6 September 1522. The battered Victoria reaches Sanlúcar. The circle is closed.
+      sources: [research-dossier, elcano-letter-1522]
+    - caption: Elcano writes to Charles V — the strait, the Moluccas, and a voyage around the whole globe.
+      sources: [research-dossier, elcano-letter-1522]
+
+movie:
+  title: The Long Way Home
+  premise: A ship’s master inherits a broken expedition and must choose between a known ocean and a forbidden route.
+  conflict: Bring a failing ship and its crew home after the commander’s death — through a rival empire’s waters.
+  challenge: Leading men who never expected him to lead them.
+  moments:
+    - text: Mactan, 1521 — Magellan is killed and the expedition’s command unravels.
+      sources: [research-dossier]
+    - text: December 1521 — the decision to sail west, across the Indian Ocean and around the Cape.
+      sources: [research-dossier]
+    - text: Sanlúcar, 6 September 1522 — the Victoria comes home, the first ship to sail around the world.
+      sources: [research-dossier, elcano-letter-1522]
+  theme: Endurance — and glory that belongs to many.
+
+places:
+  - name: Getaria
+    relation: Birthplace; keeps commemorative material about Elcano.
+    location: Gipuzkoa, Basque Country
+    sources: [research-dossier]
+  - name: Sanlúcar de Barrameda
+    relation: Where the Victoria arrived on 6 September 1522, completing the circumnavigation.
+    location: Cádiz, Andalusia
+    sources: [research-dossier]
+
+related: [miguel-lopez-de-legazpi, francisco-de-orellana]
+
+seo:
+  description: He set out as a ship’s master and came home captain of the first ship to sail around the world. The story of Juan Sebastián Elcano, in two minutes.
+
 review:
-  status: placeholder
+  status: draft
 
 sources:
   - id: research-dossier
-    title: 'Spanish Explorers and Military Leaders Who Reshaped the Early Modern World (research dossier)'
+    title: Spanish Explorers and Military Leaders Who Reshaped the Early Modern World (research dossier)
     institution: Legends of Spain
     year: '2026'
     type: reference
-    notes: 'Working dossier; to be replaced by the primary and scholarly sources it cites.'
+    notes: Working dossier; each claim is to be checked against the primary and scholarly sources it cites.
+  - id: elcano-letter-1522
+    title: Letter of Juan Sebastián Elcano to Charles V, 6 September 1522
+    institution: Archivo General de Indias, PATRONATO,48,R.20
+    type: primary
+    notes: Cited via the research dossier; not yet consulted directly.
+  - id: elcano-testament-1526
+    title: Testament of Juan Sebastián Elcano, 1526
+    institution: Archivo General de Indias, PATRONATO,38,R.1
+    type: primary
+    notes: Cited via the research dossier; not yet consulted directly.
+  - id: pigafetta-account
+    title: Account of the first voyage around the world
+    author: Antonio Pigafetta
+    type: primary
+    notes: Edition to be chosen and cited.
+  - id: fernandez-armesto-straits
+    title: Straits
+    author: Felipe Fernández-Armesto
+    type: academic
+    notes: Further reading named in the research dossier.
 
 media:
   - id: portrait
-    alt: 'Portrait of Juan Sebastián Elcano — to be selected'
+    alt: Portrait of Juan Sebastián Elcano — to be selected
     kind: historical
     title: '[Portrait to be selected]'
+    posthumous: true
     license: '[To verify]'
     attribution: '[To verify]'

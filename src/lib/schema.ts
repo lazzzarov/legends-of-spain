@@ -116,6 +116,12 @@ export const videoSchema = z
   })
   .refine((v) => v.status !== 'published' || Boolean(v.provider && v.src && v.transcript), {
     message: 'a published video needs provider, src and transcript',
+  })
+  .refine((v) => v.provider !== 'youtube' || !v.src || /^[\w-]{11}$/.test(v.src), {
+    message: 'for YouTube, src is the 11-character video id (not a URL)',
+  })
+  .refine((v) => v.provider !== 'file' || !v.src || !/^(https?:)?\/\//.test(v.src), {
+    message: 'for file videos, src is a path under public/ (e.g. media/<slug>/video.mp4)',
   });
 
 export const dialogueSchema = z

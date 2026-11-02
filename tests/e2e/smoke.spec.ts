@@ -69,6 +69,6 @@ test('unknown pages show the styled 404', async ({ page }) => {
 });
 
 test('placeholder legends are marked noindex', async ({ page }) => {
-  await page.goto('legends/juan-sebastian-elcano/');
+  await page.goto('legends/hernan-cortes/');
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex');
 });

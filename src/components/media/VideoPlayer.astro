@@ -1,0 +1,120 @@
+---
+import { getImage } from 'astro:assets';
+import SectionHeading from '../story/SectionHeading.astro';
+import { resolveImage } from '../../lib/media';
+import { withBase } from '../../lib/paths';
+import type { Legend, Media } from '../../lib/schema';
+
+/**
+ * A published video (the page hides this component otherwise).
+ * - youtube: a click-to-load facade; nothing is requested from YouTube until the visitor presses
+ *   play, then the privacy-enhanced youtube-nocookie embed loads with captions on.
+ * - file: a native <video> with WebVTT captions, preload="none", never autoplaying.
+ */
+interface Props {
+  slug: string;
+  name: string;
+  video: NonNullable<Legend['video']>;
+  poster?: Media;
+}
+const { slug, name, video, poster } = Astro.props;
+
+const posterImage = resolveImage(slug, poster?.file);
+const posterSrc = posterImage ? (await getImage({ src: posterImage, width: 1280 })).src : undefined;
+const title = `${name}: the story in ${video.durationSec ? `${video.durationSec} seconds` : 'brief'}`;
+const label = `Play video: ${title} (AI-generated historical dramatization)`;
+const embed =
+  video.provider === 'youtube'
+    ? `https://www.youtube-nocookie.com/embed/${video.src}?autoplay=1&cc_load_policy=1&rel=0&modestbranding=1`
+    : undefined;
+const minutes = video.durationSec
+  ? `${Math.floor(video.durationSec / 60)}:${String(video.durationSec % 60).padStart(2, '0')}`
+  : undefined;
+---
+
+<section aria-labelledby="video" class="scroll-mt-6">
+  <SectionHeading id="video">
+    The Story in {video.durationSec ? `${video.durationSec} Seconds` : 'Brief'}
+  </SectionHeading>
+  <div class="relative aspect-video overflow-hidden border border-ink bg-gradient-to-b from-[#2a1d14] via-umber to-burnt">
+    {video.provider === 'youtube' ? (
+      <button
+        type="button"
+        class="group absolute inset-0 flex h-full w-full cursor-pointer items-center justify-center"
+        aria-label={label}
+        data-video-embed={embed}
+        data-video-title={title}
+      >
+        {posterSrc && (
+          <img
+            src={posterSrc}
+            alt=""
+            class="absolute inset-0 h-full w-full object-cover"
+            loading="lazy"
+          />
+        )}
+        <span class="relative flex h-22 w-22 items-center justify-center rounded-full border-2 border-gold bg-umber/85 transition group-hover:scale-105 group-focus-visible:scale-105">
+          <svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 5 L19 12 L8 19 Z" fill="#F3E9D2" />
+          </svg>
+        </span>
+      </button>
+    ) : (
+      <video
+        class="absolute inset-0 h-full w-full"
+        controls
+        preload="none"
+        playsinline
+        poster={posterSrc}
+        aria-label={title}
+      >
+        <source src={withBase(video.src!)} />
+        {video.captions && (
+          <track
+            kind="captions"
+            src={withBase(video.captions)}
+            srclang="en"
+            label="English"
+            default
+          />
+        )}
+      </video>
+    )}
+    <span class="pointer-events-none absolute top-3 left-3 bg-burgundy px-2.5 py-1 font-ui text-[11px] font-semibold tracking-[0.08em] text-parchment uppercase">
+      AI-generated historical dramatization
+    </span>
+    {minutes && (
+      <span class="pointer-events-none absolute right-3 bottom-3 bg-cream/90 px-2 py-0.5 font-ui text-[11px] text-ink">
+        CC · {minutes}
+      </span>
+    )}
+  </div>
+  <p class="mt-3 mb-0 text-base leading-relaxed">{video.description}</p>
+  <p class="mt-1 mb-0 font-ui text-xs text-burnt">
+    Captions available · no autoplay{video.tool && ` · made with ${video.tool}`}
+    {video.provider === 'youtube' &&
+      ' · loads from YouTube (privacy-enhanced mode) only when you press play'}
+  </p>
+  <details class="mt-3 border-t border-dashed border-caramel pt-2">
+    <summary class="inline-flex min-h-11 cursor-pointer items-center font-sc text-[17px] text-burgundy">
+      Read the transcript
+    </summary>
+    <div class="max-w-prose text-base leading-relaxed whitespace-pre-line">{video.transcript}</div>
+  </details>
+</section>
+
+<script>
+  // Swap the facade for the real embed on demand (one listener per page, works for any number of videos).
+  document.addEventListener('click', (event) => {
+    const button = (event.target as Element).closest<HTMLButtonElement>('[data-video-embed]');
+    if (!button) return;
+    const iframe = document.createElement('iframe');
+    iframe.src = button.dataset.videoEmbed!;
+    iframe.title = button.dataset.videoTitle ?? 'Video';
+    iframe.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    iframe.allowFullscreen = true;
+    iframe.className = 'absolute inset-0 h-full w-full';
+    button.replaceWith(iframe);
+    iframe.focus();
+  });
+</script>

@@ -1,0 +1,30 @@
+---
+import Citations from './Citations.astro';
+import SectionHeading from './SectionHeading.astro';
+import VerificationBadge from './VerificationBadge.astro';
+import type { CitationIndex } from '../../lib/citations';
+import type { Legend } from '../../lib/schema';
+
+interface Props {
+  myths: Legend['myths'];
+  cite: CitationIndex['numbers'];
+}
+const { myths, cite } = Astro.props;
+---
+
+<section
+  aria-labelledby="myths"
+  class="flex flex-[1_1_320px] scroll-mt-6 flex-col gap-3 border border-dashed border-sepia bg-cream p-6"
+>
+  <SectionHeading id="myths">Legend or History?</SectionHeading>
+  {myths.map((m, i) => (
+    <div class="flex flex-col gap-2.5">
+      <p class="m-0 text-[17px] text-burnt italic">“{m.claim}”</p>
+      <VerificationBadge status={m.status} />
+      <p class="m-0 text-base leading-relaxed">
+        {m.explanation}
+        <Citations numbers={cite(m.sources)} prefix={`myth-${i}`} />
+      </p>
+    </div>
+  ))}
+</section>

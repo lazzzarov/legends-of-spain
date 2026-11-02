@@ -1,0 +1,46 @@
+---
+import Citations from './Citations.astro';
+import SectionHeading from './SectionHeading.astro';
+import type { CitationIndex } from '../../lib/citations';
+import type { Legend } from '../../lib/schema';
+
+interface Props {
+  places: Legend['places'];
+  cite: CitationIndex['numbers'];
+}
+const { places, cite } = Astro.props;
+---
+
+<section aria-labelledby="places" class="scroll-mt-6">
+  <SectionHeading id="places" eyebrow="Only places with a documented connection">
+    Places to Visit
+  </SectionHeading>
+  <ul
+    class="m-0 grid list-none grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4 p-0"
+    role="list"
+  >
+    {places.map((p, i) => (
+      <li class="flex gap-3 border-l-2 border-burgundy bg-cream p-4">
+        <svg width="20" height="26" viewBox="0 0 20 26" aria-hidden="true" class="mt-1 shrink-0">
+          <path
+            d="M10 1C5 1 1.5 4.6 1.5 9.3 1.5 15.5 10 25 10 25s8.5-9.5 8.5-15.7C18.5 4.6 15 1 10 1Z"
+            fill="none"
+            stroke="#6E1F2A"
+            stroke-width="1.4"
+          />
+          <circle cx="10" cy="9.5" r="3" fill="#B8954A" />
+        </svg>
+        <div class="flex flex-col gap-1">
+          <p class="m-0 font-display text-2xl leading-tight text-umber">
+            {p.url ? <a href={p.url}>{p.name}</a> : p.name}
+          </p>
+          <p class="m-0 font-ui text-xs tracking-wide text-burnt uppercase">{p.location}</p>
+          <p class="m-0 text-[15px] leading-normal">
+            {p.relation}
+            <Citations numbers={cite(p.sources)} prefix={`place-${i}`} />
+          </p>
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>

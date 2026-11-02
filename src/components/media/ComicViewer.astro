@@ -1,0 +1,160 @@
+---
+import { Image } from 'astro:assets';
+import MediaKindLabel from './MediaKindLabel.astro';
+import SectionHeading from '../story/SectionHeading.astro';
+import VerificationBadge from '../story/VerificationBadge.astro';
+import { resolveImage } from '../../lib/media';
+import type { Legend } from '../../lib/schema';
+
+/**
+ * The comic as a horizontal scroll-snap strip: native swipe on touch screens, arrow-key
+ * scrolling when focused, and fully readable without JavaScript. A small script adds the
+ * previous/next buttons and the "Panels 1–2 of 8" status.
+ */
+interface Props {
+  slug: string;
+  comic: NonNullable<Legend['comic']>;
+  media: Legend['media'];
+}
+const { slug, comic, media } = Astro.props;
+const mediaById = new Map(media.map((m) => [m.id, m]));
+const total = comic.panels.length;
+---
+
+<section aria-labelledby="comic" class="scroll-mt-6" data-comic>
+  <div class="flex flex-wrap items-end justify-between gap-2">
+    <SectionHeading id="comic">The Comic</SectionHeading>
+    <p class="mb-5 font-ui text-sm text-burnt" aria-live="polite" data-comic-status>
+      {total} panels
+    </p>
+  </div>
+
+  <ol
+    class="m-0 flex list-none snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth p-0 pb-3 motion-reduce:scroll-auto"
+    tabindex="0"
+    aria-label="Comic panels — scroll or use the arrow keys"
+    data-comic-track
+  >
+    {comic.panels.map((panel, i) => {
+      const art = panel.image ? mediaById.get(panel.image) : undefined;
+      const image = resolveImage(slug, art?.file);
+      return (
+        <li
+          class="w-full shrink-0 snap-start lg:w-[calc(50%-10px)]"
+          aria-label={`Panel ${i + 1} of ${total}`}
+          data-comic-panel
+        >
+          <figure class="m-0 flex h-full flex-col border-2 border-ink bg-cream">
+            <div class:list={['relative aspect-[4/3] border-b-2 border-ink', !image && 'plate']}>
+              {image && art ? (
+                <Image
+                  src={image}
+                  alt={art.alt}
+                  widths={[400, 600, 800]}
+                  sizes="(min-width: 1024px) 400px, 90vw"
+                  class="h-full w-full object-cover"
+                />
+              ) : (
+                <span class="absolute inset-0 flex items-center justify-center p-6 text-center font-ui text-sm text-burnt">
+                  Illustration in production
+                </span>
+              )}
+              {art && image && (
+                <MediaKindLabel
+                  kind={art.kind}
+                  posthumous={art.posthumous}
+                  class="absolute top-2 left-2"
+                />
+              )}
+              <span class="absolute right-2 bottom-2 bg-ink px-2 py-0.5 font-ui text-[11px] text-parchment">
+                {i + 1}
+              </span>
+            </div>
+            <figcaption class="flex grow flex-col gap-2 p-4">
+              <p class="m-0 text-base leading-normal">{panel.caption}</p>
+              {panel.dialogue.map((d) => (
+                <p class="m-0 border-l-2 border-sepia pl-3 text-[15px] italic">
+                  <span class="font-ui text-xs font-semibold not-italic">{d.speaker}:</span> “
+                  {d.text}”{' '}
+                  {d.kind === 'dramatized' && <VerificationBadge status="dramatization" />}
+                </p>
+              ))}
+              {panel.context && <p class="m-0 font-ui text-[13px] text-burnt">{panel.context}</p>}
+              {panel.note && (
+                <details class="mt-auto">
+                  <summary class="inline-flex min-h-11 cursor-pointer items-center font-ui text-[13px] font-semibold text-burgundy">
+                    ❖ Historical note
+                  </summary>
+                  <p class="m-0 text-[15px] leading-normal">{panel.note}</p>
+                </details>
+              )}
+            </figcaption>
+          </figure>
+        </li>
+      );
+    })}
+  </ol>
+
+  <div class="mt-2 flex justify-between gap-3" data-comic-controls hidden>
+    <button
+      type="button"
+      class="btn-secondary min-h-11 text-base disabled:opacity-40"
+      data-comic-prev
+    >
+      <span aria-hidden="true">←</span> Previous
+    </button>
+    <button
+      type="button"
+      class="btn-primary min-h-11 text-base disabled:opacity-40"
+      data-comic-next
+    >
+      Next <span aria-hidden="true">→</span>
+    </button>
+  </div>
+</section>
+
+<script>
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  for (const root of document.querySelectorAll<HTMLElement>('[data-comic]')) {
+    const track = root.querySelector<HTMLElement>('[data-comic-track]')!;
+    const panels = [...track.querySelectorAll<HTMLElement>('[data-comic-panel]')];
+    const status = root.querySelector<HTMLElement>('[data-comic-status]')!;
+    const controls = root.querySelector<HTMLElement>('[data-comic-controls]')!;
+    const prev = root.querySelector<HTMLButtonElement>('[data-comic-prev]')!;
+    const next = root.querySelector<HTMLButtonElement>('[data-comic-next]')!;
+    controls.hidden = false;
+
+    const step = () =>
+      panels[0]!.getBoundingClientRect().width +
+      parseFloat(getComputedStyle(track).columnGap || '0');
+    const perView = () => Math.max(1, Math.round(track.clientWidth / step()));
+
+    const update = () => {
+      const first = Math.round(track.scrollLeft / step());
+      const last = Math.min(panels.length, first + perView());
+      status.textContent =
+        last - first > 1
+          ? `Panels ${first + 1}–${last} of ${panels.length}`
+          : `Panel ${first + 1} of ${panels.length}`;
+      prev.disabled = first <= 0;
+      next.disabled = last >= panels.length;
+    };
+
+    const go = (direction: 1 | -1) =>
+      track.scrollBy({
+        left: direction * step() * perView(),
+        behavior: reduceMotion.matches ? 'auto' : 'smooth',
+      });
+
+    prev.addEventListener('click', () => go(-1));
+    next.addEventListener('click', () => go(1));
+    let frame = 0;
+    track.addEventListener('scroll', () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(update);
+    });
+    window.addEventListener('resize', update);
+    update();
+  }
+</script>

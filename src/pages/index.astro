@@ -6,16 +6,18 @@ import Divider from '../components/ornaments/Divider.astro';
 import Gallery from '../components/gallery/Gallery.astro';
 import ValuesBand from '../components/gallery/ValuesBand.astro';
 import { getLegends } from '../lib/content';
+import { siteJsonLd } from '../lib/jsonld';
 import { withBase } from '../lib/paths';
 
 const legends = await getLegends();
 const count = legends.length;
+const description =
+  'The extraordinary lives of Spanish explorers, commanders and pioneers — told in two minutes, sourced to the archive.';
+const jsonLd = JSON.stringify(siteJsonLd(Astro.site!, description));
 ---
 
-<BaseLayout
-  title="Legends of Spain"
-  description="The extraordinary lives of Spanish explorers, commanders and pioneers — told in two minutes, sourced to the archive."
->
+<BaseLayout title="Legends of Spain" description={description}>
+  <script slot="head" type="application/ld+json" is:inline set:html={jsonLd} />
   <section class="mx-auto max-w-6xl px-4 pt-12 pb-12 sm:px-6 sm:pt-16">
     <div class="relative flex flex-col items-center gap-6 border border-sepia px-5 py-14 text-center outline outline-offset-8 outline-sepia sm:px-8 sm:py-20">
       <Corners />

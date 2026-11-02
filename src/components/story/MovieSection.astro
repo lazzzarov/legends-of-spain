@@ -1,0 +1,53 @@
+---
+import Citations from './Citations.astro';
+import SectionHeading from './SectionHeading.astro';
+import VerificationBadge from './VerificationBadge.astro';
+import type { CitationIndex } from '../../lib/citations';
+import type { Legend } from '../../lib/schema';
+
+interface Props {
+  movie: NonNullable<Legend['movie']>;
+  cite: CitationIndex['numbers'];
+}
+const { movie, cite } = Astro.props;
+---
+
+<section
+  aria-labelledby="movie"
+  class="flex scroll-mt-6 flex-wrap gap-8 border border-gold bg-ink p-6 text-parchment outline outline-offset-4 outline-ink sm:p-12"
+>
+  <div
+    class="flex aspect-[2/3] w-full max-w-[220px] flex-[0_1_220px] flex-col items-center justify-end gap-1.5 border border-gold bg-gradient-to-b from-umber to-[#1a1411] p-5 text-center"
+    aria-hidden="true"
+  >
+    <span class="font-ui text-[9px] tracking-[0.2em] text-gold uppercase">
+      A cinematic interpretation
+    </span>
+    <span class="font-display text-[28px] leading-none text-parchment">{movie.title}</span>
+  </div>
+  <div class="flex min-w-0 flex-[1_1_360px] flex-col gap-3.5">
+    <SectionHeading id="movie" tone="dark">
+      Why This Deserves a Movie
+    </SectionHeading>
+    <VerificationBadge status="dramatization" tone="dark" />
+    <p class="m-0 font-display text-[22px] leading-snug text-mist italic">
+      <span class="not-italic">“{movie.title}”</span> — {movie.premise}
+    </p>
+    <dl class="m-0 grid gap-x-6 gap-y-2 font-ui text-sm sm:grid-cols-[auto_1fr]">
+      <dt class="text-gold">Conflict</dt>
+      <dd class="m-0 text-parchment">{movie.conflict}</dd>
+      <dt class="text-gold">Challenge</dt>
+      <dd class="m-0 text-parchment">{movie.challenge}</dd>
+    </dl>
+    <p class="eyebrow m-0 mt-2 text-gold">Three documented moments</p>
+    <ol class="m-0 flex flex-col gap-1.5 pl-5 text-base leading-relaxed">
+      {movie.moments.map((m, i) => (
+        <li>
+          {m.text}
+          <Citations numbers={cite(m.sources)} prefix={`moment-${i}`} tone="dark" />
+        </li>
+      ))}
+    </ol>
+    <p class="m-0 font-ui text-[13px] text-mist">Theme: {movie.theme}</p>
+  </div>
+</section>
