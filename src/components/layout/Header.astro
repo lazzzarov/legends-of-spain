@@ -1,0 +1,38 @@
+---
+import WaxSeal from '../ornaments/WaxSeal.astro';
+import { withBase } from '../../lib/paths';
+
+const links = [
+  { href: withBase('legends/'), label: 'Legends' },
+  { href: withBase('why/'), label: 'Why We Tell These Stories' },
+];
+const current = Astro.url.pathname;
+---
+
+<header class="border-b-2 border-gold bg-umber text-parchment">
+  <nav
+    aria-label="Main"
+    class="mx-auto flex min-h-16 max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-2 sm:px-6"
+  >
+    <a
+      href={withBase()}
+      class="flex items-center gap-3 text-parchment no-underline hover:text-mist"
+    >
+      <WaxSeal />
+      <span class="font-display text-2xl">Legends of Spain</span>
+    </a>
+    <ul class="flex flex-wrap gap-x-6 gap-y-1 font-ui text-[15px]" role="list">
+      {links.map((l) => (
+        <li>
+          <a
+            href={l.href}
+            class="inline-flex min-h-11 items-center text-parchment no-underline hover:text-mist aria-[current=page]:underline"
+            aria-current={current.startsWith(l.href) ? 'page' : undefined}
+          >
+            {l.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CompassRose from '../components/ornaments/CompassRose.astro';
+import { withBase } from '../lib/paths';
+---
+
+<BaseLayout title="Lost at sea" description="This page is not on any chart we hold." noindex>
+  <div class="mx-auto flex max-w-2xl flex-col items-center gap-5 px-4 py-24 text-center">
+    <CompassRose size={110} />
+    <h1 class="m-0 font-display text-6xl font-normal text-umber">Lost at sea</h1>
+    <p class="m-0 text-lg">This page is not on any chart we hold.</p>
+    <a href={withBase()} class="font-[family-name:var(--font-display-sc)] text-xl">
+      Return to the Book of Legends →
+    </a>
+  </div>
+</BaseLayout>

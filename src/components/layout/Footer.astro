@@ -1,0 +1,27 @@
+---
+import { withBase } from '../../lib/paths';
+const repo = 'https://github.com/lazzzarov/legends-of-spain';
+---
+
+<footer class="mt-24 bg-ink font-ui text-[13px] text-mist">
+  <div class="mx-auto flex max-w-6xl flex-wrap justify-between gap-3 px-4 py-7 sm:px-6">
+    <p class="m-0">Code MIT · Text CC BY-SA 4.0 · Media under their own licenses</p>
+    <ul class="m-0 flex list-none gap-5 p-0" role="list">
+      <li>
+        <a class="text-parchment" href={withBase('credits/')}>
+          Credits
+        </a>
+      </li>
+      <li>
+        <a class="text-parchment" href={`${repo}/blob/main/CONTRIBUTING.md`}>
+          Contribute
+        </a>
+      </li>
+      <li>
+        <a class="text-parchment" href={repo}>
+          GitHub
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>

@@ -1,0 +1,107 @@
+# TEMPLATE — a structurally complete placeholder, not a real person.
+# Copy this file to <slug>.yaml to start a new legend. Text in [brackets] is a placeholder.
+# Every field is documented in docs/CONTENT_GUIDE.md and validated by src/lib/schema.ts.
+
+order: 99
+name:
+  display: Example Legend
+  full: '[Full historical name]'
+dates:
+  born: { year: 1500, approx: true, display: 'c. 1500' }
+  died: { year: 1560, display: '1560' }
+origin:
+  place: '[Birthplace]'
+  region: '[Region]'
+role: '[Role, e.g. Navigator]'
+categories: [exploration]
+centuries: [16]
+values: [resilience]
+tagline: '[One sentence that makes a stranger want to read on.]'
+hook: '[Short intro paragraph (40–70 words). Open with a documented moment of tension — never an invented scene or dialogue.]'
+mainAchievement: '[One defining, documented achievement]'
+portrait: portrait
+
+chapters:
+  - key: beginning
+    title: The Beginning
+    body: '[Who were they, and how did their story begin? 50–100 words.]'
+    more: '[Optional longer text shown under "Read more".]'
+    sources: [placeholder-source]
+    status: verified
+  - key: challenge
+    title: The Challenge
+    body: '[What extraordinary obstacle did they face? 50–100 words.]'
+    sources: [placeholder-source]
+    status: verified
+  - key: odds
+    title: Against the Odds
+    body: '[What made their situation so difficult? 50–100 words.]'
+    sources: [placeholder-source]
+    status: verified
+  - key: moment
+    title: The Defining Moment
+    body: '[What happened during their most significant achievement? 50–100 words.]'
+    sources: [placeholder-source]
+    status: verified
+  - key: legacy
+    title: The Legacy
+    body: '[What were the consequences, and why does it matter today? 50–100 words.]'
+    sources: [placeholder-source]
+    status: verified
+
+facts:
+  - value: '[####]'
+    label: '[Fact label]'
+    explanation: '[One-line explanation of why this number matters.]'
+    sources: [placeholder-source]
+    status: verified
+
+myths:
+  - claim: '[A popular claim about this person]'
+    status: legend
+    explanation: '[What the documentary record actually supports.]'
+    sources: [placeholder-source]
+
+otherSide:
+  body: '[Controversies, human consequences and other perspectives — stated plainly.]'
+  sources: [placeholder-source]
+
+video:
+  status: planned
+  description: '[What the 45–90 s dramatization will show.]'
+  aiGenerated: true
+
+comic:
+  status: placeholder
+  panels:
+    - caption: '[Panel caption]'
+      context: '[Historical context for this panel]'
+      sources: [placeholder-source]
+
+movie:
+  title: '[Working film title]'
+  premise: '[One-sentence movie premise]'
+  conflict: '[Central conflict]'
+  challenge: "[The protagonist's defining challenge]"
+  moments:
+    - { text: '[Documented cinematic moment 1]', sources: [placeholder-source] }
+    - { text: '[Documented cinematic moment 2]', sources: [placeholder-source] }
+    - { text: '[Documented cinematic moment 3]', sources: [placeholder-source] }
+  theme: '[Emotional theme]'
+
+review:
+  status: placeholder
+
+sources:
+  - id: placeholder-source
+    title: '[Source title]'
+    institution: '[Author or institution]'
+    type: reference
+
+media:
+  - id: portrait
+    alt: '[Describe the portrait for screen-reader users]'
+    kind: historical
+    title: '[Artwork title]'
+    license: '[License — verify before use]'
+    attribution: '[Required attribution]'

@@ -1,0 +1,83 @@
+@import 'tailwindcss';
+
+/* Self-hosted fonts (no third-party requests). */
+@import '@fontsource/im-fell-english/400.css';
+@import '@fontsource/im-fell-english/400-italic.css';
+@import '@fontsource/im-fell-english-sc/400.css';
+@import '@fontsource-variable/source-serif-4/index.css';
+@import '@fontsource-variable/source-serif-4/wght-italic.css';
+@import '@fontsource-variable/inter/index.css';
+
+/* Design tokens — see docs/SPEC.md § Creative direction. */
+@theme {
+  --color-parchment: #f3e9d2;
+  --color-cream: #faf4e6;
+  --color-caramel: #c08a4d;
+  --color-sepia: #8b5a2b;
+  --color-burnt: #5a3a22;
+  --color-umber: #3b2416;
+  --color-ink: #231f1c;
+  --color-gold: #b8954a;
+  --color-burgundy: #6e1f2a;
+  --color-mist: #d9c29a;
+
+  --font-display: 'IM Fell English', Georgia, serif;
+  --font-display-sc: 'IM Fell English SC', Georgia, serif;
+  --font-serif: 'Source Serif 4 Variable', Georgia, serif;
+  --font-ui: 'Inter Variable', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-parchment font-serif text-ink antialiased;
+    /* Aged-paper ground; texture stays at the edges, never behind text panels. */
+    background-image: radial-gradient(
+      ellipse at 50% 20%,
+      #f6eedb 0%,
+      #f3e9d2 50%,
+      #e9d8b5 85%,
+      #d2b282 100%
+    );
+    background-attachment: fixed;
+  }
+  a {
+    @apply text-burgundy underline-offset-3 hover:text-umber;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-burgundy);
+    outline-offset: 3px;
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--color-caramel) 40%, transparent);
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-ui text-xs tracking-[0.18em] text-sepia uppercase;
+  }
+  .panel {
+    @apply border border-caramel bg-cream shadow-[0_4px_16px_rgba(59,36,22,0.12)];
+  }
+}
+
+/* Page-turn feel between pages (native View Transitions); disabled for reduced motion. */
+@view-transition {
+  navigation: auto;
+}
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,23 @@
+name: Suggest a legend
+description: Propose a historical figure whose story deserves a chapter.
+labels: [content, suggestion]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Name and dates
+    validations: { required: true }
+  - type: textarea
+    id: why
+    attributes:
+      label: Why their story deserves a film
+      description: The documented challenge, achievement and why it still matters.
+    validations: { required: true }
+  - type: textarea
+    id: sources
+    attributes:
+      label: Good sources to start from
+  - type: textarea
+    id: controversies
+    attributes:
+      label: Known controversies or other perspectives

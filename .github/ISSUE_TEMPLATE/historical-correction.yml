@@ -1,0 +1,27 @@
+name: Historical correction
+description: Report an inaccurate, unsourced or misleading claim.
+labels: [content, correction]
+body:
+  - type: input
+    id: legend
+    attributes:
+      label: Legend
+      placeholder: e.g. Juan Sebastián Elcano
+    validations: { required: true }
+  - type: textarea
+    id: claim
+    attributes:
+      label: The claim on the site
+      description: Quote it, and say where it appears (chapter, fact, comic panel…).
+    validations: { required: true }
+  - type: textarea
+    id: correction
+    attributes:
+      label: What the evidence says
+    validations: { required: true }
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Primary records, institutional sources or scholarship, with links where possible.
+    validations: { required: true }

@@ -1,0 +1,18 @@
+Legends of Spain — written content license
+
+The original written content of this project — the story text, facts,
+explanations and other prose in `src/content/` and `src/pages/` — is licensed
+under the Creative Commons Attribution-ShareAlike 4.0 International License
+(CC BY-SA 4.0).
+
+  Summary: https://creativecommons.org/licenses/by-sa/4.0/
+  Legal code: https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+Attribution: "Legends of Spain contributors", with a link to
+https://github.com/lazzzarov/legends-of-spain
+
+Not covered by this license:
+  - Source code (MIT, see LICENSE).
+  - Images, videos and other media. Each asset keeps its own license, recorded
+    in the legend's `media` list and listed on the site's Credits page.
+  - Quotations from third-party sources, which remain under their original terms.

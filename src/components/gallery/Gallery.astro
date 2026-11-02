@@ -1,0 +1,24 @@
+---
+import LegendCard from './LegendCard.astro';
+import type { LegendEntry } from '../../lib/content';
+
+interface Props {
+  legends: LegendEntry[];
+}
+const { legends } = Astro.props;
+---
+
+{legends.length > 0 ? (
+  <ul
+    role="list"
+    class="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-7 p-0"
+  >
+    {legends.map((legend) => (
+      <li>
+        <LegendCard legend={legend} />
+      </li>
+    ))}
+  </ul>
+) : (
+  <p class="panel p-8 text-center text-lg">The first chapters are being written. Come back soon.</p>
+)}

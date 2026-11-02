@@ -1,0 +1,25 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className } = Astro.props;
+---
+
+<svg
+  width="240"
+  height="28"
+  viewBox="0 0 240 28"
+  aria-hidden="true"
+  focusable="false"
+  class:list={['mx-auto block max-w-full', className]}
+>
+  <line x1="0" y1="14" x2="96" y2="14" stroke="#8B5A2B"></line>
+  <line x1="144" y1="14" x2="240" y2="14" stroke="#8B5A2B"></line>
+  <path
+    d="M100 14 C108 2, 116 2, 120 14 C124 26, 132 26, 140 14 C132 2, 124 2, 120 14 C116 26, 108 26, 100 14Z"
+    fill="none"
+    stroke="#3B2416"
+    stroke-width="1.2"
+  ></path>
+  <circle cx="120" cy="14" r="2.5" fill="#B8954A"></circle>
+</svg>

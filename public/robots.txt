@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lazzzarov.github.io/legends-of-spain/sitemap-index.xml

@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Divider from '../components/ornaments/Divider.astro';
+
+// Draft copy — awaiting the author's approval (Phase 2, task 2.7).
+const reasons = [
+  {
+    title: 'To inspire',
+    body: 'These are stories of people who faced situations most of us would call impossible — and kept making decisions anyway. Seeing how they confronted adversity is a reminder of what determination and ingenuity can do.',
+  },
+  {
+    title: 'To rediscover Spanish history',
+    body: 'Many of these names are barely known today, even in Spain. Their lives shaped oceans, continents and centuries, and they deserve to be remembered accurately.',
+  },
+  {
+    title: 'To celebrate cultural heritage',
+    body: 'Courage, creativity, persistence and ambition run through these stories. We highlight the values that emerge from what people actually did — never values assigned by nationality alone.',
+  },
+  {
+    title: 'To spark curiosity',
+    body: 'Every page links to its sources. If a story grips you, you can follow it into the archives, the museums and the books where it lives.',
+  },
+  {
+    title: 'To inspire filmmakers and writers',
+    body: 'Spanish history holds stories as dramatic as any blockbuster. Each chapter includes a playful film pitch, clearly separated from the documented facts, as an open invitation to creators.',
+  },
+  {
+    title: 'To encourage travel and discovery',
+    body: 'Where the connection can be verified, we point to the real places — birthplaces, ports, fortresses and museums — where these stories can still be felt.',
+  },
+  {
+    title: 'To preserve complexity',
+    body: 'Celebrating an achievement does not require ignoring violence, controversy or the many people whose work made it possible. Every legend includes “The Other Side of the Story”. We want appreciation for history, not mythology.',
+  },
+];
+---
+
+<BaseLayout
+  title="Why We Tell These Stories"
+  description="Why Legends of Spain exists: to inspire, to rediscover history, and to celebrate achievement without turning it into mythology."
+>
+  <article class="mx-auto max-w-3xl px-4 py-14 sm:px-6">
+    <p class="eyebrow m-0">Prologue</p>
+    <h1 class="mt-1 mb-4 font-display text-[clamp(2.75rem,6vw,4.5rem)] leading-none font-normal text-umber">
+      Why We Tell These Stories
+    </h1>
+    <p class="m-0 font-display text-2xl leading-snug text-burgundy italic">
+      Spain has produced extraordinary individuals whose stories deserve to be told — truthfully.
+    </p>
+    <Divider class="my-10" />
+    <div class="flex flex-col gap-8">
+      {reasons.map((r) => (
+        <section>
+          <h2 class="m-0 mb-2 font-[family-name:var(--font-display-sc)] text-3xl font-normal text-umber">
+            {r.title}
+          </h2>
+          <p class="m-0 text-lg leading-relaxed">{r.body}</p>
+        </section>
+      ))}
+    </div>
+  </article>
+</BaseLayout>

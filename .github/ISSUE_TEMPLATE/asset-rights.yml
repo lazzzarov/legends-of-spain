@@ -1,0 +1,15 @@
+name: Asset rights issue
+description: Report an image or video whose license or attribution is wrong.
+labels: [media, rights]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page or asset
+    validations: { required: true }
+  - type: textarea
+    id: issue
+    attributes:
+      label: What is wrong
+      description: Missing attribution, incorrect license, rights holder objection, etc.
+    validations: { required: true }
