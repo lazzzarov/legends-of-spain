@@ -1,70 +1,277 @@
-# PLACEHOLDER — only name, dates, place, role and achievement come from the research
-# dossier (docs/research/20261102_deep-research.md). Everything in [brackets] is still to be written.
+# SOURCED — researched 2026-11-02 (see production/blas-de-lezo/research.md).
+# Force sizes are given as sourced ranges; credit is shared with Viceroy Eslava, the engineers,
+# the garrison and the militia; disease is treated as a decisive factor.
 
 order: 12
 name:
-  display: 'Blas de Lezo'
+  display: Blas de Lezo
+  full: Blas de Lezo y Olavarrieta
+  aka: [Mediohombre, Patapalo]
 dates:
-  born: { year: 1689 }
-  died: { year: 1741 }
+  born: { year: 1689, month: 2, display: '1689' }
+  died: { year: 1741, month: 9, day: 7, display: '1741' }
 origin:
-  place: '[Birthplace — to verify]'
-  region: 'Basque Country'
-role: 'Naval commander'
+  place: Pasaia (Pasajes)
+  region: Gipuzkoa, Basque Country
+role: Naval commander
 categories: [naval]
 centuries: [17, 18]
-values: [leadership, resilience]
-tagline: 'Six warships, layered forts and a city that would not fall.'
-hook: '[Hook — a documented moment of tension, 40–70 words. To be written.]'
-mainAchievement: 'Shared the defense of Cartagena de Indias, 1741'
+values: [leadership, resilience, overcoming-adversity]
+tagline: Six warships, layered forts and a city that would not fall.
+hook: >-
+  On 15 March 1741 the walls of Cartagena de Indias sighted Admiral Edward Vernon’s fleet — well over
+  a hundred sail, carrying tens of thousands of sailors and soldiers. Against it the port had six
+  Spanish warships under Blas de Lezo, a few thousand regulars and militiamen, and a chain of forts.
+  The siege would last two months.
+mainAchievement: Shared the defence of Cartagena de Indias, 1741
 portrait: portrait
 
 chapters:
   - key: beginning
     title: The Beginning
-    body: '[Who they were and how the story began — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Blas de Lezo y Olavarrieta was born in Pasajes (Pasaia), Gipuzkoa, in February 1689, into a
+      family of the minor nobility with ties to the sea. In 1702 he joined the French navy as a
+      midshipman — the two crowns’ fleets were then united under Philip V. At his first battle,
+      Vélez-Málaga in 1704, a cannonball tore off his left leg below the knee.
+    sources: [rah-lezo]
     status: verified
   - key: challenge
     title: The Challenge
-    body: '[The extraordinary obstacle — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      More wounds came with promotion. He lost the sight of his left eye fighting Savoyard ships, and
+      in 1714, at the siege of Barcelona, a musket ball left his right arm useless. Yet he kept
+      rising: he commanded the South Sea squadron off Peru, destroyed an Algerian squadron at
+      Mostaganem in 1733 and became a lieutenant general. In March 1737 he reached Cartagena de Indias.
+    sources: [rah-lezo]
     status: verified
   - key: odds
     title: Against the Odds
-    body: '[What made it so difficult — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Cartagena guarded the way into New Granada. When the War of Jenkins’ Ear broke out in 1739,
+      Britain sent Vice-Admiral Edward Vernon to strike at Spain’s Caribbean ports. The fleet that
+      appeared in March 1741 numbered roughly 115 to 190 vessels, by different counts, with tens of
+      thousands of sailors, soldiers and colonial troops. The defenders had six ships of the line and
+      a few thousand men.
+    sources: [rah-lezo, rah-eslava, jauregui-lobera-2019]
     status: verified
   - key: moment
     title: The Defining Moment
-    body: '[The most significant achievement — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      The defence came in layers. The forts at Bocachica held for more than two weeks; then Spanish
+      ships were sunk to block the channel, the British broke through, and Vernon sent news of victory
+      home. But on 20 April their assault on the Castillo de San Felipe de Barajas failed — the ladders
+      were too short for the walls. With disease killing thousands, the British sailed away on 20 May.
+    sources: [rah-lezo, rah-eslava]
     status: verified
   - key: legacy
     title: The Legacy
-    body: '[Consequences, and why it matters today — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Victory brought Lezo no peace. He and Viceroy Sebastián de Eslava had quarrelled throughout the
+      siege, and Eslava asked the king to punish him. Lezo died in Cartagena on 7 September 1741; a
+      royal order removing him from command was dated weeks later. Eslava was made Marquis of la Real
+      Defensa. Lezo’s reputation was restored only years afterwards, through his son’s efforts.
+    more: >-
+      The victory was collective. Eslava, who held supreme command, oversaw the forts and supplies; the
+      engineer Carlos Desnaux defended San Luis de Bocachica and then San Felipe; regular battalions,
+      local militia, companies of pardos and some 600 Indigenous troops manned the walls. Lezo’s ships
+      and seamanship bought time — and time, in a fever-ridden climate, was the defenders’ best weapon.
+    sources: [rah-lezo, rah-eslava]
     status: verified
 
+facts:
+  - value: '6'
+    unit: warships
+    label: Lezo’s squadron
+    explanation: Six ships of the line, with about a thousand soldiers and sailors aboard, according to the RAH.
+    sources: [rah-lezo, rah-eslava, museo-naval-lezo-portrait]
+    status: verified
+  - value: c. 115–200
+    unit: vessels
+    label: Vernon’s fleet
+    explanation: >-
+      Counts vary with what is included: 115 sail (RAH, Eslava), more than 170 (RAH, Lezo), nearly
+      200 (Jáuregui-Lobera). Popular figures are often inflated.
+    sources: [rah-eslava, rah-lezo, jauregui-lobera-2019]
+    status: disputed
+  - value: c. 24,000–31,000
+    unit: men
+    label: Sailors, soldiers and colonial troops in the attack
+    explanation: >-
+      Estimates range from about 24,000 soldiers to some 31,000 men in all. Defenders are put at
+      between about 2,000 and 3,600, plus the crews of Lezo’s ships.
+    sources: [jauregui-lobera-2019, rah-eslava, rah-lezo]
+    status: disputed
+  - value: 20 Apr 1741
+    label: The assault on San Felipe fails
+    explanation: The British storming columns found their ladders too short for the walls and were driven back with heavy losses.
+    sources: [rah-lezo, rah-eslava]
+    status: verified
+  - value: 20 May 1741
+    label: The British withdraw
+    explanation: After two months, with combat losses and disease crippling the expedition.
+    sources: [rah-lezo, rah-eslava]
+    status: verified
+
+myths:
+  - claim: Lezo alone inflicted the greatest naval defeat in British history.
+    status: legend
+    explanation: >-
+      The defence was shared with Viceroy Eslava, the engineers, the garrison and the militia, and
+      tropical disease devastated the attackers. “Greatest defeat ever” is rhetoric: comparisons across
+      centuries depend entirely on the criteria chosen, and the force figures behind them are disputed.
+    sources: [rah-eslava, rah-lezo, jauregui-lobera-2019]
+  - claim: Lezo lost a leg, an eye and an arm.
+    status: legend
+    explanation: >-
+      Partly true. He lost his left leg below the knee in 1704 and the sight of his left eye in a
+      later action, but his right arm was not lost: a musket ball in 1714 left it useless.
+    sources: [rah-lezo]
+
 otherSide:
-  body: '[Controversies, human consequences and other perspectives — to be written from the dossier.]'
-  sources: [research-dossier]
+  body: >-
+    Popular retellings sometimes make Lezo the lone genius and Eslava the obstacle. The record is
+    messier: the two quarrelled bitterly, yet both exercised essential authority, and Eslava overruled
+    Lezo over sinking the ships at Bocachica. The defence also depended on engineers, regular troops,
+    Creole militia, pardo companies and Indigenous soldiers. The war itself had commercial roots in
+    the slave trade: the South Sea Company, which held the asiento for supplying enslaved Africans to
+    Spanish America, pushed for it. Vernon’s army included North American colonists and about 2,000
+    Black machete-men from Jamaica’s sugar plantations. The human cost was enormous, above all from
+    dysentery, fever and scurvy; one RAH estimate puts British losses near 18,000, but totals remain
+    disputed.
+  sources: [rah-lezo, rah-eslava]
+
+video:
+  status: planned
+  description: >-
+    A 60-second dramatization: Vernon’s fleet off Cartagena, the fall of Bocachica, the failed night
+    assault on San Felipe de Barajas, and the British withdrawal — with credit shared among the
+    defenders.
+  aiGenerated: true
+  tool: Higgsfield
+
+comic:
+  status: draft
+  panels:
+    - caption: Vélez-Málaga, 1704. A cannonball takes the left leg of a fifteen-year-old midshipman, Blas de Lezo.
+      sources: [rah-lezo]
+    - caption: March 1737. Lezo arrives at Cartagena de Indias and finds its forts in poor repair and its garrison thinned by disease.
+      sources: [rah-lezo]
+    - caption: 15 March 1741. From the walls, the defenders sight Vernon’s fleet.
+      sources: [rah-lezo, rah-eslava]
+    - caption: Bocachica holds for more than two weeks. Then the Spanish ships are sunk to block the channel — and the British force their way in.
+      sources: [rah-lezo, rah-eslava]
+    - caption: Certain of victory, Vernon sends the news to England. Medals are struck showing Lezo kneeling to surrender.
+      note: Medals of this kind survive in the Royal Museums Greenwich, the Museo Naval in Madrid and the Museo Nacional de Colombia.
+      sources: [rah-lezo, rah-eslava, rmg-vernon-medal]
+    - caption: 20 April 1741. The storming columns reach San Felipe de Barajas at dawn. Their ladders are too short.
+      sources: [rah-lezo, rah-eslava]
+    - caption: Fever, dysentery and scurvy finish what the walls began. On 20 May the British sail away.
+      sources: [rah-lezo, rah-eslava]
+    - caption: 7 September 1741. Lezo dies in Cartagena. His grave is unknown.
+      sources: [rah-lezo]
+
+movie:
+  title: The Key to the Indies
+  premise: A battered veteran and a sceptical viceroy must hold a fortress city against the largest fleet ever sent against the Americas.
+  conflict: Buy time behind layered defences until the attackers break — or the city falls.
+  challenge: Fighting a far larger enemy while fighting each other.
+  moments:
+    - text: 15 March 1741 — Vernon’s fleet appears off Cartagena de Indias.
+      sources: [rah-lezo, rah-eslava]
+    - text: Early April 1741 — Bocachica falls and Vernon sends word of victory to England; medals are struck.
+      sources: [rah-lezo, rah-eslava, rmg-vernon-medal]
+    - text: 20 April 1741 — the assault on San Felipe de Barajas fails at the foot of its walls.
+      sources: [rah-lezo, rah-eslava]
+  theme: Victory has many authors — and time can be a weapon.
+
+places:
+  - name: Castillo de San Felipe de Barajas
+    relation: The fortress on the hill of San Lázaro where the British assault of 20 April 1741 failed.
+    location: Cartagena de Indias, Colombia
+    sources: [rah-lezo, rah-eslava]
+  - name: Museo Naval
+    relation: Holds a portrait of Lezo (an 1853 copy of a family original) and examples of the premature Vernon medals.
+    location: Madrid
+    sources: [museo-naval-lezo-portrait, commons-lezo-portrait, rah-lezo]
+  - name: Pasaia (Pasajes)
+    relation: Birthplace, February 1689.
+    location: Gipuzkoa, Basque Country
+    sources: [rah-lezo]
+
+related: [fadrique-de-toledo, alvaro-de-bazan]
+
+seo:
+  description: In 1741 Cartagena de Indias held out against Vernon’s huge fleet. Blas de Lezo’s part in a defence shared with Eslava, engineers and militia.
 
 review:
-  status: placeholder
+  status: sourced
 
 sources:
-  - id: research-dossier
-    title: 'Spanish Explorers and Military Leaders Who Reshaped the Early Modern World (research dossier)'
-    institution: Legends of Spain
-    year: '2026'
+  - id: rah-lezo
+    title: Lezo y Olavarrieta, Blas de
+    author: Gonzalo M. Quintero Saravia
+    institution: Real Academia de la Historia, Diccionario Biográfico Español (Historia Hispánica)
+    url: https://historia-hispanica.rah.es/biografias/25445
+    accessed: '2026-11-02'
+    type: institutional
+    notes: >-
+      Gives Pasajes, II.1689 – Cartagena de Indias, 7.IX.1741; details each wound and the premature
+      medals. Its totals (more than 170 ships, 31,000 men; “each Spaniard defeated ten Englishmen”)
+      are at the high end and are treated here as disputed.
+  - id: rah-eslava
+    title: Eslava y Lassaga, Sebastián de. Marqués de la Real Defensa (I)
+    author: Manuel Lucena Salmoral
+    institution: Real Academia de la Historia, Diccionario Biográfico Español (Historia Hispánica)
+    url: https://historia-hispanica.rah.es/biografias/14832
+    accessed: '2026-11-02'
+    type: institutional
+    notes: Gives 115 sail, 37 ships of the line, 15,000 sailors and 12,000 soldiers against 3,200 defenders; British losses near 18,000.
+  - id: jauregui-lobera-2019
+    title: 'Navegación e historia de la ciencia: Las heridas y pesares de Don Blas de Lezo y Olavarrieta (“Mediohombre”)'
+    author: Ignacio Jáuregui-Lobera
+    publisher: Journal of Negative and No Positive Results 4(9)
+    year: '2019'
+    url: https://doi.org/10.19230/jonnpr.3141
+    accessed: '2026-11-02'
+    type: academic
+    notes: Abstract consulted; gives six ships and about 2,000 soldiers against nearly 200 ships and 24,000 soldiers.
+  - id: museo-naval-lezo-portrait
+    title: Blas de Lezo y Olavarrieta (portrait, unknown artist)
+    institution: Museo Naval / Fundación Museo Naval, via Google Arts & Culture
+    url: https://artsandculture.google.com/asset/egEi1uAObHFHFA
+    accessed: '2026-11-02'
+    type: institutional
+    notes: 18th-century portrait in the Condesa de Revilla-Gigedo collection; caption gives six ships and about 3,000 men.
+  - id: commons-lezo-portrait
+    title: File:Blas de Lezo unknown author.jpg
+    institution: Wikimedia Commons
+    url: https://commons.wikimedia.org/wiki/File:Blas_de_Lezo_unknown_author.jpg
+    accessed: '2026-11-02'
     type: reference
-    notes: 'Working dossier; to be replaced by the primary and scholarly sources it cites.'
+    notes: Records the Museo Naval portrait (inv. 431) as an anonymous 1853 copy of an original owned by Lezo’s descendants.
+  - id: rmg-vernon-medal
+    title: Medal commemorating Vernon’s attack on Cartagena, 1741 (MEC1041)
+    institution: Royal Museums Greenwich
+    url: https://www.rmg.co.uk/collections/objects/rmgc-object-38481
+    accessed: '2026-11-02'
+    type: institutional
+    notes: Silver medal reading “THE SPANISH PRIDE PULLD DOWN BY ADMIRAL VERNON” and “TRUE BRITISH HEROES TOOK CARTHAGENA”.
 
 media:
   - id: portrait
-    alt: 'Portrait of Blas de Lezo — to be selected'
+    alt: Portrait of Blas de Lezo in naval uniform, Museo Naval, Madrid
     kind: historical
-    title: '[Portrait to be selected]'
-    license: '[To verify]'
-    attribution: '[To verify]'
+    title: Blas de Lezo y Olavarrieta (1689–1741)
+    creator: Unknown artist
+    date: '1853'
+    posthumous: true
+    institution: Museo Naval, Madrid (inv. 431)
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Blas_de_Lezo_unknown_author.jpg
+    license: Public domain (PD-anon-70-EU, as stated on Wikimedia Commons)
+    attribution: Anonymous, Blas de Lezo y Olavarrieta, 1853, Museo Naval, Madrid
+    notes: >-
+      An 1853 copy of an original owned by Lezo’s descendants. An 18th-century version in the Condesa de
+      Revilla-Gigedo collection (Museo Naval) is marked “all rights reserved” on Google Arts & Culture.
+      Spanish LPI art. 128 may protect non-creative photographs of paintings for 25 years; confirm the
+      photograph’s terms with the Museo Naval before use.

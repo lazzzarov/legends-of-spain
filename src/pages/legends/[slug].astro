@@ -80,7 +80,7 @@ const jsonLd = JSON.stringify(legendJsonLd(legend.id, d, Astro.site!));
   description={description}
   type="article"
   image={withBase(`og/${legend.id}.png`)}
-  noindex={d.review.status === 'placeholder'}
+  noindex={!isVisible(d.review.status, false)}
 >
   <script slot="head" type="application/ld+json" is:inline set:html={jsonLd} />
   <StatusBanner status={d.review.status} />

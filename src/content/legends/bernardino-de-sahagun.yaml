@@ -1,70 +1,290 @@
-# PLACEHOLDER — only name, dates, place, role and achievement come from the research
-# dossier (docs/research/20261102_deep-research.md). Everything in [brackets] is still to be written.
+# SOURCED DRAFT — researched 2026-11-02. Every claim cites sources that were opened and read.
+# See production/bernardino-de-sahagun/research.md for the claim → source table, disputed points and open questions.
+# Ethical framing: the Florentine Codex is presented as a collective Nahua–Franciscan work made inside a
+# missionary project intended to suppress the religion it recorded, during epidemics and colonial rule.
 
 order: 9
 name:
-  display: 'Bernardino de Sahagún'
+  display: Bernardino de Sahagún
+  full: Bernardino de Ribeira
+  aka: [Fray Bernardino de Sahagún, Bernardino de Ribera]
 dates:
   born: { year: 1499, approx: true }
-  died: { year: 1590 }
+  died: { year: 1590, month: 2, day: 5, display: '5 February 1590' }
 origin:
-  place: 'Sahagún'
-  region: 'León'
-role: 'Franciscan scholar'
+  place: Sahagún
+  region: León, Castile and León
+role: Franciscan missionary, teacher and scholar of Nahuatl
 categories: [knowledge]
 centuries: [15, 16]
 values: [curiosity, perseverance]
-tagline: 'With Nahua scholars and artists, he compiled an encyclopedia of a world under conquest.'
-hook: '[Hook — a documented moment of tension, 40–70 words. To be written.]'
-mainAchievement: 'Florentine Codex, completed c. 1577'
+tagline: With Nahua scholars and artists, a Franciscan friar compiled an encyclopedia of a world his own mission meant to change.
+hook: >-
+  In 1577 a royal order demanded that Fray Bernardino de Sahagún’s manuscripts be gathered up:
+  writing about the old beliefs and way of life of Mexico’s Indigenous peoples was not wanted. For
+  some thirty years he and Nahua scholars at Tlatelolco had been recording their world in Nahuatl.
+  That same year their twelve illustrated books — today’s Florentine Codex — were completed.
+mainAchievement: The Florentine Codex (Historia general de las cosas de Nueva España), completed 1575–1577 with Nahua collaborators
 portrait: portrait
 
 chapters:
   - key: beginning
     title: The Beginning
-    body: '[Who they were and how the story began — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Bernardino de Ribeira was born around 1499 in the town of Sahagún, in León, and took its name.
+      He studied at the University of Salamanca, joined the Franciscans there, and in 1529 sailed for
+      New Spain with a group of thirty friars. He threw himself into learning Nahuatl. His fellow
+      friar Jerónimo de Mendieta judged that no one had gone further into the secrets and antiquities
+      of the language.
+    sources: [rah-sahagun]
     status: verified
   - key: challenge
     title: The Challenge
-    body: '[The extraordinary obstacle — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      In the early 1530s he climbed the volcanoes Popocatépetl and Iztaccíhuatl, driven, he said, by
+      curiosity — and by the wish to destroy sacred images hidden there. From 1536 he taught Latin at
+      the Colegio de Santa Cruz in Tlatelolco, founded to educate the sons of the Nahua nobility. His
+      aim was missionary: preachers had to understand Nahua beliefs in order to turn their teaching
+      against them.
+    more: >-
+      Sahagún wrote that his Tlatelolco students came to speak and write Latin and even to compose
+      verse in it. Those students and their successors became the scholars without whom his later work
+      would have been impossible.
+    sources: [rah-sahagun]
     status: verified
   - key: odds
     title: Against the Odds
-    body: '[What made it so difficult — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      From 1547 Sahagún worked on a vast history in Nahuatl and Spanish, relying on the ablest
+      Tlatelolco graduates. In 1570 some Franciscans objected to spending the order’s money on such
+      writing; in 1573 a new superior had his papers scattered among the order’s houses. Then, in
+      1577, a royal order demanded the manuscripts be collected. The work survived by persistence and
+      by the labour of its Nahua makers.
+    more: >-
+      Sahagún reckoned that the project had cost more than a thousand pesos in ink, paper and
+      scribes, and that if all the labour had been paid, ten thousand would not have been enough.
+    sources: [rah-sahagun]
     status: verified
   - key: moment
     title: The Defining Moment
-    body: '[The most significant achievement — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      The Florentine Codex was completed at Tlatelolco between 1575 and 1577, while epidemic disease
+      ravaged central Mexico. Its twelve books cover gods, calendar, omens, rhetoric, kings, merchants,
+      people and the natural world, in parallel columns of Nahuatl and Spanish, with some 2,500
+      paintings by Nahua artists. Book 12 tells the conquest from the Mexica side. Its named makers
+      include Antonio Valeriano, Alonso Vegerano, Martín Jacobita and Pedro de San Buenaventura.
+    more: >-
+      The Nahuatl column is the primary text; the Spanish column is Sahagún’s interpretation of it.
+      In Book 12 the Spanish is much shorter, and paintings — of battles, Mexica heroism and atrocities
+      by the conquistadors and their allies — fill the gaps. Diego de Grado, Bonifacio Maximiliano and
+      Mateo Severino are named as scribes.
+    sources: [getty-dfc-richter, getty-competing-narratives, getty-project, eid-megadeath]
     status: verified
   - key: legacy
     title: The Legacy
-    body: '[Consequences, and why it matters today — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      The manuscript was sent to Europe and is now in the Biblioteca Medicea Laurenziana in Florence;
+      in 2015 it entered UNESCO’s Memory of the World Register. Sahagún died in Mexico City on 5
+      February 1590. Today the codex is read as a collective work: one of the richest records of Nahua
+      language, knowledge and memory, made inside a project that was meant to replace much of what it
+      recorded.
+    more: >-
+      Since 2023 the Getty Research Institute’s Digital Florentine Codex has made the manuscript freely
+      searchable, with transcriptions and translations, audio of the Nahuatl of Book 12 and summaries in
+      modern Eastern Huasteca Nahuatl.
+    sources: [getty-project, getty-competing-narratives, rah-sahagun, getty-dfc-richter]
     status: verified
 
+facts:
+  - value: '1529'
+    label: Arrives in New Spain
+    explanation: One of a group of thirty Franciscans recruited by Fray Antonio de Ciudad Rodrigo.
+    sources: [rah-sahagun]
+    status: verified
+  - value: '12'
+    label: Books in the Florentine Codex
+    explanation: Bound today in three volumes, Ms. Mediceo Palatino 218–220, in Florence.
+    sources: [getty-dfc-richter, getty-project]
+    status: verified
+  - value: '2,472'
+    label: Images and decorative elements
+    explanation: Counted by the Digital Florentine Codex team across 2,446 pages written in Nahuatl and Spanish.
+    sources: [getty-dfc-richter]
+    status: verified
+  - value: '7'
+    label: Nahua collaborators known by name
+    explanation: >-
+      Four grammarians and three scribes. Getty researchers distinguish the hands of at least nineteen
+      artists and nine scribes, most of them anonymous.
+    sources: [getty-dfc-richter, getty-competing-narratives]
+    status: verified
+  - value: '1577'
+    label: A royal order to collect the manuscripts
+    explanation: Writing about the pre-Hispanic beliefs and customs of Indigenous people was deemed undesirable.
+    sources: [rah-sahagun]
+    status: verified
+
+myths:
+  - claim: Sahagún was the first anthropologist.
+    status: disputed
+    explanation: >-
+      Some scholars, including his biographer for the Real Academia de la Historia, call him a father
+      of cultural anthropology: he collected testimony systematically in Nahuatl. But his stated aim
+      was to help preachers uproot Nahua religion, and the knowledge came from Nahua scholars and
+      informants working under colonial rule. The label fits only with those qualifications.
+    sources: [rah-sahagun, getty-competing-narratives]
+  - claim: The Florentine Codex is Sahagún’s book.
+    status: legend
+    explanation: >-
+      The Nahuatl text is the primary one and the paintings are the work of Nahua artists. Getty
+      researchers name seven Nahua grammarians and scribes and identify many more artists’ hands.
+      Sahagún directed and interpreted the project; he did not write it alone.
+    sources: [getty-competing-narratives, getty-dfc-richter]
+
 otherSide:
-  body: '[Controversies, human consequences and other perspectives — to be written from the dossier.]'
-  sources: [research-dossier]
+  body: >-
+    The Florentine Codex records a culture and attacks it at the same time. Sahagún wrote that
+    preachers needed to know Nahua beliefs in order to turn their teaching against them; he himself
+    destroyed sacred images, and his Psalmodia christiana (1583) was written so that Nahua Christians
+    would abandon their old songs. Its Nahua makers — Antonio Valeriano, Martín Jacobita and others —
+    worked under colonial rule, for an order that after 1527 admitted no Indigenous men as friars or
+    priests. The work was made amid catastrophe: the epidemics of 1545 and 1576 killed millions in
+    central Mexico. Sahagún called the conquest “a horrible thing” yet justified it by conversion.
+    Book 12 preserves Mexica memories of the war, and its Nahuatl text and paintings say more than its
+    shorter Spanish column.
+  sources: [rah-sahagun, getty-competing-narratives, getty-dfc-richter, eid-megadeath]
+
+video:
+  status: planned
+  description: >-
+    A 60-second film inside the Colegio de Santa Cruz at Tlatelolco: Nahua scholars and painters and
+    an ageing friar building twelve books together, as epidemics pass outside and a royal order
+    arrives to collect their work.
+  aiGenerated: true
+  tool: Higgsfield
+
+comic:
+  status: draft
+  panels:
+    - caption: Sahagún, León, around 1499. Bernardino de Ribeira is born; he will take the town’s name as a Franciscan.
+      sources: [rah-sahagun]
+    - caption: 1529. He sails for New Spain with thirty friars and sets out to master Nahuatl.
+      sources: [rah-sahagun]
+    - caption: The early 1530s. He climbs the volcanoes — out of curiosity, he says, and to destroy the sacred images hidden there.
+      sources: [rah-sahagun]
+    - caption: Tlatelolco, 1536. At the Colegio de Santa Cruz, sons of the Nahua nobility learn Latin. They will become his collaborators.
+      sources: [rah-sahagun, getty-competing-narratives]
+    - caption: Scholars such as Antonio Valeriano and Martín Jacobita write in Nahuatl; Nahua artists paint the pages.
+      sources: [getty-dfc-richter, getty-competing-narratives]
+    - caption: 1573. A Franciscan superior has the papers scattered among the order’s houses.
+      sources: [rah-sahagun]
+    - caption: 1575–1577. As an epidemic sweeps central Mexico, the twelve books are completed.
+      sources: [getty-dfc-richter, eid-megadeath]
+    - caption: Florence, today. The codex survives — and its Nahua makers are finally being named.
+      sources: [getty-project, getty-competing-narratives]
+
+movie:
+  title: The Twelve Books
+  premise: >-
+    In a college in Tlatelolco, Nahua scholars and a Franciscan friar spend thirty years recording
+    a world — each for very different reasons.
+  conflict: >-
+    A missionary who wants to understand Nahua religion in order to uproot it, Nahua scholars who
+    preserve their ancestors’ knowledge, and a Church and Crown that come to distrust the whole project.
+  challenge: Making the collaborators, not only the friar, the authors of the story.
+  moments:
+    - text: 6 January 1536 — the Colegio de Santa Cruz opens in Tlatelolco to educate the sons of the Nahua nobility.
+      sources: [rah-sahagun]
+    - text: 1573 — a new Franciscan superior orders Sahagún’s papers to be dispersed among the order’s houses.
+      sources: [rah-sahagun]
+    - text: 1575–1577 — amid an epidemic, the twelve books are completed, just as a royal order demands the manuscripts be collected.
+      sources: [getty-dfc-richter, rah-sahagun, eid-megadeath]
+  theme: Knowledge saved by the people it was meant to change.
+
+places:
+  - name: Sahagún
+    relation: Birthplace, c. 1499; the friar took his name from the town.
+    location: León, Castile and León
+    sources: [rah-sahagun]
+  - name: Salamanca
+    relation: Where he studied at the university and joined the Franciscan order at the convent of San Francisco.
+    location: Salamanca, Castile and León
+    sources: [rah-sahagun]
+  - name: Tlatelolco (Colegio de Santa Cruz)
+    relation: Where he taught and where the Florentine Codex was made with Nahua scholars and artists.
+    location: Mexico City, Mexico
+    sources: [rah-sahagun, getty-project]
+  - name: Biblioteca Medicea Laurenziana
+    relation: Holds the Florentine Codex (Ms. Mediceo Palatino 218–220).
+    location: Florence, Italy
+    sources: [getty-project, getty-dfc-richter]
+
+related: [hernan-cortes, francisco-javier-balmis]
+
+seo:
+  description: Bernardino de Sahagún and the Nahua scholars and artists who made the Florentine Codex — a record of a world under conquest.
 
 review:
-  status: placeholder
+  status: sourced
 
 sources:
-  - id: research-dossier
-    title: 'Spanish Explorers and Military Leaders Who Reshaped the Early Modern World (research dossier)'
-    institution: Legends of Spain
-    year: '2026'
-    type: reference
-    notes: 'Working dossier; to be replaced by the primary and scholarly sources it cites.'
+  - id: rah-sahagun
+    title: Bernardino de Ribeira (Bernardino de Sahagún) (Diccionario Biográfico Español)
+    author: Pedro Borges Morán
+    institution: Real Academia de la Historia
+    url: https://historia-hispanica.rah.es/biografias/38812-bernardino-de-ribeira
+    accessed: '2026-11-02'
+    type: institutional
+    notes: >-
+      Read via the site’s public biography data. Quotations from Sahagún and Mendieta in this legend
+      are paraphrased from the Spanish quoted in the entry, except “a horrible thing”, a translation
+      of Sahagún’s “fue cosa horrible”.
+  - id: getty-project
+    title: Florentine Codex (project page)
+    institution: Getty Research Institute
+    url: https://www.getty.edu/projects/florentine-codex/
+    accessed: '2026-11-02'
+    type: institutional
+  - id: getty-competing-narratives
+    title: Competing Narratives on the Conquest of Mexico and the Fall of the Aztec Empire
+    author: Kim N. Richter, Alicia Maria Houtrouw, Joshua Fitzgerald
+    institution: Getty Research Institute
+    url: https://www.getty.edu/news/competing-narratives-about-the-conquest-of-mexico-and-the-fall-of-the-aztec-empire
+    year: '2020'
+    accessed: '2026-11-02'
+    type: institutional
+  - id: getty-dfc-richter
+    title: Creating the Digital Florentine Codex / Códice Florentino Digital (presentation)
+    author: Kim Richter, Alicia Maria Houtrouw
+    institution: Getty Research Institute
+    url: https://www.getty.edu/research/tools/vocabularies/00000_richter_houtrouw_digital_flo_co_20241024.pdf
+    year: '2024'
+    accessed: '2026-11-02'
+    type: institutional
+  - id: eid-megadeath
+    title: Megadrought and Megadeath in 16th Century Mexico
+    author: Rodolfo Acuna-Soto, David W. Stahle, Malcolm K. Cleaveland, Matthew D. Therrell
+    publisher: Emerging Infectious Diseases 8 (4), 2002
+    institution: Centers for Disease Control and Prevention
+    url: https://wwwnc.cdc.gov/eid/article/8/4/01-0175_article
+    year: '2002'
+    accessed: '2026-11-02'
+    type: academic
+  - id: florentine-codex-ms
+    title: Florentine Codex, Ms. Mediceo Palatino 218–220
+    institution: Biblioteca Medicea Laurenziana, Florence
+    type: primary
+    notes: Not consulted directly (the Digital Florentine Codex site could not be opened during research); described here from the Getty sources.
 
 media:
   - id: portrait
-    alt: 'Portrait of Bernardino de Sahagún — to be selected'
+    alt: Portrait of Fray Bernardino de Sahagún, a photograph of a later lithograph
     kind: historical
-    title: '[Portrait to be selected]'
-    license: '[To verify]'
-    attribution: '[To verify]'
+    title: Fr Bernardino de Sahagún. Photograph after lithograph.
+    creator: Unknown
+    posthumous: true
+    institution: Wellcome Collection (14863i)
+    sourceUrl: https://wellcomecollection.org/works/k7e3r2hh
+    license: Public Domain Mark (as stated by Wellcome Collection)
+    attribution: Wellcome Collection, London
+    notes: No portrait made in Sahagún’s lifetime is known; this is an undated later image and an imagined likeness.

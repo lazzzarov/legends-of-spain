@@ -1,21 +1,28 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
+import { loadLegend, sourceNumber } from './content';
 
 const ELCANO = 'legends/juan-sebastian-elcano/';
+// Expectations come from the legend file, so content edits don't break these tests.
+const elcano = loadLegend('juan-sebastian-elcano');
+const letter = sourceNumber(elcano, 'elcano-letter-1522');
+const panels = elcano.comic!.panels.length;
+const firstView = new RegExp(`^Panels? 1(–2)? of ${panels}$`);
 
-test.describe('Elcano story page (draft build)', () => {
-  test('shows the draft banner and the written story', async ({ page }) => {
+test.describe('Elcano story page (build with drafts)', () => {
+  test('shows the review banner, the story, and stays out of search engines', async ({ page }) => {
     await page.goto(ELCANO);
-    await expect(page.getByText(/^Draft — written from the research dossier/)).toBeVisible();
+    await expect(page.getByText(/^Sourced — awaiting the editor’s review/)).toBeVisible();
     await expect(page.locator('#moment')).toContainText('6 September 1522');
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex');
   });
 
   test('sources link back to every claim that cites them', async ({ page }) => {
     await page.goto(ELCANO);
-    const letter = page.locator('#source-2');
-    await expect(letter).toContainText('PATRONATO,48,R.20');
-    await letter.getByRole('link', { name: 'IV · The Defining Moment' }).click();
-    await expect(page).toHaveURL(/#cite-moment-2$/);
+    const entry = page.locator(`#source-${letter}`);
+    await expect(entry).toContainText('PATRONATO,48,R.20');
+    await entry.getByRole('link', { name: 'V · The Legacy' }).click();
+    await expect(page).toHaveURL(new RegExp(`#cite-legacy-${letter}$`));
   });
 
   test('hides the video until it is published', async ({ page }) => {
@@ -27,17 +34,16 @@ test.describe('Elcano story page (draft build)', () => {
     await page.goto(ELCANO);
     const comic = page.locator('[data-comic]');
     const status = comic.locator('[data-comic-status]');
-    await expect(status).toHaveText(/^Panels? 1(–2)? of 8$/);
+    await expect(status).toHaveText(firstView);
     await expect(comic.getByRole('button', { name: /Previous/ })).toBeDisabled();
     await comic.getByRole('button', { name: /Next/ }).click();
-    await expect(status).not.toHaveText(/^Panels? 1(–2)? of 8$/);
+    await expect(status).not.toHaveText(firstView);
   });
 
   test('lists only places with a documented connection', async ({ page }) => {
     await page.goto(ELCANO);
-    await expect(page.locator('section[aria-labelledby="places"]')).toContainText(
-      'Sanlúcar de Barrameda',
-    );
+    const places = page.locator('section[aria-labelledby="places"]');
+    for (const place of elcano.places) await expect(places).toContainText(place.name);
   });
 
   test('publishes structured data and a social image', async ({ page, request }) => {
@@ -45,7 +51,7 @@ test.describe('Elcano story page (draft build)', () => {
     const ld = JSON.parse(
       (await page.locator('script[type="application/ld+json"]').textContent()) ?? '{}',
     );
-    expect(ld.about.name).toBe('Juan Sebastián Elcano');
+    expect(ld.about.name).toBe(elcano.name.full ?? elcano.name.display);
     const image = await page.locator('meta[property="og:image"]').getAttribute('content');
     expect(image).toMatch(/\/legends-of-spain\/og\/juan-sebastian-elcano\.png$/);
     const res = await request.get(new URL(image!).pathname);

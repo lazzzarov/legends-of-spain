@@ -1,70 +1,267 @@
-# PLACEHOLDER — only name, dates, place, role and achievement come from the research
-# dossier (docs/research/20261102_deep-research.md). Everything in [brackets] is still to be written.
+# SOURCED — researched 2026-11-02 (see production/francisco-arias-de-bobadilla/research.md).
+# Three levels of claim are kept apart: verified (flooding, cold, escape), traditional (the
+# finding of the Marian image) and devotional (the "miracle"). Awaiting human review.
 
 order: 10
 name:
-  display: 'Francisco Arias de Bobadilla'
+  display: Francisco Arias de Bobadilla
+  full: Francisco Arias de Bobadilla, IV conde de Puñonrostro
+  aka: [Francisco de Bobadilla, Count of Puñonrostro]
 dates:
-  born: { year: 1537 }
-  died: { year: 1610 }
+  born: { year: 1537, month: 12, day: 10, display: '1537' }
+  died: { year: 1610, month: 1, day: 21, display: '1610' }
 origin:
-  place: 'Madrid region'
-  region: 'Castile'
-role: 'Maestre de campo'
+  place: Madrid
+  region: Castile
+role: Maestre de campo
 categories: [land]
 centuries: [16, 17]
-values: [resilience, courage]
-tagline: 'Trapped by deliberate floods, his men held out — and then the water froze.'
-hook: '[Hook — a documented moment of tension, 40–70 words. To be written.]'
-mainAchievement: 'Empel, 7–8 December 1585'
+values: [resilience, courage, leadership]
+tagline: Trapped by deliberate floods, his men held out — and then the water froze.
+hook: >-
+  Late in 1585 the Dutch cut the dykes of the Bommelerwaard and drove Francisco Arias de
+  Bobadilla’s tercio onto the high ground at Empel, ringed by floodwater and a rebel fleet, short
+  of food in the winter cold. Every attempt to break out failed. Then, on the night of 7 December,
+  a hard frost set in.
+mainAchievement: Empel, 7–8 December 1585
 portrait: portrait
 
 chapters:
   - key: beginning
     title: The Beginning
-    body: '[Who they were and how the story began — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Francisco Arias de Bobadilla was born in Madrid in 1537, a younger son of the noble house of
+      Puñonrostro. He began as a cavalry captain in Milan in the early 1560s and marched to the
+      Netherlands with the Duke of Alba’s army in 1567. At the siege of Mons in 1572 his courage so
+      impressed Alba that he was sent to carry the news of victory to Philip II in person.
+    sources: [rah-arias-de-bobadilla]
     status: verified
   - key: challenge
     title: The Challenge
-    body: '[The extraordinary obstacle — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      By 1585 Bobadilla was a maestre de campo — commander of a tercio — in the Army of Flanders,
+      fighting the revolt of the Dutch provinces. That November his men crossed the Maas into the
+      Bommelerwaard, an island between the Maas and the Waal, in search of winter quarters. Then
+      Philip of Hohenlohe arrived from Dordrecht with a fleet of the States and cut the dykes in
+      several places. The island began to drown.
+    sources: [rah-arias-de-bobadilla, bossche-encyclopedie-empel, army-ferrer-dalmau-2015]
     status: verified
   - key: odds
     title: Against the Odds
-    body: '[What made it so difficult — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      The Spaniards fell back across the Maas and were stranded at Empel, on higher ground by the
+      village church. Floodwater surrounded them, and Hohenlohe’s ships blocked the way to
+      ’s-Hertogenbosch. Food was short and winter had come. Every attempt to escape or to bring in
+      help failed. Spanish tradition adds that a soldier digging a trench unearthed a Flemish panel
+      painting of the Immaculate Conception.
+    sources: [bossche-encyclopedie-empel, army-ferrer-dalmau-2015, army-infanteria-2019]
     status: verified
   - key: moment
     title: The Defining Moment
-    body: '[The most significant achievement — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      On the night of 7 December 1585 a bitter north-easterly wind brought a hard frost. Fearing
+      that his ships would be frozen in, Hohenlohe pulled back towards open water, and the trapped
+      soldiers got clear to ’s-Hertogenbosch before the thaw. Spanish accounts describe them crossing
+      the ice at dawn and falling on the enemy fleet. It was 8 December — the feast of the Immaculate
+      Conception.
+    sources:
+      [bossche-encyclopedie-empel, army-ferrer-dalmau-2015, emad-empel-2018, army-infanteria-2025]
     status: verified
   - key: legacy
     title: The Legacy
-    body: '[Consequences, and why it matters today — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      In 1588 Philip II made Bobadilla the Duke of Medina Sidonia’s adviser on fighting in the
+      Armada. He later became Count of Puñonrostro and a member of the Council of War, and died in
+      Madrid in 1610. Empel lived on as devotion: Spanish units venerated the Immaculate Conception
+      as their patroness, and in 1892 the queen regent made her patroness of the whole Spanish
+      infantry.
+    more: >-
+      Empel is best told on three levels. Verified: Bobadilla’s men were trapped by deliberate
+      flooding, a sudden frost changed the situation, and they escaped. Traditional: a soldier found
+      an image of the Virgin while digging in. Devotional: the belief that the frost was a miracle —
+      a matter of faith and institutional memory, not something military history can test.
+      Strikingly, the Real Academia de la Historia’s biography of Bobadilla does not mention Empel at
+      all; it dwells on Mons, the Azores, the Armada and Aragon.
+    sources: [rah-arias-de-bobadilla, bossche-encyclopedie-empel, army-infanteria-2019]
     status: verified
 
+facts:
+  - value: 7–8 Dec 1585
+    label: Trapped and freed at Empel
+    explanation: The Spanish Army dates the episode to the night of 7 December and the morning of the 8th.
+    sources: [army-infanteria-2025, emad-empel-2018, bossche-encyclopedie-empel]
+    status: verified
+  - value: '10'
+    unit: ships
+    label: The rebel fleet, by the Spanish Army’s count
+    explanation: >-
+      The Defence Staff gives Hohenlohe ten ships. Popular retellings give far larger fleets; no
+      contemporary count was consulted for this page.
+    sources: [emad-empel-2018]
+    status: disputed
+  - value: '1588'
+    label: Adviser to the Armada’s commander
+    explanation: Philip II named him adviser to the Duke of Medina Sidonia on matters of fighting.
+    sources: [rah-arias-de-bobadilla]
+    status: verified
+  - value: '1892'
+    label: Patroness made official
+    explanation: >-
+      A royal order of the queen regent (12 November 1892) made the Immaculate Conception patroness
+      of the whole Spanish infantry. Units had honoured her unofficially since Empel.
+    sources: [bossche-encyclopedie-empel, army-infanteria-2019, army-infanteria-2025]
+    status: verified
+
+myths:
+  - claim: A miracle froze the river and saved the tercio.
+    status: legend
+    explanation: >-
+      The flooding, the sudden frost and the escape are documented. The finding of the Marian image
+      is a tradition, and the belief that the frost was divinely sent is a devotional reading. Both
+      became central to Spanish military memory, but neither can be demonstrated historically.
+    sources: [bossche-encyclopedie-empel, army-ferrer-dalmau-2015, army-infanteria-2019]
+  - claim: The Immaculate Conception has officially been patroness of the Spanish infantry since 1585.
+    status: legend
+    explanation: >-
+      The devotion among Spanish units goes back to Empel, but the official patronage of the whole
+      infantry dates only from a royal order of 1892.
+    sources: [army-infanteria-2019, army-infanteria-2025, bossche-encyclopedie-empel]
+
 otherSide:
-  body: '[Controversies, human consequences and other perspectives — to be written from the dossier.]'
-  sources: [research-dossier]
+  body: >-
+    Empel is remembered in Spain largely through devotion, and the devotional story has grown over
+    time. A Dutch local-history study of the Empel chapel found no trace of the event in the parish’s
+    old inventories or records until after the Second World War, and called a 1954 claim that a
+    soldiers’ brotherhood was founded at Empel on 8 December 1585 plainly fanciful. The Real
+    Academia de la Historia’s biography of Bobadilla passes over Empel entirely. The episode also
+    belongs to a long war in which Spain was suppressing a revolt, and Bobadilla was a hard soldier:
+    during the Armada he had a disobedient ship’s captain hanged, and in 1591–92 he urged exemplary
+    punishment of the Aragonese rebels and carried out the arrest of the Justicia of Aragon, who
+    was then executed.
+  sources: [bossche-encyclopedie-empel, rah-arias-de-bobadilla]
+
+video:
+  status: planned
+  description: >-
+    A 60-second dramatization: the dykes cut, the tercio stranded at Empel, the winter frost, and the
+    escape across the ice — with the Marian image presented clearly as tradition.
+  aiGenerated: true
+  tool: Higgsfield
+
+comic:
+  status: draft
+  panels:
+    - caption: November 1585. Bobadilla’s men cross the Maas into the Bommelerwaard, looking for winter quarters.
+      sources: [bossche-encyclopedie-empel]
+    - caption: Hohenlohe’s fleet arrives from Dordrecht. The dykes are cut, and the water rises.
+      sources: [bossche-encyclopedie-empel, army-ferrer-dalmau-2015]
+    - caption: Stranded at Empel — floodwater all around, enemy ships on the river, little food, and winter coming on.
+      sources: [bossche-encyclopedie-empel]
+    - caption: Tradition says a soldier digging a trench strikes a wooden panel painted with the Immaculate Conception.
+      note: This is a tradition, not a documented event.
+      sources: [army-infanteria-2019, army-ferrer-dalmau-2015]
+    - caption: The night of 7 December. A bitter north-easterly wind. The water begins to freeze.
+      sources: [bossche-encyclopedie-empel]
+    - caption: Fearing his ships will be frozen in, Hohenlohe pulls back towards open water.
+      sources: [bossche-encyclopedie-empel]
+    - caption: Dawn, 8 December — the feast of the Immaculate Conception. The tercio moves across the ice.
+      context: Spanish accounts say they fell on the enemy fleet; Dutch-based accounts stress the escape to ’s-Hertogenbosch.
+      sources: [army-ferrer-dalmau-2015, emad-empel-2018, bossche-encyclopedie-empel]
+    - caption: Centuries later, in 1892, the Immaculate Conception becomes patroness of the whole Spanish infantry.
+      sources: [army-infanteria-2019, bossche-encyclopedie-empel]
+
+movie:
+  title: The Night the Water Froze
+  premise: A veteran commander and his men are trapped on a drowning island by an enemy who has turned the landscape itself into a weapon.
+  conflict: Survive flood, hunger and an enemy fleet with no road out and no relief coming.
+  challenge: Keeping a starving, soaked army together long enough for a chance that may never come.
+  moments:
+    - text: November 1585 — Hohenlohe cuts the dykes and the Bommelerwaard floods.
+      sources: [bossche-encyclopedie-empel, army-ferrer-dalmau-2015]
+    - text: Empel — the stranded tercio, ringed by water and ships, fails again and again to break out.
+      sources: [bossche-encyclopedie-empel]
+    - text: The night of 7 December — a hard frost; the enemy fleet withdraws and the soldiers escape across the ice.
+      sources: [bossche-encyclopedie-empel, army-ferrer-dalmau-2015, emad-empel-2018]
+  theme: Endurance — and how a lucky frost became an article of faith.
+
+places:
+  - name: Empel
+    relation: >-
+      Where Bobadilla’s men were stranded in December 1585. The parish church of St Landelinus
+      (rebuilt in 1949 on a new site) has a side chapel to Our Lady of Empel with a 1950 triptych
+      telling the story.
+    location: ’s-Hertogenbosch, North Brabant, Netherlands
+    sources: [bossche-encyclopedie-empel, emad-empel-2018]
+  - name: Academia de Infantería
+    relation: The Spanish infantry academy, which celebrates the Immaculate Conception as patroness and where Ferrer-Dalmau’s painting El milagro de Empel was presented in 2015.
+    location: Toledo, Castile-La Mancha
+    sources: [army-ferrer-dalmau-2015, army-infanteria-2025]
+  - name: Madrid
+    relation: Birthplace (1537) and place of death (1610).
+    location: Madrid
+    sources: [rah-arias-de-bobadilla]
+
+related: [alvaro-de-bazan, antonio-de-leyva, francisco-de-sarmiento]
+
+seo:
+  description: Trapped by deliberate floods at Empel in 1585, Bobadilla’s men held out until the water froze. History, tradition and devotion, told apart.
 
 review:
-  status: placeholder
+  status: sourced
 
 sources:
-  - id: research-dossier
-    title: 'Spanish Explorers and Military Leaders Who Reshaped the Early Modern World (research dossier)'
-    institution: Legends of Spain
-    year: '2026'
+  - id: rah-arias-de-bobadilla
+    title: Arias de Bobadilla, Francisco. Conde de Puñonrostro (IV)
+    author: Patrick Williams
+    institution: Real Academia de la Historia, Diccionario Biográfico Español (Historia Hispánica)
+    url: https://historia-hispanica.rah.es/biografias/4242
+    accessed: '2026-11-02'
+    type: institutional
+    notes: Gives Madrid, 10.XII.1537 – 21.I.1610. Covers Mons, Portugal, the Azores, the Armada and Aragon; does not mention Empel.
+  - id: bossche-encyclopedie-empel
+    title: Empel, gemeente ’s-Hertogenbosch — Parochiekerk H. Landelinus (O.L. Vrouw van Empel)
+    institution: Bossche Encyclopedie
+    url: https://www.bossche-encyclopedie.nl/overig/kapellen/kapel%20oud-empel.pdf
+    accessed: '2026-11-02'
     type: reference
-    notes: 'Working dossier; to be replaced by the primary and scholarly sources it cites.'
+    notes: >-
+      Dutch local-history study of the Empel devotion. Narrates the episode from Bor, Carnero and
+      Strada, gives the royal order of 12 November 1892, and assesses the later cult critically.
+  - id: army-infanteria-2019
+    title: La Infantería española celebra el día de su patrona, la Inmaculada Concepción
+    institution: Ejército de Tierra
+    url: https://ejercito.defensa.gob.es/actualidad/2019/12/7774_inmaculada_infanteria.html
+    accessed: '2026-11-02'
+    type: institutional
+  - id: army-infanteria-2025
+    title: La Infantería celebra el día de su patrona, la Inmaculada Concepción
+    institution: Ejército de Tierra
+    url: https://ejercito.defensa.gob.es/actualidad/2025/12/10053-infanteria-celebra-patrona.html
+    accessed: '2026-11-02'
+    type: institutional
+  - id: army-ferrer-dalmau-2015
+    title: Ferrer-Dalmau presenta ‘El milagro de Empel’ en la Academia de Infantería
+    institution: Ejército de Tierra
+    url: https://ejercito.defensa.gob.es/noticias/2015/05/4253_Ferrer-Dalmau_presenta_El_milagro_de_Empel.html
+    accessed: '2026-11-02'
+    type: institutional
+    notes: Tells the Empel story explicitly as tradition (flooding by "Holak", the panel, the freeze, the dawn attack).
+  - id: emad-empel-2018
+    title: Autoridades civiles y militares recuerdan en Empel la gesta de los Tercios de Flandes
+    institution: Estado Mayor de la Defensa (EMAD)
+    url: https://emad.defensa.gob.es/prensa/noticias/2018/12/listado/181207-celebracion-empel.html
+    accessed: '2026-11-02'
+    type: institutional
+    notes: Names the Tercio Viejo de Zamora and a rebel fleet of ten ships.
 
 media:
   - id: portrait
-    alt: 'Portrait of Francisco Arias de Bobadilla — to be selected'
+    alt: Portrait of Francisco Arias de Bobadilla — no verified likeness identified yet
     kind: historical
-    title: '[Portrait to be selected]'
+    title: '[No verified portrait identified]'
     license: '[To verify]'
     attribution: '[To verify]'
+    notes: >-
+      No authenticated period portrait was found. A Wikimedia Commons file titled “Francisco Arias de
+      Bobadilla, IV Conde de Puñonrostro.png” (CC BY-SA 4.0, unknown author, sourced only from a
+      blog) was rejected for lack of provenance. See the research note.

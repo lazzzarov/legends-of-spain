@@ -1,70 +1,302 @@
-# PLACEHOLDER — only name, dates, place, role and achievement come from the research
-# dossier (docs/research/20261102_deep-research.md). Everything in [brackets] is still to be written.
+# SOURCED — researched 2026-11-02 and awaiting the editor's review.
+# Research note: production/miguel-lopez-de-legazpi/research.md (claim → source table, disputes, portrait).
 
 order: 7
 name:
-  display: 'Miguel López de Legazpi'
+  display: Miguel López de Legazpi
+  aka: [Miguel López de Legaspi]
 dates:
-  born: { year: 1510, approx: true }
-  died: { year: 1572 }
+  born: { year: 1502, approx: true, display: 'c. 1502' }
+  died: { year: 1572, month: 8, day: 20 }
 origin:
-  place: 'Zumarraga'
-  region: 'Gipuzkoa'
-role: 'Governor and expedition commander'
+  place: Zumarraga
+  region: Gipuzkoa, Basque Country
+role: Governor and expedition commander
 categories: [exploration, naval]
 centuries: [16]
 values: [leadership, perseverance]
-tagline: 'He built the base that tied the Americas to Asia across the Pacific.'
-hook: '[Hook — a documented moment of tension, 40–70 words. To be written.]'
-mainAchievement: 'Cebu, 1565; foundation of Manila, 1571'
+tagline: A colonial official from Mexico City led the voyage that founded Spanish Manila, and with it more than two centuries of galleons crossing the Pacific.
+hook: >-
+  Four days out from the port of Navidad in November 1564, Legazpi called his captains, pilots and
+  friars aboard the San Pedro. In front of a notary he opened the sealed orders he had carried from
+  Mexico. They named the Philippines, not New Guinea. Andrés de Urdaneta, the expedition’s great
+  navigator, had argued against that course and was deeply displeased.
+mainAchievement: Founded the Spanish settlements of Cebu (1565) and Manila (1571)
 portrait: portrait
 
 chapters:
   - key: beginning
     title: The Beginning
-    body: '[Who they were and how the story began — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Legazpi was born in Zumarraga, in Gipuzkoa, around 1502. As a younger son he had no claim to
+      the family estate, so after working as a notary he left for New Spain around 1528. In Mexico
+      City he became secretary of the city council, then alcalde, and held a senior post at the mint.
+      From 1536 to 1543 he was secretary to the Inquisition tribunal, which tried Indigenous lords for
+      keeping their old religion.
+    sources: [rah-legazpi, euskadi-torre-legazpi]
     status: verified
   - key: challenge
     title: The Challenge
-    body: '[The extraordinary obstacle — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      In 1559 Philip II ordered an expedition to the “Western Islands” across the Pacific. Spain had
+      tried to reach them before, but no ship had ever found a way back east to America. The friar
+      and navigator Andrés de Urdaneta was ordered to join. Legazpi was given command of four ships,
+      which the viceroy said would carry about three hundred Spaniards, half soldiers and half
+      sailors. They sailed from Navidad on 21 November 1564.
+    sources: [rah-legazpi, rah-urdaneta, blair-robertson-v2]
     status: verified
   - key: odds
     title: Against the Odds
-    body: '[What made it so difficult — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      In the islands the Spaniards were short of food and met with mistrust. Portuguese raiders had
+      attacked people there, and to the islanders the newcomers looked the same. Legazpi wrote that
+      the chiefs of Bohol made friends but would sell them nothing. At Cebu in April 1565 he sent
+      troops ashore. The people fled and about a hundred houses burned. On 8 May he founded the
+      settlement of San Miguel there.
+    sources: [blair-robertson-v2, rah-legazpi]
     status: verified
   - key: moment
     title: The Defining Moment
-    body: '[The most significant achievement — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      On 1 June 1565 Legazpi sent the San Pedro back to New Spain under his grandson Felipe de
+      Salcedo, with Urdaneta as navigator. They sailed north-east to around forty degrees north,
+      caught the westerly winds and reached Acapulco on 8 October. The way back across the Pacific
+      had been found. For the next two and a half centuries, until 1815, galleons used that route to
+      link Asia with the Americas.
+    sources: [rah-urdaneta, rah-legazpi, blair-robertson-v2]
     status: verified
   - key: legacy
     title: The Legacy
-    body: '[Consequences, and why it matters today — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Legazpi stood his ground at Cebu when a Portuguese fleet challenged him in 1568, and later
+      moved north. On 24 June 1571 he held the formal founding of Spanish Manila and set up its council.
+      He died there on 20 August 1572. Manila became the Asian end of the galleon route to Acapulco, and
+      the seat of a colonial government over much of the archipelago.
+    more: >-
+      Manila was not empty land. It was Maynila, a fortified trading town under Rajah Matanda and his
+      nephew Rajah Soliman, with Lakandula ruling Tondo nearby. Chinese and Japanese traders lived
+      there. In 1570 Legazpi’s field commander, Martín de Goiti, fought the town, which burned. In
+      May 1571 Legazpi negotiated through two interpreters, and the three rulers agreed to become
+      vassals of the Spanish crown. A month later he formally founded the Spanish city.
+    sources: [rah-legazpi, pares-legazpi-pereira, blair-robertson-v3]
     status: verified
 
+facts:
+  - value: c. 1502–1510
+    label: Year of birth
+    explanation: >-
+      The Real Academia de la Historia gives 12 June 1502, and the Basque government gives
+      “around 1502”. Older works often say about 1510.
+    sources: [rah-legazpi, euskadi-torre-legazpi]
+    status: disputed
+  - value: '4'
+    unit: ships
+    label: In the 1564 fleet
+    explanation: >-
+      Two galleons and two smaller pataches. The viceroy expected them to carry about three hundred
+      Spaniards, half soldiers and half sailors, plus six Augustinian friars.
+    sources: [blair-robertson-v2]
+    status: verified
+  - value: '16'
+    label: Deaths on the first return voyage
+    explanation: >-
+      About 210 people sailed home on the San Pedro in 1565. Sixteen died, and only ten to eighteen
+      were fit to work when they neared Mexico.
+    sources: [blair-robertson-v2, rah-urdaneta]
+    status: verified
+  - value: 24 Jun 1571
+    label: Spanish Manila is formally founded
+    explanation: Four days later Legazpi created its city council, with two alcaldes and twelve councillors.
+    sources: [rah-legazpi]
+    status: verified
+  - value: '1815'
+    label: The last year of the Manila–Acapulco galleon
+    explanation: The route opened by Urdaneta’s 1565 voyage stayed in use for two and a half centuries.
+    sources: [rah-legazpi]
+    status: verified
+
+myths:
+  - claim: Legazpi found the route back across the Pacific.
+    status: legend
+    explanation: >-
+      Legazpi stayed in Cebu. The return route, the tornaviaje, was sailed in 1565 by the San Pedro
+      under his grandson Felipe de Salcedo, with the Augustinian friar Andrés de Urdaneta as its real
+      navigator.
+    sources: [rah-urdaneta, rah-legazpi]
+  - claim: Legazpi won the Philippines without bloodshed.
+    status: legend
+    explanation: >-
+      He did rely heavily on negotiation and treaties. But his forces burned and sacked villages on
+      Guam in January 1565 and took Cebu by landing troops, and around a hundred houses burned. In
+      1570 his field commander fought Maynila, and the town was destroyed by fire.
+    sources: [blair-robertson-v2, blair-robertson-v3, rah-legazpi]
+
 otherSide:
-  body: '[Controversies, human consequences and other perspectives — to be written from the dossier.]'
-  sources: [research-dossier]
+  body: >-
+    To the people of the islands this was an invasion. In the 1565 treaty, Tupas and the chiefs of
+    Cebu became vassals of Castile. They had to hand over runaway slaves and could not enter the
+    Spanish camp armed, and they were promised a year’s grace before paying tribute. Reinforcements soon
+    brought authority to set up encomiendas, grants of Filipino labour and tribute to Spanish settlers. Spanish
+    reports call islanders treacherous, and the 1903 English editors kept that tone, but the
+    officials themselves traced the hostility to Portuguese massacres. Soliman of Maynila
+    resisted, and his town was burned. Legazpi depended on Urdaneta, Salcedo, Goiti, interpreters and
+    Cebuano and Panayan fighters in their own boats. In Mexico he had served the Inquisition against
+    Indigenous lords.
+  sources: [blair-robertson-v2, blair-robertson-v3, rah-legazpi, rah-urdaneta]
+
+video:
+  status: planned
+  description: >-
+    A 60-second dramatization: the sealed orders opened at sea, the hungry months in the islands,
+    the San Pedro’s return voyage that opened the galleon route, and the founding of Spanish Manila,
+    told alongside the people who were already there.
+  aiGenerated: true
+  tool: Higgsfield
+
+comic:
+  status: draft
+  panels:
+    - caption: Zumarraga, Gipuzkoa. Miguel López de Legazpi is born in the family tower house around 1502.
+      sources: [euskadi-torre-legazpi, rah-legazpi]
+    - caption: Mexico City. For more than thirty years he works as a notary, council secretary, alcalde and official.
+      sources: [rah-legazpi]
+    - caption: November 1564. Four days out of Navidad, Legazpi opens the sealed orders. Their destination is the Philippines.
+      context: Urdaneta had argued for New Guinea.
+      sources: [rah-legazpi]
+    - caption: Cebu, April 1565. Troops land, the people flee and about a hundred houses burn.
+      note: In one surviving house the Spaniards find the Santo Niño image that Magellan’s expedition had left in 1521.
+      sources: [blair-robertson-v2, rah-legazpi]
+    - caption: 1 June 1565. The San Pedro sails north-east with Urdaneta as navigator, looking for a way back to America.
+      sources: [rah-urdaneta, rah-legazpi]
+    - caption: 8 October 1565. The ship reaches Acapulco with many of its crew sick or dead. The return route has been found.
+      sources: [rah-urdaneta, blair-robertson-v2]
+    - caption: May 1571. Through two interpreters, Legazpi negotiates with Rajah Matanda, Rajah Soliman and Lakandula.
+      sources: [rah-legazpi]
+    - caption: 24 June 1571. Spanish Manila is formally founded on the site of Maynila.
+      sources: [rah-legazpi]
+
+movie:
+  title: The Sealed Orders
+  premise: An ageing colonial official opens his orders at sea and must build a colony on the far side of an ocean no ship has yet sailed back across.
+  conflict: Keep a hungry expedition alive among islanders who have good reason to distrust it, while a rival empire claims the same islands.
+  challenge: Holding on long enough for one ship to find the way home, and facing what that holding-on costs others.
+  moments:
+    - text: November 1564. Four days out, the sealed instructions are opened and name the Philippines, against Urdaneta’s wishes.
+      sources: [rah-legazpi]
+    - text: Cebu, April 1565. The landing, the burning houses, and the Santo Niño found in the ruins.
+      sources: [blair-robertson-v2, rah-legazpi]
+    - text: Manila, 24 June 1571. Spanish Manila is founded on the site of Rajah Soliman’s town.
+      sources: [rah-legazpi, blair-robertson-v3]
+  theme: Building something that lasts, and the cost to those who were already there.
+
+places:
+  - name: Torre de los Legazpi
+    relation: The family tower house in Zumarraga where, according to the Basque government, he was born.
+    location: Zumarraga, Gipuzkoa
+    url: https://www.euskadi.eus/torre-de-los-legazpi/zumarraga/camino-ignaciano/web01-a2kulonr/es/
+    sources: [euskadi-torre-legazpi]
+  - name: Barra de Navidad
+    relation: The Pacific port of New Spain from which the fleet sailed on 21 November 1564.
+    location: Jalisco, Mexico
+    sources: [rah-legazpi, blair-robertson-v2]
+  - name: Cebu
+    relation: Where Legazpi founded the settlement of San Miguel on 8 May 1565.
+    location: Cebu, Philippines
+    sources: [rah-legazpi, blair-robertson-v2]
+  - name: Manila
+    relation: Formally founded as a Spanish city on 24 June 1571; Legazpi died there in 1572.
+    location: Luzon, Philippines
+    sources: [rah-legazpi, blair-robertson-v3]
+  - name: Archivo General de Indias
+    relation: Holds Legazpi’s correspondence with the Portuguese commander Gonzalo Pereira (1568–1569).
+    location: Seville, Andalusia
+    url: https://pares.cultura.gob.es/ParesBusquedas20/catalogo/description/121774
+    sources: [pares-legazpi-pereira]
+
+related: [juan-sebastian-elcano, francisco-de-orellana, hernan-cortes]
+
+seo:
+  description: Miguel López de Legazpi founded Spanish Cebu and Manila and began the Pacific galleon route. The story, and the people already living there.
 
 review:
-  status: placeholder
+  status: sourced
 
 sources:
-  - id: research-dossier
-    title: 'Spanish Explorers and Military Leaders Who Reshaped the Early Modern World (research dossier)'
-    institution: Legends of Spain
-    year: '2026'
-    type: reference
-    notes: 'Working dossier; to be replaced by the primary and scholarly sources it cites.'
+  - id: rah-legazpi
+    title: Miguel López de Legazpi
+    author: Leoncio Cabrero Fernández
+    institution: Real Academia de la Historia, Diccionario Biográfico Español
+    url: https://historia-hispanica.rah.es/biografias/26616-miguel-lopez-de-legazpi
+    accessed: '2026-11-02'
+    type: institutional
+    notes: >-
+      Full DB~e entry, read via the site's public data (nid 26616). Its tone is sympathetic; it says
+      little of the violence, so it is balanced here with the contemporary documents.
+  - id: rah-urdaneta
+    title: Andrés de Urdaneta y Cerain
+    author: Mariano Cuesta Domingo
+    institution: Real Academia de la Historia, Diccionario Biográfico Español
+    url: https://historia-hispanica.rah.es/biografias/44063-andres-de-urdaneta-y-cerain
+    accessed: '2026-11-02'
+    type: institutional
+    notes: >-
+      DB~e entry (nid 44063). Covers the tornaviaje from 1 June to 8 October 1565, Felipe de Salcedo
+      as Legazpi's grandson, and the quote on 16 dead and ten to eighteen men able to work.
+  - id: blair-robertson-v2
+    title: The Philippine Islands, 1493–1803, vol. II (1521–1569)
+    author: Emma Helen Blair and James Alexander Robertson (eds.)
+    publisher: Arthur H. Clark, Cleveland (1903); Project Gutenberg eBook 13280
+    year: '1903'
+    url: https://www.gutenberg.org/ebooks/13280
+    accessed: '2026-11-02'
+    type: primary
+    notes: >-
+      English translations and summaries of contemporary documents: the viceroy's letters of 1564,
+      the Relation of the expedition, Legazpi's own Relation, Esteban Rodríguez's log, and the terms
+      of the 1565 Cebu treaty. The editors' 1903 summaries contain prejudiced language about the
+      islanders, which is not repeated here. The Spanish originals in the AGI were not consulted.
+  - id: blair-robertson-v3
+    title: The Philippine Islands, 1493–1803, vol. III (1569–1576)
+    author: Emma Helen Blair and James Alexander Robertson (eds.)
+    publisher: Arthur H. Clark, Cleveland (1903); Project Gutenberg eBook 13616
+    year: '1903'
+    url: https://www.gutenberg.org/ebooks/13616
+    accessed: '2026-11-02'
+    type: primary
+    notes: >-
+      Translated contemporary relations of the 1570 Manila expedition, including the burning of
+      Soliman's town and 80 captives, the 1571 settlement, and Legazpi's death on 20 August 1572.
+  - id: pares-legazpi-pereira
+    title: Cartas y copias de varios documentos sobre la correspondencia que tuvo Miguel López de Legazpi con Gonzalo Pereira, portugués (1568–1569)
+    institution: Archivo General de Indias, PATRONATO,24,R.9 (PARES)
+    url: https://pares.cultura.gob.es/ParesBusquedas20/catalogo/description/121774
+    accessed: '2026-11-02'
+    type: primary
+    notes: >-
+      PARES catalogue entry consulted. Related entries: PATRONATO,24,R.6 (requerimientos, 28 March
+      1568) and R.7 (autos on expelling the Portuguese fleet from Cebu). The document images were
+      not consulted.
+  - id: euskadi-torre-legazpi
+    title: Torre de los Legazpi (Zumarraga)
+    institution: Gobierno Vasco, Departamento de Cultura y Política Lingüística
+    url: https://www.euskadi.eus/torre-de-los-legazpi/zumarraga/camino-ignaciano/web01-a2kulonr/es/
+    accessed: '2026-11-02'
+    type: institutional
+    notes: Says he was born in the tower around 1502, moved to Mexico in 1528 and married Isabel Garcés in 1532.
 
 media:
   - id: portrait
-    alt: 'Portrait of Miguel López de Legazpi — to be selected'
+    alt: Wood-engraved portrait of Miguel López de Legazpi from an 1887 Spanish magazine, an imagined likeness
     kind: historical
-    title: '[Portrait to be selected]'
-    license: '[To verify]'
-    attribution: '[To verify]'
+    title: Miguel López de Legazpi (La Hormiga de Oro, no. 16)
+    creator: Celestí Sadurní i Deop (wood engraver)
+    date: 16 April 1887
+    posthumous: true
+    institution: La Hormiga de Oro (Barcelona); scan in the Biblioteca Nacional de España, Hemeroteca Digital
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Miguel_L%C3%B3pez_de_Legazpi,_en_La_Hormiga_de_Oro.jpg
+    license: Public domain (the engraver died in 1896 or 1904; Commons uses PD-scan and Public Domain Mark 1.0)
+    attribution: Celestí Sadurní, La Hormiga de Oro, 16 April 1887. Biblioteca Nacional de España, via Wikimedia Commons.
+    notes: >-
+      No portrait from life is known. The file is a scan of a printed page, so LPI art. 128 does not
+      apply. An alternative is Baltasar Giraudier's 1860 portrait (BNE, ER/2241 (3)), which the RAH
+      uses. Not yet downloaded.

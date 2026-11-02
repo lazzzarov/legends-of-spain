@@ -1,70 +1,301 @@
-# PLACEHOLDER — only name, dates, place, role and achievement come from the research
-# dossier (docs/research/20261102_deep-research.md). Everything in [brackets] is still to be written.
+# SOURCED DRAFT — researched 2026-11-02 from the RAH Diccionario Biográfico, peer-reviewed medical history
+# (Tuells & Duro-Torrijos 2015; Tuells & Franco-Paredes 2023; Asensi Botet 2009) and Spanish government
+# publications. Archival records (AGI, AHN, AGN México) are cited only through those works.
+# Research notes: production/francisco-javier-balmis/research.md
 
 order: 13
 name:
-  display: 'Francisco Javier Balmis'
+  display: Francisco Javier Balmis
+  full: Francisco Javier Balmis y Berenguer
+  aka: [Francisco Xavier de Balmis]
 dates:
-  born: { year: 1753 }
-  died: { year: 1819 }
+  born: { year: 1753, month: 12, day: 2 }
+  died: { year: 1819, month: 2, day: 12 }
 origin:
-  place: 'Alicante'
-  region: 'Valencia'
-role: 'Military physician'
+  place: Alicante
+  region: Valencian Community
+role: Military surgeon and physician
 categories: [knowledge]
 centuries: [18, 19]
-values: [ingenuity, perseverance]
-tagline: 'Before refrigeration, he carried a living vaccine across oceans — arm to arm.'
-hook: '[Hook — a documented moment of tension, 40–70 words. To be written.]'
-mainAchievement: 'Led the Royal Vaccine Expedition, from 1803'
+values: [ingenuity, perseverance, leadership, attempting-the-impossible]
+tagline: Before refrigeration, he carried a living vaccine across two oceans — arm to arm, in the bodies of children.
+hook: >-
+  In March 1804 the vaccine expedition left Puerto Rico short of children. By the time it neared
+  the Venezuelan coast, only one child still carried live vaccine in his arm. The cowpox brought
+  from Spain survived only by passing from arm to arm; if that chain broke, the whole voyage would
+  have been for nothing.
+mainAchievement: Directed the Royal Philanthropic Vaccine Expedition, 1803–1806
 portrait: portrait
 
 chapters:
   - key: beginning
     title: The Beginning
-    body: '[Who they were and how the story began — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Francisco Javier Balmis was born in Alicante in 1753, the son and grandson of surgeons. He
+      trained at the city’s military hospital, served as an army surgeon and spent a decade in the
+      Caribbean and New Spain, where he studied medicinal plants. When Edward Jenner made cowpox
+      vaccination public, Balmis became one of its earliest Spanish champions, translating Moreau de
+      la Sarthe’s treatise on the vaccine in 1803. He had not invented the vaccine. His idea was how
+      to move it.
+    sources: [rah-balmis, red-defensa-2019]
     status: verified
   - key: challenge
     title: The Challenge
-    body: '[The extraordinary obstacle — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Smallpox killed and disfigured people across Spain’s empire, and the vaccine was fragile.
+      Earlier attempts to ship cowpox material in sealed glass had failed on long, hot voyages. In
+      June 1803 the royal surgeons approved Balmis’s plan: carry the vaccine alive, in children who
+      had never had smallpox. Roughly every week, two children would be vaccinated with fluid from
+      the ripe pustules of the previous pair. It was a human chain that could not be allowed to
+      break.
+    sources: [rah-balmis, tuells-duro-2015]
     status: verified
   - key: odds
     title: Against the Odds
-    body: '[What made it so difficult — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      On 30 November 1803 the corvette María Pita left A Coruña carrying 22 boys aged three to
+      nine, foundlings from institutions in A Coruña and Santiago de Compostela. Nobody asked their
+      consent. Caring for them was Isabel Zendal, rector of the A Coruña foundling home, whose
+      adoptive son was among them. In Puerto Rico the vaccine had already arrived from a neighbouring
+      island, and the expedition left so short of children that only one still carried live vaccine
+      when it neared Venezuela.
+    sources: [tuells-duro-2015, rah-balmis, red-defensa-2019]
     status: verified
   - key: moment
     title: The Defining Moment
-    body: '[The most significant achievement — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      In Caracas the vaccine took hold, and Balmis set up the first vaccination board on the
+      American mainland. On 8 May 1804 the expedition split. José Salvany led a team south through
+      New Granada, Quito, Lima and the Andes. He lost an eye, injured a wrist and died in Cochabamba
+      in 1810. Balmis went on through Cuba and Mexico, then crossed the Pacific with 26 Mexican
+      children, reaching Manila on 15 April 1805. From there he took the vaccine to Macao and
+      Canton.
+    sources: [tuells-duro-2015, rah-balmis, rah-salvany]
     status: verified
   - key: legacy
     title: The Legacy
-    body: '[Consequences, and why it matters today — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Balmis sailed home by way of Saint Helena, where he introduced the vaccine, and reached Lisbon
+      on 14 August 1806. The lasting work was institutional: vaccination boards in Caracas, Havana,
+      Mexico, Manila and beyond, where local doctors would keep the vaccine alive. Jenner himself
+      praised the expedition. But the children paid a price. The Galician boys were left in a Mexico
+      City poorhouse and never returned to Spain. Balmis died in Madrid in 1819.
+    more: >-
+      The expedition belonged to many people. Isabel Zendal looked after the children through every
+      stage, from A Coruña to the Philippines, and Balmis wrote to the minister Caballero that she had
+      ruined her health caring for them. Salvany’s team carried the vaccine through much of South
+      America; Salvany never came home. In 1810 Balmis returned to Mexico on a second commission and
+      protested to the authorities that the promises made to the children and their families — care,
+      education and a future — had not been kept.
+    sources: [rah-balmis, tuells-duro-2015, tuells-franco-paredes-2023, rah-salvany]
     status: verified
 
+facts:
+  - value: 30 Nov 1803
+    label: Departure from A Coruña
+    explanation: The corvette María Pita sails with Balmis, his medical team, Isabel Zendal and the child carriers.
+    sources: [rah-balmis, tuells-duro-2015, red-defensa-2019]
+    status: verified
+  - value: '22'
+    label: Children who left A Coruña
+    explanation: Boys aged three to nine from foundling institutions in A Coruña and Santiago de Compostela, who carried the vaccine across the Atlantic.
+    sources: [tuells-duro-2015, rah-balmis, tuells-franco-paredes-2023]
+    status: verified
+  - value: '26'
+    label: Mexican children who crossed the Pacific
+    explanation: Recruited in New Spain to carry the vaccine from Acapulco to Manila in 1805; two of them died before they could return home.
+    sources: [tuells-duro-2015, rah-balmis, tuells-franco-paredes-2023]
+    status: verified
+  - value: 14 Aug 1806
+    label: Balmis reaches Lisbon
+    explanation: After Macao, Canton and Saint Helena. Charles IV received him at San Ildefonso on 7 September 1806.
+    sources: [rah-balmis]
+    status: verified
+  - value: 21 Jul 1810
+    label: José Salvany dies in Cochabamba
+    explanation: The deputy director, worn out by years of carrying the vaccine through the Andes, never returned to Spain.
+    sources: [rah-salvany, exteriores-la-paz-2015]
+    status: verified
+
+myths:
+  - claim: Balmis invented the smallpox vaccine.
+    status: legend
+    explanation: >-
+      Edward Jenner demonstrated cowpox vaccination in 1796–1798. Balmis’s achievement was
+      organising how to carry a living vaccine across oceans and how to keep it going afterwards,
+      through vaccination boards and trained local practitioners.
+    sources: [rah-balmis, tuells-duro-2015]
+  - claim: All the children who carried the vaccine were orphans.
+    status: legend
+    explanation: >-
+      The 22 boys from A Coruña were foundlings from charitable institutions. Most of the 26 Mexican
+      children taken to the Philippines had known parents, who were offered money and promises of
+      care and education in return for lending their sons. Many of those promises were not kept.
+    sources: [tuells-duro-2015, tuells-franco-paredes-2023]
+
 otherSide:
-  body: '[Controversies, human consequences and other perspectives — to be written from the dossier.]'
-  sources: [research-dossier]
+  body: >-
+    The expedition’s success depended on children who could not consent. Foundlings were chosen
+    because no parent would hand a child to a stranger for such a voyage, and they were used as
+    living containers for the vaccine. On the Pacific crossing the children slept on the floor of a
+    filthy, rat-infested hold, and several were accidentally infected from one another. In Mexico the
+    Galician boys were placed in a poorhouse and made to light funerals. They never returned to
+    Spain, and Mexican families who had lent their sons for payment and promises were left
+    disappointed. Balmis protested about the children’s treatment more than once, as late as 1810.
+    In Havana, when the authorities supplied no children, the expedition bought enslaved women
+    (three according to the RAH biography, while one archival note speaks of four slaves) and
+    recruited a drummer boy to keep the chain alive. Modern historians agree that the expedition
+    would not pass today’s ethical standards. They dispute claims that it systematically exploited
+    enslaved children, and they credit Isabel Zendal, José Salvany and the children as much as
+    Balmis. The expedition was also a project of the Spanish crown, which linked public health to
+    the size and productivity of its empire’s population.
+  sources: [tuells-duro-2015, rah-balmis, tuells-franco-paredes-2023]
+
+video:
+  status: planned
+  description: >-
+    A 60-second dramatization of the vaccine’s journey: the María Pita leaving A Coruña with 22
+    children, the near-break of the chain before Venezuela, the split at Caracas and the crossing to
+    Manila. Isabel Zendal and the children are shown as central to the story.
+  aiGenerated: true
+  tool: Higgsfield
+
+comic:
+  status: draft
+  panels:
+    - caption: Alicante, 1753. Francisco Javier Balmis is born into a family of surgeons.
+      sources: [rah-balmis]
+    - caption: 1803. Jenner’s cowpox vaccine works, but it dies on long voyages. Balmis proposes carrying it alive, in children.
+      context: Earlier shipments in sealed glass had failed in the heat.
+      sources: [rah-balmis, tuells-duro-2015]
+    - caption: A Coruña, 30 November 1803. The María Pita sails with 22 foundling boys and their carer, Isabel Zendal.
+      note: The boys were aged three to nine. Nobody asked their consent.
+      sources: [tuells-duro-2015, rah-balmis]
+    - caption: Every week or so, two children are vaccinated from the arms of the last two. The chain must not break.
+      sources: [rah-balmis, tuells-duro-2015]
+    - caption: Caracas, 8 May 1804. The expedition splits. José Salvany heads south towards the Andes; Balmis turns north.
+      sources: [rah-salvany, tuells-duro-2015]
+    - caption: Acapulco to Manila, 1805. Twenty-six Mexican children carry the vaccine across the Pacific, sleeping in a rat-infested hold.
+      sources: [tuells-duro-2015, rah-balmis]
+    - caption: Macao and Canton. Balmis takes the vaccine to China, then sails home by way of Saint Helena.
+      sources: [rah-balmis]
+    - caption: Cochabamba, 21 July 1810. Salvany dies far from home. The vaccine boards he and Balmis founded live on.
+      sources: [rah-salvany, exteriores-la-paz-2015]
+
+movie:
+  title: Arm to Arm
+  premise: A royal surgeon, a foundling-home rector and a group of children carry a living vaccine around the world.
+  conflict: Keep a fragile biological chain alive across oceans, against heat, distance, officials who will not help and a shortage of children.
+  challenge: The mission works only by using children who cannot choose, and the people leading it know it.
+  moments:
+    - text: A Coruña, 30 November 1803 — 22 foundling boys and Isabel Zendal board the María Pita.
+      sources: [tuells-duro-2015, rah-balmis]
+    - text: Caracas, 8 May 1804 — the expedition splits; Salvany and Balmis will never meet again.
+      sources: [tuells-duro-2015, rah-salvany]
+    - text: Manila, 15 April 1805 — after a miserable Pacific crossing, 26 Mexican children bring the vaccine to the Philippines.
+      sources: [tuells-duro-2015]
+  theme: A triumph of public health, and the question of who paid for it.
+
+places:
+  - name: Alicante
+    relation: Birthplace of Balmis, where he trained at the military hospital.
+    location: Alicante, Valencian Community
+    sources: [rah-balmis, red-defensa-2019]
+  - name: A Coruña
+    relation: Where the María Pita sailed from on 30 November 1803; home of the foundling institution run by Isabel Zendal.
+    location: A Coruña, Galicia
+    sources: [tuells-duro-2015, rah-balmis]
+  - name: Caracas
+    relation: Seat of the first vaccination board on the American mainland, where the expedition split on 8 May 1804.
+    location: Venezuela
+    sources: [tuells-duro-2015, rah-salvany]
+  - name: Manila
+    relation: Reached on 15 April 1805; a vaccine board was set up and local physicians took over the work.
+    location: Philippines
+    sources: [tuells-duro-2015]
+  - name: Cochabamba
+    relation: Where José Salvany died on 21 July 1810; he is buried in the church of San Francisco.
+    location: Bolivia
+    sources: [rah-salvany, exteriores-la-paz-2015]
+
+related: [juan-sebastian-elcano, miguel-lopez-de-legazpi, francisco-espoz-y-mina]
+
+seo:
+  description: How Francisco Javier Balmis, Isabel Zendal, José Salvany and dozens of children carried a living smallpox vaccine around the world, 1803–1806.
 
 review:
-  status: placeholder
+  status: sourced
 
 sources:
-  - id: research-dossier
-    title: 'Spanish Explorers and Military Leaders Who Reshaped the Early Modern World (research dossier)'
-    institution: Legends of Spain
-    year: '2026'
-    type: reference
-    notes: 'Working dossier; to be replaced by the primary and scholarly sources it cites.'
+  - id: rah-balmis
+    title: Francisco Javier Balmis Berenguer
+    author: Emilio Balaguer Perigüell
+    institution: Real Academia de la Historia, Diccionario Biográfico Español
+    url: https://historia-hispanica.rah.es/biografias/4765-francisco-javier-balmis-berenguer
+    accessed: '2026-11-02'
+    type: institutional
+    notes: Dates of birth and death, career, expedition dates (departure, split, Acapulco, Macao, Canton, Saint Helena, Lisbon, audience with Charles IV), the Havana purchase of enslaved women and the 1810 return to Mexico.
+  - id: rah-salvany
+    title: José Salvany Lleopart
+    author: Susana María Ramírez Martín
+    institution: Real Academia de la Historia, Diccionario Biográfico Español
+    url: https://historia-hispanica.rah.es/biografias/39975-jose-salvany-lleopart
+    accessed: '2026-11-02'
+    type: institutional
+    notes: Split at Caracas on 8 May 1804; Salvany's route, injuries and death in Cochabamba on 21 July 1810.
+  - id: tuells-duro-2015
+    title: 'The journey of the vaccine against smallpox: one expedition, two oceans, three continents, and thousands of children'
+    author: José Tuells and José Luis Duro-Torrijos
+    publisher: Gaceta Médica de México, 151, 388–397
+    year: '2015'
+    url: https://www.anmm.org.mx/GMM/2015/n3_english/2331AX153_151_2015_UK3_388-397.pdf
+    accessed: '2026-11-02'
+    type: academic
+    notes: Table of the 22 children and their ages and institutions; the Puerto Rico shortage; the Havana, Mexico and Pacific stages; the Manila arrival on 15 April 1805; the children's treatment and fate. Quotes archival records (AGI, AGN México) that were not consulted directly.
+  - id: tuells-franco-paredes-2023
+    title: 'Deconstructing Balmis: a distorted story of enslaved orphans'
+    author: José Tuells and Carlos Franco-Paredes
+    publisher: Gaceta Sanitaria, 37, 102258
+    year: '2023'
+    url: https://www.gacetasanitaria.org/en-deconstructing-balmis-distorted-story-enslaved-articulo-S0213911122001546
+    accessed: '2026-11-02'
+    type: academic
+    notes: Letter on the ethics of the expedition and the use of enslaved carriers; states that it would not meet current research ethics; quotes Jenner's praise.
+  - id: asensi-botet-2009
+    title: 'La real expedición filantrópica de la vacuna (Xavier de Balmis/Josep Salvany): 1803-1806'
+    author: Francesc Asensi Botet
+    publisher: Revista Chilena de Infectología, 26(6), 562–567
+    year: '2009'
+    url: https://scielo.conicyt.cl/scielo.php?script=sci_arttext&pid=S0716-10182009000700014
+    accessed: '2026-11-02'
+    type: academic
+    notes: Used for cross-checking only. It differs from Tuells on the children's origin (4 from Madrid, 18 from Santiago) and on the name of the Pacific ship; the more detailed Tuells account is preferred.
+  - id: red-defensa-2019
+    title: Francisco Xavier Balmis, médico y militar
+    author: Germán Segura García
+    institution: Ministerio de Defensa, Revista Española de Defensa, no. 367 (December 2019), pp. 62–65
+    url: https://www.defensa.gob.es/Galerias/gabinete/red/2019/12/p-62-65-red-367-balmis.pdf
+    accessed: '2026-11-02'
+    type: institutional
+    notes: Bicentenary article. It confirms the departure on 30 November 1803 aboard the María Pita, the 22 children, Isabel Zendal's role and the routes, and includes a route map.
+  - id: exteriores-la-paz-2015
+    title: Inauguración de una placa conmemorativa en recuerdo de Josep Salvany y Lleopart
+    institution: Embajada de España en Bolivia, Ministerio de Asuntos Exteriores
+    year: '2015'
+    url: https://www.exteriores.gob.es/Embajadas/lapaz/es/Comunicacion/Noticias/Paginas/Articulos/20151022_NOT1.aspx
+    accessed: '2026-11-02'
+    type: institutional
+    notes: Salvany's death in Cochabamba on 21 July 1810 and his burial in the church of San Francisco.
 
 media:
   - id: portrait
-    alt: 'Portrait of Francisco Javier Balmis — to be selected'
+    alt: Engraved bust portrait of Francisco Javier Balmis
     kind: historical
-    title: '[Portrait to be selected]'
-    license: '[To verify]'
-    attribution: '[To verify]'
+    title: Portrait of Francisco Javier Balmis (engraving)
+    creator: Unknown engraver
+    date: c. 1800 (as dated on Wikimedia Commons; not independently verified)
+    posthumous: false
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Balmis.jpg
+    license: Public domain (Wikimedia Commons, Public Domain Mark 1.0; work published before 1931)
+    attribution: Unknown engraver, via Wikimedia Commons
+    notes: The holding institution and original publication are not recorded on Commons, so verify the provenance before use. If the engraving turns out to post-date 1819, set posthumous to true.

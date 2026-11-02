@@ -65,7 +65,13 @@ P0 = must, P1 = should, P2 = nice to have.
 
 ## Phase 5 — Remaining legends
 
-- [ ] 5.x For each of the 13 remaining legends: content → media rights → briefs → review · P0
+- [x] 5.1 Research pass on all 14 legends (Elcano upgraded from draft): full chapters, sourced facts, myths, other side, film pitch, places, 8 comic captions each; `review.status: sourced` · P0
+- [x] 5.2 Research note per legend in `production/<slug>/research.md` (claim → source table, disputes, open questions, portrait candidates) · P0
+- [x] 5.3 Link check: 84 unique URLs, 80 return 200; 4 block bots (Britannica, Prado ×2, Europe PMC) and need a manual look · P1
+- [x] 5.4 Tests decoupled from live content (fixture-based unit tests; e2e expectations read from the legend files); unreviewed legends get `noindex` · P1
+- [ ] 5.5 Portrait images: download the 12 recommended candidates and confirm each licence (Bobadilla and Sarmiento have no verified likeness) · P0 · **needs your OK to download**
+- [ ] 5.6 Video briefs and comic scripts for the 13 new legends (Elcano's exist) · P1
+- [ ] 5.7 Editorial review of each legend → `reviewed` · P0 · **waiting on you**
 
 ## Phase 6 — QA and launch
 

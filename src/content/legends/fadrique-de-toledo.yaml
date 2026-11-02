@@ -1,71 +1,274 @@
-# PLACEHOLDER — only name, dates, place, role and achievement come from the research
-# dossier (docs/research/20261102_deep-research.md). Everything in [brackets] is still to be written.
+# SOURCED — researched 2026-11-02 (see production/fadrique-de-toledo/research.md).
+# A joint Iberian operation: Castilian, Portuguese and Neapolitan forces under one king, with
+# Portugal keeping its own institutions. Maíno's surrender scene is treated as invention.
 
 order: 11
 name:
-  display: 'Fadrique de Toledo'
-  full: 'Fadrique de Toledo Osorio'
+  display: Fadrique de Toledo
+  full: Fadrique de Toledo Osorio, I marqués de Villanueva de Valdueza
+  aka: [Fadrique Álvarez de Toledo, Marquis of Villanueva de Valdueza]
 dates:
-  born: { year: 1580 }
-  died: { year: 1634 }
+  born: { year: 1580, month: 5, day: 30, display: '1580 (some scholars argue c. 1589)' }
+  died: { year: 1634, month: 12, display: '1634' }
 origin:
-  place: 'Naples'
-  region: 'Kingdom of Naples'
-role: 'Admiral'
+  place: Naples
+  region: Kingdom of Naples
+role: Admiral
 categories: [naval]
 centuries: [16, 17]
-values: [leadership]
-tagline: 'An Iberian armada crossed the Atlantic to take back a captured capital.'
-hook: '[Hook — a documented moment of tension, 40–70 words. To be written.]'
-mainAchievement: 'Recapture of Salvador da Bahia, 1625'
+values: [leadership, determination]
+tagline: An Iberian armada crossed the Atlantic to take back a captured capital.
+hook: >-
+  In May 1624 the Dutch West India Company seized Salvador, capital of Portuguese Brazil, in less
+  than a day. Castile and Portugal answered with one of the largest fleets of the age. On 29 March
+  1625, after 74 days at sea, Fadrique de Toledo led it into the Bay of All Saints — with a
+  fortified enemy waiting ashore.
+mainAchievement: Recapture of Salvador da Bahia, 1625
 portrait: portrait
 
 chapters:
   - key: beginning
     title: The Beginning
-    body: '[Who they were and how the story began — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Fadrique de Toledo Osorio was the second son of Pedro de Toledo, Marquis of Villafranca. The
+      Real Academia de la Historia gives his birth as Naples, 30 May 1580; a more recent study argues
+      for about 1589. He chose the sea. By 1618 he was captain general of the Armada of the Ocean Sea,
+      and in August 1621 he defeated a stronger Dutch squadron off Cape St Vincent.
+    sources: [rah-fadrique-de-toledo, brasilhis-fadrique-de-toledo]
     status: verified
   - key: challenge
     title: The Challenge
-    body: '[The extraordinary obstacle — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      In May 1624 the Dutch West India Company captured Salvador da Bahia, capital of Portuguese
+      America; the city fell in less than a day. Portugal and Castile then shared a king, Philip IV,
+      but Portugal kept its own laws and institutions. The loss struck at the Portuguese crown, at a
+      sugar colony worked by enslaved Africans, and at the prestige of the whole Habsburg monarchy.
+    sources: [schwartz-review-2024, iglesias-magalhaes-2010, rah-fadrique-de-toledo]
     status: verified
   - key: odds
     title: Against the Odds
-    body: '[What made it so difficult — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      The answer was a combined armada of Castilian, Portuguese and Neapolitan forces — between 52 and
+      62 ships and around 12,000 men, depending on the count. Fadrique sailed from Cádiz on 14 January
+      1625 and joined the Portuguese squadron of Manuel de Meneses at Cape Verde. Carrying so many
+      soldiers across the Atlantic, and keeping them fed and healthy, was a feat in itself.
+    sources: [brasilhis-fadrique-de-toledo, rah-fadrique-de-toledo, schwartz-review-2024]
     status: verified
   - key: moment
     title: The Defining Moment
-    body: '[The most significant achievement — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      The fleet entered the Bay of All Saints on 29 March 1625 and besieged the Dutch garrison by
+      land and sea. On 30 April the defenders surrendered, and on 1 May Fadrique’s forces entered
+      Salvador. According to the Real Academia de la Historia they took more than 3,000 prisoners,
+      seven ships, 259 guns and 18 flags. The news reached Madrid on 6 July.
+    sources: [brasilhis-fadrique-de-toledo, rah-fadrique-de-toledo]
     status: verified
   - key: legacy
     title: The Legacy
-    body: '[Consequences, and why it matters today — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Bahia became one of the celebrated victories of 1625, and Juan Bautista Maíno painted it for the
+      Hall of Realms in the Buen Retiro palace. In 1629 Fadrique drove the English and French from St
+      Kitts. But in 1634 he refused to lead a poorly prepared expedition to retake Pernambuco, clashed
+      with Olivares, was condemned and stripped of his honours, and died in Madrid that December.
+    more: >-
+      The punishment, according to the Real Academia de la Historia, included prison, a fine of
+      10,000 ducats and ten years’ banishment from Castile. Within a few years of the triumph at
+      Bahia, the Dutch had taken Recife and a long stretch of the Brazilian coast, which Portugal did
+      not recover until 1654 — twenty years after Fadrique’s death.
+    sources: [rah-fadrique-de-toledo, brasilhis-fadrique-de-toledo]
     status: verified
 
+facts:
+  - value: 52–62
+    unit: ships
+    label: The combined armada
+    explanation: >-
+      The Real Academia de la Historia gives 52 vessels; the BRASILHIS dictionary gives 62. Counts
+      differ depending on which squadrons and transports are included.
+    sources: [rah-fadrique-de-toledo, brasilhis-fadrique-de-toledo]
+    status: disputed
+  - value: c. 12,000–12,600
+    unit: men
+    label: Soldiers from several kingdoms
+    explanation: Castilian, Portuguese and Neapolitan troops; the RAH gives 12,000 men, BRASILHIS 12,563 soldiers.
+    sources: [rah-fadrique-de-toledo, brasilhis-fadrique-de-toledo, schwartz-review-2024]
+    status: disputed
+  - value: '74'
+    unit: days
+    label: At sea before reaching Bahia
+    explanation: From Cádiz on 14 January to the Bay of All Saints on 29 March 1625.
+    sources: [brasilhis-fadrique-de-toledo]
+    status: verified
+  - value: 1 May 1625
+    label: Salvador recovered
+    explanation: The Dutch garrison surrendered on 30 April; Fadrique’s forces entered the city the next day.
+    sources: [brasilhis-fadrique-de-toledo, rah-fadrique-de-toledo]
+    status: verified
+
+myths:
+  - claim: Maíno’s famous painting shows how the Dutch surrendered.
+    status: legend
+    explanation: >-
+      Maíno shows Fadrique pointing the defeated Dutch to a tapestry of Philip IV and Olivares. The
+      Prado notes that no such episode appears in the accounts of the recapture: the scene is largely
+      invented, drawing on Lope de Vega’s play El Brasil restituido (1625) and on printed relations of
+      the campaign.
+    sources: [prado-maino-bahia, schwartz-review-2024, monteiro-2024]
+  - claim: The recapture of Bahia was a purely Spanish victory.
+    status: legend
+    explanation: >-
+      It was a joint Iberian operation of Castilian, Portuguese and Neapolitan forces under the same
+      king. Portugal kept its own institutions, and Portuguese commanders felt that Spanish command
+      had reduced their share of the credit.
+    sources: [schwartz-review-2024, rah-fadrique-de-toledo, brasilhis-fadrique-de-toledo]
+
 otherSide:
-  body: '[Controversies, human consequences and other perspectives — to be written from the dossier.]'
-  sources: [research-dossier]
+  body: >-
+    The victory looked different from Lisbon and from Bahia. Manuel de Meneses, who commanded the
+    Portuguese contingent and was Portugal’s chief chronicler, wrote an account so critical of how the
+    Portuguese were treated that the Council of State banned its publication; some in Portugal later
+    accused the armada of sacking Salvador like an enemy city and shipping church silver to Spain, and
+    a thousand soldiers were quartered on the city at its own expense. Spanish accounts blamed the fall
+    of the city on New Christians, a charge rooted in religious prejudice. Bahia was a sugar colony
+    worked by enslaved Africans: during the occupation many fled the plantations to seek freedom, and
+    a company of about 200 Africans armed by the Dutch had its leader, Francisco, executed when the
+    city was retaken.
+  sources: [schwartz-review-2024, iglesias-magalhaes-2010]
+
+video:
+  status: planned
+  description: >-
+    A 60-second dramatization: Salvador falls in a day, a combined Castilian–Portuguese armada crosses
+    the Atlantic, and the Dutch garrison surrenders on 30 April 1625.
+  aiGenerated: true
+  tool: Higgsfield
+
+comic:
+  status: draft
+  panels:
+    - caption: May 1624. Ships of the Dutch West India Company take Salvador, capital of Portuguese Brazil, in less than a day.
+      sources: [schwartz-review-2024]
+    - caption: Castile and Portugal — two crowns under one king — gather a combined armada.
+      context: Castilian, Portuguese and Neapolitan forces sailed together.
+      sources: [schwartz-review-2024, rah-fadrique-de-toledo]
+    - caption: 14 January 1625. Fadrique de Toledo sails from Cádiz.
+      sources: [brasilhis-fadrique-de-toledo]
+    - caption: At Cape Verde the Portuguese squadron of Manuel de Meneses joins the fleet.
+      sources: [brasilhis-fadrique-de-toledo]
+    - caption: 29 March 1625. After 74 days at sea, the armada enters the Bay of All Saints.
+      sources: [brasilhis-fadrique-de-toledo]
+    - caption: A month of siege by land and sea closes around the Dutch garrison.
+      sources: [brasilhis-fadrique-de-toledo, rah-fadrique-de-toledo]
+    - caption: 30 April. The Dutch surrender. The next day, 1 May, Fadrique’s forces enter Salvador.
+      sources: [brasilhis-fadrique-de-toledo, rah-fadrique-de-toledo]
+    - caption: Ten years later, Maíno paints the victory for the king’s Hall of Realms — with a surrender scene of his own invention.
+      sources: [rah-fadrique-de-toledo, prado-maino-bahia]
+
+movie:
+  title: Two Crowns, One Fleet
+  premise: An admiral must weld rival kingdoms’ ships and soldiers into one armada and carry it across an ocean to retake a lost capital.
+  conflict: Dislodge an entrenched Dutch garrison from a fortified city half a world away.
+  challenge: Holding together an alliance whose partners did not trust each other.
+  moments:
+    - text: May 1624 — Salvador da Bahia falls to the Dutch West India Company in less than a day.
+      sources: [schwartz-review-2024]
+    - text: 29 March 1625 — after 74 days at sea, the combined armada sails into the Bay of All Saints.
+      sources: [brasilhis-fadrique-de-toledo]
+    - text: 30 April–1 May 1625 — the Dutch surrender and the armada enters Salvador.
+      sources: [brasilhis-fadrique-de-toledo, rah-fadrique-de-toledo]
+  theme: Victory is shared — and so is the bill.
+
+places:
+  - name: Museo del Prado
+    relation: Holds Juan Bautista Maíno’s The Recapture of Bahía de Todos los Santos (1634–35), painted for the Hall of Realms.
+    location: Madrid
+    url: https://www.museodelprado.es/
+    sources: [rah-fadrique-de-toledo, prado-maino-bahia]
+  - name: Salvador da Bahia
+    relation: Capital of Portuguese Brazil, taken by the Dutch in 1624 and recovered by the combined armada on 1 May 1625.
+    location: Bahia, Brazil
+    sources: [brasilhis-fadrique-de-toledo, rah-fadrique-de-toledo]
+
+related: [alvaro-de-bazan, blas-de-lezo, francisco-arias-de-bobadilla]
+
+seo:
+  description: In 1625 a combined Castilian–Portuguese armada under Fadrique de Toledo crossed the Atlantic and retook Salvador da Bahia from the Dutch.
 
 review:
-  status: placeholder
+  status: sourced
 
 sources:
-  - id: research-dossier
-    title: 'Spanish Explorers and Military Leaders Who Reshaped the Early Modern World (research dossier)'
-    institution: Legends of Spain
-    year: '2026'
-    type: reference
-    notes: 'Working dossier; to be replaced by the primary and scholarly sources it cites.'
+  - id: rah-fadrique-de-toledo
+    title: Toledo Osorio, Fadrique de. Marqués de Villanueva de Valdueza (I)
+    author: Rafael Rodríguez-Moñino Soriano
+    institution: Real Academia de la Historia, Diccionario Biográfico Español (Historia Hispánica)
+    url: https://historia-hispanica.rah.es/biografias/42934
+    accessed: '2026-11-02'
+    type: institutional
+    notes: >-
+      Header gives Naples, 30.V.1580 – Madrid, 19.XII.1634 (the body text says he died where he was
+      born, an internal inconsistency). The page’s RAH timeline events give 12,000 men and 52 vessels,
+      news reaching Madrid on 6 July, and Maíno’s painting for the Salón de Reinos.
+  - id: brasilhis-fadrique-de-toledo
+    title: Fadrique de Toledo Osorio
+    author: Irene Vicente Martín
+    institution: BRASILHIS Dictionary, Universidad de Salamanca
+    url: https://brasilhisdictionary.usal.es/en/fadrique-alvarez-de-toledo-osorio-2-2/
+    accessed: '2026-11-02'
+    type: academic
+    notes: Argues for birth c. 1589; gives 62 ships and 12,563 soldiers; gives his death as 1634 with two different days.
+  - id: schwartz-review-2024
+    title: Review of Santos Pérez, Vicente Martín and Rodrigues-Moura (eds.), Salvador de Bahía 1625. La “Jornada de Brasil” en las noticias, las relaciones y el teatro
+    author: Stuart B. Schwartz
+    publisher: Cuadernos de Historia Moderna 49(2)
+    year: '2024'
+    url: https://dx.doi.org/10.5209/chmo.98018
+    accessed: '2026-11-02'
+    type: academic
+  - id: iglesias-magalhaes-2010
+    title: A relação do Engenho de Sergipe do Conde em 1625
+    author: Pablo Antonio Iglesias Magalhães
+    publisher: Afro-Ásia 41, Universidade Federal da Bahia
+    year: '2010'
+    url: https://www.redalyc.org/pdf/770/77020005007.pdf
+    accessed: '2026-11-02'
+    type: academic
+    notes: Edits a 1625 Jesuit report on a Bahian sugar mill; discusses enslaved Africans’ flight during the occupation.
+  - id: monteiro-2024
+    title: 'Minerva e a Virgem Maria: a expulsão dos holandeses na tela de Juan Bautista Maíno e na cópia doada aos baianos'
+    author: Nilson Magalhães Monteiro
+    publisher: ArtCultura 26(48)
+    year: '2024'
+    url: https://seer.ufu.br/index.php/artcultura/article/view/75982
+    accessed: '2026-11-02'
+    type: academic
+    notes: Abstract page consulted; studies the tapestry scene in Maíno’s painting and the copy given to Salvador in 1950.
+  - id: prado-maino-bahia
+    title: The Recapture of Bahía de Todos los Santos (Juan Bautista Maíno, 1634–1635)
+    institution: Museo del Prado
+    url: https://www.museodelprado.es/en/the-collection/art-work/the-recapture-of-bahia-de-todos-los-santos/6097f5ec-0faa-46b4-bee6-aa48043ab2c1
+    accessed: '2026-11-02'
+    type: institutional
+    notes: >-
+      The page was behind a bot-verification screen when accessed and could not be read in full; the
+      statement that the scene is absent from the accounts and draws on Lope de Vega’s play was read
+      in the search-engine extract of this page. A human reviewer should confirm the wording.
 
 media:
   - id: portrait
-    alt: 'Portrait of Fadrique de Toledo — to be selected'
+    alt: Fadrique de Toledo, detail from Juan Bautista Maíno’s painting The Recapture of Bahía de Todos los Santos
     kind: historical
-    title: '[Portrait to be selected]'
-    license: '[To verify]'
-    attribution: '[To verify]'
+    title: The Recapture of Bahía de Todos los Santos (detail showing Fadrique de Toledo)
+    creator: Juan Bautista Maíno
+    date: 1634–1635
+    posthumous: true
+    institution: Museo del Prado, Madrid
+    sourceUrl: https://commons.wikimedia.org/wiki/File:La_recuperaci%C3%B3n_de_Bah%C3%ADa,_Ma%C3%ADno.jpg
+    license: Public domain (PD-old-100, as stated on Wikimedia Commons)
+    attribution: Juan Bautista Maíno, The Recapture of Bahía de Todos los Santos, Museo del Prado
+    notes: >-
+      Commissioned at the end of 1634 and finished in 1635, so almost certainly completed after
+      Fadrique’s death in December 1634. The surrounding scene is an invention; the figure is meant as
+      his likeness. Alternative: the detail of Félix Castelo’s Recapture of St Kitts (Prado, P000654).
+      Spanish LPI art. 128 may protect non-creative photographs of paintings for 25 years; prefer the
+      Prado’s own image terms or an old reproduction.

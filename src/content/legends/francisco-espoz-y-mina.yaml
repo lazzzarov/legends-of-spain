@@ -1,70 +1,270 @@
-# PLACEHOLDER — only name, dates, place, role and achievement come from the research
-# dossier (docs/research/20261102_deep-research.md). Everything in [brackets] is still to be written.
+# SOURCED DRAFT — researched 2026-11-02, mainly from the RAH Diccionario Biográfico entry (Andrés
+# Cassinello Pérez), which draws on Espoz y Mina's service record and Memorias, and from a review of
+# Charles Esdaile's revisionist study of the guerrilla war. Archival records are not consulted directly.
+# Research notes: production/francisco-espoz-y-mina/research.md
 
 order: 14
 name:
-  display: 'Francisco Espoz y Mina'
+  display: Francisco Espoz y Mina
+  full: Francisco Espoz y Mina Ilundain
+  aka: [Francisco Espoz Ilundain, Mina]
 dates:
-  born: { year: 1781 }
-  died: { year: 1836 }
+  born: { year: 1781, month: 6, day: 17 }
+  died: { year: 1836, month: 12, day: 24 }
 origin:
-  place: 'Idocin'
-  region: 'Navarre'
-role: 'Guerrilla commander'
+  place: Idocin
+  region: Navarre
+role: Guerrilla commander, later liberal general
 categories: [land]
 centuries: [18, 19]
-values: [determination, ingenuity]
-tagline: 'He turned scattered guerrilla bands into an organized force behind French lines.'
-hook: '[Hook — a documented moment of tension, 40–70 words. To be written.]'
-mainAchievement: 'Navarre campaigns, 1810–1813'
+values: [determination, ingenuity, leadership, resilience]
+tagline: He turned a scattered guerrilla band into an army with its own taxes, courts and schools, and then tried to overthrow his king.
+hook: >-
+  On 29 March 1810 French troops surprised the Navarrese guerrillas at Labiano and captured their
+  young leader, Javier Mina. His uncle Francisco Espoz slipped away with six men. They chose him as
+  their chief, although he had never commanded anyone. Within weeks he had talked some four hundred
+  more guerrillas into following him.
+mainAchievement: Built and led the Navarre Division against the French occupation, 1810–1814
 portrait: portrait
 
 chapters:
   - key: beginning
     title: The Beginning
-    body: '[Who they were and how the story began — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Francisco Espoz y Mina was born on 17 June 1781 in Idocin, Navarre, into a family of well-off
+      farmers. When French troops took control of Pamplona in February 1808, he did not rush to join
+      the bands forming in the countryside. In February 1809 he enlisted in a volunteer battalion at
+      Jaca. When its citadel surrendered, he climbed down the walls, went home and joined the
+      guerrilla band of his nephew Javier Mina as an ordinary soldier.
+    sources: [rah-espoz-y-mina]
     status: verified
   - key: challenge
     title: The Challenge
-    body: '[The extraordinary obstacle — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      On 29 March 1810 the French surprised the band at Labiano and captured Javier Mina. Espoz
+      escaped with six men, who chose him as leader although he had never held command. At Lacunza he
+      persuaded some 400 more guerrillas to follow him. He then fought on two fronts: against the
+      French, and against rival bands that were closer to banditry. In July 1810 he captured one
+      rival chief, Echeverría, at Estella and had him shot.
+    sources: [rah-espoz-y-mina]
     status: verified
   - key: odds
     title: Against the Odds
-    body: '[What made it so difficult — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Espoz answered scarcity with administration. To pay, clothe and feed his men without
+      plundering, he set up customs posts on roads and frontier passes and collected tithes and state
+      taxes. He also ran mobile arms workshops and hospitals, and even set up courts. Priests and
+      mayors were made to send him intelligence, carried by couriers who passed messages on by word of
+      mouth. After his infantry was almost destroyed at Belorado in 1810, he drilled his men and
+      founded officer schools.
+    sources: [rah-espoz-y-mina]
     status: verified
   - key: moment
     title: The Defining Moment
-    body: '[The most significant achievement — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      His trademark was the ambush. Before dawn on 25 May 1811 he hid his battalions on both sides of
+      the Arlabán pass to strike a French convoy. Each man had a single cartridge: one volley, then
+      the bayonet. Of an escort of about 1,200, only some 400 got back to Vitoria, and around 1,000
+      Spanish and British prisoners were freed. In 1813 Wellington used Espoz to pin down French
+      forces before the battle of Vitoria.
+    sources: [rah-espoz-y-mina]
     status: verified
   - key: legacy
     title: The Legacy
-    body: '[Consequences, and why it matters today — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Peace brought no reward. The king refused him the viceroyalty of Navarre and sent his men home.
+      On the night of 25–26 September 1814 Espoz marched on Pamplona’s citadel in a failed coup; his
+      officers refused to follow, and he fled to France. He returned after the liberal revolution of
+      1820, fought the absolutists in Catalonia and, after years in exile, commanded against the
+      Carlists. He died in Barcelona on 24 December 1836.
+    more: >-
+      His 1814 rising is often counted as the first of the military pronunciamientos that marked
+      nineteenth-century Spain. His RAH biographer is sceptical about its motives: Espoz had shown
+      little attachment to the 1812 Constitution before then, and his troops never swore to it during
+      the war. Later he led professionalised former guerrillas into the liberal officer corps. He is
+      buried in the cloister of Pamplona Cathedral, and his widow, Juana de Vega, was made Countess of
+      Espoz y Mina in 1842.
+    sources: [rah-espoz-y-mina, portillo-esdaile-2007]
     status: verified
 
+facts:
+  - value: 29 Mar 1810
+    label: Takes command
+    explanation: After the French capture Javier Mina at Labiano, the survivors choose Espoz as their leader.
+    sources: [rah-espoz-y-mina]
+    status: verified
+  - value: 3,000–11,000
+    label: Men under his command, 1810–1814
+    explanation: These are his own figures, for the end of 1810 and for 1814. Navarre’s own 1817 returns counted about 3,500 Navarrese volunteers, so many of his men must have come from neighbouring regions or have been French deserters.
+    sources: [rah-espoz-y-mina]
+    status: disputed
+  - value: '40,000'
+    label: French casualties he claimed
+    explanation: His service record and memoirs claim about 40,000 French losses, 14,000 of them prisoners. His RAH biographer says these numbers should be treated with caution.
+    sources: [rah-espoz-y-mina, espoz-memorias]
+    status: disputed
+  - value: 14 Dec 1811
+    label: “War to the death”
+    explanation: In answer to French decrees against guerrillas’ families, he declares war without quarter and orders captured French soldiers to be hanged.
+    sources: [rah-espoz-y-mina]
+    status: verified
+  - value: 25–26 Sep 1814
+    label: The Pamplona rising
+    explanation: An improvised attempt to seize Pamplona’s citadel against Ferdinand VII. It fails, and Espoz flees to France.
+    sources: [rah-espoz-y-mina, enciclopedia-catalana]
+    status: verified
+
+myths:
+  - claim: The guerrilla war against Napoleon was a spontaneous rising of the whole Spanish people.
+    status: legend
+    explanation: >-
+      Modern historians, notably Charles Esdaile, show that most people tried to stay out of the war.
+      Those who joined often had concrete motives such as hunger or the passage of armies, and some
+      bands were little more than bandits. Espoz y Mina himself built a structured force that taxed,
+      policed and compelled the villages it controlled to supply intelligence.
+    sources: [portillo-esdaile-2007, rah-espoz-y-mina]
+  - claim: Guerrillas like Espoz y Mina drove the French out of Spain on their own.
+    status: legend
+    explanation: >-
+      Guerrillas wore down French forces and tied up troops, but they could not defeat regular armies
+      in open battle. The decisive victory at Vitoria in 1813 was won by Wellington’s Anglo-Spanish-
+      Portuguese army, which Espoz supported by pinning down French forces.
+    sources: [portillo-esdaile-2007, rah-espoz-y-mina]
+
 otherSide:
-  body: '[Controversies, human consequences and other perspectives — to be written from the dossier.]'
-  sources: [research-dossier]
+  body: >-
+    The romantic image of the guerrilla as the people in arms does not survive close study. Modern
+    historiography stresses that most Spaniards tried to stay out of the war, that some bands were
+    bandits, and that the regular Allied armies were decisive. Espoz y Mina was exceptional because he
+    imposed order, but that order rested on coercion. He made priests and mayors inform for him,
+    collected taxes and tithes (possibly double what the French collected) and had at least one rival
+    guerrilla chief shot. The war in Navarre was brutal on both sides. In 1811 French decrees made
+    guerrillas’ families responsible for their conduct, took hostages and put prices on the leaders’
+    heads. Espoz answered with “war to the death”, ordering prisoners to be hanged, although 300
+    gendarmes captured soon afterwards were spared. His casualty figures come largely from his own
+    memoirs. His later career repeated the pattern. In Catalonia in 1822 he razed Castellfollit. In
+    Navarre in 1834 he burned Lekaroz and had three of its inhabitants shot. As captain general of
+    Catalonia in 1836, he was held responsible for the reprisal execution of the Carlist leader
+    Ramón Cabrera’s mother, which caused widespread revulsion.
+  sources: [rah-espoz-y-mina, portillo-esdaile-2007, enciclopedia-catalana]
+
+video:
+  status: planned
+  description: >-
+    A 60-second dramatization: the capture of Javier Mina at Labiano, Espoz rebuilding the band, the
+    dawn ambush at the Arlabán pass and the failed march on Pamplona in 1814. It also shows the
+    coercion and reprisals behind the guerrilla war.
+  aiGenerated: true
+  tool: Higgsfield
+
+comic:
+  status: draft
+  panels:
+    - caption: Idocin, Navarre, 1781. Francisco Espoz is born into a family of well-off farmers.
+      sources: [rah-espoz-y-mina]
+    - caption: Jaca, 1809. When the citadel surrenders to the French, Espoz climbs down the walls and heads home.
+      sources: [rah-espoz-y-mina]
+    - caption: Labiano, 29 March 1810. The French capture Javier Mina. Six survivors choose his uncle as their new chief.
+      sources: [rah-espoz-y-mina]
+    - caption: Customs posts, taxes, arms workshops, hospitals and courts. Espoz builds a state behind French lines.
+      note: Priests and mayors were obliged to inform for him.
+      sources: [rah-espoz-y-mina]
+    - caption: Arlabán pass, before dawn, 25 May 1811. One cartridge each, one volley, then the bayonet.
+      sources: [rah-espoz-y-mina]
+    - caption: 14 December 1811. Answering French reprisals, Espoz proclaims war to the death, without quarter.
+      context: Both sides took hostages and executed prisoners.
+      sources: [rah-espoz-y-mina]
+    - caption: Night of 25–26 September 1814. Espoz marches on Pamplona against the king. His officers refuse to follow.
+      sources: [rah-espoz-y-mina]
+    - caption: Exile, return in 1820, exile again. He dies in Barcelona in 1836 and is buried in Pamplona Cathedral.
+      sources: [rah-espoz-y-mina]
+
+movie:
+  title: Behind the Lines
+  premise: A farmer with no experience of command inherits a broken guerrilla band and turns it into a shadow state.
+  conflict: Survive French columns many times his strength while feeding, paying and disciplining an army that officially does not exist.
+  challenge: The methods that hold his force together, including taxation, informers, executions and reprisals, are the same ones he is fighting against.
+  moments:
+    - text: Labiano, 29 March 1810 — Javier Mina is captured, and six survivors choose Espoz as their leader.
+      sources: [rah-espoz-y-mina]
+    - text: Arlabán pass, 25 May 1811 — a dawn ambush on a French convoy frees around a thousand prisoners.
+      sources: [rah-espoz-y-mina]
+    - text: Pamplona, 25–26 September 1814 — the guerrilla general turns against his king, and his own officers refuse to follow.
+      sources: [rah-espoz-y-mina]
+  theme: The war that makes a hero also teaches him its cruelties.
+
+places:
+  - name: Idocin
+    relation: Birthplace, on 17 June 1781.
+    location: Navarre
+    sources: [rah-espoz-y-mina]
+  - name: Labiano
+    relation: Where the French captured Javier Mina on 29 March 1810, leaving Espoz to take command.
+    location: Navarre
+    sources: [rah-espoz-y-mina]
+  - name: Arlabán pass
+    relation: Site of his ambushes of French convoys on 25 May 1811 and 12 April 1812.
+    location: Between Álava and Gipuzkoa
+    sources: [rah-espoz-y-mina]
+  - name: Puente la Reina and Pamplona
+    relation: Starting point and target of his failed rising of 25–26 September 1814.
+    location: Navarre
+    sources: [rah-espoz-y-mina]
+  - name: Pamplona Cathedral
+    relation: He is buried in the cathedral cloister.
+    location: Pamplona, Navarre
+    sources: [rah-espoz-y-mina]
+
+related: [francisco-javier-balmis]
+
+seo:
+  description: How Francisco Espoz y Mina built a guerrilla army with its own taxes and courts in Navarre, 1810–1814, and what it cost. The story in two minutes.
 
 review:
-  status: placeholder
+  status: sourced
 
 sources:
-  - id: research-dossier
-    title: 'Spanish Explorers and Military Leaders Who Reshaped the Early Modern World (research dossier)'
-    institution: Legends of Spain
-    year: '2026'
+  - id: rah-espoz-y-mina
+    title: Francisco Espoz y Mina Ilundain
+    author: Andrés Cassinello Pérez
+    institution: Real Academia de la Historia, Diccionario Biográfico Español
+    url: https://historia-hispanica.rah.es/biografias/14585-francisco-espoz-y-mina-ilundain
+    accessed: '2026-11-02'
+    type: institutional
+    notes: Main source for the narrative. The entry itself is based on the AHN (Estado), the Archivo General Militar de Segovia service record and the 1851 Memorias.
+  - id: portillo-esdaile-2007
+    title: 'La venganza de don Quijote. Los orígenes de la guerrilla en España (review of Charles J. Esdaile, España contra Napoleón. Guerrillas, bandoleros y el mito del pueblo en armas, Edhasa, 2006)'
+    author: José M. Portillo Valdés
+    publisher: Revista de Libros
+    year: '2007'
+    url: https://www.revistadelibros.com/la-guerrilla-durante-la-guerra-de-la-independencia-espanola/
+    accessed: '2026-11-02'
+    type: academic
+    notes: Scholarly review summarising Esdaile's revisionist arguments. Esdaile's book itself was not consulted directly.
+  - id: enciclopedia-catalana
+    title: Francisco Espoz e Ilundain
+    institution: Gran Enciclopèdia Catalana
+    url: https://www.enciclopedia.cat/gran-enciclopedia-catalana/francisco-espoz-e-ilundain
+    accessed: '2026-11-02'
     type: reference
-    notes: 'Working dossier; to be replaced by the primary and scholarly sources it cites.'
+    notes: Used for the 1814 rising, Castellfollit (1822) and the execution of Ramón Cabrera's mother (1836).
+  - id: espoz-memorias
+    title: Memorias del General Don Francisco Espoz y Mina, escritas por él mismo
+    author: Francisco Espoz y Mina
+    year: '1851–1852'
+    type: primary
+    notes: Not consulted directly. Cited through the RAH biography, which warns that its casualty figures should be read with caution.
 
 media:
   - id: portrait
-    alt: 'Portrait of Francisco Espoz y Mina — to be selected'
+    alt: Bust-length oil portrait of Francisco Espoz y Mina in military uniform
     kind: historical
-    title: '[Portrait to be selected]'
-    license: '[To verify]'
-    attribution: '[To verify]'
+    title: Portrait of Francisco Espoz y Mina
+    creator: Anonymous painter
+    date: c. 1815–1823 (as dated on Wikimedia Commons)
+    posthumous: false
+    institution: Museo del Romanticismo, Madrid (per the Commons source; not confirmed in the museum catalogue)
+    sourceUrl: https://commons.wikimedia.org/wiki/File:General_Francisco_Espoz_y_Mina_(by_anonymous_author).jpg
+    license: Public domain painting (Wikimedia Commons, Public Domain Mark 1.0). Check the photograph's rights under Spanish LPI art. 128 before use.
+    attribution: Anonymous, Portrait of Francisco Espoz y Mina, c. 1815–1823; photograph Museo del Romanticismo, via Wikimedia Commons
+    notes: An earlier Commons revision attributed this painting to Goya; the current attribution is anonymous. The alternative is José Vallespín y Aibar's 1858 posthumous portrait in the Palacio de Navarra.

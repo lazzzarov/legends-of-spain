@@ -10,7 +10,7 @@
 
 > **ELCANO:** Basque mariner in his early 30s (1519–1522), weathered face, short dark beard, dark hair under a simple dark wool cap; plain loose linen shirt, dark wool doublet, sash at the waist, knee breeches, simple leather shoes; no armour, no plumed hat, no officer's finery. Calm, watchful expression.
 >
-> ⚠️ No contemporary portrait of Elcano is known (to be confirmed). This is an interpretation; keep it consistent and never present it as his likeness.
+> No portrait from life exists (Fundación Elkano). This is an interpretation; keep it consistent and never present it as his likeness.
 
 > **THE VICTORIA:** a small 16th-century nao/carrack, high stern castle, three masts with square sails on the fore and main and a lateen mizzen, weathered and patched sails, no flags beyond a simple Castilian banner. ⚠️ Check rig details against Museo Naval material.
 
@@ -18,16 +18,16 @@
 
 ## Panels
 
-| #   | Caption (from the legend file)                               | Scene description                                                                                 | Prompt notes                                                        |
-| --- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| 1   | Getaria, on the Basque coast… born here in 1487.             | A small stone harbour town on a green headland, fishing boats, grey sea                           | Wide establishing shot; no people needed                            |
-| 2   | 1519. He joins Magellan's fleet as master of the Concepción… | ELCANO on deck checking rigging, crew working around him                                          | Mid shot; he is working, not commanding                             |
-| 3   | Mactan, 1521. Magellan is killed…                            | Ships anchored off a distant tropical shore, smoke rising; officers arguing on deck in silhouette | No depiction of the death itself                                    |
-| 4   | Elcano… emerges in command of the Victoria.                  | ELCANO at the stern of the VICTORIA, hand on the rail, looking out                                | Low angle, quiet; not triumphant                                    |
-| 5   | December 1521… the Victoria turns west…                      | ELCANO bent over a chart by lantern light; a route traced west around Africa                      | Close-up of hands and chart; note: Portuguese-controlled waters     |
-| 6   | Around the Cape of Good Hope and north…                      | The VICTORIA in heavy seas off a rocky cape, patched sails straining                              | Dramatic weather; ship small against the sea                        |
-| 7   | 6 September 1522… reaches Sanlúcar. The circle is closed.    | Dawn at a river mouth, the battered ship arriving, figures on shore                               | Warm light; the ship visibly worn                                   |
-| 8   | Elcano writes to Charles V…                                  | ELCANO writing a letter at a table; quill, wax, a globe in the background                         | Keep the letter's text unreadable (we do not reproduce its wording) |
+| #   | Caption (from the legend file)                                  | Scene description                                                                                 | Prompt notes                                                         |
+| --- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| 1   | Getaria, on the Basque coast… born here around 1487.            | A small stone harbour town on a green headland, fishing boats, grey sea                           | Wide establishing shot; no people needed                             |
+| 2   | August 1519. He sails from Seville as master of the Concepción… | ELCANO on deck checking rigging, crew working around him                                          | Mid shot; he is working, not commanding                              |
+| 3   | Mactan, April 1521. Magellan is killed…                         | Ships anchored off a distant tropical shore, smoke rising; officers arguing on deck in silhouette | No depiction of the death itself                                     |
+| 4   | Tidore, December 1521. The Trinidad is leaking…                 | Two ships at anchor off a volcanic island; one heeled over for repairs                            | The parting of the two ships; ELCANO small on the Victoria's deck    |
+| 5   | For about nine weeks gales hold the Victoria off the Cape…      | The VICTORIA in heavy seas off a rocky cape, patched sails straining                              | Dramatic weather; ship small against the sea                         |
+| 6   | Cape Verde, July 1522. The crew find their calendar…            | ELCANO with an axe at the anchor cable; a boat being seized near the shore in the distance        | Tension, not combat; the boat's crew are left behind                 |
+| 7   | 6 September 1522. The Victoria reaches Sanlúcar with eighteen…  | Dawn at a river mouth, the battered ship arriving, a handful of gaunt men on deck                 | Warm light; the ship visibly worn; about 18 figures, not a full crew |
+| 8   | Elcano writes to Charles V…                                     | ELCANO writing a letter at a table; quill, wax, a globe in the background                         | Keep the letter's text unreadable (we do not reproduce its wording)  |
 
 ## Production checklist
 

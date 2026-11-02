@@ -1,70 +1,257 @@
-# PLACEHOLDER — only name, dates, place, role and achievement come from the research
-# dossier (docs/research/20261102_deep-research.md). Everything in [brackets] is still to be written.
+# SOURCED DRAFT — researched 2026-11-02 from the RAH Diccionario Biográfico entry (as "Antonio de
+# Leiva"), the Academia de las Ciencias y las Artes Militares paper on Pavia (2025) and Britannica.
+# Garrison and army sizes conflict between sources and are given as ranges. Birthplace: the RAH and
+# ACAMI both say Navarre (the dossier's "Leyva, La Rioja" is not supported by them).
+# Research note: production/antonio-de-leyva/research.md
 
 order: 3
 name:
-  display: 'Antonio de Leyva'
+  display: Antonio de Leyva
+  full: Antonio de Leiva, first prince of Ascoli
+  aka: [Antonio de Leiva, Antonio de Leva]
 dates:
   born: { year: 1480 }
-  died: { year: 1536 }
+  died: { year: 1536, month: 9, day: 7 }
 origin:
-  place: 'Leyva'
-  region: 'La Rioja'
-role: 'Imperial commander'
+  place: Navarre
+  region: Kingdom of Navarre (some accounts say Leiva, La Rioja)
+role: Imperial commander
 categories: [land]
 centuries: [15, 16]
-values: [perseverance, leadership]
-tagline: 'His besieged garrison held on long enough for an empire to strike back.'
-hook: '[Hook — a documented moment of tension, 40–70 words. To be written.]'
-mainAchievement: 'Defense of Pavia, 1524–1525'
+values: [perseverance, leadership, ingenuity]
+tagline: His hungry, unpaid garrison held Pavia for four months, long enough for an empire to strike back.
+hook: >-
+  In the winter of 1524–25 the defenders of Pavia had no food to spare and no money. The German
+  mercenaries who made up much of the garrison were threatening to leave unless they were paid.
+  Antonio de Leyva billeted his soldiers on the townspeople, melted down the churches’ silver and
+  struck coins reading: “The Caesarians besieged in Pavia, 1524.”
+mainAchievement: Defence of Pavia, October 1524 – February 1525
 portrait: portrait
 
 chapters:
   - key: beginning
     title: The Beginning
-    body: '[Who they were and how the story began — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Antonio de Leyva was born in 1480, in Navarre according to the Real Academia de la Historia.
+      His father, Juan Martínez de Leiva, had been a general of the Catholic Monarchs. Antonio first
+      fought at twenty-one, against the morisco rising in the Alpujarras, then went to Naples to serve
+      under Gonzalo Fernández de Córdoba, the “Great Captain”. He was wounded at the battle of Ravenna
+      in 1512, a defeat for Spain and its allies.
+    sources: [rah-leiva, acami-pavia]
     status: verified
   - key: challenge
     title: The Challenge
-    body: '[The extraordinary obstacle — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      In 1524 Francis I of France crossed the Alps with a large army and retook Milan. The imperial
+      commander, the marquis of Pescara, was too weak to fight a pitched battle. He split his troops
+      among several towns and put Leyva in charge of Pavia, a walled city on the Ticino that controlled
+      the road to the Alps. In late October the French king arrived in person to besiege it, expecting
+      a quick surrender.
+    sources: [rah-leiva, acami-pavia, britannica-pavia]
     status: verified
   - key: odds
     title: Against the Odds
-    body: '[What made it so difficult — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      The garrison repulsed the November assaults and repaired the breaches. When the French tried to
+      divert the Ticino, heavy rain washed their dams away. When they destroyed the river mills,
+      Leyva already had hand mills ready. Shortage of pay was the real danger. Germans deserted, mutiny
+      threatened, and Leyva melted church silver to pay them. His sorties kept the besiegers on edge
+      all winter.
+    sources: [rah-leiva, acami-pavia]
     status: verified
   - key: moment
     title: The Defining Moment
-    body: '[The most significant achievement — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      In early February 1525 the imperial relief army reached Pavia. Before dawn on 24 February it broke
+      through the walls of the great park around Mirabello and attacked. Leyva was ill that day
+      and had himself carried to the city gate in a chair. From there his sortie of Spanish and German
+      soldiers pinned down the troops the French had left in the siege lines. Within hours the French army was
+      shattered and Francis I was a prisoner.
+    sources: [rah-leiva, acami-pavia, britannica-pavia]
     status: verified
   - key: legacy
     title: The Legacy
-    body: '[Consequences, and why it matters today — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Charles V rewarded Leyva with the government of the Milanese and the title of prince of Ascoli.
+      He held Milan in 1527–28, crippled by gout and carried into action on a litter. In 1536 he was
+      the emperor’s senior commander in the invasion of Provence. Plague swept the camp at Aix, and
+      he died there on 7 September 1536. Pavia gave the Habsburgs the upper hand in Italy, but the war
+      with France went on.
+    sources: [rah-leiva, britannica-pavia]
     status: verified
 
+facts:
+  - value: '24 Feb 1525'
+    label: Battle of Pavia
+    explanation: The relief army attacks, the garrison sorties, and Francis I of France is captured.
+    sources: [rah-leiva, acami-pavia, britannica-pavia]
+    status: verified
+  - value: '4'
+    unit: months
+    label: Length of the siege
+    explanation: >-
+      From the French arrival in late October 1524 (sources give 25 or 28 October) to the battle
+      of 24 February 1525.
+    sources: [rah-leiva, acami-pavia, britannica-pavia]
+    status: verified
+  - value: '800–7,000'
+    unit: soldiers
+    label: Size of the garrison
+    explanation: >-
+      Sources disagree sharply. The ACAMI paper lists 6,000 German landsknechts, 400 Spaniards,
+      500 Italians, 250 lances and 16 guns. The RAH entry says Leyva had only 300 men-at-arms and
+      500 infantry among 6,000 people in the city.
+    sources: [acami-pavia, rah-leiva]
+    status: disputed
+  - value: '20,000–28,000'
+    unit: men
+    label: The French army at the battle
+    explanation: >-
+      Britannica gives both figures. The army Francis led into Italy for the whole campaign is put at
+      over 40,000 (ACAMI) or 50,000 (RAH).
+    sources: [britannica-pavia, acami-pavia, rah-leiva]
+    status: disputed
+
+myths:
+  - claim: Pavia was a purely Spanish victory.
+    status: legend
+    explanation: >-
+      It was won by a multinational imperial army. According to the ACAMI paper, most of Leyva’s garrison were
+      German landsknechts, and the relief army had more Germans than Spaniards, together with Italian troops.
+      Its commanders included a Burgundian viceroy (Lannoy), a marquis from Naples (Pescara) and a
+      renegade French prince (Bourbon). Spanish arquebusiers did play a decisive part.
+    sources: [acami-pavia, britannica-pavia, rah-leiva]
+  - claim: Charles V once enlisted as “Carlos de Gante, soldier of the tercio of the valiant Antonio de Leyva.”
+    status: legend
+    explanation: >-
+      The RAH entry presents this as a story “told as certain, repeated by various historians”, but it
+      cites no contemporary source for it. It shows how Leyva was later remembered, not something we
+      can verify.
+    sources: [rah-leiva]
+
 otherSide:
-  body: '[Controversies, human consequences and other perspectives — to be written from the dossier.]'
-  sources: [research-dossier]
+  body: >-
+    Pavia’s victory had many fathers. The battle plan was Pescara’s, and the RAH entry gives him the
+    leading role. Lannoy commanded the army, Bourbon led the heavy cavalry, and Georg von Frundsberg’s
+    landsknechts destroyed the French army’s Black Band. The garrison itself was largely German and
+    kept together only by money. The citizens of Pavia paid much of the cost: soldiers were billeted on
+    them with orders to be fed, and their churches’ silver was melted down for wages. French losses
+    were heavy, and many fleeing soldiers drowned in the Ticino. Nor did the victory settle anything
+    for long. Francis repudiated the Treaty of Madrid as soon as he was free. In 1527 an unpaid imperial
+    army sacked Rome while Leyva held Milan. The 1536 Provence campaign, made on Leyva’s advice,
+    ended with the imperial army wrecked by plague.
+  sources: [rah-leiva, acami-pavia, britannica-pavia]
+
+video:
+  status: planned
+  description: >-
+    A 60-second dramatisation of the siege of Pavia: the French arrival, church silver melted into
+    siege coins, the failed diversion of the Ticino, and the garrison’s sortie on 24 February 1525.
+  aiGenerated: true
+  tool: Higgsfield
+
+comic:
+  status: draft
+  panels:
+    - caption: Naples, early 1500s. The young Antonio de Leyva learns his trade under the Great Captain.
+      sources: [rah-leiva]
+    - caption: Autumn 1524. Francis I crosses the Alps. Leyva is given Pavia, the key to Lombardy.
+      sources: [rah-leiva, acami-pavia]
+    - caption: November. The French assaults fail, and the defenders repair the breaches.
+      sources: [rah-leiva, acami-pavia]
+    - caption: The French try to divert the Ticino. Heavy rain sweeps their dams away.
+      sources: [rah-leiva, acami-pavia]
+    - caption: No money for the mercenaries. Church silver is melted and struck into coins.
+      context: The coins read “The Caesarians besieged in Pavia, 1524” (inscription as reported by the RAH, translated).
+      sources: [rah-leiva, acami-pavia]
+    - caption: February 1525. The relief army arrives outside the walls.
+      sources: [rah-leiva, acami-pavia]
+    - caption: 24 February. Ill, Leyva has himself carried to the gate in a chair, and the garrison sorties.
+      sources: [rah-leiva]
+    - caption: By the end of the day, the King of France is a prisoner.
+      sources: [rah-leiva, acami-pavia, britannica-pavia]
+
+movie:
+  title: The Key to Lombardy
+  premise: An ageing, gout-ridden captain must keep a starving, unpaid, multinational garrison together until help arrives.
+  conflict: Hold Pavia against a king’s army for a whole winter, without money, food or certainty of relief.
+  challenge: Keeping mercenaries loyal when the only thing that binds them is pay that isn’t there.
+  moments:
+    - text: Winter 1524–25. Church silver is melted and struck into siege coins to pay the German garrison.
+      sources: [rah-leiva, acami-pavia]
+    - text: The French attempt to divert the Ticino is washed away by heavy rain. Hand mills replace the destroyed river mills.
+      sources: [rah-leiva]
+    - text: 24 February 1525. Carried to the gate in a chair, Leyva launches the sortie as the relief army breaks into the park of Mirabello.
+      sources: [rah-leiva, acami-pavia]
+  theme: Endurance as a team effort. Glory shared among many nations.
+
+places:
+  - name: Pavia
+    relation: The walled city Leyva defended from October 1524 to February 1525, and the site of the battle of 24 February 1525.
+    location: Lombardy, Italy
+    sources: [rah-leiva, acami-pavia]
+  - name: Aix-en-Provence
+    relation: Where Leyva died of plague and gout in the imperial camp on 7 September 1536.
+    location: Provence, France
+    sources: [rah-leiva]
+  - name: Museo del Ejército
+    relation: Holds an oil portrait of Leyva painted in 1901 by Pedro González (inventory no. 20.018), probably copied from the Giovio collection portrait.
+    location: Toledo, Castile-La Mancha
+    sources: [rah-leiva]
+
+related: [francisco-de-sarmiento, alvaro-de-bazan, hernan-cortes]
+
+seo:
+  description: A hungry, unpaid, multinational garrison held Pavia for four months until the empire struck back. The story of Antonio de Leyva, 1525.
 
 review:
-  status: placeholder
+  status: sourced
 
 sources:
-  - id: research-dossier
-    title: 'Spanish Explorers and Military Leaders Who Reshaped the Early Modern World (research dossier)'
-    institution: Legends of Spain
-    year: '2026'
+  - id: rah-leiva
+    title: Antonio de Leiva
+    author: Vicente Alonso Juanola
+    institution: Real Academia de la Historia, Diccionario Biográfico Español (Historia Hispánica)
+    url: https://historia-hispanica.rah.es/biografias/25978-antonio-de-leiva
+    accessed: '2026-11-02'
+    type: institutional
+    notes: >-
+      Full text read. Gives birth in Navarre in 1480 and death at Aix-en-Provence on 7 September
+      1536. Its bibliography is mostly 19th–20th-century military history, and it cites no archival
+      sources. One passage on 1535–36 appears confused, so it was not used.
+  - id: acami-pavia
+    title: Batalla de Pavía
+    author: César Muro Benayas
+    institution: Academia de las Ciencias y las Artes Militares, Sección de Patrimonio Cultural Militar
+    year: '2025'
+    url: https://www.acami.es/wp-content/uploads/2025/02/Batalla-de-Pavia-web.pdf
+    accessed: '2026-11-02'
+    type: institutional
+    notes: Academic communication dated 6 January 2025. Read in full. Unreferenced narrative.
+  - id: britannica-pavia
+    title: Battle of Pavia
+    author: R. G. Grant and the Editors of Encyclopaedia Britannica
+    publisher: Encyclopaedia Britannica
+    url: https://www.britannica.com/event/Battle-of-Pavia
+    accessed: '2026-11-02'
     type: reference
-    notes: 'Working dossier; to be replaced by the primary and scholarly sources it cites.'
+    notes: >-
+      Gives the French army as 28,000 in the text and 20,000 in its loss summary (French 8,000
+      lost; Habsburg 1,000 of 23,000), hence the disputed range.
 
 media:
   - id: portrait
-    alt: 'Portrait of Antonio de Leyva — to be selected'
+    alt: Engraved bust portrait of Antonio de Leyva in armour, within an ornamental frame
     kind: historical
-    title: '[Portrait to be selected]'
-    license: '[To verify]'
-    attribution: '[To verify]'
+    title: Antonio de Leyva, conte di Monza
+    creator: Aliprando Caprioli
+    date: '1596–1600'
+    posthumous: true
+    institution: Biblioteca comunale di Trento
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Antonio_de_Leyva,_conte_di_Monza.jpg
+    license: CC0 (as stated on Wikimedia Commons)
+    attribution: Aliprando Caprioli, Ritratti di cento capitani illustri (Rome, 1596). Biblioteca comunale di Trento, via Wikimedia Commons.
+    notes: >-
+      Engraved some sixty years after Leyva’s death. Check the Trento record before use. Another
+      impression is held by the BNE (bdh-rd.bne.es, id 0000031747), whose Commons copy is
+      CC BY-SA 4.0.

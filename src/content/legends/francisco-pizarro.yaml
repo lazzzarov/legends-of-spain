@@ -1,70 +1,300 @@
-# PLACEHOLDER — only name, dates, place, role and achievement come from the research
-# dossier (docs/research/20261102_deep-research.md). Everything in [brackets] is still to be written.
+# SOURCED DRAFT — researched 2026-11-02. Every claim cites sources that were opened and read.
+# See production/francisco-pizarro/research.md for the claim → source table, disputed points and open questions.
+# Ethical framing: Cajamarca is stated plainly as a massacre of an unresisting retinue; the Andean civil war,
+# Andean allies, disease (disputed) and the human consequences carry equal weight with Pizarro's persistence.
 
 order: 4
 name:
-  display: 'Francisco Pizarro'
+  display: Francisco Pizarro
+  full: Francisco Pizarro González
+  aka: [Marqués de los Atabillos]
 dates:
-  born: { year: 1475, approx: true }
-  died: { year: 1541 }
+  born: { year: 1478, approx: true, display: 'c. 1475–1478' }
+  died: { year: 1541, month: 6, day: 26, display: '26 June 1541' }
 origin:
-  place: 'Trujillo'
-  region: 'Extremadura'
-role: 'Conquistador'
+  place: Trujillo
+  region: Cáceres, Extremadura
+role: Conquistador and governor of New Castile (Peru)
 categories: [land]
 centuries: [15, 16]
-values: [ambition]
-tagline: 'A small, Crown-sanctioned expedition entered an empire already torn by civil war.'
-hook: '[Hook — a documented moment of tension, 40–70 words. To be written.]'
-mainAchievement: 'Cajamarca, 1532; foundation of Lima, 1535'
+values: [ambition, determination]
+tagline: An illiterate soldier from Trujillo seized an emperor in an ambush — inside an Andean world already torn by civil war.
+hook: >-
+  Late on 16 November 1532, fewer than two hundred Spaniards hid in the buildings around the great
+  square of Cajamarca. Atahualpa, fresh from victory in a war of succession, was carried in on a
+  litter amid thousands of attendants. Within about half an hour, by the account of Pizarro’s own
+  secretary, some two thousand of them lay dead and the Inca was a prisoner.
+mainAchievement: Capture of Atahualpa at Cajamarca, 1532; foundation of Lima, 1535
 portrait: portrait
 
 chapters:
   - key: beginning
     title: The Beginning
-    body: '[Who they were and how the story began — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Francisco Pizarro was born around 1478 in Trujillo, Extremadura, the illegitimate son of a
+      hidalgo and a servant, Francisca González. He grew up poor and never learned to read. In 1502
+      he sailed for Hispaniola and spent two decades as a soldier in the Caribbean and Panama. He was
+      with Vasco Núñez de Balboa when Europeans first saw the Pacific in 1513 — and five years later
+      arrested Balboa on the governor’s orders.
+    sources: [rah-pizarro]
     status: verified
   - key: challenge
     title: The Challenge
-    body: '[The extraordinary obstacle — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      In Panama, Pizarro formed a company with Diego de Almagro and the cleric Hernando de Luque to
+      find a rich land rumoured to lie to the south. Voyages from 1524 brought hunger, deaths and
+      battles along the mangrove coast; Pizarro was wounded seven times. In 1527, stranded on the
+      island of Gallo, he refused a governor’s order to return. Only thirteen men stayed with him.
+    more: >-
+      Their persistence paid off at Tumbes, an Inca town on the coast, where they saw clear signs of a
+      great and wealthy state. Pizarro then sailed to Spain to negotiate directly with the Crown,
+      leaving his partners in Panama.
+    sources: [rah-pizarro, xerez-relacion]
     status: verified
   - key: odds
     title: Against the Odds
-    body: '[What made it so difficult — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      The Capitulación de Toledo of 26 July 1529 made Pizarro governor of a land not yet conquered.
+      In January 1531 he left Panama with about 180 men. The Andean world he entered was in crisis:
+      after the death of the Inca Huayna Capac, his sons Huáscar and Atahualpa had fought a war of
+      succession, and peoples ruled from Cuzco, such as the Huancas and Chachapoyas, saw in the
+      newcomers allies against Inca rule.
+    more: >-
+      Huayna Capac died in an epidemic in the late 1520s. It is often identified as smallpox carried
+      ahead of the Spaniards, but historians such as Robert McCaa have questioned that diagnosis and
+      argue that smallpox became a major killer in the Andes only decades later. By November 1532
+      Atahualpa’s generals had defeated and captured Huáscar.
+    sources: [rah-pizarro, mccaa-smallpox, xerez-relacion]
     status: verified
   - key: moment
     title: The Defining Moment
-    body: '[The most significant achievement — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      On 16 November 1532 Atahualpa entered the square of Cajamarca on a gilded litter. The friar
+      Vicente de Valverde addressed him and handed him a book; when Atahualpa let it fall, Valverde
+      gave the agreed signal. Guns fired and horsemen charged into the crowd. Pizarro’s secretary,
+      Francisco de Xerez, wrote that no Indian raised a weapon against a Spaniard. The lords carrying
+      the litter were killed and Atahualpa was seized.
+    more: >-
+      Xerez estimated that some 2,000 people were killed, not counting the wounded, and that only
+      nightfall stopped the slaughter. The next day the Spaniards plundered Atahualpa’s camp and took
+      captured men and women as servants. Later writers, Spanish and Andean, retold the scene of the
+      book again and again to argue about whether the conquest was lawful.
+    sources: [xerez-relacion, maccormack-atahualpa, rah-pizarro]
     status: verified
   - key: legacy
     title: The Legacy
-    body: '[Consequences, and why it matters today — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Atahualpa delivered a vast ransom in gold and silver, then was tried on charges built partly on
+      an unproven rumour and garrotted on 26 July 1533. With Andean allies, Pizarro’s forces entered
+      Cuzco in November 1533; on 18 January 1535 he founded Lima. Manco Inca’s rising of 1536 besieged
+      both cities. The conquerors then fought each other: Almagro was executed in 1538, and his
+      followers killed Pizarro in Lima on 26 June 1541.
+    more: >-
+      His remains are in Lima Cathedral; a lead box holding his skull was found in the crypt in 1977
+      and the remains were moved to a remodelled chapel in 1985. After the siege of Cuzco, Manco Inca
+      and his followers withdrew to the mountains of Vilcabamba.
+    sources: [rah-pizarro]
     status: verified
 
+facts:
+  - value: 26 Jul 1529
+    label: Capitulación de Toledo
+    explanation: The Crown names Pizarro governor, adelantado and alguacil mayor of Peru before it is conquered.
+    sources: [rah-pizarro]
+    status: verified
+  - value: 160–200
+    label: Spaniards at Cajamarca
+    explanation: Accounts differ slightly; all agree the Spanish force was fewer than two hundred men, horse and foot.
+    sources: [rah-pizarro, maccormack-atahualpa]
+    status: disputed
+  - value: c. 2,000
+    label: People killed in the square of Cajamarca
+    explanation: >-
+      The estimate of Francisco de Xerez, Pizarro’s secretary, who also wrote that the Inca’s people
+      raised no weapons. No independent count exists.
+    sources: [xerez-relacion]
+    status: disputed
+  - value: 26 Jul 1533
+    label: Atahualpa is executed
+    explanation: Garrotted at Cajamarca after receiving baptism to avoid being burnt.
+    sources: [rah-pizarro]
+    status: verified
+  - value: 18 Jan 1535
+    label: Lima is founded
+    explanation: As the Ciudad de los Reyes, capital of Pizarro’s governorship of New Castile.
+    sources: [rah-pizarro]
+    status: verified
+
+myths:
+  - claim: A handful of Spaniards with guns and horses conquered the Inca Empire.
+    status: legend
+    explanation: >-
+      Pizarro’s men exploited an empire divided by a war of succession, and many Andean peoples —
+      Huancas and Chachapoyas among them — sided with the Spaniards against Cuzco’s rule. Nor was
+      Cajamarca the end: Manco Inca’s rising of 1536 besieged Cuzco and Lima, and he and his followers
+      then held out in Vilcabamba.
+    sources: [rah-pizarro, maccormack-atahualpa]
+  - claim: On the island of Gallo, Pizarro drew a line in the sand and thirteen men crossed it.
+    status: disputed
+    explanation: >-
+      That thirteen men stayed with Pizarro in 1527 is documented, and the Crown later rewarded them.
+      The dramatic line drawn with a sword is a story in which, as the Real Academia de la Historia’s
+      biography puts it, history is mixed with legend.
+    sources: [rah-pizarro]
+
 otherSide:
-  body: '[Controversies, human consequences and other perspectives — to be written from the dossier.]'
-  sources: [research-dossier]
+  body: >-
+    Cajamarca was a planned ambush on a retinue that, by the Spaniards’ own account, did not fight
+    back. Captives were handed out as servants, Atahualpa was executed after paying his ransom, and
+    Andean gold and silverwork was melted down and shared out, with the Crown taking its fifth. The
+    conquest depended on Andean politics — a war of succession and peoples such as the Huancas and
+    Chachapoyas who sided with the Spaniards against Cuzco. Pizarro then granted Andean people to
+    his followers in encomienda, as tribute payers and labourers. Over the following century the
+    Indigenous population of Peru collapsed; historians debate the weight of epidemics against war,
+    destruction and oppression, but the collapse itself is not in doubt. Andean resistance continued,
+    from Manco Inca’s siege of Cuzco to his retreat to Vilcabamba.
+  sources:
+    [xerez-relacion, rah-pizarro, maccormack-atahualpa, mccaa-smallpox, cook-demographic-collapse]
+
+video:
+  status: planned
+  description: >-
+    A 60-second film of Cajamarca told from two sides — the Spanish hiding places around the square
+    and Atahualpa’s procession — from the silent book to the ransom room, with the killing shown as a
+    massacre, not a battle.
+  aiGenerated: true
+  tool: Higgsfield
+
+comic:
+  status: draft
+  panels:
+    - caption: Trujillo, Extremadura. Francisco Pizarro, the illegitimate son of a hidalgo, grows up poor and never learns to read.
+      sources: [rah-pizarro]
+    - caption: 1527, the island of Gallo. Ordered home, Pizarro refuses. Thirteen men stay with him.
+      note: The line drawn in the sand is a later legend — do not show it as fact.
+      sources: [rah-pizarro]
+    - caption: Toledo, 26 July 1529. The Crown names him governor of a land he has not yet conquered.
+      sources: [rah-pizarro]
+    - caption: The Andes, 1532. Atahualpa has defeated his brother Huáscar in a war of succession.
+      sources: [rah-pizarro, xerez-relacion]
+    - caption: Cajamarca, 16 November 1532. Fewer than two hundred Spaniards hide in the buildings around the square.
+      sources: [maccormack-atahualpa, rah-pizarro]
+    - caption: The friar Valverde hands Atahualpa a book. It falls. The signal is given.
+      sources: [maccormack-atahualpa, xerez-relacion]
+    - caption: The Inca’s attendants do not fight back. By Xerez’s count, some two thousand are killed. Atahualpa is taken.
+      note: Show the aftermath and the empty litter, not the violence as spectacle.
+      sources: [xerez-relacion]
+    - caption: Lima, 26 June 1541. Pizarro is killed in his own house by followers of his former partner, Almagro.
+      sources: [rah-pizarro]
+
+movie:
+  title: The Book and the Square
+  premise: >-
+    An illiterate soldier and an Inca emperor meet in a square at Cajamarca — each convinced he holds
+    the advantage, neither able to understand the other.
+  conflict: >-
+    A tiny, Crown-licensed expedition against a ruler who has just won a civil war, with Andean
+    peoples deciding which side to back.
+  challenge: Showing persistence and audacity without turning a massacre into a triumph.
+  moments:
+    - text: The island of Gallo, 1527 — ordered home, Pizarro refuses, and thirteen men stay with him.
+      sources: [rah-pizarro]
+    - text: Cajamarca, 16 November 1532 — Valverde’s book falls, the ambush is sprung and Atahualpa is seized.
+      sources: [maccormack-atahualpa, xerez-relacion]
+    - text: Cajamarca, 26 July 1533 — after delivering a vast ransom in gold and silver, Atahualpa is garrotted.
+      sources: [rah-pizarro]
+  theme: Ambition that wins everything and destroys almost everyone it touches.
+
+places:
+  - name: Trujillo
+    relation: Birthplace of Francisco Pizarro, c. 1478.
+    location: Cáceres, Extremadura
+    sources: [rah-pizarro]
+  - name: Cajamarca
+    relation: Where Atahualpa was captured on 16 November 1532 and executed on 26 July 1533.
+    location: Cajamarca, Peru
+    sources: [xerez-relacion, maccormack-atahualpa, rah-pizarro]
+  - name: Cuzco
+    relation: The Inca capital, entered by Pizarro’s forces on 14 November 1533 and besieged by Manco Inca in 1536.
+    location: Cusco, Peru
+    sources: [rah-pizarro]
+  - name: Lima Cathedral
+    relation: Pizarro founded Lima on 18 January 1535; his remains lie in a chapel of the cathedral.
+    location: Lima, Peru
+    sources: [rah-pizarro]
+
+related: [hernan-cortes, francisco-de-orellana]
+
+seo:
+  description: Francisco Pizarro, Cajamarca and the fall of the Inca state — an ambush, a civil war, Andean allies and the human cost of conquest.
 
 review:
-  status: placeholder
+  status: sourced
 
 sources:
-  - id: research-dossier
-    title: 'Spanish Explorers and Military Leaders Who Reshaped the Early Modern World (research dossier)'
-    institution: Legends of Spain
-    year: '2026'
-    type: reference
-    notes: 'Working dossier; to be replaced by the primary and scholarly sources it cites.'
+  - id: rah-pizarro
+    title: Francisco Pizarro González (Diccionario Biográfico Español)
+    author: Héctor López Martínez
+    institution: Real Academia de la Historia
+    url: https://historia-hispanica.rah.es/biografias/36098-francisco-pizarro-gonzalez
+    accessed: '2026-11-02'
+    type: institutional
+    notes: >-
+      Read via the site’s public biography data. Admiring in tone (it calls Pizarro’s treatment of the
+      captive Atahualpa “generous”); used for dates, places and events, not for its judgements.
+  - id: xerez-relacion
+    title: Verdadera relación de la conquista del Perú (1534)
+    author: Francisco de Xerez
+    publisher: Biblioteca Antológica (digital transcription)
+    url: https://www.biblioteca-antologica.org/es/wp-content/uploads/2019/08/LOPEZ-DE-XEREZ-Verdadera-relaci%C3%B3n-de-la-conquista-del-Per%C3%BA.pdf
+    year: '1534'
+    accessed: '2026-11-02'
+    type: primary
+    notes: >-
+      Eyewitness account by Pizarro’s secretary, written to justify the conquest. Read in a modern
+      digital transcription, not the 1534 Seville printing; figures are his estimates.
+  - id: maccormack-atahualpa
+    title: Atahualpa y el libro
+    author: Sabine G. MacCormack
+    publisher: Revista de Indias 48 (184), 1988, CSIC
+    url: https://revistadeindias.revistas.csic.es/index.php/revistadeindias/article/download/1406/1518/1941
+    year: '1988'
+    accessed: '2026-11-02'
+    type: academic
+  - id: mccaa-smallpox
+    title: 'Why Blame Smallpox? The Death of the Inca Huayna Capac and the Demographic Destruction of Tawantinsuyu (Ancient Peru)'
+    author: Robert McCaa, Aleta Nimlos, Teodoro Hampe Martínez
+    institution: University of Minnesota
+    url: https://users.pop.umn.edu/~rmccaa/aha2004/whypox.htm
+    year: c. 2004
+    accessed: '2026-11-02'
+    type: academic
+    notes: Conference paper (American Historical Association, 2004, as the URL indicates); argues against the smallpox diagnosis.
+  - id: cook-demographic-collapse
+    title: 'Demographic Collapse: Indian Peru, 1520–1620'
+    author: Noble David Cook
+    publisher: Cambridge University Press
+    url: https://www.cambridge.org/core/books/demographic-collapse/conclusion/78C6B02AB5D08E7797452430330F9201
+    year: '1981'
+    accessed: '2026-11-02'
+    type: academic
+    notes: Only the publisher’s chapter page and table of contents were accessible; cited for the existence and scale of the collapse, not for specific figures.
+  - id: capitulacion-toledo
+    title: Capitulación de Toledo, 26 July 1529
+    institution: Archivo General de Indias (shelfmark given in the research dossier as LIMA,565,L.1)
+    type: primary
+    notes: Not consulted directly; its date and terms are taken from the RAH biography.
 
 media:
   - id: portrait
-    alt: 'Portrait of Francisco Pizarro — to be selected'
+    alt: Nineteenth-century oil portrait of Francisco Pizarro in a black plumed hat, by Amable-Paul Coutan
     kind: historical
-    title: '[Portrait to be selected]'
-    license: '[To verify]'
-    attribution: '[To verify]'
+    title: Francisco Pizarro, conqueror (1475–1541)
+    creator: Amable-Paul Coutan
+    date: 1834–1835
+    posthumous: true
+    institution: Musée national des châteaux de Versailles et de Trianon
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Portrait_of_Francisco_Pizarro.jpg
+    license: Public domain (PD-art, author died more than 100 years ago); confirm the museum photograph’s terms
+    attribution: Amable-Paul Coutan, Francisco Pizarro, 1835. Château de Versailles
+    notes: Imagined likeness commissioned by Louis-Philippe for the historical galleries of Versailles; no portrait from life is known.

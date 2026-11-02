@@ -1,6 +1,8 @@
 import { expect, test } from '@playwright/test';
+import { loadLegend, sourceNumber } from './content';
 
 const ELCANO = 'legends/juan-sebastian-elcano/';
+const elcano = loadLegend('juan-sebastian-elcano');
 const cards = (page: import('@playwright/test').Page) =>
   page.locator('[data-gallery] > li:not([hidden])');
 
@@ -74,11 +76,12 @@ test.describe('story navigation', () => {
 test.describe('citations', () => {
   test('preview the source on keyboard focus', async ({ page }) => {
     await page.goto(ELCANO);
-    const marker = page.locator('#moment').getByRole('link', { name: 'Source 2' });
+    const n = sourceNumber(elcano, 'elcano-letter-1522');
+    const marker = page.locator('#legacy').getByRole('link', { name: `Source ${n}` });
     await marker.focus();
     const tip = page.locator('#citation-preview');
     await expect(tip).toBeVisible();
-    await expect(tip).toContainText('Letter of Juan Sebastián Elcano to Charles V');
+    await expect(tip).toContainText(elcano.sources[n - 1]!.title.slice(0, 40));
     await expect(marker).toHaveAttribute('aria-describedby', 'citation-preview');
     await page.keyboard.press('Escape');
     await expect(tip).toBeHidden();

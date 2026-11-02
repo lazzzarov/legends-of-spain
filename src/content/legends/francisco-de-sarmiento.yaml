@@ -1,70 +1,283 @@
-# PLACEHOLDER — only name, dates, place, role and achievement come from the research
-# dossier (docs/research/20261102_deep-research.md). Everything in [brackets] is still to be written.
+# SOURCED DRAFT — researched 2026-11-02 from the RAH Diccionario Biográfico entry, José M. Floristán's
+# 2023 edition of the Alcaraz–Tapia relation (which prints the full text) and Ricardo González
+# Castrillo's 2013 survey of the Spanish sources. Archival items cited by those works were not
+# consulted directly. Research note: production/francisco-de-sarmiento/research.md
 
 order: 5
 name:
-  display: 'Francisco de Sarmiento'
+  display: Francisco de Sarmiento
+  full: Francisco Sarmiento de Mendoza y Manuel
 dates:
-  born: { year: 1498, approx: true }
-  died: { year: 1539 }
+  born: { year: 1498, approx: true, display: 'c. 1498' }
+  died: { year: 1539, month: 8, display: '6 or 7 August 1539' }
 origin:
-  place: 'Burgos (probable)'
-  region: 'Castile'
-role: 'Maestre de campo'
+  place: Burgos
+  region: Castile
+role: Maestre de campo
 categories: [land]
 centuries: [15, 16]
-values: [sacrifice, courage]
-tagline: 'Offered safe passage and payment, the garrison said no.'
-hook: '[Hook — a documented moment of tension, 40–70 words. To be written.]'
-mainAchievement: 'Held Castelnuovo against a far larger Ottoman force, 1539'
+values: [sacrifice, courage, leadership]
+tagline: Offered safe passage and twenty ducats a man, the garrison of Castelnuovo chose to fight.
+hook: >-
+  On 23 July 1539 a renegade Spaniard brought Castelnuovo a letter from the Ottoman land
+  commander: leave with your banners flying, sail to Apulia, and every soldier gets twenty
+  ducats. Francisco de Sarmiento put it to his captains, and they to their officers. Two survivors
+  later swore to the answer: they would rather die.
+mainAchievement: Held Castelnuovo against a far larger Ottoman force, July–August 1539
 portrait: portrait
 
 chapters:
   - key: beginning
     title: The Beginning
-    body: '[Who they were and how the story began — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Francisco Sarmiento was born around 1498 in Burgos, into a well-connected Castilian family.
+      From the age of eighteen he kept the tower and gate of Santa María, the city’s ceremonial
+      entrance. When Burgos rose in the Comunero revolt of 1520 he held the royal banner in the
+      parishes beside the castle. Rewarded with command of a company of three hundred men, he
+      fought in Navarre in 1521 and at the long siege of Fuenterrabía.
+    sources: [rah-sarmiento]
     status: verified
   - key: challenge
     title: The Challenge
-    body: '[The extraordinary obstacle — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      In 1529 he raised another company and followed Charles V to Italy. Over the next decade he
+      fought at Florence, marched to defend Vienna, held Coron in Greece and stormed La Goleta at
+      Tunis. In 1536 he became maestre de campo. Two years later his tercio sailed with the Holy
+      League fleet, which took the Ottoman port of Castelnuovo, on the Bay of Kotor, in October
+      1538. The garrison left to hold it was entirely Spanish, apart from a few light horsemen.
+    sources: [rah-sarmiento, gonzalez-castrillo-2013]
     status: verified
   - key: odds
     title: Against the Odds
-    body: '[What made it so difficult — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Castelnuovo was a weak place, overlooked by higher ground. Through the winter Sarmiento’s men
+      dug bastions, casemates and mines and patched the walls with what they could find. In June 1539,
+      hearing that Barbarossa was coming, he sent captains to Italy to beg for help. The viceroy’s
+      reply, which never reached him, shows that no relief was planned. In mid-July the Ottoman
+      fleet and army arrived. Estimates of their size vary enormously.
+    sources: [rah-sarmiento, floristan-2023, gonzalez-castrillo-2013]
     status: verified
   - key: moment
     title: The Defining Moment
-    body: '[The most significant achievement — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      The ultimatum was refused on 23 July. For a fortnight the guns pounded the town, and the
+      defenders beat back assault after assault. On 1 August a deserter told Barbarossa to aim
+      everything at the upper castle, which was then flattened. By 7 August the defences had
+      given way. According to the two corporals, Sarmiento, wounded and on horseback, was offered a
+      rope to climb into the lower castle. He refused and rode at the janissaries. His body was never
+      identified.
+    sources: [alcaraz-tapia-1539, floristan-2023, rah-sarmiento]
     status: verified
   - key: legacy
     title: The Legacy
-    body: '[Consequences, and why it matters today — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Several hundred defenders, along with women, children and merchants, were taken captive.
+      Charles V tried to ransom them, but some were still slaves in Constantinople years later.
+      Chroniclers and poets turned the siege into a byword for courage. The best evidence, though,
+      comes from two ordinary soldiers, Juan de Alcaraz and Juan de Tapia, who escaped and gave
+      sworn testimony at Andria, in Apulia, on 4 September 1539.
+    more: >-
+      Their statement survives in a copy in the Archivo de los Duques de Alba in Madrid. José M.
+      Floristán published it in full in 2023. It agrees with the chronicles in outline but differs
+      in details, and its huge figures for the Ottoman army and Ottoman losses served, as Floristán
+      notes, to underline both the inevitability of the defeat and the heroism of the defence.
+    sources: [gonzalez-castrillo-2013, floristan-2023, alcaraz-tapia-1539]
     status: verified
 
+facts:
+  - value: '23 Jul 1539'
+    label: The offer refused
+    explanation: >-
+      Safe passage to Apulia in Ragusan ships, banners flying, and twenty ducats for every soldier,
+      but no guns or munitions. The captains’ answer was unanimous.
+    sources: [alcaraz-tapia-1539, floristan-2023]
+    status: verified
+  - value: '2,500–4,000'
+    unit: defenders
+    label: Size of the Spanish garrison
+    explanation: >-
+      Sources disagree. Chronicles give 2,500, 3,000 or nearly 4,000 men, and one says fewer than
+      3,000 were left when the siege began. The RAH biography describes twelve companies of three
+      hundred men each, plus eighty-five light horsemen.
+    sources: [gonzalez-castrillo-2013, rah-sarmiento]
+    status: disputed
+  - value: '22,000–150,000'
+    unit: attackers
+    label: Size of the Ottoman force
+    explanation: >-
+      Andrea Doria’s report gives 18,000 Turks and 4,000 janissaries. Sandoval writes of 30,000
+      infantry by land plus the troops of the fleet. The two corporals claim 20,000 aboard ship and
+      130,000 by land. All agree the defenders were vastly outnumbered.
+    sources: [gonzalez-castrillo-2013, floristan-2023, alcaraz-tapia-1539]
+    status: disputed
+  - value: '200–800'
+    unit: survivors
+    label: Taken alive
+    explanation: >-
+      The corporals count about 400 captives. Sandoval says some 800 people of every kind survived,
+      women and boys included. A report of 23 August 1539 speaks of about 200 soldiers escaping.
+    sources: [floristan-2023, gonzalez-castrillo-2013]
+    status: disputed
+
+myths:
+  - claim: Sarmiento personally sent back the defiant reply “Let them come when they will.”
+    status: legend
+    explanation: >-
+      The nearest source is the corporals’ sworn statement. It reports the reply indirectly, as a
+      collective decision. Sarmiento consulted all his captains, the captains consulted their
+      officers, and they resolved to die in the service of God and the emperor, adding that the
+      enemy could come whenever they pleased. It was a council’s answer, not a single man’s line.
+    sources: [alcaraz-tapia-1539, floristan-2023]
+  - claim: Every defender of Castelnuovo died fighting.
+    status: legend
+    explanation: >-
+      Most of the garrison died, and the wounded were killed where they lay. But hundreds were taken
+      captive, among them several captains, the bishop and non-combatants. Some escaped or were later
+      ransomed. That is how the two corporals lived to tell the story.
+    sources: [floristan-2023, gonzalez-castrillo-2013]
+
 otherSide:
-  body: '[Controversies, human consequences and other perspectives — to be written from the dossier.]'
-  sources: [research-dossier]
+  body: >-
+    Castelnuovo was a tactical feat and a strategic dead end. It had been taken in 1538 to make up
+    for the League’s failure at Preveza, and Doria and Gonzaga had even promised to bring the
+    garrison home in spring. When Barbarossa came, Venice was already negotiating with the sultan,
+    and the RAH biography concludes that there was never any will to relieve or evacuate the men.
+    Whether their sacrifice was justified in practical terms, as González Castrillo puts it, is
+    another question. The cost fell on many people. The wounded were killed where they lay. Women,
+    children and merchants sheltering in the lower castle were enslaved, and the town was burned.
+    Some captives were reported still unransomed in Constantinople in the 1550s. The town had been
+    Ottoman, with a Slav population, before the Spaniards took it, and its capture in 1538 had
+    already produced some 1,600 prisoners. Casualty figures were inflated on every side. The
+    corporals put Ottoman dead at 40,000, while Doria’s own report says about 3,000.
+  sources: [rah-sarmiento, gonzalez-castrillo-2013, floristan-2023]
+
+video:
+  status: planned
+  description: >-
+    A 60-second dramatisation of the siege of Castelnuovo: the arrival of Barbarossa’s fleet, the
+    refused offer of 23 July, the bombardment of the upper castle and the last stand of 7 August.
+  aiGenerated: true
+  tool: Higgsfield
+
+comic:
+  status: draft
+  panels:
+    - caption: Burgos. Francisco Sarmiento keeps the tower and gate of Santa María from the age of eighteen.
+      sources: [rah-sarmiento]
+    - caption: October 1538. The Holy League takes Castelnuovo, on the Bay of Kotor. Sarmiento’s Spaniards are left to hold it.
+      sources: [rah-sarmiento, gonzalez-castrillo-2013]
+    - caption: All winter they dig bastions and patch the walls. In June, word comes that Barbarossa is on his way.
+      sources: [rah-sarmiento]
+    - caption: July 1539. Barbarossa’s fleet fills the bay, and an army comes overland.
+      context: Estimates of the Ottoman strength range from about 22,000 to 150,000.
+      sources: [floristan-2023, gonzalez-castrillo-2013]
+    - caption: 23 July. An offer arrives. Leave with your banners and your clothes, sail to Apulia, and every soldier gets twenty ducats.
+      sources: [alcaraz-tapia-1539, floristan-2023]
+    - caption: Sarmiento consults his captains, and they consult their officers. The answer is unanimous.
+      note: >-
+        Reported speech from the corporals’ sworn statement, translated. Original: “que querían morir
+        en servicio de Dios y de su Maestá y que viniessen quando quisiessen”.
+      dialogue:
+        - speaker: The captains of Castelnuovo, as reported by Alcaraz and Tapia
+          text: They would rather die in the service of God and of His Majesty, and the enemy could come whenever they pleased.
+          kind: quotation
+          source: alcaraz-tapia-1539
+      sources: [alcaraz-tapia-1539]
+    - caption: From 1 August, the Ottoman guns turn on the upper castle and leave it flat enough to ride a horse into.
+      sources: [alcaraz-tapia-1539, floristan-2023]
+    - caption: 7 August. Wounded, Sarmiento refuses a rope into the lower castle and rides into the janissaries. He is never seen again.
+      sources: [alcaraz-tapia-1539, rah-sarmiento]
+
+movie:
+  title: When They Please
+  premise: >-
+    A garrison left behind on a hostile coast receives a generous offer to leave, and turns it down.
+  conflict: >-
+    Hold a weak fortress against an overwhelming Ottoman army and fleet, with no relief on the way.
+  challenge: Keeping a council of captains, and thousands of men, united in a choice that means death.
+  moments:
+    - text: 23 July 1539. The Ottoman ultimatum, and the unanimous refusal after Sarmiento consults his captains.
+      sources: [alcaraz-tapia-1539, floristan-2023]
+    - text: 1 August 1539. A deserting gunner advises Barbarossa to concentrate fire on the upper castle.
+      sources: [alcaraz-tapia-1539, gonzalez-castrillo-2013]
+    - text: 7 August 1539. Sarmiento, wounded and mounted, refuses a rope into the lower castle and charges the janissaries.
+      sources: [alcaraz-tapia-1539, rah-sarmiento]
+  theme: Courage and its price. Honour honestly weighed against a strategy that had already given up.
+
+places:
+  - name: Herceg Novi (historic Castelnuovo)
+    relation: The fortress town Sarmiento garrisoned in 1538–1539 and where he died. The RAH biography credits him with raising the sea tower.
+    location: Bay of Kotor, Montenegro
+    sources: [rah-sarmiento, floristan-2023]
+  - name: Arco de Santa María
+    relation: Sarmiento was alcaide of the tower and gate of Santa María la Blanca (today the Arco de Santa María) from the age of eighteen.
+    location: Burgos, Castile and León
+    sources: [rah-sarmiento]
+  - name: Cloister of the former Convento de San Juan
+    relation: Displays the preserved doorway of the house Sarmiento built in Burgos, which his daughter later sold to pay his debts.
+    location: Burgos, Castile and León
+    sources: [rah-sarmiento]
+
+related: [antonio-de-leyva, alvaro-de-bazan, francisco-arias-de-bobadilla]
+
+seo:
+  description: Offered safe passage and twenty ducats a man, the Spanish garrison of Castelnuovo chose to fight. The story of Francisco de Sarmiento, 1539.
 
 review:
-  status: placeholder
+  status: sourced
 
 sources:
-  - id: research-dossier
-    title: 'Spanish Explorers and Military Leaders Who Reshaped the Early Modern World (research dossier)'
-    institution: Legends of Spain
-    year: '2026'
-    type: reference
-    notes: 'Working dossier; to be replaced by the primary and scholarly sources it cites.'
+  - id: rah-sarmiento
+    title: Francisco Sarmiento de Mendoza y Manuel
+    author: Juan Luis Sánchez Martín
+    institution: Real Academia de la Historia, Diccionario Biográfico Español (Historia Hispánica)
+    url: https://historia-hispanica.rah.es/biografias/41145-francisco-sarmiento-de-mendoza-y-manuel
+    accessed: '2026-11-02'
+    type: institutional
+    notes: >-
+      Full text read, including the sources (AGS Estado legs. 1029, 1030 and 1181, Patronato Real
+      leg. 45; AHN Órdenes Militares) and the bibliography. The archival items it cites were not
+      consulted directly. Gives birth c. 1498 in Burgos and death on 6 August 1539. The old URL
+      dbe.rah.es/biografias/123978 redirects here.
+  - id: floristan-2023
+    title: Relación del asedio y toma de Castelnuovo (1539)
+    author: José M. Floristán
+    publisher: Cuadernos de Filología Clásica. Estudios griegos e indoeuropeos 33 (núm. especial), 237–244
+    year: '2023'
+    url: https://revistas.ucm.es/index.php/CFCG/article/view/90323
+    accessed: '2026-11-02'
+    type: academic
+    notes: DOI 10.5209/cfcg.90323. Introduction and full edition of the Alcaraz–Tapia relation (PDF read in full).
+  - id: alcaraz-tapia-1539
+    title: Relación de la pérdida de Castilnovo (sworn statement of Juan de Alcaraz and Juan de Tapia, Andria, 4 September 1539)
+    author: Juan de Alcaraz and Juan de Tapia
+    institution: Archivo de los Duques de Alba, Madrid, 21-17
+    url: https://revistas.ucm.es/index.php/CFCG/article/view/90323
+    accessed: '2026-11-02'
+    type: primary
+    notes: >-
+      Read in Floristán’s 2023 transcription (folios II–VIII). The manuscript itself was not
+      consulted. Another copy is in the Archives Générales du Royaume, Brussels.
+  - id: gonzalez-castrillo-2013
+    title: La pérdida de Castelnuovo en 1539 según fuentes españolas
+    author: Ricardo González Castrillo
+    publisher: Anaquel de Estudios Árabes 24, 73–84
+    year: '2013'
+    url: https://revistas.ucm.es/index.php/ANQE/article/view/42628
+    accessed: '2026-11-02'
+    type: academic
+    notes: >-
+      DOI 10.5209/rev_ANQE.2013.v24.42628. PDF read. Compiles Sandoval, Rocca, Doria’s report,
+      an eyewitness slave’s account and Simancas documents on garrison size, Ottoman strength,
+      survivors and Charles V’s ransom efforts.
 
 media:
   - id: portrait
-    alt: 'Portrait of Francisco de Sarmiento — to be selected'
+    alt: No known portrait of Francisco de Sarmiento. A labelled placeholder is shown instead.
     kind: historical
-    title: '[Portrait to be selected]'
+    title: No contemporary portrait known
     license: '[To verify]'
     attribution: '[To verify]'
+    notes: >-
+      No portrait, contemporary or later, was found in the RAH entry, Wikimedia Commons or the
+      sources consulted. Do not substitute an AI image or a generic tercio soldier as a portrait.

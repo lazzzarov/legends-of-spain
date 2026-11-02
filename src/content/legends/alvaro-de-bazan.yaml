@@ -1,70 +1,278 @@
-# PLACEHOLDER — only name, dates, place, role and achievement come from the research
-# dossier (docs/research/20261102_deep-research.md). Everything in [brackets] is still to be written.
+# SOURCED DRAFT — researched 2026-11-02 from the RAH Diccionario Biográfico entry (Hugo O'Donnell)
+# and the Revista General de Marina monograph "500 años del nacimiento de don Álvaro de Bazán"
+# (August–September 2026). Fleet sizes conflict and are given as ranges. The 1583 landing date
+# differs between the RAH (surrender on 23 July) and the RGM (landing on 26 July). The RGM is
+# followed for the landing. Research note: production/alvaro-de-bazan/research.md
 
 order: 8
 name:
-  display: 'Álvaro de Bazán'
+  display: Álvaro de Bazán
+  full: Álvaro de Bazán y Guzmán, first marquis of Santa Cruz
+  aka: [Marquis of Santa Cruz, Álvaro de Bazán el Mozo]
 dates:
-  born: { year: 1526 }
-  died: { year: 1588 }
+  born: { year: 1526, month: 12, day: 12 }
+  died: { year: 1588, month: 2, day: 9 }
 origin:
-  place: 'Granada'
-  region: 'Andalusia'
-role: 'Admiral'
+  place: Granada
+  region: Andalusia
+role: Admiral
 categories: [naval]
 centuries: [16]
-values: [leadership, ingenuity]
-tagline: 'Fleet, troops and landing craft — welded into a single blow.'
-hook: '[Hook — a documented moment of tension, 40–70 words. To be written.]'
-mainAchievement: 'Lepanto, 1571; Terceira amphibious campaign, 1582–1583'
+values: [leadership, ingenuity, courage]
+tagline: Fleet, troops and landing craft, welded into a single blow.
+hook: >-
+  Off the Azores on 26 July 1582, Álvaro de Bazán faced a French fleet that outnumbered his own,
+  while his reinforcements were still at sea. After some five hours of gunfire and boarding, the
+  French flagship surrendered. The next year he came back with flat-bottomed landing barges
+  whose bows dropped into ramps, and took Terceira from the sea.
+mainAchievement: Commanded the reserve at Lepanto (1571) and conquered the Azores (1582–1583)
 portrait: portrait
 
 chapters:
   - key: beginning
     title: The Beginning
-    body: '[Who they were and how the story began — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Álvaro de Bazán was born in Granada on 12 December 1526. His father, also Álvaro, commanded
+      Spain’s galleys and built ships of his own design. At nine the boy was made perpetual governor
+      of Gibraltar’s castle, under his father’s supervision. Still in his teens, he was aboard his
+      father’s flagship at the battle of Muros in 1544, and was then left in command of the whole
+      squadron while his father went ashore.
+    sources: [rah-bazan]
     status: verified
   - key: challenge
     title: The Challenge
-    body: '[The extraordinary obstacle — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      For years he hunted corsairs and escorted the treasure fleets home. In 1565, with Malta
+      under Ottoman siege, he proposed a bold plan to the commander, García de Toledo: take only the
+      best galleys, crammed with soldiers, and dash across the channel. It worked, and the relief force
+      landed. In 1569 Philip II made him marquis of Santa Cruz.
+    sources: [rah-bazan]
     status: verified
   - key: odds
     title: Against the Odds
-    body: '[What made it so difficult — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      At Lepanto, on 7 October 1571, Bazán commanded the reserve. Before the battle, when the Venetian
+      commander hanged an Italian captain without authority, Bazán argued in council that the alliance must
+      hold. During it he sent his brother Alonso with ten galleys to rescue the right wing. He led
+      another ten into the centre to relieve Don John’s flagship, capturing an Ottoman galley crewed
+      by janissaries.
+    sources: [rah-bazan, rgm-machado-lepanto]
     status: verified
   - key: moment
     title: The Defining Moment
-    body: '[The most significant achievement — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      In 1582 Philip II sent him to the Azores, the last stronghold of the Portuguese claimant Dom
+      António. Off São Miguel on 26 July he defeated Filippo Strozzi’s larger French fleet. In 1583
+      he returned with galleys and purpose-built landing barges. On 26 July his troops stormed the
+      beach of las Molas, on Terceira, and entered Angra the next day. Within weeks the islands had
+      surrendered.
+    sources: [rah-bazan, rgm-gonzalez-molina]
     status: verified
   - key: legacy
     title: The Legacy
-    body: '[Consequences, and why it matters today — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Philip II made him a Grandee of Spain. From 1586 he planned an invasion of England, but delays
+      kept the fleet in Lisbon, where typhus broke out. Visiting the sick, Bazán caught it and died on
+      9 February 1588, just as he was being replaced in command. He never sailed with the Armada.
+      Cervantes called him a “thunderbolt of war, father of soldiers”.
+    more: >-
+      He lies in the chapel of the palace he built at Viso del Marqués, in La Mancha. Since 1948
+      the palace has housed the Spanish Navy’s historical archive, the Archivo-Museo Don Álvaro de
+      Bazán. In 2026 the Navy’s Revista General de Marina devoted an anniversary issue to him and
+      analysed the Terceira landing as an early amphibious operation. The Cervantes phrase is translated from the RAH biography’s
+      quotation.
+    sources: [rah-bazan, rgm-anca-palacio, rgm-gonzalez-molina]
     status: verified
 
+facts:
+  - value: '7 Oct 1571'
+    label: Lepanto
+    explanation: Bazán commands the Holy League’s reserve, sending reinforcements first to the right wing and then to the centre.
+    sources: [rah-bazan, rgm-machado-lepanto]
+    status: verified
+  - value: 'c. 25 vs 30–60+'
+    unit: ships
+    label: Off São Miguel, 26 July 1582
+    explanation: >-
+      The RGM monograph gives Bazán about 25 ships against more than 60 French vessels of all sizes.
+      The RAH counts thirty large French ships and agrees the French fleet was the stronger.
+    sources: [rgm-gonzalez-molina, rah-bazan]
+    status: disputed
+  - value: '98'
+    unit: ships
+    label: The 1583 invasion force
+    explanation: >-
+      With more than 8,000 Spanish, German and Italian soldiers, 12 galleys and seven flat-bottomed
+      landing barges. These are the RGM’s figures. The RAH gives no totals, and other accounts vary.
+    sources: [rgm-gonzalez-molina]
+    status: disputed
+  - value: '9 Feb 1588'
+    label: Death in Lisbon
+    explanation: Of typhus caught while visiting sick sailors, months before the Armada sailed.
+    sources: [rah-bazan, rgm-gonzalez-molina]
+    status: verified
+
+myths:
+  - claim: If Bazán had lived, the Armada of 1588 would have succeeded.
+    status: legend
+    explanation: >-
+      This is a counterfactual, not a fact. Bazán had planned an invasion, but his fleet was already
+      delayed and stricken with typhus, and Philip II had replaced him before he died. No one can know
+      how he would have fared against the English fleet and the weather of 1588. His real record is
+      remarkable enough.
+    sources: [rah-bazan, rgm-gonzalez-molina]
+  - claim: The executions after the 1582 battle were Bazán’s own cruelty.
+    status: disputed
+    explanation: >-
+      French historians in particular have blamed Bazán. But Spain and France were not formally at
+      war, and Philip II’s instructions ordered that foreigners captured be hanged as pirates. Bazán
+      carried out an order rather than inventing a punishment, though he still bears responsibility
+      for carrying it out.
+    sources: [rah-bazan, rgm-gonzalez-molina]
+
 otherSide:
-  body: '[Controversies, human consequences and other perspectives — to be written from the dossier.]'
-  sources: [research-dossier]
+  body: >-
+    The 1582 victory ended in mass executions. Because France and Spain were not formally at war, the
+    French prisoners were treated as pirates, as the king had ordered. At Vila Franca on São Miguel,
+    some eighty noblemen and gentlemen were beheaded and more than three hundred soldiers and sailors
+    over seventeen were hanged. Lepanto was a coalition victory under Don John of Austria, shared
+    with Venetian and Genoese squadrons. The Azores campaign was fought by Spanish, German and
+    Italian troops against Portuguese islanders loyal to Dom António and their French allies. Bazán’s
+    galleys ran on forced labour: captured English sailors went to the oars in 1562, and the 1576
+    raid on Kerkennah brought back 1,200 slaves. A family memorial written by his granddaughter
+    boasts of 2,500 people enslaved on Terceira and Faial. It is a celebratory source, but it shows
+    the human cost behind the glory.
+  sources: [rah-bazan, rgm-gonzalez-molina]
+
+video:
+  status: planned
+  description: >-
+    A 60-second dramatisation of the Azores campaign: the battle off São Miguel in 1582, the
+    purpose-built landing barges, and the dawn assault on Terceira in 1583.
+  aiGenerated: true
+  tool: Higgsfield
+
+comic:
+  status: draft
+  panels:
+    - caption: Granada, 1526. Álvaro de Bazán is born into a family of seafarers and shipbuilders.
+      sources: [rah-bazan]
+    - caption: Muros, 1544. Aged seventeen, he is left in command of his father’s squadron.
+      sources: [rah-bazan]
+    - caption: Lepanto, 7 October 1571. From the reserve, Bazán sends galleys wherever the line is breaking.
+      sources: [rah-bazan, rgm-machado-lepanto]
+    - caption: His own galley rescues Don John’s flagship and captures an Ottoman galley crewed by janissaries.
+      sources: [rah-bazan]
+    - caption: Off São Miguel, 26 July 1582. The French fleet is bigger, and Bazán’s reinforcements have not arrived.
+      context: Sources put the fleets at about 25 Spanish ships against 30 to more than 60 French.
+      sources: [rah-bazan, rgm-gonzalez-molina]
+    - caption: 1583. Flat-bottomed barges with ramp bows, built in Seville for one purpose — putting soldiers ashore.
+      sources: [rah-bazan, rgm-gonzalez-molina]
+    - caption: Dawn, 26 July 1583. Towed by galleys, the barges head for the beach of las Molas on Terceira.
+      sources: [rgm-gonzalez-molina]
+    - caption: Lisbon, 1588. Bazán dies of typhus while preparing the fleet. He never sails with the Armada.
+      sources: [rah-bazan, rgm-gonzalez-molina]
+
+movie:
+  title: From the Sea
+  premise: An admiral who has spent his life at sea must take an island fortress no fleet alone can capture.
+  conflict: >-
+    Defeat a larger French fleet in the open Atlantic, then land an army on a defended coast without
+    any doctrine for how to do it.
+  challenge: Combining galleys, sailing ships, soldiers and new landing craft into a single operation.
+  moments:
+    - text: 7 October 1571. At Lepanto, Bazán throws his reserve galleys first to the right wing, then to Don John’s flagship.
+      sources: [rah-bazan, rgm-machado-lepanto]
+    - text: 26 July 1582. Outnumbered and without his reinforcements, Bazán’s fleet fights Strozzi’s off São Miguel and takes the French flagship.
+      sources: [rah-bazan, rgm-gonzalez-molina]
+    - text: 26 July 1583. Galleys bombard the shore and tow the landing barges towards the beach of las Molas. Angra falls the next day.
+      sources: [rgm-gonzalez-molina]
+  theme: Ingenuity under pressure, and the cost that victory imposes on the defeated.
+
+places:
+  - name: Palacio del Marqués de Santa Cruz
+    relation: >-
+      The palace Bazán began building in 1564. His remains lie in its chapel, and since 1948 it has
+      housed the Spanish Navy’s historical archive, the Archivo-Museo Don Álvaro de Bazán.
+    location: Viso del Marqués, Ciudad Real, Castile-La Mancha
+    sources: [rah-bazan, rgm-anca-palacio]
+  - name: Granada
+    relation: Birthplace. He was born in his grandfather’s “casas grandes” beside the Darro, near the convent of Sancti Spiritus.
+    location: Granada, Andalusia
+    sources: [rah-bazan]
+  - name: Beach of las Molas (probably today’s Baía das Mós)
+    relation: >-
+      The beach between Praia and Angra chosen for the amphibious landing of 26 July 1583. Its
+      identification with the modern Baía das Mós still needs to be checked.
+    location: Terceira, Azores, Portugal
+    sources: [rgm-gonzalez-molina]
+
+related: [antonio-de-leyva, francisco-de-sarmiento, fadrique-de-toledo, blas-de-lezo]
+
+seo:
+  description: The admiral who held Lepanto’s reserve and took the Azores from the sea. The story of Álvaro de Bazán, marquis of Santa Cruz.
 
 review:
-  status: placeholder
+  status: sourced
 
 sources:
-  - id: research-dossier
-    title: 'Spanish Explorers and Military Leaders Who Reshaped the Early Modern World (research dossier)'
-    institution: Legends of Spain
+  - id: rah-bazan
+    title: Álvaro de Bazán y Guzmán
+    author: Hugo O’Donnell y Duque de Estrada, duque de Tetuán
+    institution: Real Academia de la Historia, Diccionario Biográfico Español (Historia Hispánica)
+    url: https://historia-hispanica.rah.es/biografias/5632-alvaro-de-bazan-y-guzman
+    accessed: '2026-11-02'
+    type: institutional
+    notes: >-
+      Full text, sources and bibliography read. Cites the family archive of the marquises of
+      Santa Cruz, AGI, AGS (Estado, Guerra Antigua), BNE, Museo Naval (Navarrete and Sanz de Barutell
+      collections) and RAH. None of these were consulted directly.
+  - id: rgm-gonzalez-molina
+    title: '“…Y en la tercera, el francés”. Una visión diferente de la figura de Álvaro de Bazán y la campaña de las Terceras (1581–1583)'
+    author: Alfredo González Molina
+    publisher: Revista General de Marina, tomo 291 (agosto–septiembre 2026), pp. 392–414
+    institution: Armada Española
     year: '2026'
-    type: reference
-    notes: 'Working dossier; to be replaced by the primary and scholarly sources it cites.'
+    url: https://armada.defensa.gob.es/archivo/rgm/2026/08-09/rgmagosep2026.pdf
+    accessed: '2026-11-02'
+    type: institutional
+    notes: >-
+      Read in the full issue PDF. Includes some dramatised passages (invented dialogue), which were
+      not used. Factual figures are cited to Herrera (1591), Fernández Duro and Cerezo Martínez.
+  - id: rgm-machado-lepanto
+    title: Las cinco intervenciones decisivas de don Álvaro de Bazán en la batalla de Lepanto
+    author: Lorenzo Machado Alique
+    publisher: Revista General de Marina, tomo 291 (agosto–septiembre 2026), pp. 362–373
+    institution: Armada Española
+    year: '2026'
+    url: https://armada.defensa.gob.es/archivo/rgm/2026/08-09/rgmagosep2026.pdf
+    accessed: '2026-11-02'
+    type: institutional
+  - id: rgm-anca-palacio
+    title: El Escorial manchego. El palacio de don Álvaro de Bazán en Viso del Marqués
+    author: Alejandro Anca Alamillo
+    publisher: Revista General de Marina, tomo 291 (agosto–septiembre 2026), pp. 330–347
+    institution: Armada Española
+    year: '2026'
+    url: https://armada.defensa.gob.es/archivo/rgm/2026/08-09/rgmagosep2026.pdf
+    accessed: '2026-11-02'
+    type: institutional
+    notes: Cites the decree of 26 November 1948 making the palace the seat of the Archivo General de la Marina, and the 1949 founding decree of the Archivo-Museo.
 
 media:
   - id: portrait
-    alt: 'Portrait of Álvaro de Bazán — to be selected'
+    alt: Engraved half-length portrait of Álvaro de Bazán in armour
     kind: historical
-    title: '[Portrait to be selected]'
-    license: '[To verify]'
-    attribution: '[To verify]'
+    title: Portret van Álvaro de Bazán
+    creator: Bartolomé Vázquez, after a drawing by Antonio Carnicero
+    date: '1759–1802'
+    posthumous: true
+    institution: Rijksmuseum, Amsterdam (RP-P-1908-2060)
+    sourceUrl: https://id.rijksmuseum.nl/200266084
+    license: Public domain (Rijksmuseum; CC0 on Wikimedia Commons)
+    attribution: Bartolomé Vázquez after Antonio Carnicero. Rijksmuseum, Amsterdam.
+    notes: >-
+      The Rijksmuseum record does not say which Álvaro de Bazán is shown. Check the plate inscription
+      before use, because van Dyck’s well-known portrait shows his son, the second marquis. An
+      alternative is Rafael Tegeo’s posthumous oil of 1828 in the Museo Naval, Madrid, but photographs
+      of it carry their own rights (LPI art. 128).

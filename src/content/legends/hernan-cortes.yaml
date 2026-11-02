@@ -1,70 +1,327 @@
-# PLACEHOLDER — only name, dates, place, role and achievement come from the research
-# dossier (docs/research/20261102_deep-research.md). Everything in [brackets] is still to be written.
+# SOURCED DRAFT — researched 2026-11-02. Every claim cites sources that were opened and read.
+# See production/hernan-cortes/research.md for the claim → source table, disputed points and open questions.
+# Ethical framing: the campaign is told as the work of an Indigenous–Spanish coalition, with its massacres,
+# enslavement, forced labour and the epidemic stated plainly. Not ready for review until a historian checks it.
 
 order: 1
 name:
-  display: 'Hernán Cortés'
+  display: Hernán Cortés
+  full: Hernán Cortés de Monroy y Pizarro Altamirano
+  aka: [Marqués del Valle de Oaxaca]
 dates:
   born: { year: 1485 }
-  died: { year: 1547 }
+  died: { year: 1547, month: 12, day: 2, display: '2 December 1547' }
 origin:
-  place: 'Medellín'
-  region: 'Extremadura'
-role: 'Conquistador'
+  place: Medellín
+  region: Badajoz, Extremadura
+role: Conquistador and governor of New Spain
 categories: [land]
 centuries: [15, 16]
 values: [leadership, ambition]
-tagline: 'He turned a defiant expedition into a coalition that brought down Tenochtitlan.'
-hook: '[Hook — a documented moment of tension, 40–70 words. To be written.]'
-mainAchievement: 'Mexico campaign, 1519–1521, built on Indigenous alliances'
+tagline: He led a few hundred Spaniards into Mexico — but Tenochtitlan fell to a vast Indigenous coalition, to smallpox and to siege.
+hook: >-
+  In July 1520 Cortés’s battered force limped into Tlaxcala. Days earlier it had fled
+  Tenochtitlan by night, losing hundreds of Spaniards and thousands of Indigenous allies on the
+  causeways. Now the rulers of Tlaxcala held his fate in their hands, and they demanded new, more
+  favourable terms before they would feed him. Everything that followed depended on their decision.
+mainAchievement: Fall of Mexico-Tenochtitlan, 1521, as leader of the Spanish contingent in an Indigenous-led coalition
 portrait: portrait
 
 chapters:
   - key: beginning
     title: The Beginning
-    body: '[Who they were and how the story began — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Hernán Cortés was born in 1485 in Medellín, Extremadura, into a family of minor nobility and
+      modest means. He spent two years in Salamanca but left without a degree, and around 1504 he
+      sailed for Hispaniola. In 1511 he joined the conquest of Cuba as a secretary, was granted
+      Indigenous people in encomienda — tribute and forced labour — and grew rich from cattle and
+      gold mines. He had almost no military experience.
+    sources: [rah-cortes]
     status: verified
   - key: challenge
     title: The Challenge
-    body: '[The extraordinary obstacle — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      In 1518 Governor Diego Velázquez chose Cortés to lead an expedition to the mainland, then tried
+      to replace him. Cortés sailed early, in February 1519, with roughly five hundred soldiers, in
+      open defiance of the man who had appointed him. To speak with anyone he needed interpreters:
+      Jerónimo de Aguilar, a Spaniard who had lived among the Maya, and Malintzin, a Nahua woman
+      enslaved as a girl and handed to the Spaniards by the lords of Tabasco.
+    more: >-
+      Malintzin spoke Nahuatl and Maya languages; Aguilar translated between Maya and Spanish. Federico
+      Navarrete argues that everything Cortés learned about Mesoamerican politics — who his friends and
+      enemies might be, which roads to take — reached him through Malintzin and through his local
+      allies. The expedition was privately financed by Velázquez, Cortés and other investors, without
+      any contribution from the Crown.
+    sources: [rah-cortes, navarrete-coalicion, paz-nomey-malintzin]
     status: verified
   - key: odds
     title: Against the Odds
-    body: '[What made it so difficult — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      The Totonacs of Cempoala broke with the Mexica and supplied porters and warriors. In September
+      1519 the Tlaxcalans fought the newcomers hard, then chose an alliance against their old enemy.
+      In October, at Cholula, the Spaniards and their allies massacred thousands of people. In May
+      1520, while Cortés was away, Pedro de Alvarado’s men massacred the Mexica nobility gathered for
+      the festival of Toxcatl at the Templo Mayor. The city rose.
+    more: >-
+      Cortés claimed Cholula was planning to ambush him; Navarrete notes that the Tlaxcalans, Cholula’s
+      rivals, had convinced the Spaniards it was an enemy. Cortés’s own letters to the emperor do not
+      mention the Toxcatl massacre at all. On the night of 30 June 1520 the Spaniards and their allies
+      fled Tenochtitlan across the causeways; Moctezuma had died in disputed circumstances.
+    sources: [rah-cortes, navarrete-guerra, olivier-toxcatl, navarrete-coalicion]
     status: verified
   - key: moment
     title: The Defining Moment
-    body: '[The most significant achievement — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      The reconquest was a Mesoamerican war. Tlaxcalans, Texcocans, Chalcas, Otomís and others
+      fought for their own aims; Navarrete argues that the allies shaped the strategy of dismantling
+      Mexica tribute networks before the siege. Thirteen brigantines built in Tlaxcala closed the
+      lake, and the aqueduct was cut. Smallpox struck the besieged city. After weeks of fighting
+      house by house, Tenochtitlan fell on 13 August 1521.
+    more: >-
+      The Mexica leader Cuauhtémoc was captured as the city fell. Navarrete calls the siege the first
+      colonial “total war”: neither the Spaniards nor their allies could afford to lose, and the
+      traditional Mesoamerican way of ending a war — a negotiated surrender — never came.
+    sources: [rah-cortes, navarrete-coalicion, navarrete-guerra, eid-megadeath]
     status: verified
   - key: legacy
     title: The Legacy
-    body: '[Consequences, and why it matters today — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      As governor of New Spain, Cortés handed out encomiendas, rebuilt the city on the ruins of
+      Tenochtitlan and used enslaved Indigenous and African labour on his estates. On a march to
+      Honduras he had Cuauhtémoc executed. The emperor made him Marqués del Valle in 1529 but kept real power from
+      him. He died near Seville in 1547. The colony he helped found was built on conquest, coercion and
+      a demographic catastrophe.
+    more: >-
+      Tlaxcala was exempted from encomienda as a reward for its alliance. Cortés also financed expeditions to Baja California and
+      the gulf that still bears his name. The execution of Cuauhtémoc during the march to Honduras was
+      criticised even by his fellow conquistador Bernal Díaz del Castillo.
+    sources: [rah-cortes, eid-megadeath]
     status: verified
 
+facts:
+  - value: Feb 1519
+    label: Sails from Cuba
+    explanation: Leaving early, in defiance of Governor Diego Velázquez, who had tried to replace him.
+    sources: [rah-cortes]
+    status: verified
+  - value: 25,000–200,000
+    label: Indigenous allies in the war
+    explanation: >-
+      A Spanish-derived count of the review at Texcoco in May 1521 gives about 25,000 allied
+      warriors, 16,000 of them Tlaxcalan, beside some 900 Spaniards. Navarrete estimates the coalition
+      at 100,000–200,000 Mesoamericans, against fewer than 1,000 Spaniards.
+    sources: [rah-cortes, paz-nomey-malintzin]
+    status: disputed
+  - value: 13 Aug 1521
+    label: Tenochtitlan falls
+    explanation: After a siege by land and water that began at the end of May 1521.
+    sources: [rah-cortes]
+    status: verified
+  - value: 5–8 million
+    label: Deaths in the smallpox epidemic of 1519–1520
+    explanation: >-
+      An estimate for central Mexico. Population figures for this period are reconstructions and
+      vary widely between historians.
+    sources: [eid-megadeath]
+    status: disputed
+
+myths:
+  - claim: About five hundred Spaniards conquered the Aztec Empire.
+    status: legend
+    explanation: >-
+      The Spanish contingent never reached a thousand men. Tenochtitlan fell to a coalition of tens
+      of thousands of Indigenous warriors — Tlaxcalans, Texcocans, Chalcas, Otomís and others — who
+      pursued their own goals, and to an epidemic that ravaged the besieged city.
+    sources: [rah-cortes, navarrete-coalicion, navarrete-guerra, paz-nomey-malintzin]
+  - claim: The Mexica took Cortés for the returning god Quetzalcoatl.
+    status: disputed
+    explanation: >-
+      Several colonial sources link Cortés with Quetzalcoatl, and the Nahuatl word teotl, applied to
+      the Spaniards, can mean “god”. But it had other meanings too, and historians still debate how far
+      the identification was a Mexica belief and how far it was shaped by Cortés and later writers.
+    sources: [dupey-quetzalcoatl]
+
 otherSide:
-  body: '[Controversies, human consequences and other perspectives — to be written from the dossier.]'
-  sources: [research-dossier]
+  body: >-
+    The fall of Tenochtitlan was not one man’s achievement. It was won by an Indigenous coalition
+    whose leaders had their own reasons to destroy Mexica power, by Malintzin’s work as interpreter and
+    negotiator, and by smallpox. The war included massacres at Cholula and the Templo Mayor, the
+    enslavement of captives — Navarrete notes that slaves and gold were kept for the Spaniards — and the
+    destruction of the Mexica capital. What followed was encomienda labour, the suppression
+    of Indigenous religion and, with later epidemics, a collapse of the Indigenous population that
+    took centuries to recover. Cortés’s own letters were legal arguments that left out the Toxcatl
+    massacre; Book 12 of the Florentine Codex, written by Nahua authors, records the war from the
+    side of the Mexica.
+  sources:
+    [
+      navarrete-coalicion,
+      navarrete-guerra,
+      olivier-toxcatl,
+      rah-cortes,
+      eid-megadeath,
+      getty-competing-narratives,
+    ]
+
+video:
+  status: planned
+  description: >-
+    A 60-second film told from several viewpoints — Malintzin, a Tlaxcalan ruler and Cortés — from
+    the landing in 1519 to the retreat to Tlaxcala and the siege of 1521, with the massacres and the
+    epidemic shown plainly.
+  aiGenerated: true
+  tool: Higgsfield
+
+comic:
+  status: draft
+  panels:
+    - caption: February 1519. Cortés sails from Cuba against the orders of the governor who appointed him.
+      sources: [rah-cortes]
+    - caption: Two interpreters make every conversation possible — Jerónimo de Aguilar and Malintzin, a Nahua woman enslaved as a girl.
+      sources: [rah-cortes, navarrete-coalicion]
+    - caption: September 1519. After fierce battles, the Tlaxcalans choose an alliance against their old enemies, the Mexica.
+      sources: [rah-cortes, navarrete-guerra]
+    - caption: Cholula, October 1519. The Spaniards and their allies massacre thousands of people.
+      note: Cortés claimed he was forestalling a plot. Show the aftermath, not the violence as spectacle.
+      sources: [rah-cortes, navarrete-guerra]
+    - caption: May 1520. Pedro de Alvarado’s men massacre the Mexica nobles gathered for the festival of Toxcatl. The city rises.
+      sources: [olivier-toxcatl, navarrete-coalicion]
+    - caption: July 1520. After a night flight from Tenochtitlan, the survivors reach Tlaxcala — whose rulers set new terms.
+      sources: [rah-cortes, navarrete-guerra]
+    - caption: 1521. Brigantines on the lake, a coalition army on the causeways, and smallpox inside the city.
+      sources: [rah-cortes, navarrete-coalicion, eid-megadeath]
+    - caption: 13 August 1521. Tenochtitlan falls. Nahua authors will later record the war in Book 12 of the Florentine Codex.
+      sources: [rah-cortes, getty-competing-narratives]
+
+movie:
+  title: The Interpreters’ War
+  premise: >-
+    A Spanish captain, a Nahua interpreter and the rulers of Tlaxcala each try to use the others
+    to win a war against the most powerful city in Mesoamerica.
+  conflict: >-
+    Rival agendas inside one coalition — Spanish greed for gold, Tlaxcalan determination to break
+    Mexica power, Malintzin’s survival — against a city that will not surrender.
+  challenge: Telling a story of alliance and atrocity without letting any single voice own it.
+  moments:
+    - text: September 1519 — after fighting the Spaniards, Tlaxcala’s leaders decide to ally with them against the Mexica.
+      sources: [rah-cortes, navarrete-guerra]
+    - text: May 1520 — Pedro de Alvarado’s men massacre the Mexica nobility at the festival of Toxcatl, and the war begins in earnest.
+      sources: [olivier-toxcatl, navarrete-coalicion]
+    - text: July 1520 — the survivors of the flight from Tenochtitlan reach Tlaxcala, and its rulers demand better terms before feeding them.
+      sources: [navarrete-guerra, rah-cortes]
+  theme: Victory is made by many hands — and so is its cost.
+
+places:
+  - name: Medellín
+    relation: Birthplace of Hernán Cortés, 1485.
+    location: Badajoz, Extremadura
+    sources: [rah-cortes]
+  - name: Tlaxcala
+    relation: Seat of the Tlaxcalan allies; refuge after the flight of 1520 and the place where the brigantines were built.
+    location: Tlaxcala, Mexico
+    sources: [rah-cortes, navarrete-guerra]
+  - name: Mexico City (Tenochtitlan)
+    relation: The Mexica capital besieged and destroyed in 1521, then rebuilt as the capital of New Spain.
+    location: Mexico City, Mexico
+    sources: [rah-cortes]
+  - name: Castilleja de la Cuesta
+    relation: Where Cortés died on 2 December 1547.
+    location: Seville, Andalusia
+    sources: [rah-cortes]
+
+related: [francisco-pizarro, bernardino-de-sahagun]
+
+seo:
+  description: Hernán Cortés and the fall of Tenochtitlan — a war won by an Indigenous coalition, an interpreter and an epidemic, and its human cost.
 
 review:
-  status: placeholder
+  status: sourced
 
 sources:
-  - id: research-dossier
-    title: 'Spanish Explorers and Military Leaders Who Reshaped the Early Modern World (research dossier)'
-    institution: Legends of Spain
-    year: '2026'
-    type: reference
-    notes: 'Working dossier; to be replaced by the primary and scholarly sources it cites.'
+  - id: rah-cortes
+    title: Hernán Cortés (Diccionario Biográfico Español)
+    author: Bartolomé Bennassar
+    institution: Real Academia de la Historia
+    url: https://historia-hispanica.rah.es/biografias/12255-hernan-cortes
+    accessed: '2026-11-02'
+    type: institutional
+    notes: >-
+      Read via the site’s public biography data. The entry is admiring in tone (it speaks of Cortés’s
+      “genius”); used here for dates, places and force sizes, not for its judgements. Force and casualty
+      figures in it derive from Spanish accounts.
+  - id: navarrete-coalicion
+    title: Cómo funcionaba la coalición interétnica que conquistó México-Tenochtitlan
+    author: Federico Navarrete
+    institution: Noticonquista, Instituto de Investigaciones Históricas, UNAM
+    url: https://www.noticonquista.unam.mx/sites/default/files/2021-06/navarrete-coalicion-interetnica-final.pdf
+    year: '2021'
+    accessed: '2026-11-02'
+    type: academic
+  - id: navarrete-guerra
+    title: La guerra según los indígenas conquistadores
+    author: Federico Navarrete
+    institution: Noticonquista, Instituto de Investigaciones Históricas, UNAM
+    url: https://www.noticonquista.unam.mx/sites/default/files/2021-05/navarrete-la-guerra-segun-los-indigenas-conquistadores-final.pdf
+    year: '2021'
+    accessed: '2026-11-02'
+    type: academic
+  - id: olivier-toxcatl
+    title: Pedro de Alvarado y la Matanza de Tóxcatl
+    author: Guilhem Olivier
+    institution: Noticonquista, Instituto de Investigaciones Históricas, UNAM
+    url: https://www.noticonquista.unam.mx/sites/default/files/2020-05/olivier_-_pedro_de_alvarado_-_final.pdf
+    year: '2020'
+    accessed: '2026-11-02'
+    type: academic
+  - id: dupey-quetzalcoatl
+    title: ¿Quién era Quetzalcóatl?
+    author: Élodie Dupey García
+    institution: Noticonquista, Instituto de Investigaciones Históricas, UNAM
+    url: https://www.noticonquista.unam.mx/sites/default/files/2019-06/dupey_-_quetzalcoatl_-_final.pdf
+    year: '2019'
+    accessed: '2026-11-02'
+    type: academic
+  - id: paz-nomey-malintzin
+    title: 'Nombres, palabras, mundos y sus equivalencias en la vida de una intérprete: acerca del libro Malintzin, o la conquista como traducción de Federico Navarrete'
+    author: José Luis Paz Nomey
+    publisher: Allpanchis 49 (89), 2022, pp. 259–268
+    url: https://revistas.ucsp.edu.pe/index.php/Allpanchis/article/download/1357/1434/5117
+    year: '2022'
+    accessed: '2026-11-02'
+    type: academic
+    notes: Review of Navarrete’s book; the 100,000–200,000 coalition estimate is reported from it.
+  - id: eid-megadeath
+    title: Megadrought and Megadeath in 16th Century Mexico
+    author: Rodolfo Acuna-Soto, David W. Stahle, Malcolm K. Cleaveland, Matthew D. Therrell
+    publisher: Emerging Infectious Diseases 8 (4), 2002
+    institution: Centers for Disease Control and Prevention
+    url: https://wwwnc.cdc.gov/eid/article/8/4/01-0175_article
+    year: '2002'
+    accessed: '2026-11-02'
+    type: academic
+  - id: getty-competing-narratives
+    title: Competing Narratives on the Conquest of Mexico and the Fall of the Aztec Empire
+    author: Kim N. Richter, Alicia Maria Houtrouw, Joshua Fitzgerald
+    institution: Getty Research Institute
+    url: https://www.getty.edu/news/competing-narratives-about-the-conquest-of-mexico-and-the-fall-of-the-aztec-empire
+    year: '2020'
+    accessed: '2026-11-02'
+    type: institutional
+  - id: cortes-cartas
+    title: Cartas de relación (Second Letter, 30 October 1520)
+    author: Hernán Cortés
+    type: primary
+    notes: Not consulted directly; cited only as further reading. AGI and Library of Congress copies to be checked.
 
 media:
   - id: portrait
-    alt: 'Portrait of Hernán Cortés — to be selected'
+    alt: Drawing of Hernán Cortés made in 1529 by Christoph Weiditz
     kind: historical
-    title: '[Portrait to be selected]'
-    license: '[To verify]'
-    attribution: '[To verify]'
+    title: Hernán Cortés, from the Trachtenbuch (costume book) of Christoph Weiditz
+    creator: Christoph Weiditz
+    date: '1529'
+    posthumous: false
+    institution: Germanisches Nationalmuseum, Nuremberg (Hs. 22474)
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Weiditz_Trachtenbuch_077_Hernan_Cort%C3%A9s.jpg
+    license: Public domain (artwork); confirm the reuse terms of the museum’s digitisation before use
+    attribution: Christoph Weiditz, Trachtenbuch, 1529. Germanisches Nationalmuseum, Nuremberg, Hs. 22474
+    notes: Made in Spain in 1529, during Cortés’s lifetime. Alternative — José Salomé Pina’s c. 1879 copy (Museo del Prado P003430), posthumous.

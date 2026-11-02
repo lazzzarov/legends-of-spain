@@ -1,70 +1,335 @@
-# PLACEHOLDER — only name, dates, place, role and achievement come from the research
-# dossier (docs/research/20261102_deep-research.md). Everything in [brackets] is still to be written.
+# SOURCED — researched 2026-11-02 and awaiting the editor's review.
+# Research note: production/francisco-de-orellana/research.md (claim → source table, disputes, portrait).
 
 order: 6
 name:
-  display: 'Francisco de Orellana'
+  display: Francisco de Orellana
 dates:
-  born: { year: 1511 }
-  died: { year: 1546 }
+  born: { year: 1511, approx: true, display: 'c. 1511' }
+  died: { year: 1546, approx: true, display: 'c. 1546' }
 origin:
-  place: 'Trujillo'
-  region: 'Extremadura'
-role: 'Explorer'
+  place: Trujillo
+  region: Cáceres, Extremadura
+role: Explorer
 categories: [exploration]
 centuries: [16]
-values: [exploration, resilience]
-tagline: 'Sent downstream to find food, he followed the river all the way to the Atlantic.'
-hook: '[Hook — a documented moment of tension, 40–70 words. To be written.]'
-mainAchievement: 'First documented European descent of most of the Amazon, 1541–1542'
+values: [exploration, resilience, overcoming-adversity]
+tagline: Sent downstream to find food, he followed the river all the way to the Atlantic.
+hook: >-
+  Early in 1542 Orellana’s men were drifting down an unknown river in a makeshift boat and stolen
+  canoes. The current was too strong to row back, and the jungle too thick to walk. Their friar
+  wrote that they ate nothing but leather, belts and shoe soles boiled with herbs. The only way left
+  was onward, wherever the river led.
+mainAchievement: Led the first recorded European descent of most of the Amazon, 1541–1542
 portrait: portrait
 
 chapters:
   - key: beginning
     title: The Beginning
-    body: '[Who they were and how the story began — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Orellana came from Trujillo, in Extremadura, the home town of the Pizarro brothers, to whom he
+      was related. He crossed to the Americas young and fought in the conquest of Peru, where he lost
+      an eye. He stayed loyal to the Pizarros in their civil wars. In 1538 he refounded the city of
+      Santiago de Guayaquil and governed it. A report to the Crown in 1541 praised him as a great warrior, conqueror
+      and good governor.
+    sources: [rah-orellana, pares-orellana-meritos-1541]
     status: verified
   - key: challenge
     title: The Challenge
-    body: '[The extraordinary obstacle — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      In 1541 Gonzalo Pizarro, the new governor of Quito, led an expedition east over the Andes in
+      search of El Dorado and the Land of Cinnamon. Orellana joined it with men he paid for himself,
+      spending more than 40,000 gold pesos. The march brought cold, earthquakes, thick forest and
+      hunger. The cinnamon trees they found were worthless as a trade. At the Coca river the starving
+      company built a small brigantine, the San Pedro.
+    sources: [rah-orellana, rah-gonzalo-pizarro]
     status: verified
   - key: odds
     title: Against the Odds
-    body: '[What made it so difficult — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      On 26 December 1541 Orellana took the brigantine and some canoes downstream with fifty-seven
+      men to look for food, meaning to come back. The swollen current carried them twenty to twenty-five
+      leagues a day. For two hundred leagues they found no food, and they boiled leather to eat. Rowing back
+      upstream was impossible. So they agreed to go on, and Orellana gave up the authority Pizarro had
+      given him and was elected their captain.
+    sources: [carvajal-medina-1894, rah-orellana, rah-gonzalo-pizarro]
     status: verified
   - key: moment
     title: The Defining Moment
-    body: '[The most significant achievement — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Downriver, in the lands of a chief called Aparia, they forged nails and built a second, sturdier
+      brigantine. Then came months of fighting along heavily populated banks, past the mouths of the
+      Negro and the Madeira. The friar Gaspar de Carvajal, who chronicled the journey, lost an eye to
+      an arrow. On 26 August 1542 the two boats left the river mouth for the Atlantic. Eleven men had
+      died.
+    sources: [rah-orellana, rah-carvajal, carvajal-medina-1894]
     status: verified
   - key: legacy
     title: The Legacy
-    body: '[Consequences, and why it matters today — to be written from verified sources.]'
-    sources: [research-dossier]
+    body: >-
+      Orellana sailed to Spain and in February 1544 was named governor and captain-general of
+      “Nueva Andalucía”, the lands along the river. His second expedition was a disaster. About
+      400 men left Sanlúcar, and nearly a hundred died at Cape Verde alone. Orellana died around 1546
+      near the river. The voyage put the river on European maps, and it soon came to be called the
+      Amazon.
+    more: >-
+      Carvajal’s “Relación” is the first written description of life along the river. It records
+      villages, food, trade and warfare. For centuries readers dismissed it as exaggerated. Today
+      archaeologists working near Manaus and across southern Amazonia find widespread evidence of
+      large pre-Columbian settlements, which makes his picture of busy riverbanks much more plausible.
+      The name “Amazonas” came from Carvajal’s story of a battle in which, he says, women fought at
+      the head of the warriors. It won out over “Orellana’s river” and other names.
+    sources:
+      [pares-orellana-provision-1544, guzman-relation, rah-orellana, uea-da-silva, de-souza-2018]
     status: verified
 
+facts:
+  - value: 56–57
+    label: Men who went downstream with Orellana
+    explanation: >-
+      Carvajal’s own count is fifty-seven. The Real Academia de la Historia’s entry on Orellana gives
+      fifty-six, and its list of names also mentions two unnamed Black men who served on the voyage.
+    sources: [carvajal-medina-1894, rah-orellana, rah-carvajal]
+    status: disputed
+  - value: 26 Dec 1541
+    label: Leaves Gonzalo Pizarro’s camp
+    explanation: The boat party sets off down the Coca to look for food.
+    sources: [rah-gonzalo-pizarro, rah-carvajal]
+    status: verified
+  - value: 26 Aug 1542
+    label: Reaches the Atlantic
+    explanation: The two brigantines leave the river mouth, with Marajó island to the south.
+    sources: [rah-orellana, rah-carvajal]
+    status: verified
+  - value: '11'
+    label: Men lost on the river
+    explanation: The deaths the Real Academia de la Historia counts during the crossing of the continent.
+    sources: [rah-orellana]
+    status: verified
+  - value: '400'
+    label: Men on the second expedition
+    explanation: >-
+      A survivor reported that about 400 sailed from Sanlúcar on 11 May, that ninety-eight died at
+      Cape Verde, and that fifty-seven more died at the river while building a boat.
+    sources: [guzman-relation]
+    status: verified
+
+myths:
+  - claim: Orellana discovered the Amazon.
+    status: legend
+    explanation: >-
+      Millions of Indigenous people already lived along the river and knew it well. Even in Europe,
+      its mouth was known before 1541: Diego Ribero’s 1529 map names it the Marañón. What Orellana’s
+      party achieved was the first recorded European journey down most of its length.
+    sources: [rah-orellana, de-souza-2018]
+  - claim: Orellana deliberately betrayed Gonzalo Pizarro.
+    status: disputed
+    explanation: >-
+      Pizarro wrote to the emperor in 1542 accusing Orellana of treason and of leaving the main
+      party to starve. Carvajal says the current made it impossible to go back. Historians still
+      disagree. The legal break, when Orellana gave up Pizarro’s commission and was elected captain,
+      is what some count as betrayal.
+    sources: [rah-gonzalo-pizarro, carvajal-medina-1894, rah-orellana]
+
 otherSide:
-  body: '[Controversies, human consequences and other perspectives — to be written from the dossier.]'
-  sources: [research-dossier]
+  body: >-
+    The river had owners. The peoples living along it, such as those under the chiefs Aparia,
+    Machiparo and Paguana, met the expedition with gifts and food in some places and with war in
+    others. The expedition’s record describes the Spaniards seizing villages to take food when they were starving,
+    and holding a ceremony of “taking possession” of the land in the king’s name. Gonzalo Pizarro’s
+    expedition had brought thousands of Indigenous porters and enslaved Africans,
+    and two Black men, whose names were not recorded, served on Orellana’s boats. Later readers
+    dismissed what Carvajal said about crowded riverbanks, but archaeology now supports it. European
+    diseases cut these populations sharply in the following century. The second expedition aimed at
+    conquest and settlement and cost hundreds of lives.
+  sources:
+    [
+      rah-orellana,
+      rah-gonzalo-pizarro,
+      carvajal-medina-1894,
+      uea-da-silva,
+      de-souza-2018,
+      guzman-relation,
+    ]
+
+video:
+  status: planned
+  description: >-
+    A 60-second dramatization: the starving camp on the Coca, the boat party that cannot return,
+    the second brigantine built at Aparia, and the first sight of the open Atlantic.
+  aiGenerated: true
+  tool: Higgsfield
+
+comic:
+  status: draft
+  panels:
+    - caption: Trujillo, Extremadura. Francisco de Orellana grows up in the same town as the Pizarro brothers.
+      sources: [rah-orellana]
+    - caption: 1541. Gonzalo Pizarro’s expedition crosses the Andes in search of the Land of Cinnamon. Orellana pays for his own men.
+      sources: [rah-orellana, rah-gonzalo-pizarro]
+    - caption: On the Coca river, the starving company builds a small brigantine, the San Pedro.
+      sources: [rah-gonzalo-pizarro, rah-orellana]
+    - caption: 26 December 1541. Fifty-seven men go downstream to look for food. The current will not let them come back.
+      sources: [carvajal-medina-1894, rah-carvajal]
+    - caption: With no food for two hundred leagues, they boil leather, belts and shoe soles with herbs.
+      sources: [carvajal-medina-1894]
+    - caption: In Aparia’s lands they make charcoal, forge nails and build a second, stronger brigantine.
+      sources: [rah-orellana]
+    - caption: Months of battles along crowded riverbanks. The chronicler, Friar Gaspar de Carvajal, loses an eye to an arrow.
+      sources: [rah-orellana, rah-carvajal]
+    - caption: 26 August 1542. The two boats leave the mouth of the great river and enter the Atlantic.
+      sources: [rah-orellana, rah-carvajal]
+
+movie:
+  title: The River Will Not Let Us Go
+  premise: A one-eyed captain sent to find food for a starving army is swept into a river no European has charted.
+  conflict: Survive hunger, the current and the peoples whose lands they are passing through, while the men left behind call it treason.
+  challenge: Turning a desperate errand into a voyage across a continent, and answering for it afterwards.
+  moments:
+    - text: 26 December 1541. The boat party leaves Gonzalo Pizarro’s camp on the Coca to find food and never returns.
+      sources: [rah-gonzalo-pizarro, carvajal-medina-1894]
+    - text: Spring 1542. In Aparia’s lands the men forge nails and build a second brigantine for the voyage ahead.
+      sources: [rah-orellana]
+    - text: 26 August 1542. The two brigantines leave the river mouth for the open Atlantic.
+      sources: [rah-orellana, rah-carvajal]
+  theme: Survival, and who gets to call a journey a discovery.
+
+places:
+  - name: Trujillo
+    relation: Birthplace. A bust of Orellana stands in the town.
+    location: Cáceres, Extremadura
+    sources: [rah-orellana]
+  - name: Guayaquil
+    relation: Orellana refounded and governed Santiago de Guayaquil in 1538.
+    location: Guayas, Ecuador
+    sources: [rah-orellana]
+  - name: Coca river
+    relation: Where Gonzalo Pizarro’s company built the brigantine San Pedro and Orellana’s party set off downstream.
+    location: Orellana province, Ecuador
+    sources: [rah-gonzalo-pizarro, rah-orellana]
+  - name: Cubagua
+    relation: The island where the two brigantines arrived in September 1542 after leaving the Amazon.
+    location: Nueva Esparta, Venezuela
+    sources: [rah-orellana, rah-carvajal]
+  - name: Archivo General de Indias
+    relation: Holds the 1544 royal provision naming Orellana governor of Nueva Andalucía.
+    location: Seville, Andalusia
+    url: https://pares.cultura.gob.es/ParesBusquedas20/catalogo/description/244608
+    sources: [pares-orellana-provision-1544]
+
+related: [francisco-pizarro, hernan-cortes, juan-sebastian-elcano]
+
+seo:
+  description: Sent to find food in 1541, Francisco de Orellana and 57 men were swept down the Amazon to the Atlantic. The story, and its other side.
 
 review:
-  status: placeholder
+  status: sourced
 
 sources:
-  - id: research-dossier
-    title: 'Spanish Explorers and Military Leaders Who Reshaped the Early Modern World (research dossier)'
-    institution: Legends of Spain
-    year: '2026'
-    type: reference
-    notes: 'Working dossier; to be replaced by the primary and scholarly sources it cites.'
+  - id: rah-orellana
+    title: Francisco de Orellana
+    author: Mariano Cuesta Domingo
+    institution: Real Academia de la Historia, Diccionario Biográfico Español
+    url: https://historia-hispanica.rah.es/biografias/33875-francisco-de-orellana
+    accessed: '2026-11-02'
+    type: institutional
+    notes: >-
+      Full DB~e entry, read via the site's public data (nid 33875). It gives 56 men, 11 deaths, the
+      Atlantic on 26 August 1542, and Cubagua on 16 September. It lists the crew's names and two
+      unnamed Black men.
+  - id: rah-gonzalo-pizarro
+    title: Gonzalo Pizarro Viedma
+    institution: Real Academia de la Historia, Diccionario Biográfico Español
+    url: https://historia-hispanica.rah.es/biografias/36102-gonzalo-pizarro-viedma
+    accessed: '2026-11-02'
+    type: institutional
+    notes: >-
+      DB~e entry (nid 36102). It gives 57 men and departure on 26 December 1541, the legal break on
+      1 March 1542, and Pizarro's letter of 3 August 1542 accusing Orellana of treason. It lists
+      3,000 Indigenous porters and many enslaved Black people in Pizarro's expedition.
+  - id: rah-carvajal
+    title: Gaspar de Carvajal
+    author: Miguel Ángel Medina Escudero, OP
+    institution: Real Academia de la Historia, Diccionario Biográfico Español
+    url: https://historia-hispanica.rah.es/biografias/9515-gaspar-de-carvajal
+    accessed: '2026-11-02'
+    type: institutional
+    notes: >-
+      DB~e entry (nid 9515). It gives 57 men, the river mouth on 24 August 1542, the Atlantic two
+      days later, Cubagua on 11 September (other sources say 16 September), and Carvajal's lost eye.
+  - id: carvajal-medina-1894
+    title: Descubrimiento del río de las Amazonas según la relación hasta ahora inédita de Fr. Gaspar de Carvajal
+    author: Gaspar de Carvajal (ed. José Toribio Medina)
+    publisher: Imprenta de E. Rasco, Seville
+    year: '1894'
+    url: https://archive.org/details/descubrimientod00carvgoog
+    accessed: '2026-11-02'
+    type: primary
+    notes: >-
+      Carvajal's eyewitness Relación and related documents, read in the scanned 1894 Medina edition
+      on the Internet Archive (Harvard copy). The passages consulted are the 57 men, the hunger, the
+      boiled leather and the women warriors.
+  - id: guzman-relation
+    title: Relación de lo que dice Francisco de Guzmán, uno de los que fueron con el Adelantado Orellana (doc. XVII)
+    author: Francisco de Guzmán (printed in Medina, ed., 1894)
+    publisher: Imprenta de E. Rasco, Seville
+    year: '1894'
+    url: https://archive.org/details/descubrimientod00carvgoog
+    accessed: '2026-11-02'
+    type: primary
+    notes: >-
+      A survivor's account of the 1545 expedition (AGI, Patronato), read as printed by Medina. The
+      AGI original was not consulted directly. It gives 400 men, 98 dead at Cape Verde and 57 dead
+      at the river.
+  - id: pares-orellana-provision-1544
+    title: Real provisión al capitán Francisco de Orellana, nombrándolo gobernador y capitán general de Nueva Andalucía (17 February 1544)
+    institution: Archivo General de Indias, INDIFERENTE,416,L.2,F.6V-8V (PARES)
+    url: https://pares.cultura.gob.es/ParesBusquedas20/catalogo/description/244608
+    accessed: '2026-11-02'
+    type: primary
+    notes: PARES catalogue entry consulted. The document images were not consulted.
+  - id: pares-orellana-meritos-1541
+    title: Méritos de Francisco de Orellana, teniente de gobernador, Perú (1541)
+    institution: Archivo General de Indias, PATRONATO,185,R.23 (PARES)
+    url: https://pares.cultura.gob.es/ParesBusquedas20/catalogo/description/125295
+    accessed: '2026-11-02'
+    type: primary
+    notes: >-
+      PARES catalogue entry consulted. The summary records the Lima city council praising him as a
+      warrior, conqueror and good governor. The document images were not consulted.
+  - id: uea-da-silva
+    title: A História das Sociedades Humanas — Interação na Área da Zona Leste de Manaus, Brasil, Antes da Viagem de Francisco de Orellana
+    author: Carlos Augusto da Silva; Luciano de Souza Silva
+    publisher: Revista Contracorrente, Universidade do Estado do Amazonas
+    url: https://periodicos.uea.edu.br/index.php/contracorrente/article/download/737/646
+    accessed: '2026-11-02'
+    type: academic
+    notes: Archaeologists argue that sites around Manaus confirm Carvajal's first observations of extensive human occupation.
+  - id: de-souza-2018
+    title: Pre-Columbian earth-builders settled along the entire southern rim of the Amazon
+    author: Jonas Gregorio de Souza et al.
+    publisher: Nature Communications 9, 1125
+    year: '2018'
+    url: https://europepmc.org/article/PMC/PMC5871619
+    accessed: '2026-11-02'
+    type: academic
+    notes: >-
+      Estimates 500,000 to 1 million people in the southern rim of the Amazon between about 1250 and
+      1500. It notes that later counts reflect the impact of European diseases.
 
 media:
   - id: portrait
-    alt: 'Portrait of Francisco de Orellana — to be selected'
-    kind: historical
-    title: '[Portrait to be selected]'
-    license: '[To verify]'
-    attribution: '[To verify]'
+    alt: Bronze bust of Francisco de Orellana in Trujillo, a modern imagined likeness
+    kind: photograph
+    title: Bust of Francisco de Orellana, Trujillo (Cáceres)
+    creator: Photograph by Ximénex (Wikimedia Commons user); sculptor not recorded
+    date: Photographed 2007
+    posthumous: true
+    institution: Public monument, Trujillo, Spain
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Francisco_de_Orellana1.JPG
+    license: Public domain (the photographer has released it worldwide)
+    attribution: Ximénex, via Wikimedia Commons
+    notes: >-
+      No portrait of Orellana from life is known. The RAH uses this same photograph. The bust is a
+      modern public monument; photos of works in public places are allowed under LPI art. 35.2. The
+      sculptor and date need checking. Not yet downloaded.
