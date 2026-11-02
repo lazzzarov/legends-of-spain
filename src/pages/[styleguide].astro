@@ -31,7 +31,12 @@ const video: NonNullable<Legend['video']> = {
 const comic: NonNullable<Legend['comic']> = {
   status: 'reviewed',
   panels: [
-    { caption: 'Test fixture panel one.', dialogue: [], sources: [] },
+    {
+      caption: 'Test fixture panel one, with an illustration.',
+      image: 'fixture',
+      dialogue: [],
+      sources: [],
+    },
     {
       caption: 'Test fixture panel two, with dramatized dialogue.',
       dialogue: [{ speaker: 'Narrator', text: 'A dramatized line.', kind: 'dramatized' }],
@@ -40,6 +45,26 @@ const comic: NonNullable<Legend['comic']> = {
     { caption: 'Test fixture panel three.', note: 'A historical note.', dialogue: [], sources: [] },
   ],
 };
+
+// A generated test pattern, not artwork. The condition is replaced at build time, so a
+// production build drops this import and never emits the fixture image.
+const fixtureImage =
+  import.meta.env.DEV || import.meta.env.PUBLIC_SHOW_DRAFTS === 'true'
+    ? (await import('../assets/fixtures/fixture-panel.jpg')).default
+    : undefined;
+const comicImages = fixtureImage ? { fixture: fixtureImage } : undefined;
+const comicMedia: Legend['media'] = [
+  {
+    id: 'fixture',
+    file: 'fixture-panel.jpg', // resolved via comicImages
+    alt: 'Test fixture: a hatched placeholder pattern',
+    kind: 'ai-generated',
+    title: 'Test fixture panel',
+    posthumous: false,
+    license: 'Test fixture',
+    attribution: 'Generated test pattern',
+  },
+];
 ---
 
 <BaseLayout title="Styleguide" description="Component states for review and tests." noindex>
@@ -72,6 +97,6 @@ const comic: NonNullable<Legend['comic']> = {
     </PullQuote>
 
     <VideoPlayer slug="styleguide" name="Test Fixture" video={video} />
-    <ComicViewer slug="styleguide" comic={comic} media={[]} />
+    <ComicViewer slug="styleguide" comic={comic} media={comicMedia} images={comicImages} />
   </div>
 </BaseLayout>

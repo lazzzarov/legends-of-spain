@@ -53,14 +53,15 @@ P0 = must, P1 = should, P2 = nice to have.
 - [x] 3.13a Dev-only styleguide page with test fixtures for video and comic states · P1
 - [ ] 3.13 Research pass on Elcano (survivor numbers, distances, primary sources consulted directly), then author review → `reviewed` · P0 · **waiting on you**
 
-## Phase 4 — Interactive features
+## Phase 4 — Interactive features ✅
 
-- [ ] 4.1 Gallery filters (category, century, value), synced to the URL · P1
-- [ ] 4.2 Comic: swipe, keys, expand, notes, focus management · P0
-- [ ] 4.3 Chapter mini table of contents + progress bar · P1
-- [ ] 4.4 Scroll reveals (CSS + IntersectionObserver) · P2
-- [ ] 4.5 Accessible historical-note popovers · P1
-- [ ] 4.6 Related and next legend navigation · P1
+- [x] 4.1 Gallery filters (kind, century, value) as radio-chip groups on `/legends/`, synced to the URL, live result count, clear button; home value chips link to filtered views; hidden without JS (all legends shown) · P1
+- [x] 4.2 Comic: native swipe, arrow/Home/End keys, "Enlarge" modal dialog for finished illustrations (Esc closes, focus returns), historical notes · P0
+- [x] 4.3 Current-section highlight in the side contents, reading-progress bar, sticky "In this chapter" menu on small screens · P1
+- [x] 4.4 Scroll reveals (opacity/transform only); off for reduced motion; never hidden without JS (3 s safety fallback) · P2
+- [x] 4.5 Source previews on hover/focus of citation markers (tooltip, `aria-describedby`, Esc to close) · P1
+- [x] 4.6 Related legends section (from each legend's `related` list) + next chapter · P1
+- [x] 4.7 Search deferred until 12+ published legends (decision unchanged) · P2
 
 ## Phase 5 — Remaining legends
 

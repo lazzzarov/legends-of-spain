@@ -12,9 +12,15 @@ const { legends } = Astro.props;
   <ul
     role="list"
     class="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-7 p-0"
+    data-gallery
   >
     {legends.map((legend) => (
-      <li>
+      <li
+        data-reveal
+        data-category={legend.data.categories.join(' ')}
+        data-century={legend.data.centuries.join(' ')}
+        data-value={legend.data.values.join(' ')}
+      >
         <LegendCard legend={legend} />
       </li>
     ))}

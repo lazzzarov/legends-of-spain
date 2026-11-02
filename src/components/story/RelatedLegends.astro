@@ -1,0 +1,36 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import type { LegendEntry } from '../../lib/content';
+import { lifespan } from '../../lib/legends';
+import { legendPath } from '../../lib/paths';
+
+interface Props {
+  legends: LegendEntry[];
+}
+const { legends } = Astro.props;
+---
+
+<section data-reveal aria-labelledby="related" class="scroll-mt-6">
+  <SectionHeading id="related" eyebrow="Continue the journey">
+    Related Legends
+  </SectionHeading>
+  <ul
+    class="m-0 grid list-none grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4 p-0"
+    role="list"
+  >
+    {legends.map((l) => (
+      <li>
+        <a
+          href={legendPath(l.id)}
+          class="flex h-full flex-col gap-1.5 border border-sepia bg-cream p-5 text-umber no-underline transition hover:-translate-y-0.5 hover:shadow-lift"
+        >
+          <span class="eyebrow">
+            {l.data.role} · {lifespan(l.data.dates)}
+          </span>
+          <span class="font-display text-[26px] leading-tight">{l.data.name.display}</span>
+          <span class="text-[15px] leading-normal text-umber italic">{l.data.tagline}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>

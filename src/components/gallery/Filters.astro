@@ -1,0 +1,149 @@
+---
+import type { LegendEntry } from '../../lib/content';
+import { CATEGORIES, VALUES } from '../../lib/schema';
+import { CATEGORY_LABEL, VALUE_LABEL, centuryLabel } from '../../i18n/en';
+
+/**
+ * Filter chips for the gallery. Hidden without JavaScript (every legend is shown);
+ * with JavaScript, choices filter the cards in place and are mirrored in the URL.
+ * Each group is a radio set, so arrow keys move within it natively.
+ */
+interface Props {
+  legends: LegendEntry[];
+}
+const { legends } = Astro.props;
+
+// Offer only options that at least one legend has, in a stable order.
+const has = (pick: (l: LegendEntry) => readonly (string | number)[]) =>
+  new Set(legends.flatMap((l) => pick(l).map(String)));
+const categories = CATEGORIES.filter((c) => has((l) => l.data.categories).has(c));
+const values = VALUES.filter((v) => has((l) => l.data.values).has(v));
+const centuries = [...has((l) => l.data.centuries)].map(Number).sort((a, b) => a - b);
+
+const groups = [
+  {
+    key: 'category',
+    legend: 'Kind of story',
+    options: categories.map((c) => [c, CATEGORY_LABEL[c]]),
+  },
+  {
+    key: 'century',
+    legend: 'Century',
+    options: centuries.map((c) => [String(c), centuryLabel([c])]),
+  },
+  { key: 'value', legend: 'Value', options: values.map((v) => [v, VALUE_LABEL[v]]) },
+] as const;
+---
+
+<form class="mb-8 flex flex-col gap-4" aria-label="Filter the legends" data-filters hidden>
+  {groups.map((g) => (
+    <fieldset class="m-0 flex flex-wrap items-center gap-2 border-0 p-0">
+      <legend class="eyebrow float-left mr-3 mb-1 w-full sm:mb-0 sm:w-28">{g.legend}</legend>
+      {[['', 'All'] as const, ...g.options].map(([value, label]) => (
+        <label class="cursor-pointer">
+          <input
+            type="radio"
+            name={g.key}
+            value={value}
+            checked={value === ''}
+            class="peer sr-only"
+          />
+          <span class="inline-flex min-h-11 items-center rounded-full border border-sepia px-4 font-ui text-sm text-umber transition-colors peer-checked:border-umber peer-checked:bg-umber peer-checked:text-parchment peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-burgundy hover:border-umber">
+            {label}
+          </span>
+        </label>
+      ))}
+    </fieldset>
+  ))}
+  <div class="flex flex-wrap items-center justify-between gap-3 border-t border-dashed border-caramel pt-3">
+    <p class="m-0 font-ui text-sm text-burnt" aria-live="polite" data-filters-summary></p>
+    <button
+      type="reset"
+      class="min-h-11 font-ui text-sm text-burgundy underline underline-offset-3"
+      data-filters-reset
+    >
+      Clear filters
+    </button>
+  </div>
+</form>
+
+<p class="panel hidden p-8 text-center text-lg" data-filters-empty>
+  No legends match these filters.{' '}
+  <button type="button" class="text-burgundy underline" data-filters-reset>
+    Clear filters
+  </button>
+</p>
+
+<script>
+  import {
+    FILTER_KEYS,
+    matches,
+    parseFilters,
+    summary,
+    toSearch,
+    type Filters,
+  } from '../../lib/filters';
+
+  const form = document.querySelector<HTMLFormElement>('[data-filters]');
+  const gallery = document.querySelector<HTMLElement>('[data-gallery]');
+
+  if (form && gallery) {
+    const cards = [...gallery.querySelectorAll<HTMLElement>(':scope > li')];
+    const status = form.querySelector<HTMLElement>('[data-filters-summary]')!;
+    const empty = document.querySelector<HTMLElement>('[data-filters-empty]')!;
+    const words = (el: HTMLElement, key: string) =>
+      (el.dataset[key] ?? '').split(' ').filter(Boolean);
+
+    const read = (): Filters => parseFilters(new URLSearchParams(new FormData(form) as never));
+
+    const apply = (filters: Filters) => {
+      let shown = 0;
+      for (const card of cards) {
+        const visible = matches(
+          {
+            category: words(card, 'category'),
+            century: words(card, 'century'),
+            value: words(card, 'value'),
+          },
+          filters,
+        );
+        card.hidden = !visible;
+        if (visible) shown++;
+      }
+      status.textContent = summary(shown, cards.length);
+      empty.classList.toggle('hidden', shown > 0);
+    };
+
+    const sync = () => {
+      const filters = read();
+      apply(filters);
+      history.replaceState(null, '', `${location.pathname}${toSearch(filters)}${location.hash}`);
+    };
+
+    // Restore filters from the URL (shared links, back/forward).
+    const restore = () => {
+      const filters = parseFilters(location.search);
+      for (const key of FILTER_KEYS) {
+        const input = form.querySelector<HTMLInputElement>(
+          `input[name="${key}"][value="${filters[key] ?? ''}"]`,
+        );
+        if (input) input.checked = true;
+        else delete filters[key]; // unknown value in the URL: ignore it
+      }
+      apply(filters);
+    };
+
+    form.hidden = false;
+    form.addEventListener('change', sync);
+    form.addEventListener('submit', (e) => e.preventDefault());
+    for (const button of document.querySelectorAll('[data-filters-reset]')) {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        form.reset();
+        sync();
+      });
+    }
+    window.addEventListener('popstate', restore);
+    restore();
+  }
+</script>

@@ -19,21 +19,30 @@ import { getLegends, type LegendEntry } from '../../lib/content';
 import { legendJsonLd } from '../../lib/jsonld';
 import { isVisible, lifespan, showDrafts } from '../../lib/legends';
 import { legendPath, withBase } from '../../lib/paths';
-import { CATEGORY_LABEL, VALUE_LABEL, centuryLabel } from '../../i18n/en';
+import StoryNavigator from '../../components/story/StoryNavigator.astro';
+import RelatedLegends from '../../components/story/RelatedLegends.astro';
+import { CATEGORY_LABEL, CHAPTER_NUMERAL, VALUE_LABEL, centuryLabel } from '../../i18n/en';
 
 export const getStaticPaths = (async () => {
   const legends = await getLegends();
+  const byId = new Map(legends.map((l) => [l.id, l]));
   return legends.map((legend, i) => ({
     params: { slug: legend.id },
-    props: { legend, next: legends[(i + 1) % legends.length] },
+    props: {
+      legend,
+      next: legends[(i + 1) % legends.length]!,
+      // Only related legends that are visible in this build.
+      related: legend.data.related.map((id) => byId.get(id)).filter((l): l is LegendEntry => !!l),
+    },
   }));
 }) satisfies GetStaticPaths;
 
 interface Props {
   legend: LegendEntry;
   next: LegendEntry;
+  related: LegendEntry[];
 }
-const { legend, next } = Astro.props;
+const { legend, next, related } = Astro.props;
 const d = legend.data;
 const mediaById = new Map(d.media.map((m) => [m.id, m]));
 const portrait = mediaById.get(d.portrait)!;
@@ -57,6 +66,10 @@ const sections = [
   d.places.length > 0 && { id: 'places', label: 'Places to Visit' },
   d.sources.length > 0 && { id: 'sources', label: 'Sources' },
 ].filter((s): s is { id: string; label: string } => Boolean(s));
+const tocItems = [
+  ...d.chapters.map((c) => ({ id: c.key, label: `${CHAPTER_NUMERAL[c.key]} · ${c.title}` })),
+  ...sections,
+];
 
 const description = d.seo?.description ?? d.tagline;
 const jsonLd = JSON.stringify(legendJsonLd(legend.id, d, Astro.site!));
@@ -102,12 +115,14 @@ const jsonLd = JSON.stringify(legendJsonLd(legend.id, d, Astro.site!));
     </header>
   </section>
 
-  <div class="mx-auto flex max-w-6xl flex-wrap items-start gap-x-12 gap-y-8 px-4 pb-8 sm:px-6">
+  <StoryNavigator items={tocItems} />
+
+  <div class="mx-auto flex max-w-6xl flex-wrap items-start gap-x-12 gap-y-8 px-4 pt-6 pb-8 sm:px-6 lg:pt-0">
     <aside class="hidden flex-[0_0_220px] lg:block">
       <ChapterNav chapters={d.chapters} sections={sections} />
     </aside>
 
-    <article class="flex min-w-0 flex-[999_1_600px] flex-col gap-14">
+    <article class="flex min-w-0 flex-[999_1_600px] flex-col gap-14" data-story>
       <section aria-label="The story" class="panel flex flex-col gap-9 p-6 sm:p-12">
         {d.chapters.map((c, i) => (
           <>
@@ -136,6 +151,7 @@ const jsonLd = JSON.stringify(legendJsonLd(legend.id, d, Astro.site!));
 
       {d.places.length > 0 && <Places places={d.places} cite={cite} />}
       {d.sources.length > 0 && <SourcesList sources={d.sources} backlinks={backlinks} />}
+      {related.length > 0 && <RelatedLegends legends={related} />}
 
       {next.id !== legend.id && (
         <a

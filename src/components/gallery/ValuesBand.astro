@@ -2,6 +2,7 @@
 import type { LegendEntry } from '../../lib/content';
 import { VALUE_LABEL } from '../../i18n/en';
 import type { VALUES } from '../../lib/schema';
+import { withBase } from '../../lib/paths';
 
 interface Props {
   legends: LegendEntry[];
@@ -29,11 +30,17 @@ const values = [...counts.entries()].sort((a, b) => b[1] - a[1]);
       </div>
       <ul class="m-0 flex flex-[1_1_460px] list-none flex-wrap gap-3 p-0" role="list">
         {values.map(([value, n]) => (
-          <li class="inline-flex min-h-12 items-center gap-2 border border-gold px-5 font-sc text-[19px]">
-            {VALUE_LABEL[value]}
-            <span class="font-ui text-xs text-mist" aria-label={`${n} legends`}>
-              {n}
-            </span>
+          <li>
+            <a
+              href={withBase(`legends/?value=${value}`)}
+              class="inline-flex min-h-12 items-center gap-2 border border-gold px-5 font-sc text-[19px] text-parchment no-underline hover:bg-gold hover:text-ink"
+            >
+              {VALUE_LABEL[value]}
+              <span class="font-ui text-xs">
+                {n}
+                <span class="sr-only"> legends</span>
+              </span>
+            </a>
           </li>
         ))}
       </ul>

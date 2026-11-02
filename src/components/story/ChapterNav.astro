@@ -7,6 +7,9 @@ interface Props {
   sections: { id: string; label: string }[];
 }
 const { chapters, sections } = Astro.props;
+// The current section gets aria-current="location" from StoryNavigator's script.
+const link =
+  'relative flex min-h-10 items-center text-umber no-underline hover:text-burgundy aria-[current=location]:font-semibold aria-[current=location]:text-burgundy aria-[current=location]:before:absolute aria-[current=location]:before:-left-[17px] aria-[current=location]:before:h-6 aria-[current=location]:before:w-[3px] aria-[current=location]:before:bg-burgundy aria-[current=location]:before:content-[""]';
 ---
 
 <nav aria-label="In this chapter" class="font-ui text-sm lg:sticky lg:top-6">
@@ -14,10 +17,7 @@ const { chapters, sections } = Astro.props;
   <ol class="m-0 flex list-none flex-col border-l border-sepia p-0 pl-4" role="list">
     {chapters.map((c) => (
       <li>
-        <a
-          href={`#${c.key}`}
-          class="flex min-h-10 items-center text-umber no-underline hover:text-burgundy"
-        >
+        <a href={`#${c.key}`} class={link} data-toc-link>
           {CHAPTER_NUMERAL[c.key]} · {c.title}
         </a>
       </li>
@@ -25,10 +25,7 @@ const { chapters, sections } = Astro.props;
     <li aria-hidden="true" class="my-2 h-px bg-caramel"></li>
     {sections.map((s) => (
       <li>
-        <a
-          href={`#${s.id}`}
-          class="flex min-h-10 items-center text-umber no-underline hover:text-burgundy"
-        >
+        <a href={`#${s.id}`} class={link} data-toc-link>
           {s.label}
         </a>
       </li>

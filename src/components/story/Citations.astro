@@ -22,9 +22,72 @@ const { numbers, prefix, tone = 'light' } = Astro.props;
           tone === 'dark' && 'text-gold hover:text-mist',
         ]}
         aria-label={`Source ${n}`}
+        data-citation
       >
         [{n}]
       </a>
     ))}
   </sup>
 )}
+
+<script>
+  // Preview a source on hover or keyboard focus, read from the Sources list itself, so the
+  // reader doesn't have to jump away. Clicking still goes to the full entry.
+  const tip = document.createElement('div');
+  tip.id = 'citation-preview';
+  tip.setAttribute('role', 'tooltip');
+  tip.hidden = true;
+  tip.className =
+    'pointer-events-none fixed z-50 max-w-xs border border-gold bg-ink px-3 py-2 font-ui text-[13px] leading-snug text-parchment shadow-lg';
+  document.body.append(tip);
+  let current: HTMLAnchorElement | null = null;
+
+  const show = (link: HTMLAnchorElement) => {
+    const entry = document.querySelector(link.hash);
+    if (!entry) return;
+    const kind = entry.querySelector('span')?.textContent?.trim() ?? '';
+    const title = entry.querySelector('p')?.textContent?.replace(/\s+/g, ' ').trim() ?? '';
+    tip.textContent = `${link.textContent?.trim()} ${title}${kind ? ` — ${kind.toLowerCase()}` : ''}`;
+    tip.hidden = false;
+    link.setAttribute('aria-describedby', tip.id);
+    current = link;
+    position();
+  };
+  // Place the preview under the marker (above it near the bottom edge), kept on screen.
+  const position = () => {
+    if (!current) return;
+    const r = current.getBoundingClientRect();
+    const left = Math.min(Math.max(8, r.left), window.innerWidth - tip.offsetWidth - 8);
+    const below = r.bottom + 8 + tip.offsetHeight < window.innerHeight;
+    tip.style.left = `${left}px`;
+    tip.style.top = `${below ? r.bottom + 6 : r.top - tip.offsetHeight - 6}px`;
+  };
+  const hide = () => {
+    tip.hidden = true;
+    current?.removeAttribute('aria-describedby');
+    current = null;
+  };
+  const citation = (e: Event) =>
+    (e.target as Element | null)?.closest?.<HTMLAnchorElement>('a[data-citation]') ?? null;
+
+  document.addEventListener('pointerover', (e) => {
+    const link = citation(e);
+    if (link && link !== current) show(link);
+  });
+  document.addEventListener('pointerout', (e) => {
+    if (citation(e)) hide();
+  });
+  document.addEventListener('focusin', (e) => {
+    const link = citation(e);
+    if (link) show(link);
+  });
+  document.addEventListener('focusout', (e) => {
+    if (citation(e)) hide();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') hide();
+  });
+  // Focusing a marker can scroll the page; follow the marker instead of hiding.
+  window.addEventListener('scroll', position, { passive: true });
+  window.addEventListener('resize', position);
+</script>
