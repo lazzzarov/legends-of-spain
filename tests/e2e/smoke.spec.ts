@@ -19,6 +19,9 @@ for (const { path, heading } of routes) {
     });
 
     test('has no serious accessibility violations', async ({ page }) => {
+      // Scan the settled page: reduced motion skips the scroll-reveal fades, which axe would
+      // otherwise measure mid-transition on slow CI runners.
+      await page.emulateMedia({ reducedMotion: 'reduce' });
       await page.goto(path);
       const { violations } = await new AxeBuilder({ page })
         .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'])

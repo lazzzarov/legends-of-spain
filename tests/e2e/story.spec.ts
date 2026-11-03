@@ -60,6 +60,9 @@ test.describe('Elcano story page (build with drafts)', () => {
   });
 
   test('has no serious accessibility violations', async ({ page }) => {
+    // Scan the settled page: reduced motion skips the scroll-reveal fades, which axe would
+    // otherwise measure mid-transition on slow CI runners.
+    await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto(ELCANO);
     const { violations } = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag22aa'])
@@ -108,6 +111,9 @@ test.describe('styleguide fixtures', () => {
   });
 
   test('has no serious accessibility violations', async ({ page }) => {
+    // Scan the settled page: reduced motion skips the scroll-reveal fades, which axe would
+    // otherwise measure mid-transition on slow CI runners.
+    await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('styleguide/');
     const { violations } = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag22aa'])
