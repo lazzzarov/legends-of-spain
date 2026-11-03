@@ -286,6 +286,7 @@ sources:
 
 media:
   - id: portrait
+    file: portrait.jpg
     alt: Wood-engraved portrait of Miguel López de Legazpi from an 1887 Spanish magazine, an imagined likeness
     kind: historical
     title: Miguel López de Legazpi (La Hormiga de Oro, no. 16)
@@ -299,4 +300,4 @@ media:
     notes: >-
       No portrait from life is known. The file is a scan of a printed page, so LPI art. 128 does not
       apply. An alternative is Baltasar Giraudier's 1860 portrait (BNE, ER/2241 (3)), which the RAH
-      uses. Not yet downloaded.
+      uses. Downloaded 2026-11-03 from the source URL.

@@ -261,6 +261,7 @@ sources:
 
 media:
   - id: portrait
+    file: portrait.jpg
     alt: Engraved half-length portrait of Álvaro de Bazán in armour
     kind: historical
     title: Portret van Álvaro de Bazán
@@ -276,3 +277,4 @@ media:
       before use, because van Dyck’s well-known portrait shows his son, the second marquis. An
       alternative is Rafael Tegeo’s posthumous oil of 1828 in the Museo Naval, Madrid, but photographs
       of it carry their own rights (LPI art. 128).
+      Downloaded 2026-11-03 (resized to ≤1000 px). Plate inscription checked on download: "Primer Marqués de S. Cruz … nació en Granada Año de 1526 … falleció en Lisboa en 1588", so it shows the first marquis.

@@ -280,6 +280,7 @@ sources:
 
 media:
   - id: portrait
+    file: portrait.jpg
     alt: Engraved bust portrait of Juan Sebastián Elcano, an imagined likeness made more than 250 years after his death
     kind: historical
     title: Juan Sebastián de Elcano (Retratos de los Españoles Ilustres)
@@ -293,4 +294,4 @@ media:
     notes: >-
       No portrait from life exists, according to Fundación Elkano. The file is a scan of a printed
       book, not a photograph of a painting, so the 25-year photo right in LPI art. 128 is not a
-      concern. Not yet downloaded.
+      concern. Downloaded 2026-11-03 from the source URL.

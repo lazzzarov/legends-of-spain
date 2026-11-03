@@ -278,6 +278,7 @@ sources:
 
 media:
   - id: portrait
+    file: portrait.jpg
     alt: Portrait of Fray Bernardino de Sahagún, a photograph of a later lithograph
     kind: historical
     title: Fr Bernardino de Sahagún. Photograph after lithograph.
@@ -287,4 +288,6 @@ media:
     sourceUrl: https://wellcomecollection.org/works/k7e3r2hh
     license: Public Domain Mark (as stated by Wellcome Collection)
     attribution: Wellcome Collection, London
-    notes: No portrait made in Sahagún’s lifetime is known; this is an undated later image and an imagined likeness.
+    notes: >-
+      No portrait made in Sahagún’s lifetime is known; this is an undated later image and an imagined likeness.
+      Downloaded 2026-11-03 (resized to ≤1000 px).

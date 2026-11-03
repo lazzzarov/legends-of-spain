@@ -319,6 +319,7 @@ sources:
 
 media:
   - id: portrait
+    file: portrait.jpg
     alt: Bronze bust of Francisco de Orellana in Trujillo, a modern imagined likeness
     kind: photograph
     title: Bust of Francisco de Orellana, Trujillo (Cáceres)
@@ -332,4 +333,4 @@ media:
     notes: >-
       No portrait of Orellana from life is known. The RAH uses this same photograph. The bust is a
       modern public monument; photos of works in public places are allowed under LPI art. 35.2. The
-      sculptor and date need checking. Not yet downloaded.
+      sculptor and date need checking. Downloaded 2026-11-03 from the source URL.

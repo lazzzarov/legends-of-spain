@@ -289,6 +289,7 @@ sources:
 
 media:
   - id: portrait
+    file: portrait.jpg
     alt: Engraved bust portrait of Francisco Javier Balmis
     kind: historical
     title: Portrait of Francisco Javier Balmis (engraving)
@@ -298,4 +299,6 @@ media:
     sourceUrl: https://commons.wikimedia.org/wiki/File:Balmis.jpg
     license: Public domain (Wikimedia Commons, Public Domain Mark 1.0; work published before 1931)
     attribution: Unknown engraver, via Wikimedia Commons
-    notes: The holding institution and original publication are not recorded on Commons, so verify the provenance before use. If the engraving turns out to post-date 1819, set posthumous to true.
+    notes: >-
+      The holding institution and original publication are not recorded on Commons, so verify the provenance before use. If the engraving turns out to post-date 1819, set posthumous to true.
+      Downloaded 2026-11-03 (resized to ≤1000 px).

@@ -241,6 +241,7 @@ sources:
 
 media:
   - id: portrait
+    file: portrait.jpg
     alt: Engraved bust portrait of Antonio de Leyva in armour, within an ornamental frame
     kind: historical
     title: Antonio de Leyva, conte di Monza
@@ -255,3 +256,4 @@ media:
       Engraved some sixty years after Leyva’s death. Check the Trento record before use. Another
       impression is held by the BNE (bdh-rd.bne.es, id 0000031747), whose Commons copy is
       CC BY-SA 4.0.
+      Downloaded 2026-11-03 (resized to ≤1000 px).

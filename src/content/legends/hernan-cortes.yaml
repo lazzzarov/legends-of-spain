@@ -314,6 +314,7 @@ sources:
 
 media:
   - id: portrait
+    file: portrait.jpg
     alt: Drawing of Hernán Cortés made in 1529 by Christoph Weiditz
     kind: historical
     title: Hernán Cortés, from the Trachtenbuch (costume book) of Christoph Weiditz
@@ -324,4 +325,6 @@ media:
     sourceUrl: https://commons.wikimedia.org/wiki/File:Weiditz_Trachtenbuch_077_Hernan_Cort%C3%A9s.jpg
     license: Public domain (artwork); confirm the reuse terms of the museum’s digitisation before use
     attribution: Christoph Weiditz, Trachtenbuch, 1529. Germanisches Nationalmuseum, Nuremberg, Hs. 22474
-    notes: Made in Spain in 1529, during Cortés’s lifetime. Alternative — José Salomé Pina’s c. 1879 copy (Museo del Prado P003430), posthumous.
+    notes: >-
+      Made in Spain in 1529, during Cortés’s lifetime. Alternative — José Salomé Pina’s c. 1879 copy (Museo del Prado P003430), posthumous.
+      Downloaded 2026-11-03 (resized to ≤1000 px). Checked on download: a single page of the Trachtenbuch with the 1529 inscription naming Cortés.

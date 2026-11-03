@@ -257,6 +257,7 @@ sources:
 
 media:
   - id: portrait
+    file: portrait.jpg
     alt: Bust-length oil portrait of Francisco Espoz y Mina in military uniform
     kind: historical
     title: Portrait of Francisco Espoz y Mina
@@ -267,4 +268,6 @@ media:
     sourceUrl: https://commons.wikimedia.org/wiki/File:General_Francisco_Espoz_y_Mina_(by_anonymous_author).jpg
     license: Public domain painting (Wikimedia Commons, Public Domain Mark 1.0). Check the photograph's rights under Spanish LPI art. 128 before use.
     attribution: Anonymous, Portrait of Francisco Espoz y Mina, c. 1815–1823; photograph Museo del Romanticismo, via Wikimedia Commons
-    notes: An earlier Commons revision attributed this painting to Goya; the current attribution is anonymous. The alternative is José Vallespín y Aibar's 1858 posthumous portrait in the Palacio de Navarra.
+    notes: >-
+      An earlier Commons revision attributed this painting to Goya; the current attribution is anonymous. The alternative is José Vallespín y Aibar's 1858 posthumous portrait in the Palacio de Navarra.
+      Downloaded 2026-11-03 (resized to ≤1000 px). Rights check pending: the Commons file comes from the Museo del Romanticismo’s own Flickr photo; under LPI art. 128 the museum’s photograph may still be protected.

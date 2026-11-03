@@ -287,6 +287,7 @@ sources:
 
 media:
   - id: portrait
+    file: portrait.jpg
     alt: Nineteenth-century oil portrait of Francisco Pizarro in a black plumed hat, by Amable-Paul Coutan
     kind: historical
     title: Francisco Pizarro, conqueror (1475–1541)
@@ -297,4 +298,6 @@ media:
     sourceUrl: https://commons.wikimedia.org/wiki/File:Portrait_of_Francisco_Pizarro.jpg
     license: Public domain (PD-art, author died more than 100 years ago); confirm the museum photograph’s terms
     attribution: Amable-Paul Coutan, Francisco Pizarro, 1835. Château de Versailles
-    notes: Imagined likeness commissioned by Louis-Philippe for the historical galleries of Versailles; no portrait from life is known.
+    notes: >-
+      Imagined likeness commissioned by Louis-Philippe for the historical galleries of Versailles; no portrait from life is known.
+      Downloaded 2026-11-03 (resized to ≤1000 px).

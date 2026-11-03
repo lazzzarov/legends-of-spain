@@ -260,6 +260,7 @@ sources:
 
 media:
   - id: portrait
+    file: portrait.jpg
     alt: Portrait of Blas de Lezo in naval uniform, Museo Naval, Madrid
     kind: historical
     title: Blas de Lezo y Olavarrieta (1689–1741)
@@ -275,3 +276,4 @@ media:
       Revilla-Gigedo collection (Museo Naval) is marked “all rights reserved” on Google Arts & Culture.
       Spanish LPI art. 128 may protect non-creative photographs of paintings for 25 years; confirm the
       photograph’s terms with the Museo Naval before use.
+      Downloaded 2026-11-03 (resized to ≤1000 px). Rights check pending: the Commons file’s source is a Centro Virtual Cervantes page on the Museo Naval; confirm the photograph’s terms.
