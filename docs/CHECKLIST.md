@@ -72,7 +72,7 @@ P0 = must, P1 = should, P2 = nice to have.
 - [x] 5.5 Portrait images: 12 downloaded 2026-11-03 (licences confirmed via the Commons and Wellcome APIs), resized to ≤1000 px in `src/assets/legends/<slug>/portrait.jpg`; Bazán inscription and Cortés page checked; Fadrique cropped from Maíno; Bobadilla and Sarmiento have no verified likeness · P0
 - [ ] 5.5a Rights check on two photographs: Espoz y Mina (Museo del Romanticismo photo) and Blas de Lezo (Museo Naval via Cervantes) · P1
 - [ ] 5.6 Video briefs and comic scripts for the 13 new legends (Elcano's exist) · P1
-- [ ] 5.7 Editorial review of each legend → `reviewed` · P0 · **waiting on you**
+- [ ] 5.7 Editorial review of each legend → `reviewed` (sheet: `docs/REVIEW.md`) · P0 · **waiting on you**
 
 ## Phase 6 — QA and launch
 
