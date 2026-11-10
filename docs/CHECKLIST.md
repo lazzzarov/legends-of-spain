@@ -82,7 +82,7 @@ P0 = must, P1 = should, P2 = nice to have.
 - [ ] 6.4 Source link checker in CI · P1
 - [x] 6.5 Asset licence audit: all 12 portraits have file, licence, source and alt; internal caveats moved out of public credit lines into `notes`; credits page generated from content · P0
 - [x] 6.6 SEO: sitemap lists all 18 pages, canonical + description + OG image on every page, JSON-LD on home and legends, no `noindex` in production, robots.txt points to sitemap · P0
-- [ ] 6.7 Make the repo public, enable Pages (Source: GitHub Actions), first deploy · P0
+- [x] 6.7 Repo made public, Pages enabled (Source: GitHub Actions), first deploy 2026-11-10: https://lazzzarov.github.io/legends-of-spain/ · P0
 
 ## Phase 7 — Optional (only if approved)
 

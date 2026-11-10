@@ -1,7 +1,7 @@
 name: Deploy to GitHub Pages
 
-# Free GitHub Pages requires a public repository. While the repo is private,
-# the jobs below are skipped instead of failing.
+# Free GitHub Pages requires a public repository. If the repo is ever made
+# private again, the jobs below are skipped instead of failing.
 on:
   push:
     branches: [main]

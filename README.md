@@ -51,7 +51,7 @@ Copy `docs/templates/legend.template.yaml` to `src/content/legends/<slug>.yaml`,
 
 ## Deployment
 
-Pushing to `main` builds and deploys to GitHub Pages through `.github/workflows/deploy.yml` at `https://lazzzarov.github.io/legends-of-spain/`. The deploy is skipped while the repository is private. Once it is public, set **Settings → Pages → Source: GitHub Actions**.
+Pushing to `main` builds and deploys to GitHub Pages through `.github/workflows/deploy.yml` at `https://lazzzarov.github.io/legends-of-spain/`. The site went live on 10 November 2026 (Pages source: GitHub Actions). The deploy is skipped automatically if the repository is ever made private again.
 
 ## Licenses
 

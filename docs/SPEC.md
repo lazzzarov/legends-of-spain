@@ -13,7 +13,7 @@ An open-source, illustrated storybook of Spanish explorers, commanders and pione
 | Name      | **Legends of Spain**                                                                              |
 | Stack     | Astro (static) + React islands + TypeScript + Tailwind v4                                         |
 | Hosting   | GitHub Pages at `lazzzarov.github.io/legends-of-spain/`. No custom domain.                        |
-| Repo      | `lazzzarov/legends-of-spain`, **private until V1**, then public                                   |
+| Repo      | `lazzzarov/legends-of-spain`, public since V1 (10 Nov 2026)                                       |
 | Language  | English first; UI strings and routes ready for more languages later                               |
 | Roster    | The 14 figures in `docs/research/20261102_deep-research.md`; Elcano is the first template legend  |
 | Research  | Not now: build first, fill in content later. Unknowns stay as labelled placeholders.              |
