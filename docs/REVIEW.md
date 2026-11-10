@@ -118,6 +118,6 @@ The points below come from the research notes. "Decide" means a judgement call o
 | Bernardino de Sahagún        | Approved | 2026-11-10 | Open points accepted as worded                             |
 | Francisco Arias de Bobadilla | Approved | 2026-11-10 | Open points accepted as worded                             |
 | Fadrique de Toledo           | Approved | 2026-11-10 | Prado wording still to be read on museodelprado.es         |
-| Blas de Lezo                 | Approved | 2026-11-10 | Portrait photo rights still unconfirmed                    |
+| Blas de Lezo                 | Approved | 2026-11-10 | Portrait photo rights unconfirmed; editor chose to keep it |
 | Francisco Javier Balmis      | Approved | 2026-11-10 | Open points accepted as worded                             |
-| Francisco Espoz y Mina       | Approved | 2026-11-10 | Portrait photo rights still unconfirmed                    |
+| Francisco Espoz y Mina       | Approved | 2026-11-10 | Portrait photo rights unconfirmed; editor chose to keep it |

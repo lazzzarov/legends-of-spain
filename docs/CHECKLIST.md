@@ -70,7 +70,7 @@ P0 = must, P1 = should, P2 = nice to have.
 - [x] 5.3 Link check: 84 unique URLs, 80 return 200; 4 block bots (Britannica, Prado ×2, Europe PMC) and need a manual look · P1
 - [x] 5.4 Tests decoupled from live content (fixture-based unit tests; e2e expectations read from the legend files); unreviewed legends get `noindex` · P1
 - [x] 5.5 Portrait images: 12 downloaded 2026-11-03 (licences confirmed via the Commons and Wellcome APIs), resized to ≤1000 px in `src/assets/legends/<slug>/portrait.jpg`; Bazán inscription and Cortés page checked; Fadrique cropped from Maíno; Bobadilla and Sarmiento have no verified likeness · P0
-- [ ] 5.5a Rights check on two photographs: Espoz y Mina (Museo del Romanticismo photo) and Blas de Lezo (Museo Naval via Cervantes) · P1 · **decide before going public**
+- [x] 5.5a Espoz y Mina and Blas de Lezo photographs: rights not confirmed; editor chose to keep them (2026-11-10). Replace with the placeholder if a rights holder objects · P1
 - [ ] 5.6 Video briefs and comic scripts for the 13 new legends (Elcano's exist) · P1
 - [x] 5.7 Editorial review: all 14 approved 2026-11-10 → `reviewed` (log and open follow-ups in `docs/REVIEW.md`) · P0
 
