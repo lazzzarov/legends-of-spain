@@ -229,7 +229,9 @@ seo:
   description: Francisco Pizarro, Cajamarca and the fall of the Inca state — an ambush, a civil war, Andean allies and the human cost of conquest.
 
 review:
-  status: sourced
+  status: reviewed
+  reviewedBy: lazzzarov
+  reviewedAt: '2026-11-10'
 
 sources:
   - id: rah-pizarro
@@ -296,8 +298,9 @@ media:
     posthumous: true
     institution: Musée national des châteaux de Versailles et de Trianon
     sourceUrl: https://commons.wikimedia.org/wiki/File:Portrait_of_Francisco_Pizarro.jpg
-    license: Public domain (PD-art, author died more than 100 years ago); confirm the museum photograph’s terms
+    license: Public domain
     attribution: Amable-Paul Coutan, Francisco Pizarro, 1835. Château de Versailles
     notes: >-
       Imagined likeness commissioned by Louis-Philippe for the historical galleries of Versailles; no portrait from life is known.
       Downloaded 2026-11-03 (resized to ≤1000 px).
+      Licence detail: PD-art on Commons (author died more than 100 years ago); the museum photograph's terms were not separately confirmed.

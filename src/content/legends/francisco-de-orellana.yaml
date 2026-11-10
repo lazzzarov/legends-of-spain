@@ -223,7 +223,9 @@ seo:
   description: Sent to find food in 1541, Francisco de Orellana and 57 men were swept down the Amazon to the Atlantic. The story, and its other side.
 
 review:
-  status: sourced
+  status: reviewed
+  reviewedBy: lazzzarov
+  reviewedAt: '2026-11-10'
 
 sources:
   - id: rah-orellana

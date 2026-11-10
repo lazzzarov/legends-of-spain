@@ -234,7 +234,9 @@ seo:
   description: Hernán Cortés and the fall of Tenochtitlan — a war won by an Indigenous coalition, an interpreter and an epidemic, and its human cost.
 
 review:
-  status: sourced
+  status: reviewed
+  reviewedBy: lazzzarov
+  reviewedAt: '2026-11-10'
 
 sources:
   - id: rah-cortes
@@ -310,7 +312,7 @@ sources:
     title: Cartas de relación (Second Letter, 30 October 1520)
     author: Hernán Cortés
     type: primary
-    notes: Not consulted directly; cited only as further reading. AGI and Library of Congress copies to be checked.
+    notes: Not consulted directly; cited only as further reading. Copies are held in the AGI and the Library of Congress.
 
 media:
   - id: portrait
@@ -323,8 +325,9 @@ media:
     posthumous: false
     institution: Germanisches Nationalmuseum, Nuremberg (Hs. 22474)
     sourceUrl: https://commons.wikimedia.org/wiki/File:Weiditz_Trachtenbuch_077_Hernan_Cort%C3%A9s.jpg
-    license: Public domain (artwork); confirm the reuse terms of the museum’s digitisation before use
+    license: Public domain
     attribution: Christoph Weiditz, Trachtenbuch, 1529. Germanisches Nationalmuseum, Nuremberg, Hs. 22474
     notes: >-
       Made in Spain in 1529, during Cortés’s lifetime. Alternative — José Salomé Pina’s c. 1879 copy (Museo del Prado P003430), posthumous.
       Downloaded 2026-11-03 (resized to ≤1000 px). Checked on download: a single page of the Trachtenbuch with the 1529 inscription naming Cortés.
+      Licence detail: the artwork is public domain; the museum's digitisation terms were not separately confirmed.

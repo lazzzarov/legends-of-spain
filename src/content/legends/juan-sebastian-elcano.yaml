@@ -218,7 +218,9 @@ seo:
   description: A ship’s master with a past, Juan Sebastián Elcano brought the Victoria home in 1522 with 18 men, the first ship to sail round the world.
 
 review:
-  status: sourced
+  status: reviewed
+  reviewedBy: lazzzarov
+  reviewedAt: '2026-11-10'
 
 sources:
   - id: rah-elcano
@@ -289,9 +291,10 @@ media:
     posthumous: true
     institution: Published by the Imprenta Real, Madrid; a copy is in the Biblioteca Nacional de España (BDH bdh0000031840)
     sourceUrl: https://commons.wikimedia.org/wiki/File:Juan_Sebastian_de_Elcano.jpg
-    license: Public domain (the engraving dates from the 18th century). Commons labels the scan Public Domain Mark 1.0.
+    license: Public domain
     attribution: Luis Fernández Noseret after José López Enguídanos, Retratos de los Españoles Ilustres (Madrid, Imprenta Real, 1791). Via Wikimedia Commons.
     notes: >-
       No portrait from life exists, according to Fundación Elkano. The file is a scan of a printed
       book, not a photograph of a painting, so the 25-year photo right in LPI art. 128 is not a
       concern. Downloaded 2026-11-03 from the source URL.
+      Licence detail: the engraving dates from the 18th century; Commons labels the scan Public Domain Mark 1.0.

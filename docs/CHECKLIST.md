@@ -30,7 +30,7 @@ P0 = must, P1 = should, P2 = nice to have.
 - [x] 2.4 Home cover, values band, promise section to mockup fidelity · P0
 - [x] 2.5 LegendCard: portrait slot, value ribbon (replaced the seal, which overflowed on long values) · P0
 - [x] 2.6 Story primitives: Chapter, ReadMore, VerificationBadge, Citations, Portrait + credit, MediaKindLabel, PullQuote, ChapterNav, SectionHeading · P0
-- [ ] 2.7 "Why We Tell These Stories" copy approved by the author · P0 · **waiting on you**
+- [x] 2.7 "Why We Tell These Stories" copy approved by the author · P0
 - [x] 2.8 Credits page: lists only produced media; AI policy with live labels · P1
 - [x] 2.9 Page-turn view transition (slide + fade); disabled under reduced motion · P1
 - [x] 2.10 Responsive QA at 300 / 375 / 1280 in the browser; no horizontal overflow at 375 · P0
@@ -51,7 +51,7 @@ P0 = must, P1 = should, P2 = nice to have.
 - [x] 3.11 Sources list with "Cited in" back-links to every claim · P0
 - [x] 3.12 Build-time OG image per legend (satori + sharp, site fonts) + JSON-LD (Article about a Person; WebSite on home) · P0
 - [x] 3.13a Dev-only styleguide page with test fixtures for video and comic states · P1
-- [ ] 3.13 Research pass on Elcano (survivor numbers, distances, primary sources consulted directly), then author review → `reviewed` · P0 · **waiting on you**
+- [x] 3.13 Research pass on Elcano and author review → `reviewed` (2026-11-10) · P0
 
 ## Phase 4 — Interactive features ✅
 
@@ -70,18 +70,18 @@ P0 = must, P1 = should, P2 = nice to have.
 - [x] 5.3 Link check: 84 unique URLs, 80 return 200; 4 block bots (Britannica, Prado ×2, Europe PMC) and need a manual look · P1
 - [x] 5.4 Tests decoupled from live content (fixture-based unit tests; e2e expectations read from the legend files); unreviewed legends get `noindex` · P1
 - [x] 5.5 Portrait images: 12 downloaded 2026-11-03 (licences confirmed via the Commons and Wellcome APIs), resized to ≤1000 px in `src/assets/legends/<slug>/portrait.jpg`; Bazán inscription and Cortés page checked; Fadrique cropped from Maíno; Bobadilla and Sarmiento have no verified likeness · P0
-- [ ] 5.5a Rights check on two photographs: Espoz y Mina (Museo del Romanticismo photo) and Blas de Lezo (Museo Naval via Cervantes) · P1
+- [ ] 5.5a Rights check on two photographs: Espoz y Mina (Museo del Romanticismo photo) and Blas de Lezo (Museo Naval via Cervantes) · P1 · **decide before going public**
 - [ ] 5.6 Video briefs and comic scripts for the 13 new legends (Elcano's exist) · P1
-- [ ] 5.7 Editorial review of each legend → `reviewed` (sheet: `docs/REVIEW.md`) · P0 · **waiting on you**
+- [x] 5.7 Editorial review: all 14 approved 2026-11-10 → `reviewed` (log and open follow-ups in `docs/REVIEW.md`) · P0
 
 ## Phase 6 — QA and launch
 
-- [ ] 6.1 Full e2e suite · P0
-- [ ] 6.2 Accessibility audit (axe + keyboard + NVDA) · P0
-- [ ] 6.3 Lighthouse budget · P0
+- [x] 6.1 Full suite: 58 unit, 105 e2e (desktop + mobile), `astro check` clean, Prettier clean · P0
+- [ ] 6.2 Accessibility audit · P0 — axe on every page incl. all 14 legends ✓, Lighthouse accessibility 100 ✓ (fixed heading order); manual keyboard + NVDA pass still to do
+- [x] 6.3 Lighthouse (production build): desktop 100/100/100/100; mobile performance 83–90 (LCP 3.1–3.8 s on simulated slow 4G), CLS ≤ 0.09 after fixing the filter shift · P0
 - [ ] 6.4 Source link checker in CI · P1
-- [ ] 6.5 Asset license audit + generated CREDITS · P0
-- [ ] 6.6 SEO validation (sitemap, OG, structured data) · P0
+- [x] 6.5 Asset licence audit: all 12 portraits have file, licence, source and alt; internal caveats moved out of public credit lines into `notes`; credits page generated from content · P0
+- [x] 6.6 SEO: sitemap lists all 18 pages, canonical + description + OG image on every page, JSON-LD on home and legends, no `noindex` in production, robots.txt points to sitemap · P0
 - [ ] 6.7 Make the repo public, enable Pages (Source: GitHub Actions), first deploy · P0
 
 ## Phase 7 — Optional (only if approved)

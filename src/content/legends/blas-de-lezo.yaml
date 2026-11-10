@@ -205,7 +205,9 @@ seo:
   description: In 1741 Cartagena de Indias held out against Vernon’s huge fleet. Blas de Lezo’s part in a defence shared with Eslava, engineers and militia.
 
 review:
-  status: sourced
+  status: reviewed
+  reviewedBy: lazzzarov
+  reviewedAt: '2026-11-10'
 
 sources:
   - id: rah-lezo

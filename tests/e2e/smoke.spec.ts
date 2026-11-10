@@ -71,7 +71,7 @@ test('unknown pages show the styled 404', async ({ page }) => {
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Lost at sea');
 });
 
-test('unreviewed legends are marked noindex', async ({ page }) => {
+test('reviewed legends are open to search engines', async ({ page }) => {
   await page.goto('legends/hernan-cortes/');
-  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex');
+  await expect(page.locator('meta[name="robots"]')).toHaveCount(0);
 });

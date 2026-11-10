@@ -207,7 +207,9 @@ seo:
   description: Trapped by deliberate floods at Empel in 1585, Bobadilla’s men held out until the water froze. History, tradition and devotion, told apart.
 
 review:
-  status: sourced
+  status: reviewed
+  reviewedBy: lazzzarov
+  reviewedAt: '2026-11-10'
 
 sources:
   - id: rah-arias-de-bobadilla

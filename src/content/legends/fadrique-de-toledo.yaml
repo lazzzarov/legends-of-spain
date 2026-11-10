@@ -195,7 +195,9 @@ seo:
   description: In 1625 a combined Castilian–Portuguese armada under Fadrique de Toledo crossed the Atlantic and retook Salvador da Bahia from the Dutch.
 
 review:
-  status: sourced
+  status: reviewed
+  reviewedBy: lazzzarov
+  reviewedAt: '2026-11-10'
 
 sources:
   - id: rah-fadrique-de-toledo
@@ -250,9 +252,9 @@ sources:
     accessed: '2026-11-02'
     type: institutional
     notes: >-
-      The page was behind a bot-verification screen when accessed and could not be read in full; the
-      statement that the scene is absent from the accounts and draws on Lope de Vega’s play was read
-      in the search-engine extract of this page. A human reviewer should confirm the wording.
+      The page could not be read in full when consulted; the statement that the scene is absent from
+      the accounts and draws on Lope de Vega’s play is taken from the search-engine extract of this
+      page.
 
 media:
   - id: portrait

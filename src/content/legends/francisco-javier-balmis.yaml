@@ -224,7 +224,9 @@ seo:
   description: How Francisco Javier Balmis, Isabel Zendal, José Salvany and dozens of children carried a living smallpox vaccine around the world, 1803–1806.
 
 review:
-  status: sourced
+  status: reviewed
+  reviewedBy: lazzzarov
+  reviewedAt: '2026-11-10'
 
 sources:
   - id: rah-balmis
@@ -294,7 +296,7 @@ media:
     kind: historical
     title: Portrait of Francisco Javier Balmis (engraving)
     creator: Unknown engraver
-    date: c. 1800 (as dated on Wikimedia Commons; not independently verified)
+    date: c. 1800
     posthumous: false
     sourceUrl: https://commons.wikimedia.org/wiki/File:Balmis.jpg
     license: Public domain (Wikimedia Commons, Public Domain Mark 1.0; work published before 1931)
@@ -302,3 +304,4 @@ media:
     notes: >-
       The holding institution and original publication are not recorded on Commons, so verify the provenance before use. If the engraving turns out to post-date 1819, set posthumous to true.
       Downloaded 2026-11-03 (resized to ≤1000 px).
+      Credit detail: the date is as given on Wikimedia Commons and was not independently verified.

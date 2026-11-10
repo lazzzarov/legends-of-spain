@@ -35,7 +35,7 @@ const groups = [
 ] as const;
 ---
 
-<form class="mb-8 flex flex-col gap-4" aria-label="Filter the legends" data-filters hidden>
+<form class="mb-8 flex flex-col gap-4" aria-label="Filter the legends" data-filters>
   {groups.map((g) => (
     <fieldset class="m-0 flex flex-wrap items-center gap-2 border-0 p-0">
       <legend class="eyebrow float-left mr-3 mb-1 w-full sm:mb-0 sm:w-28">{g.legend}</legend>
@@ -133,7 +133,6 @@ const groups = [
       apply(filters);
     };
 
-    form.hidden = false;
     form.addEventListener('change', sync);
     form.addEventListener('submit', (e) => e.preventDefault());
     for (const button of document.querySelectorAll('[data-filters-reset]')) {

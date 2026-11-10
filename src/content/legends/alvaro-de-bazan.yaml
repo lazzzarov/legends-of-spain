@@ -203,7 +203,7 @@ places:
   - name: Beach of las Molas (probably today’s Baía das Mós)
     relation: >-
       The beach between Praia and Angra chosen for the amphibious landing of 26 July 1583. Its
-      identification with the modern Baía das Mós still needs to be checked.
+      identification with the modern Baía das Mós is likely but not confirmed.
     location: Terceira, Azores, Portugal
     sources: [rgm-gonzalez-molina]
 
@@ -213,7 +213,9 @@ seo:
   description: The admiral who held Lepanto’s reserve and took the Azores from the sea. The story of Álvaro de Bazán, marquis of Santa Cruz.
 
 review:
-  status: sourced
+  status: reviewed
+  reviewedBy: lazzzarov
+  reviewedAt: '2026-11-10'
 
 sources:
   - id: rah-bazan

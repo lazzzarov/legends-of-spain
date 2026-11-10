@@ -224,7 +224,9 @@ seo:
   description: Offered safe passage and twenty ducats a man, the Spanish garrison of Castelnuovo chose to fight. The story of Francisco de Sarmiento, 1539.
 
 review:
-  status: sourced
+  status: reviewed
+  reviewedBy: lazzzarov
+  reviewedAt: '2026-11-10'
 
 sources:
   - id: rah-sarmiento

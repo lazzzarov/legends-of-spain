@@ -225,7 +225,9 @@ seo:
   description: Bernardino de Sahagún and the Nahua scholars and artists who made the Florentine Codex — a record of a world under conquest.
 
 review:
-  status: sourced
+  status: reviewed
+  reviewedBy: lazzzarov
+  reviewedAt: '2026-11-10'
 
 sources:
   - id: rah-sahagun

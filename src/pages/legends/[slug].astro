@@ -123,7 +123,10 @@ const jsonLd = JSON.stringify(legendJsonLd(legend.id, d, Astro.site!));
     </aside>
 
     <article class="flex min-w-0 flex-[999_1_600px] flex-col gap-14" data-story>
-      <section aria-label="The story" class="panel flex flex-col gap-9 p-6 sm:p-12">
+      <section aria-labelledby="story-title" class="panel flex flex-col gap-9 p-6 sm:p-12">
+        <h2 id="story-title" class="sr-only">
+          The story
+        </h2>
         {d.chapters.map((c, i) => (
           <>
             {i > 0 && <SmallDivider />}

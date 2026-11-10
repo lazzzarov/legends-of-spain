@@ -10,11 +10,13 @@ const panels = elcano.comic!.panels.length;
 const firstView = new RegExp(`^Panels? 1(–2)? of ${panels}$`);
 
 test.describe('Elcano story page (build with drafts)', () => {
-  test('shows the review banner, the story, and stays out of search engines', async ({ page }) => {
+  test('shows the reviewed story with no draft banner, open to search engines', async ({
+    page,
+  }) => {
     await page.goto(ELCANO);
-    await expect(page.getByText(/^Sourced — awaiting the editor’s review/)).toBeVisible();
+    await expect(page.getByText(/awaiting the editor’s review/)).toHaveCount(0);
     await expect(page.locator('#moment')).toContainText('6 September 1522');
-    await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex');
+    await expect(page.locator('meta[name="robots"]')).toHaveCount(0);
   });
 
   test('sources link back to every claim that cites them', async ({ page }) => {

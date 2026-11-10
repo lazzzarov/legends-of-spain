@@ -110,6 +110,12 @@
   }
 }
 
+/* The filters need the script, but are shown from first paint (via the early "js" class)
+   so the gallery doesn't jump down when the script runs. */
+html:not(.js) [data-filters] {
+  display: none;
+}
+
 /*
  * Scroll reveals: content is hidden only when JavaScript has marked <html class="js">
  * and the visitor has not asked for reduced motion; opacity/transform only (no layout shift).

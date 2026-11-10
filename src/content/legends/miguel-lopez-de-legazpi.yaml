@@ -219,7 +219,9 @@ seo:
   description: Miguel López de Legazpi founded Spanish Cebu and Manila and began the Pacific galleon route. The story, and the people already living there.
 
 review:
-  status: sourced
+  status: reviewed
+  reviewedBy: lazzzarov
+  reviewedAt: '2026-11-10'
 
 sources:
   - id: rah-legazpi
@@ -295,9 +297,10 @@ media:
     posthumous: true
     institution: La Hormiga de Oro (Barcelona); scan in the Biblioteca Nacional de España, Hemeroteca Digital
     sourceUrl: https://commons.wikimedia.org/wiki/File:Miguel_L%C3%B3pez_de_Legazpi,_en_La_Hormiga_de_Oro.jpg
-    license: Public domain (the engraver died in 1896 or 1904; Commons uses PD-scan and Public Domain Mark 1.0)
+    license: Public domain
     attribution: Celestí Sadurní, La Hormiga de Oro, 16 April 1887. Biblioteca Nacional de España, via Wikimedia Commons.
     notes: >-
       No portrait from life is known. The file is a scan of a printed page, so LPI art. 128 does not
       apply. An alternative is Baltasar Giraudier's 1860 portrait (BNE, ER/2241 (3)), which the RAH
       uses. Downloaded 2026-11-03 from the source URL.
+      Licence detail: the engraver died in 1896 or 1904; Commons uses PD-scan and Public Domain Mark 1.0.
