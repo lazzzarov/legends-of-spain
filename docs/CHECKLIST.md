@@ -84,6 +84,39 @@ P0 = must, P1 = should, P2 = nice to have.
 - [x] 6.6 SEO: sitemap lists all 18 pages, canonical + description + OG image on every page, JSON-LD on home and legends, no `noindex` in production, robots.txt points to sitemap · P0
 - [x] 6.7 Repo made public, Pages enabled (Source: GitHub Actions), first deploy 2026-11-10: https://lazzzarov.github.io/legends-of-spain/ · P0
 
-## Phase 7 — Optional (only if approved)
+## V2 — proposed (see `docs/PLAN_V2.md`; waiting for approval)
 
-Maps, animated routes, timelines, search, more languages, poster gallery, social formats.
+- [ ] D1–D5 Decisions: video look, self-hosted loops, pilot first, narrator, YouTube channel · P0 · **waiting on you**
+
+### Phase 7 — Timeline
+
+- [ ] 7.1 `keyEvent` (year, label, source) in the schema and all 14 legend files · P0
+- [ ] 7.2 `/timeline/` page: horizontal lanes on desktop, vertical on mobile, filters, links · P0
+- [ ] 7.3 Home strip and "where this sits" strip on legend pages · P1
+- [ ] 7.4 Tests: scale and lane maths, order, keyboard, axe, no overflow at 375 px · P0
+
+### Phase 8 — Story mode
+
+- [ ] 8.1 Slide builder from legend content (build time) · P0
+- [ ] 8.2 Player: control bar, keys, swipe, deep link `?mode=story`, exit · P0
+- [ ] 8.3 "Play the book" in timeline order · P1
+- [ ] 8.4 Reduced motion, pause, focus management, live region · P0
+- [ ] 8.5 Tests: play, pause, keys, exit, deep link, reduced motion, axe · P0
+
+### Phase 9 — Video scripts
+
+- [ ] 9.1 Script format and source-id checker; upgrade Elcano's brief · P0
+- [ ] 9.2 Scripts, shot lists and character sheets for the other 13 legends · P0
+- [ ] 9.3 Editor approval of each script · P0 · **waiting on you**
+
+### Phase 10 — Video production (Higgsfield)
+
+- [ ] 10.1 Confirm Higgsfield output terms; style bible; narrator voice · P0
+- [ ] 10.2 Pilot film (Elcano): stills → drafts → finals → voice → score → assembly; record credits used · P0
+- [ ] 10.3 Site integration: hero loop, story-mode loops, player, captions, transcript, credits · P0
+- [ ] 10.4 Decide the batch from the pilot's cost; produce the remaining films · P1
+- [ ] 10.5 Performance budget for loops in CI (Lighthouse) · P1
+
+## Later — optional (only if approved)
+
+Maps, animated routes, search, more languages, poster gallery, social formats.
