@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { parse } from 'yaml';
@@ -31,6 +31,15 @@ describe('legend content files', () => {
 
   it.each(files)('%s has a key event for the timeline', (file) => {
     expect(load(file).keyEvent?.year).toBeTypeOf('number');
+  });
+
+  it.each(files)('%s story loops have their video and poster files', (file) => {
+    for (const loop of load(file).storyLoops ?? []) {
+      for (const ext of ['webm', 'mp4', 'jpg'])
+        expect(existsSync(join(import.meta.dirname, '../../public', `${loop.file}.${ext}`))).toBe(
+          true,
+        );
+    }
   });
 
   it('use unique book order', () => {

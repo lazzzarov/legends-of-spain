@@ -113,9 +113,9 @@ P0 = must, P1 = should, P2 = nice to have.
 
 ### Phase 10 — Video production (Higgsfield)
 
-- [ ] 10.1 Confirm Higgsfield output terms; style bible; narrator voice · P0
-- [ ] 10.2 Pilot film (Elcano): stills → drafts → finals → voice → score → assembly; record credits used · P0
-- [ ] 10.3 Site integration: hero loop, story-mode loops, player, captions, transcript, credits · P0
+- [x] 10.1 Higgsfield terms checked (no ownership claimed, commercial use allowed, disclosure required); character reference; narrator voice "Arthur" (chosen unheard, cheap to swap) · P0
+- [x] 10.2 Elcano pilot film: 84 s, 193 credits (log: `production/juan-sebastian-elcano/pilot/README.md`); YouTube upload by the editor still to do · P0
+- [ ] 10.3 Site integration: story-mode loops on four Elcano chapters ✓, captions and transcript in place ✓, poster in credits ✓; full film waits for the YouTube id · P0
 - [ ] 10.4 Decide the batch from the pilot's cost; produce the remaining films · P1
 - [ ] 10.5 Performance budget for loops in CI (Lighthouse) · P1
 

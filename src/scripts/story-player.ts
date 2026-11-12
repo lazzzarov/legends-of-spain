@@ -26,6 +26,19 @@ if (stage) {
   const dots = $$<HTMLButtonElement>('[data-story-goto]');
   const total = decks.length + 1;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const isVisible = (el: Element) => !el.closest('[hidden]');
+
+  // Loops only play when motion is welcome and the visitor hasn't asked to save data.
+  const saveData = Boolean(
+    (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData,
+  );
+  function syncLoops() {
+    $$<HTMLVideoElement>('[data-story-loop]').forEach((video) => {
+      const show = isVisible(video) && !reduceMotion.matches && !saveData;
+      if (show) void video.play().catch(() => {});
+      else if (!video.paused) video.pause();
+    });
+  }
 
   // null = the timeline (step 1).
   let position: { deck: number; slide: number } | null = null;
@@ -107,6 +120,7 @@ if (stage) {
       else dot.removeAttribute('aria-current');
     });
     prevButton.disabled = false;
+    syncLoops();
     live.textContent =
       deck && slide ? `${deck.dataset.name}: ${slide.dataset.label}` : 'The timeline';
 
@@ -118,8 +132,6 @@ if (stage) {
       (inStory ? toggle : $('[data-story-begin]')).focus({ preventScroll: true });
     }
   }
-
-  const isVisible = (el: Element) => !el.closest('[hidden]');
 
   function syncHash(push: boolean) {
     const hash = position
@@ -276,6 +288,7 @@ if (stage) {
   });
   reduceMotion.addEventListener('change', () => {
     if (reduceMotion.matches) setPlaying(false);
+    syncLoops();
   });
 
   const followHash = () => {

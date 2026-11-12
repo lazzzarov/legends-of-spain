@@ -5,7 +5,7 @@ import VerificationBadge from '../story/VerificationBadge.astro';
 import type { LegendEntry } from '../../lib/content';
 import { lifespan } from '../../lib/legends';
 import { initials, resolveImage } from '../../lib/media';
-import { legendPath } from '../../lib/paths';
+import { legendPath, withBase } from '../../lib/paths';
 import { FACTS_PER_SLIDE, buildSlides } from '../../lib/story';
 import { VERIFICATION_LABEL } from '../../i18n/en';
 
@@ -31,6 +31,11 @@ const year = d.keyEvent?.year;
 const credit = [media.creator, media.date].filter(Boolean).join(', ');
 // Each slide frames the portrait a little differently, so the same image keeps moving.
 const FRAMES = ['frame-a', 'frame-b', 'frame-c'];
+// AI-generated loops replace the portrait on the chapters they illustrate (labelled as such).
+const loopFor = (slide: (typeof slides)[number]) =>
+  slide.kind === 'chapter'
+    ? d.storyLoops.find((l) => l.chapter === d.chapters[slide.item!]!.key)
+    : undefined;
 ---
 
 <section
@@ -53,32 +58,60 @@ const FRAMES = ['frame-a', 'frame-b', 'frame-c'];
       aria-roledescription="slide"
       aria-label={`${i + 1} of ${slides.length}: ${slide.label}`}
     >
-      {slide.kind !== 'facts' && (
-        <figure class="visual">
-          <div class:list={['frame', FRAMES[i % FRAMES.length]]}>
-            {image ? (
-              <Image
-                src={image}
-                alt={media.alt}
-                widths={[360, 540, 720]}
-                sizes="(min-width: 768px) 36vw, 90vw"
-                loading="lazy"
-                class="kb"
-              />
-            ) : (
-              <span class="plate initials" aria-hidden="true">
-                {initials(d.name.display)}
-              </span>
-            )}
-          </div>
-          {image && (
-            <figcaption class="caption">
-              <MediaKindLabel kind={media.kind} posthumous={media.posthumous} />
-              {credit && <span>{credit}</span>}
-            </figcaption>
-          )}
-        </figure>
-      )}
+      {slide.kind !== 'facts' &&
+        (() => {
+          const loop = loopFor(slide);
+          if (loop)
+            return (
+              <figure class="visual">
+                <div class="frame">
+                  <video
+                    class="loop"
+                    muted
+                    loop
+                    playsinline
+                    preload="none"
+                    poster={withBase(`${loop.file}.jpg`)}
+                    aria-label={loop.alt}
+                    data-story-loop
+                  >
+                    <source src={withBase(`${loop.file}.webm`)} type="video/webm" />
+                    <source src={withBase(`${loop.file}.mp4`)} type="video/mp4" />
+                  </video>
+                </div>
+                <figcaption class="caption">
+                  <span class="ai-label">AI-generated historical dramatization</span>
+                  <span>Not a likeness</span>
+                </figcaption>
+              </figure>
+            );
+          return (
+            <figure class="visual">
+              <div class:list={['frame', FRAMES[i % FRAMES.length]]}>
+                {image ? (
+                  <Image
+                    src={image}
+                    alt={media.alt}
+                    widths={[360, 540, 720]}
+                    sizes="(min-width: 768px) 36vw, 90vw"
+                    loading="lazy"
+                    class="kb"
+                  />
+                ) : (
+                  <span class="plate initials" aria-hidden="true">
+                    {initials(d.name.display)}
+                  </span>
+                )}
+              </div>
+              {image && (
+                <figcaption class="caption">
+                  <MediaKindLabel kind={media.kind} posthumous={media.posthumous} />
+                  {credit && <span>{credit}</span>}
+                </figcaption>
+              )}
+            </figure>
+          );
+        })()}
 
       <div class="text">
         {slide.kind === 'title' && (
@@ -264,6 +297,21 @@ const FRAMES = ['frame-a', 'frame-b', 'frame-c'];
     border: 10px solid var(--color-cream);
     outline: 1px solid var(--color-burnt);
     box-shadow: 0 10px 30px rgb(59 36 22 / 0.35);
+  }
+  .loop {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+  .ai-label {
+    padding: 2px 8px;
+    background: var(--color-burgundy);
+    color: var(--color-parchment);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
   .kb,
   .initials {

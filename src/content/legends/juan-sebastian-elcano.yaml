@@ -154,12 +154,42 @@ otherSide:
   sources: [rah-elcano, pigafetta-stanley, elcano-testament-1526]
 
 video:
-  status: planned
+  # Pilot film made 2026-11-13 (production/juan-sebastian-elcano/pilot/). Published once the editor
+  # uploads it to YouTube and the 11-character id goes in `src` with `provider: youtube`.
+  status: in-production
   description: >-
-    A 60-second dramatization of the homeward voyage: the decision at Tidore, the weeks off the
+    An 84-second dramatization of the homeward voyage: the decision at Tidore, the weeks off the
     Cape of Good Hope, the escape from Cape Verde and the Victoria’s arrival at Sanlúcar.
+  poster: video-poster
+  captions: media/juan-sebastian-elcano/video.en.vtt
+  transcript: >-
+    In 1521, an expedition sent west to reach the Spice Islands was falling apart. Its commander,
+    Ferdinand Magellan, had been killed on Mactan. After a run of command changes, a ship's master
+    named Juan Sebastián Elcano was captain of the Victoria. At Tidore the other ship was leaking.
+    The Victoria would go home alone: west, by the Portuguese route, without calling at any port.
+    Sixty men went aboard. For about nine weeks, gales held her off the Cape of Good Hope. Scurvy
+    spread and the ship leaked. The crew begged him to put in at Mozambique. He refused. Starving,
+    they stopped at Portuguese Cape Verde, and found their calendar a day behind. When the
+    Portuguese seized the boat's crew, Elcano cut the cable and left them. On 6 September 1522 the
+    Victoria reached Sanlúcar. Eighteen men came home. Magellan planned the voyage and died on it.
+    Elcano finished it. They had sailed right round the world.
+  durationSec: 84
   aiGenerated: true
-  tool: Higgsfield
+  tool: Higgsfield (Nano Banana, Kling 3.0, Seedance 2.5, Seed Audio, ElevenLabs Music)
+
+storyLoops:
+  - chapter: challenge
+    file: media/juan-sebastian-elcano/loop-challenge
+    alt: Painted animation of a bearded mariner studying a chart on a ship's deck off a green volcanic island while a boat brings sacks of cloves
+  - chapter: odds
+    file: media/juan-sebastian-elcano/loop-odds
+    alt: Painted animation of a small three-masted ship pitching in a grey gale off a rocky cape
+  - chapter: moment
+    file: media/juan-sebastian-elcano/loop-moment
+    alt: Painted animation of a battered ship with patched sails gliding into a river mouth at dawn, a few men at the rail
+  - chapter: legacy
+    file: media/juan-sebastian-elcano/loop-legacy
+    alt: Animated ink drawing of a small ship sailing in a circle round a compass rose on old parchment
 
 comic:
   status: draft
@@ -285,6 +315,20 @@ sources:
     notes: Confirms that no portrait from life exists and dates the Fernández Noseret engraving to around 1791–1805.
 
 media:
+  - id: video-poster
+    file: video-poster.jpg
+    alt: Painted scene of the battered Victoria entering the river mouth at Sanlúcar at dawn
+    kind: ai-generated
+    title: The Long Way Home (pilot film and story-mode loops)
+    creator: Legends of Spain, made with Higgsfield (Nano Banana, Kling 3.0, Seedance 2.5)
+    date: '2026'
+    license: AI-generated; CC BY-SA 4.0 where rights exist
+    attribution: Legends of Spain. AI-generated historical dramatization, not a likeness.
+    notes: >-
+      Stills, shots, narration and music generated 2026-11-13 from the approved script
+      (production/juan-sebastian-elcano/video-script.md); every still was checked for anachronisms
+      before animation (three retakes). Higgsfield's terms (§4.4) claim no ownership of outputs and
+      allow commercial use; AI content must be disclosed (§5.5). Originals kept in the pilot folder.
   - id: portrait
     file: portrait.jpg
     alt: Engraved bust portrait of Juan Sebastián Elcano, an imagined likeness made more than 250 years after his death

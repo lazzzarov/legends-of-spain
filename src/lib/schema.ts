@@ -168,6 +168,16 @@ export const movieSchema = z.object({
   poster: id.optional(),
 });
 
+/**
+ * A short, silent AI-generated loop shown behind one chapter in story mode. `file` is a path
+ * under public/ without extension: `<file>.webm`, `<file>.mp4` and `<file>.jpg` (poster) must exist.
+ */
+export const storyLoopSchema = z.object({
+  chapter: z.enum(CHAPTER_KEYS),
+  file: z.string().regex(/^media\/[a-z0-9-]+\/[a-z0-9-]+$/, 'a path like media/<slug>/<name>'),
+  alt: z.string().min(1),
+});
+
 export const placeSchema = z.object({
   name: z.string().min(1),
   relation: z.string().min(1),
@@ -205,6 +215,7 @@ export const legendSchema = z
     myths: z.array(mythSchema).default([]),
     otherSide: z.object({ body: z.string().min(1), sources: sourceIds.default([]) }),
     video: videoSchema.optional(),
+    storyLoops: z.array(storyLoopSchema).default([]),
     comic: comicSchema.optional(),
     movie: movieSchema.optional(),
     places: z.array(placeSchema).default([]),
@@ -265,6 +276,12 @@ export const legendSchema = z
     );
     checkMedia(legend.movie?.poster, ['movie', 'poster']);
     checkMedia(legend.video?.poster, ['video', 'poster']);
+    const loopChapters = new Set<string>();
+    legend.storyLoops.forEach((l, i) => {
+      if (loopChapters.has(l.chapter))
+        issue(`more than one loop for chapter "${l.chapter}"`, ['storyLoops', i, 'chapter']);
+      loopChapters.add(l.chapter);
+    });
     legend.comic?.panels.forEach((p, i) => {
       checkMedia(p.image, ['comic', 'panels', i, 'image']);
       checkSources(p.sources, ['comic', 'panels', i, 'sources']);

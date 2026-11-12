@@ -25,3 +25,7 @@ Thumbs.db
 
 # local tooling
 .claude/
+
+# Pilot film working media (large; finished site assets go to public/media/)
+production/*/pilot/**
+!production/*/pilot/*.md

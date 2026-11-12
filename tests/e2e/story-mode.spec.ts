@@ -156,6 +156,29 @@ test.describe('story mode', () => {
     expect(overflow).toBe(0);
   });
 
+  test('chapters with a film loop show it, labelled as AI-generated', async ({ page }) => {
+    const elcano = legends.find((l) => l.slug === 'juan-sebastian-elcano')!;
+    const loop = elcano.data.storyLoops[0]!;
+    const index = elcano.data.chapters.findIndex((c) => c.key === loop.chapter) + 2;
+    await page.goto(`./#story/${elcano.slug}/${index}`);
+    const video = visibleSlide(page).locator('video[data-story-loop]');
+    await expect(video).toHaveAttribute('aria-label', loop.alt);
+    await expect(video).toHaveJSProperty('muted', true);
+    await expect(visibleSlide(page)).toContainText('AI-generated historical dramatization');
+    await expect.poll(() => video.evaluate((v: HTMLVideoElement) => v.paused)).toBe(false);
+  });
+
+  test('reduced motion: loops stay still', async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    const elcano = legends.find((l) => l.slug === 'juan-sebastian-elcano')!;
+    const loop = elcano.data.storyLoops[0]!;
+    const index = elcano.data.chapters.findIndex((c) => c.key === loop.chapter) + 2;
+    await page.goto(`./#story/${elcano.slug}/${index}`);
+    const video = visibleSlide(page).locator('video[data-story-loop]');
+    await expect(video).toBeVisible();
+    expect(await video.evaluate((v: HTMLVideoElement) => v.paused)).toBe(true);
+  });
+
   test('an open slide has no serious accessibility violations', async ({ page }) => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto(`./#story/${first.slug}/2`);
