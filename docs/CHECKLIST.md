@@ -106,7 +106,7 @@ P0 = must, P1 = should, P2 = nice to have.
 ### Phase 9 — Video scripts
 
 - [x] 9.1 Script format and checker (`tests/unit/video-scripts.test.ts`: 7 beats, known source per line, word count, disclosure, no dialogue); Elcano's brief upgraded to `video-script.md` · P0
-- [ ] 9.2 Scripts, shot lists and character sheets for the other 13 legends · P0
+- [x] 9.2 Scripts, shot lists and character sheets drafted for the other 13 legends (`production/<slug>/video-script.md`); all pass the checker · P0
 - [ ] 9.3 Editor approval of each script · P0 · **waiting on you**
 
 ### Phase 10 — Video production (Higgsfield)
