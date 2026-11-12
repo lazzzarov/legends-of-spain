@@ -1,78 +1,49 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import CompassRose from '../components/ornaments/CompassRose.astro';
-import Corners from '../components/ornaments/Corners.astro';
-import Divider from '../components/ornaments/Divider.astro';
-import Gallery from '../components/gallery/Gallery.astro';
-import ValuesBand from '../components/gallery/ValuesBand.astro';
-import TimelineStrip from '../components/timeline/TimelineStrip.astro';
+import SeaChart from '../components/story-mode/SeaChart.astro';
+import StoryBar from '../components/story-mode/StoryBar.astro';
+import StoryDeck from '../components/story-mode/StoryDeck.astro';
 import { getLegends } from '../lib/content';
 import { siteJsonLd } from '../lib/jsonld';
-import { withBase } from '../lib/paths';
+import { toTimeline } from '../lib/timeline';
 
-const legends = await getLegends();
-const count = legends.length;
+// The home page is the book: the timeline is step 1, then every legend's story in order.
+const items = toTimeline(await getLegends());
 const description =
-  'The extraordinary lives of Spanish explorers, commanders and pioneers — told in two minutes, sourced to the archive.';
+  'Fourteen Spanish explorers, commanders and pioneers, in the order their defining moments happened — each told in two minutes, sourced to the archive.';
 const jsonLd = JSON.stringify(siteJsonLd(Astro.site!, description));
 ---
 
-<BaseLayout title="Legends of Spain" description={description}>
+<BaseLayout title="Legends of Spain" description={description} stage>
   <script slot="head" type="application/ld+json" is:inline set:html={jsonLd} />
-  <section class="mx-auto max-w-6xl px-4 pt-12 pb-12 sm:px-6 sm:pt-16">
-    <div class="relative flex flex-col items-center gap-6 border border-sepia px-5 py-14 text-center outline outline-offset-8 outline-sepia sm:px-8 sm:py-20">
-      <Corners />
-      <CompassRose size={84} />
-      <p class="eyebrow m-0">
-        {count > 0 ? `A chronicle of ${count} lives` : 'A chronicle in progress'} · 1480 – 1836
-      </p>
-      <h1 class="m-0 max-w-4xl font-display text-[clamp(2.75rem,7vw,5.5rem)] leading-[1.02] font-normal text-umber">
-        Legends Worthy of a Thousand Films
-      </h1>
-      <Divider />
-      <p class="m-0 max-w-2xl text-[clamp(1.125rem,2vw,1.375rem)] leading-relaxed text-umber">
-        Discover the extraordinary lives of Spanish explorers, commanders and pioneers who
-        challenged the impossible — told in two minutes, sourced to the archive.
-      </p>
-      <a href="#legends" class="btn-primary text-xl">
-        Open the Book <span aria-hidden="true">→</span>
-      </a>
-    </div>
-  </section>
-
-  <section
-    id="legends"
-    class="mx-auto max-w-6xl px-4 pt-6 pb-16 sm:px-6"
-    aria-labelledby="legends-title"
-  >
-    <div class="mb-8 border-b border-sepia pb-4">
-      <p class="eyebrow m-0">Table of contents</p>
-      <h2
-        id="legends-title"
-        class="m-0 font-display text-[44px] leading-tight font-normal text-umber"
-      >
-        The Legends
-      </h2>
-    </div>
-    <Gallery legends={legends} />
-  </section>
-
-  <TimelineStrip legends={legends} />
-
-  <ValuesBand legends={legends} />
-
-  <section class="mx-auto flex max-w-3xl flex-col items-center gap-4 px-4 py-16 text-center sm:px-6">
-    <p class="eyebrow m-0">Our promise</p>
-    <h2 class="m-0 font-display text-[44px] leading-tight font-normal text-umber">
-      History, not mythology
-    </h2>
-    <p class="m-0 text-lg leading-relaxed sm:text-[19px]">
-      We celebrate courage and ingenuity without hiding violence, controversy or the many hands
-      behind every famous name. Every claim is labelled, every fact is sourced, and every AI image
-      is marked as such.
-    </p>
-    <a href={withBase('why/')} class="font-sc text-[19px]">
-      Why we tell these stories →
-    </a>
-  </section>
+  <div class="stage" data-story-stage data-mode="timeline">
+    <SeaChart legends={items.map((i) => i.legend)} />
+    {items.map((item, i) => (
+      <StoryDeck legend={item.legend} step={i + 1} next={items[i + 1]?.legend} />
+    ))}
+    <StoryBar steps={items.map((i) => ({ slug: i.slug, name: i.name, year: i.eventYear }))} />
+  </div>
 </BaseLayout>
+
+<script>
+  import '../scripts/story-player';
+</script>
+
+<style>
+  .stage {
+    /* Room kept clear for the control bar at the bottom. */
+    --bar-space: clamp(84px, 13vh, 112px);
+    position: relative;
+    height: calc(100svh - 66px);
+    min-height: 560px;
+    overflow: hidden;
+  }
+  @media (max-width: 767px) {
+    /* The timeline may grow past a short phone screen; a story always fits the screen. */
+    .stage[data-mode='timeline'] {
+      height: auto;
+      min-height: calc(100svh - 66px);
+      overflow: visible;
+    }
+  }
+</style>

@@ -27,14 +27,6 @@ test.describe('gallery filters', () => {
     await page.goto('legends/?value=not-a-value');
     await expect(cards(page)).toHaveCount(14);
   });
-
-  test('home value links open the filtered gallery', async ({ page }) => {
-    await page.goto('./');
-    await page.getByRole('link', { name: /^Leadership/ }).click();
-    await expect(page).toHaveURL(/\/legends\/\?value=leadership$/);
-    await expect(page.getByRole('radio', { name: 'Leadership' })).toBeChecked();
-    await expect(page.locator('[data-filters-summary]')).toHaveText(/^Showing \d+ of 14 legends$/);
-  });
 });
 
 test.describe('story navigation', () => {

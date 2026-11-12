@@ -115,6 +115,13 @@ const jsonLd = JSON.stringify(legendJsonLd(legend.id, d, Astro.site!));
         <li class="border border-sepia px-3 py-1.5 text-umber">{d.origin.place}</li>
         <li class="px-1 py-1.5 text-burnt">2-minute read</li>
       </ul>
+      {d.keyEvent && (
+        <p class="m-0">
+          <a href={withBase(`#story/${legend.id}`)} class="btn-primary text-lg" data-play-story>
+            Play the story <span aria-hidden="true">▸</span>
+          </a>
+        </p>
+      )}
     </header>
   </section>
 

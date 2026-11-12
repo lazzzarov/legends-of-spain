@@ -91,23 +91,25 @@ P0 = must, P1 = should, P2 = nice to have.
 ### Phase 7 — Timeline
 
 - [x] 7.1 `keyEvent` (year, label, sources) in the schema and all 14 legend files; must fall within the lifetime and cite a known source · P0
-- [x] 7.2 `/timeline/` page: one row per legend in order of key event, lifetime bar and seal on a shared axis, same layout stacked on mobile, gallery filters, links; added to the main navigation · P0
-- [x] 7.3 Home strip and "On the timeline" (before / after) on legend pages · P1
+- [x] 7.2 (superseded by 8.0) `/timeline/` page: one row per legend in order of key event, lifetime bar and seal on a shared axis, same layout stacked on mobile, gallery filters, links; added to the main navigation · P0
+- [x] 7.3 (home strip superseded by 8.0) Home strip and "On the timeline" (before / after) on legend pages · P1
 - [x] 7.4 Tests: scale, order and neighbour maths (unit); order, links, keyboard, filters, axe, no overflow at 375 px (e2e) · P0
 
 ### Phase 8 — Story mode
 
-- [ ] 8.1 Slide builder from legend content (build time) · P0
-- [ ] 8.2 Player: control bar, keys, swipe, deep link `?mode=story`, exit · P0
-- [ ] 8.3 "Play the book" in timeline order · P1
-- [ ] 8.4 Reduced motion, pause, focus management, live region · P0
-- [ ] 8.5 Tests: play, pause, keys, exit, deep link, reduced motion, axe · P0
+- [x] 8.0 Home page is the timeline (mockup concept A, "The Sea Chart"): one screen, no scrolling, step 1 of the story; `/timeline/` and the home gallery retired · P0
+
+- [x] 8.1 Slide builder (`src/lib/story.ts`): title, five chapters, facts, legend or history, other side, page turn; timed by text length; dense layout for long text · P0
+- [x] 8.2 Player: control bar with step dots, play/pause, previous/next, exit; arrow keys, Space, Escape, swipe; deep links `#story/<slug>/<n>`; Back returns to the timeline; "Play the story" on every legend page · P0
+- [x] 8.3 "Begin the story" plays the whole book in timeline order · P1
+- [x] 8.4 Never starts by itself; reduced motion stops auto-advance and animation; pauses when the tab is hidden; focus moves to each slide heading; live region announces slides · P0
+- [x] 8.5 Tests: play, pause, auto-advance, keys, exit, Back, deep link, reduced motion, no-JS, axe on the timeline and a slide; every slide measured to fit at 1280×720, 1440×900 and 1920×1080 · P0
 
 ### Phase 9 — Video scripts
 
 - [x] 9.1 Script format and checker (`tests/unit/video-scripts.test.ts`: 7 beats, known source per line, word count, disclosure, no dialogue); Elcano's brief upgraded to `video-script.md` · P0
 - [x] 9.2 Scripts, shot lists and character sheets drafted for the other 13 legends (`production/<slug>/video-script.md`); all pass the checker · P0
-- [ ] 9.3 Editor approval of each script · P0 · **waiting on you**
+- [x] 9.3 Editor approval: all 14 scripts approved 2026-11-12 · P0
 
 ### Phase 10 — Video production (Higgsfield)
 

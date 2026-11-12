@@ -1,0 +1,487 @@
+---
+import { Image } from 'astro:assets';
+import MediaKindLabel from '../media/MediaKindLabel.astro';
+import VerificationBadge from '../story/VerificationBadge.astro';
+import type { LegendEntry } from '../../lib/content';
+import { lifespan } from '../../lib/legends';
+import { initials, resolveImage } from '../../lib/media';
+import { legendPath } from '../../lib/paths';
+import { FACTS_PER_SLIDE, buildSlides } from '../../lib/story';
+import { VERIFICATION_LABEL } from '../../i18n/en';
+
+/**
+ * One legend told as slides (see lib/story.ts). Hidden until the player opens it; the
+ * reviewed text is shown as written, with its credibility labels, and every slide links
+ * back to the full, sourced chapter.
+ */
+interface Props {
+  legend: LegendEntry;
+  /** Position in the book (1 = first legend after the timeline). */
+  step: number;
+  next?: LegendEntry;
+}
+const { legend, step, next } = Astro.props;
+const d = legend.data;
+const slug = legend.id;
+const slides = buildSlides(d);
+const media = d.media.find((m) => m.id === d.portrait)!;
+const image = resolveImage(slug, media.file);
+const page = legendPath(slug);
+const year = d.keyEvent?.year;
+const credit = [media.creator, media.date].filter(Boolean).join(', ');
+// Each slide frames the portrait a little differently, so the same image keeps moving.
+const FRAMES = ['frame-a', 'frame-b', 'frame-c'];
+---
+
+<section
+  class="deck"
+  data-deck={slug}
+  data-name={d.name.display}
+  data-step={step}
+  hidden
+  aria-label={`The story of ${d.name.display}`}
+>
+  {slides.map((slide, i) => (
+    <article
+      class="slide"
+      data-slide
+      data-kind={slide.kind}
+      data-dense={slide.dense ? '' : undefined}
+      data-label={slide.label}
+      data-duration={slide.durationMs}
+      hidden
+      aria-roledescription="slide"
+      aria-label={`${i + 1} of ${slides.length}: ${slide.label}`}
+    >
+      {slide.kind !== 'facts' && (
+        <figure class="visual">
+          <div class:list={['frame', FRAMES[i % FRAMES.length]]}>
+            {image ? (
+              <Image
+                src={image}
+                alt={media.alt}
+                widths={[360, 540, 720]}
+                sizes="(min-width: 768px) 36vw, 90vw"
+                loading="lazy"
+                class="kb"
+              />
+            ) : (
+              <span class="plate initials" aria-hidden="true">
+                {initials(d.name.display)}
+              </span>
+            )}
+          </div>
+          {image && (
+            <figcaption class="caption">
+              <MediaKindLabel kind={media.kind} posthumous={media.posthumous} />
+              {credit && <span>{credit}</span>}
+            </figcaption>
+          )}
+        </figure>
+      )}
+
+      <div class="text">
+        {slide.kind === 'title' && (
+          <>
+            <p class="eyebrow m-0">
+              {year} · {d.role} · {lifespan(d.dates)}
+            </p>
+            <h2 class="name" tabindex="-1">
+              {d.name.display}
+            </h2>
+            <p class="tagline">{d.tagline}</p>
+            <p class="body">{d.hook}</p>
+          </>
+        )}
+
+        {slide.kind === 'chapter' &&
+          (() => {
+            const c = d.chapters[slide.item!]!;
+            return (
+              <>
+                <p class="eyebrow m-0">{d.name.display}</p>
+                <div class="heading-row">
+                  <h2 class="chapter" tabindex="-1">
+                    {slide.label}
+                  </h2>
+                  <VerificationBadge status={c.status} />
+                </div>
+                <p class="body">{c.body}</p>
+                <a class="more" href={`${page}#${c.key}`}>
+                  Sources and the full chapter <span aria-hidden="true">→</span>
+                </a>
+              </>
+            );
+          })()}
+
+        {slide.kind === 'facts' && (
+          <>
+            <p class="eyebrow m-0">{d.name.display}</p>
+            <h2 class="chapter" tabindex="-1">
+              In numbers
+            </h2>
+            <ul class="facts" role="list">
+              {d.facts.slice(0, FACTS_PER_SLIDE).map((f) => (
+                <li>
+                  <span class="fact-value">
+                    {f.value}
+                    {f.unit && <span class="fact-unit"> {f.unit}</span>}
+                  </span>
+                  <span class="fact-label">
+                    {f.label}
+                    {f.status !== 'verified' && (
+                      <span class="fact-status"> · {VERIFICATION_LABEL[f.status]}</span>
+                    )}
+                  </span>
+                  <span class="fact-text">{f.explanation}</span>
+                </li>
+              ))}
+            </ul>
+            <a class="more" href={`${page}#facts`}>
+              Every number, with its sources <span aria-hidden="true">→</span>
+            </a>
+          </>
+        )}
+
+        {slide.kind === 'myth' &&
+          (() => {
+            const m = d.myths[0]!;
+            return (
+              <>
+                <p class="eyebrow m-0">{d.name.display}</p>
+                <h2 class="chapter" tabindex="-1">
+                  Legend or history?
+                </h2>
+                <p class="claim">{m.claim}</p>
+                <VerificationBadge status={m.status} />
+                <p class="body">{m.explanation}</p>
+                <a class="more" href={`${page}#myths`}>
+                  More myths, with sources <span aria-hidden="true">→</span>
+                </a>
+              </>
+            );
+          })()}
+
+        {slide.kind === 'other' && (
+          <>
+            <p class="eyebrow m-0">{d.name.display}</p>
+            <h2 class="chapter" tabindex="-1">
+              The other side
+            </h2>
+            <p class="body">{d.otherSide.body}</p>
+            <a class="more" href={`${page}#other-side`}>
+              Sources <span aria-hidden="true">→</span>
+            </a>
+          </>
+        )}
+
+        {slide.kind === 'end' && (
+          <>
+            <p class="eyebrow m-0">{d.name.display}</p>
+            <h2 class="chapter" tabindex="-1">
+              {next ? 'Turn the page' : 'The end of the book'}
+            </h2>
+            <p class="body">
+              {next
+                ? `Next, ${next.data.keyEvent?.year}: ${next.data.name.display}.`
+                : 'Fourteen lives, from 1521 to 1811. Every claim is sourced in the full chapters.'}
+            </p>
+            <div class="actions">
+              {next && (
+                <button type="button" class="btn-primary" data-story-next>
+                  Continue with {next.data.name.display} <span aria-hidden="true">▸</span>
+                </button>
+              )}
+              <a class="btn-secondary" href={page}>
+                Read the full chapter
+              </a>
+              <button type="button" class="link-button" data-story-exit>
+                Back to the timeline
+              </button>
+            </div>
+          </>
+        )}
+      </div>
+    </article>
+  ))}
+</section>
+
+<style>
+  .slide {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    align-items: center;
+    gap: clamp(24px, 4vw, 72px);
+    box-sizing: border-box;
+    padding: clamp(16px, 4vh, 40px) clamp(16px, 6vw, 96px) var(--bar-space);
+    animation: slide-in 0.45s ease both;
+  }
+  /* Long text (over DENSE_WORDS): a narrower picture and smaller type, so it fits one screen. */
+  .slide[data-dense] {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+  }
+  .slide[data-dense] .text {
+    max-width: 780px;
+  }
+  .slide[data-dense] .body {
+    font-size: clamp(15px, 2vh, 18px);
+    line-height: 1.55;
+  }
+  .slide[data-kind='facts'] {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+  }
+  .slide[data-kind='facts'] .text {
+    width: 100%;
+    max-width: 1100px;
+  }
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(28px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  .visual {
+    margin: 0;
+    height: 100%;
+    max-height: 640px;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .frame {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+    border: 10px solid var(--color-cream);
+    outline: 1px solid var(--color-burnt);
+    box-shadow: 0 10px 30px rgb(59 36 22 / 0.35);
+  }
+  .kb,
+  .initials {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: 50% 15%;
+  }
+  .initials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 96px;
+    color: rgb(90 58 34 / 0.55);
+  }
+  /* Slow push-ins (Ken Burns), each slide from a different starting frame. */
+  .kb {
+    animation: kb-a 24s ease-out both;
+  }
+  .frame-b .kb {
+    animation-name: kb-b;
+  }
+  .frame-c .kb {
+    animation-name: kb-c;
+  }
+  @keyframes kb-a {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.12);
+    }
+  }
+  @keyframes kb-b {
+    from {
+      transform: scale(1.18) translate(2%, 3%);
+    }
+    to {
+      transform: scale(1.06) translate(0, 0);
+    }
+  }
+  @keyframes kb-c {
+    from {
+      transform: scale(1.1) translate(-3%, 0);
+    }
+    to {
+      transform: scale(1.2) translate(2%, -2%);
+    }
+  }
+  .caption {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 10px;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    color: var(--color-burnt);
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(8px, 1.8vh, 16px);
+    max-width: 640px;
+    max-height: 100%;
+    overflow-y: auto;
+  }
+  .name {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(40px, 8vh, 80px);
+    line-height: 1;
+    color: var(--color-umber);
+  }
+  .tagline {
+    margin: 0;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(20px, 3.2vh, 30px);
+    line-height: 1.25;
+    color: var(--color-burgundy);
+  }
+  .heading-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 16px;
+  }
+  .chapter {
+    margin: 0;
+    font-family: var(--font-display-sc);
+    font-weight: 400;
+    font-size: clamp(28px, 5vh, 44px);
+    line-height: 1.1;
+    color: var(--color-umber);
+  }
+  .body {
+    margin: 0;
+    font-size: clamp(17px, 2.6vh, 23px);
+    line-height: 1.6;
+  }
+  .claim {
+    margin: 0;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(22px, 3.6vh, 32px);
+    line-height: 1.3;
+    color: var(--color-umber);
+  }
+  .more {
+    font-family: var(--font-ui);
+    font-size: 14px;
+  }
+  .facts {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: clamp(16px, 3vh, 32px) clamp(24px, 4vw, 48px);
+    width: 100%;
+  }
+  .facts li {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 14px;
+    border-top: 2px solid var(--color-caramel);
+  }
+  .fact-value {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 7vh, 64px);
+    line-height: 1;
+    color: var(--color-burgundy);
+  }
+  .fact-unit {
+    font-size: 0.5em;
+  }
+  .fact-label {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-umber);
+  }
+  .fact-status {
+    font-weight: 400;
+    color: var(--color-burgundy);
+  }
+  .fact-text {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 20px;
+    margin-top: 8px;
+  }
+  .link-button {
+    min-height: 44px;
+    border: 0;
+    background: none;
+    padding: 0;
+    font-family: var(--font-ui);
+    font-size: 15px;
+    color: var(--color-burgundy);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  @media (max-width: 767px) {
+    .slide {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: auto minmax(0, 1fr);
+      align-items: start;
+      gap: 16px;
+      padding-top: 16px;
+    }
+    .slide[data-kind='facts'] {
+      grid-template-rows: minmax(0, 1fr);
+    }
+    .visual {
+      height: 26svh;
+    }
+    .caption {
+      display: none;
+    }
+    .frame {
+      border-width: 6px;
+    }
+    .text {
+      height: 100%;
+    }
+    .body {
+      font-size: 17px;
+      line-height: 1.55;
+    }
+    .name {
+      font-size: 40px;
+    }
+    .chapter {
+      font-size: 26px;
+    }
+    .fact-value {
+      font-size: 34px;
+    }
+    .fact-text {
+      font-size: 15px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .slide,
+    .kb {
+      animation: none;
+    }
+  }
+</style>

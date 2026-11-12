@@ -40,6 +40,8 @@ Effort: small. No dependencies on the other phases.
 
 ## Phase 8 — Story mode (presentation)
 
+**Revised 12 November 2026 (editor's decision):** the timeline is the home page and the first step of the story. Concept A from the mockups ("The Sea Chart": one voyage line, legends evenly spaced and alternating above and below it, long gaps labelled) fills one screen with no scrolling. "Begin the story" plays the book from there; any face opens that legend's story. The separate `/timeline/` page and the home gallery are retired; the gallery stays at `/legends/`.
+
 **Reference:** renzopayero.dev `?build=present`. What it does: the page plays itself as a guided tour. A bar fixed at the bottom shows step dots, the current step's name, a progress line, and Pause and Skip buttons. Sections animate in one after another.
 
 **Our version:** any legend can be played as a two-minute illustrated story, and the whole book can be played in timeline order.

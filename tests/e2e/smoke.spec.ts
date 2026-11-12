@@ -2,10 +2,9 @@ import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
 
 const routes = [
-  { path: './', heading: 'Legends Worthy of a Thousand Films' },
+  { path: './', heading: 'Who came first?' },
   { path: 'legends/', heading: 'The Legends' },
   { path: 'legends/juan-sebastian-elcano/', heading: 'Juan Sebastián Elcano' },
-  { path: 'timeline/', heading: 'The Timeline' },
   { path: 'why/', heading: 'Why We Tell These Stories' },
   { path: 'credits/', heading: 'Credits & Licenses' },
 ];
@@ -33,8 +32,8 @@ for (const { path, heading } of routes) {
   });
 }
 
-test('navigates from the home gallery to a legend and onward', async ({ page }) => {
-  await page.goto('./');
+test('navigates from the gallery to a legend and onward', async ({ page }) => {
+  await page.goto('legends/');
   await page.getByRole('link', { name: 'Juan Sebastián Elcano', exact: true }).click();
   await expect(page).toHaveURL(/\/legends-of-spain\/legends\/juan-sebastian-elcano\/$/);
   await expect(page.getByRole('heading', { name: 'The Other Side of the Story' })).toBeVisible();
@@ -60,11 +59,24 @@ test('chapters show credibility labels and link to sources', async ({ page }) =>
 
 test('main navigation links stay under the base path', async ({ page }) => {
   await page.goto('./');
+  // The desktop bar and the small-screen menu carry the same links; check both.
   const hrefs = await page
-    .getByRole('navigation', { name: 'Main' })
-    .getByRole('link')
+    .locator('header nav a')
     .evaluateAll((links) => links.map((a) => a.getAttribute('href')));
+  expect(hrefs.length).toBeGreaterThan(0);
   for (const href of hrefs) expect(href).toMatch(/^\/legends-of-spain\//);
+});
+
+test('the small-screen menu opens and lists the main links', async ({ page, isMobile }) => {
+  test.skip(!isMobile, 'the menu replaces the link bar on small screens only');
+  await page.goto('why/');
+  await page.locator('header summary').click();
+  const menu = page.getByRole('navigation', { name: 'Main (menu)' });
+  await expect(menu.getByRole('link', { name: 'All legends' })).toBeVisible();
+  await expect(menu.getByRole('link', { name: 'Why We Tell These Stories' })).toHaveAttribute(
+    'aria-current',
+    'page',
+  );
 });
 
 test('unknown pages show the styled 404', async ({ page }) => {

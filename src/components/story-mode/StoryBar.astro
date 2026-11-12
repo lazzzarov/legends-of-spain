@@ -1,0 +1,315 @@
+---
+import { withBase } from '../../lib/paths';
+
+/**
+ * The control bar fixed to the bottom of the stage. On the timeline it offers "Begin the
+ * story"; inside a story it shows where you are and the player controls. Everything that
+ * needs JavaScript starts hidden, so without it the bar is a plain link to the gallery.
+ */
+interface Props {
+  steps: { slug: string; name: string; year: number }[];
+}
+const { steps } = Astro.props;
+const total = steps.length + 1;
+---
+
+<div class="bar" data-story-bar role="region" aria-label="Story controls">
+  <span class="progress" aria-hidden="true">
+    <span data-story-progress></span>
+  </span>
+
+  <span class="where">
+    <span class="count" data-story-count>
+      1 / {total}
+    </span>
+    <span class="label">
+      <span data-story-step>The Timeline</span>
+      <span class="slide-label" data-story-slide></span>
+    </span>
+  </span>
+
+  <ol class="dots" data-story-dots hidden>
+    <li>
+      <button
+        type="button"
+        class="dot"
+        data-story-goto=""
+        aria-label="The timeline"
+        aria-current="step"
+      ></button>
+    </li>
+    {steps.map((s) => (
+      <li>
+        <button
+          type="button"
+          class="dot"
+          data-story-goto={s.slug}
+          aria-label={`${s.name}, ${s.year}`}
+        ></button>
+      </li>
+    ))}
+  </ol>
+
+  <span class="controls" data-story-when="timeline">
+    <a class="browse" href={withBase('legends/')}>
+      Browse all legends
+    </a>
+    <button type="button" class="primary" data-story-begin hidden>
+      Begin the story <span aria-hidden="true">▸</span>
+    </button>
+  </span>
+
+  <span class="controls" data-story-when="story" hidden>
+    <button type="button" class="icon" data-story-prev aria-label="Previous slide">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M15 5l-7 7 7 7"></path>
+      </svg>
+    </button>
+    <button type="button" class="icon" data-story-toggle aria-label="Pause">
+      <svg class="when-playing" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M8 5v14M16 5v14"></path>
+      </svg>
+      <svg class="when-paused" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 4.5l12 7.5-12 7.5z"></path>
+      </svg>
+    </button>
+    <button type="button" class="icon" data-story-next-slide aria-label="Next slide">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M9 5l7 7-7 7"></path>
+      </svg>
+    </button>
+    <button type="button" class="exit" data-story-exit aria-label="Back to the timeline">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6 6l12 12M18 6L6 18"></path>
+      </svg>
+      <span>Timeline</span>
+    </button>
+  </span>
+</div>
+<p class="sr-only" aria-live="polite" data-story-live></p>
+
+<style>
+  .bar {
+    position: absolute;
+    left: 50%;
+    bottom: clamp(12px, 3vh, 28px);
+    z-index: 20;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    max-width: calc(100% - 32px);
+    box-sizing: border-box;
+    padding: 8px 8px 8px 22px;
+    background: var(--color-umber);
+    border-radius: 40px;
+    box-shadow: 0 10px 30px rgb(35 31 28 / 0.35);
+    font-family: var(--font-ui);
+    color: var(--color-parchment);
+    overflow: hidden;
+  }
+  .progress {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    top: 0;
+    height: 2px;
+    background: rgb(217 194 154 / 0.25);
+  }
+  .progress span {
+    display: block;
+    height: 100%;
+    background: var(--color-gold);
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  .where {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+  }
+  .count {
+    font-size: 13px;
+    color: var(--color-mist);
+    white-space: nowrap;
+  }
+  .label {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    font-size: 14px;
+    line-height: 1.25;
+  }
+  .label > span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 16rem;
+  }
+  .slide-label {
+    font-size: 12px;
+    color: var(--color-mist);
+  }
+  .slide-label:empty {
+    display: none;
+  }
+  .dots {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  .dot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+  }
+  .dot::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--color-sepia);
+    transition: width 0.2s ease;
+  }
+  .dot:hover::before {
+    background: var(--color-mist);
+  }
+  .dot[aria-current]::before {
+    width: 16px;
+    background: var(--color-gold);
+  }
+  .dot:focus-visible,
+  .bar button:focus-visible,
+  .bar a:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .controls[hidden] {
+    display: none;
+  }
+  .browse {
+    margin-right: 10px;
+    font-size: 14px;
+    color: var(--color-mist);
+    white-space: nowrap;
+  }
+  .browse:hover {
+    color: var(--color-parchment);
+  }
+  .primary {
+    min-height: 44px;
+    padding: 0 22px;
+    border: 0;
+    border-radius: 30px;
+    background: var(--color-gold);
+    color: var(--color-ink);
+    font-family: var(--font-display-sc);
+    font-size: 18px;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .primary:hover {
+    background: var(--color-mist);
+  }
+  .icon,
+  .exit {
+    min-width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0 10px;
+    border: 0;
+    border-radius: 22px;
+    background: rgb(243 233 210 / 0.08);
+    color: var(--color-parchment);
+    font-family: var(--font-ui);
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .icon:hover,
+  .exit:hover {
+    background: rgb(243 233 210 / 0.18);
+  }
+  .icon:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .when-paused {
+    fill: currentColor;
+    stroke: none;
+  }
+  .bar:not([data-playing]) .when-playing,
+  .bar[data-playing] .when-paused {
+    display: none;
+  }
+
+  @media (max-width: 1199px) {
+    .dots {
+      display: none;
+    }
+  }
+  @media (max-width: 767px) {
+    .bar {
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      transform: none;
+      max-width: none;
+      justify-content: space-between;
+      gap: 8px;
+      padding-left: 16px;
+    }
+    .where {
+      gap: 8px;
+    }
+    .count {
+      display: none;
+    }
+    .label > span {
+      max-width: 9.5rem;
+    }
+    .browse {
+      display: none;
+    }
+    .exit span {
+      display: none;
+    }
+    .controls {
+      gap: 4px;
+    }
+    .primary {
+      padding: 0 16px;
+      font-size: 17px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .dot::before {
+      transition: none;
+    }
+  }
+</style>

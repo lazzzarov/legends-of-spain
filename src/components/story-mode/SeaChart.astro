@@ -1,0 +1,422 @@
+---
+import { Image } from 'astro:assets';
+import type { LegendEntry } from '../../lib/content';
+import { initials, resolveImage } from '../../lib/media';
+import { legendPath } from '../../lib/paths';
+import { toTimeline } from '../../lib/timeline';
+
+/**
+ * Step 1 of the story, and the home page: every legend on one voyage line, evenly spaced in
+ * the order of their defining moments, alternating above and below the line. Spacing is even
+ * so all fourteen fit one screen; long gaps in time are drawn dashed and labelled instead.
+ * Each face links to the legend's page; with JavaScript it opens the legend's story instead.
+ */
+interface Props {
+  legends: LegendEntry[];
+}
+const items = toTimeline(Astro.props.legends);
+const LONG_GAP = 20;
+
+const gapAfter = (i: number) =>
+  i < items.length - 1 ? items[i + 1]!.eventYear - items[i]!.eventYear : 0;
+const stops = items.map((item, i) => {
+  const d = item.legend.data;
+  const media = d.media.find((m) => m.id === d.portrait)!;
+  return {
+    ...item,
+    image: resolveImage(item.slug, media.file),
+    side: i % 2 === 0 ? 'up' : 'down',
+    before: i === 0 ? 'edge' : gapAfter(i - 1) >= LONG_GAP ? 'long' : 'short',
+    after: i === items.length - 1 ? 'edge' : gapAfter(i) >= LONG_GAP ? 'long' : 'short',
+    gap: gapAfter(i) >= LONG_GAP ? gapAfter(i) : 0,
+  };
+});
+
+// Century bands under the line: consecutive legends whose moments share a century.
+const century = (year: number) => Math.floor((year - 1) / 100) + 1;
+const eras: { label: string; span: number }[] = [];
+for (const item of items) {
+  const c = century(item.eventYear);
+  const last = eras.at(-1);
+  if (last && last.label.startsWith(`${c}th`)) last.span++;
+  else eras.push({ label: `${c}th`, span: 1 });
+}
+for (const era of eras) if (era.span > 1) era.label += ' century';
+
+const first = items[0];
+const last = items.at(-1);
+---
+
+<div class="chart-wrap" data-story-timeline>
+  <div class="intro">
+    <div>
+      <p class="eyebrow m-0">A chronicle of {items.length} lives · 1480–1836</p>
+      <h1 class="title">Who came first?</h1>
+    </div>
+    {first && last && (
+      <p class="lede">
+        {items.length} defining moments, from {first.eventYear} to {last.eventYear}, in the order
+        they happened. Choose a face, or begin the story.
+      </p>
+    )}
+  </div>
+
+  <ol
+    class="chart"
+    style={`--n:${stops.length}`}
+    aria-label="Legends in order of their defining moment"
+  >
+    {stops.map((s) => (
+      <li
+        class="stop"
+        data-side={s.side}
+        data-before={s.before}
+        data-after={s.after}
+        data-stop={s.slug}
+      >
+        <a href={legendPath(s.slug)} class="stop-link" data-story-open={s.slug}>
+          {s.image ? (
+            <Image src={s.image} alt="" width={160} height={160} class="face" loading="eager" />
+          ) : (
+            <span class="face plate" aria-hidden="true">
+              {initials(s.name)}
+            </span>
+          )}
+          <span class="stop-text">
+            <span class="sr-only">{s.eventYear}: </span>
+            <span class="name">{s.name}</span>
+            <span class="event">{s.eventLabel}</span>
+          </span>
+        </a>
+        <span class="seal" aria-hidden="true">
+          {s.eventYear}
+        </span>
+        <span class="dot" aria-hidden="true" />
+        {s.gap > 0 && (
+          <span class="gap" aria-hidden="true">
+            {s.gap} years
+          </span>
+        )}
+      </li>
+    ))}
+  </ol>
+
+  <ol class="eras" style={`--n:${stops.length}`} aria-hidden="true">
+    {eras.map((e) => (
+      <li style={`grid-column: span ${e.span}`}>{e.label}</li>
+    ))}
+  </ol>
+</div>
+
+<style>
+  .chart-wrap {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    height: 100%;
+    box-sizing: border-box;
+    padding: clamp(16px, 3.5vh, 36px) clamp(16px, 4.5vw, 64px) var(--bar-space);
+  }
+  .intro {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 8px 40px;
+  }
+  .title {
+    margin: 4px 0 0;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(34px, 6vh, 56px);
+    line-height: 1.02;
+    color: var(--color-umber);
+  }
+  .lede {
+    margin: 0;
+    max-width: 26rem;
+    font-size: clamp(15px, 2vh, 17px);
+    line-height: 1.5;
+    color: var(--color-umber);
+    text-align: right;
+  }
+
+  /* Desktop: one horizontal voyage line through the middle of every column. */
+  .chart {
+    --face: clamp(44px, 8.5vh, 80px);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(var(--n), minmax(0, 1fr));
+    min-height: 0;
+  }
+  .stop {
+    position: relative;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto minmax(0, 1fr);
+    justify-items: center;
+    min-width: 0;
+  }
+  .stop::before,
+  .stop::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 50%;
+    border-top: 2px solid var(--color-sepia);
+  }
+  .stop::before {
+    left: 0;
+  }
+  .stop::after {
+    right: 0;
+  }
+  .stop[data-before='edge']::before,
+  .stop[data-after='edge']::after {
+    border-top-color: var(--color-caramel);
+  }
+  .stop[data-before='long']::before,
+  .stop[data-after='long']::after {
+    border-top-style: dashed;
+  }
+  .stop-link {
+    grid-row: 1;
+    align-self: end;
+    /* Wider than the column: neighbours sit on the other side of the line, so text has room. */
+    width: 190%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-umber);
+  }
+  .stop[data-side='down'] .stop-link {
+    grid-row: 3;
+    align-self: start;
+    flex-direction: column;
+    padding: 12px 0 0;
+  }
+  .stop-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .name {
+    font-family: var(--font-display);
+    font-size: clamp(15px, 2.1vh, 19px);
+    line-height: 1.1;
+  }
+  .event {
+    font-size: 13px;
+    line-height: 1.3;
+    font-style: italic;
+    color: var(--color-burnt);
+  }
+  .face {
+    width: var(--face);
+    height: var(--face);
+    flex-shrink: 0;
+    box-sizing: border-box;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 15%;
+    border: 3px solid var(--color-cream);
+    outline: 1px solid var(--color-sepia);
+    box-shadow: 0 6px 14px rgb(59 36 22 / 0.28);
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+  span.face {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: calc(var(--face) * 0.3);
+    color: var(--color-burnt);
+  }
+  .stop-link:hover .face,
+  .stop-link:focus-visible .face {
+    transform: scale(1.08);
+    box-shadow: 0 10px 22px rgb(59 36 22 / 0.35);
+  }
+  .stop-link:hover .name,
+  .stop-link:focus-visible .name {
+    color: var(--color-burgundy);
+  }
+  .stop-link:focus-visible {
+    outline: 2px solid var(--color-burgundy);
+    outline-offset: 4px;
+  }
+  .stop.is-current .face {
+    outline: 3px solid var(--color-burgundy);
+  }
+  .seal {
+    grid-row: 2;
+    z-index: 1;
+    min-width: 52px;
+    box-sizing: border-box;
+    padding: 0 8px;
+    border-radius: 14px;
+    background: var(--color-burgundy);
+    color: var(--color-cream);
+    font-family: var(--font-display-sc);
+    font-size: 16px;
+    line-height: 28px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 0.25);
+  }
+  .dot {
+    display: none;
+  }
+  .gap {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 1;
+    transform: translate(50%, 10px);
+    padding: 0 4px;
+    background: var(--color-parchment);
+    font-family: var(--font-ui);
+    font-size: 11px;
+    white-space: nowrap;
+    color: var(--color-burnt);
+  }
+  .eras {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(var(--n), minmax(0, 1fr));
+    column-gap: 8px;
+  }
+  .eras li {
+    padding-top: 8px;
+    border-top: 1px solid var(--color-sepia);
+    font-family: var(--font-ui);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--color-burnt);
+  }
+  /* Short or narrow screens: names only, so nothing collides. */
+  @media (max-height: 760px), (max-width: 1180px) {
+    .event {
+      display: none;
+    }
+  }
+
+  /* Phones: the same voyage, running down the page. */
+  @media (max-width: 767px) {
+    .chart-wrap {
+      display: block;
+    }
+    .chart-wrap {
+      padding-top: 14px;
+    }
+    .lede,
+    .eras {
+      display: none;
+    }
+    .title {
+      font-size: 32px;
+    }
+    .chart {
+      --face: 36px;
+      grid-template-columns: 1fr;
+      margin-top: 12px;
+    }
+    .stop {
+      grid-template-rows: none;
+      grid-template-columns: 2.75rem 1rem minmax(0, 1fr);
+      column-gap: 12px;
+      align-items: center;
+      justify-items: start;
+      min-height: 40px;
+    }
+    .stop::before,
+    .stop::after {
+      top: auto;
+      width: 0;
+      height: 50%;
+      border-top: 0;
+      border-left: 2px solid var(--color-sepia);
+      left: calc(2.75rem + 12px + 0.5rem - 1px);
+    }
+    .stop::before {
+      top: 0;
+    }
+    .stop::after {
+      bottom: 0;
+      right: auto;
+    }
+    .stop[data-before='edge']::before,
+    .stop[data-after='edge']::after {
+      display: none;
+    }
+    .stop[data-before='long']::before,
+    .stop[data-after='long']::after {
+      border-left-style: dashed;
+    }
+    .stop-link,
+    .stop[data-side='down'] .stop-link {
+      grid-row: 1;
+      grid-column: 3;
+      align-self: center;
+      width: auto;
+      flex-direction: row;
+      gap: 12px;
+      padding: 0;
+      text-align: left;
+    }
+    .name {
+      font-size: 18px;
+    }
+    .event {
+      display: none;
+    }
+    .face {
+      border-width: 2px;
+      box-shadow: none;
+    }
+    .seal {
+      grid-row: 1;
+      grid-column: 1;
+      justify-self: end;
+      min-width: 0;
+      padding: 0;
+      background: none;
+      box-shadow: none;
+      color: var(--color-burgundy);
+    }
+    .dot {
+      display: block;
+      grid-row: 1;
+      grid-column: 2;
+      justify-self: center;
+      z-index: 1;
+      width: 12px;
+      height: 12px;
+      box-sizing: border-box;
+      border-radius: 50%;
+      background: var(--color-burgundy);
+      border: 2px solid var(--color-cream);
+      box-shadow: 0 0 0 1px var(--color-sepia);
+    }
+    .gap {
+      top: auto;
+      bottom: 0;
+      transform: translateY(50%);
+      background: none;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .face {
+      transition: none;
+    }
+  }
+</style>
