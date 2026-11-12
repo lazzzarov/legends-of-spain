@@ -153,6 +153,30 @@ Worked example, Elcano beat 6 (Sanlúcar, 6 September 1522):
 - **Timeline:** hovering a legend plays two seconds of its loop.
 - **Performance rules:** poster image first; loops load only when visible and only on connections that allow it; never on reduced motion or data-saver; each loop under 1.5 MB (AV1/WebM with an H.264 fallback); the page must keep its Lighthouse scores.
 
+### Measured prices (Higgsfield quotes, 13 November 2026, nothing spent)
+
+| Item                       | Model                  | Credits |
+| -------------------------- | ---------------------- | ------: |
+| Keyframe still, 16:9       | Nano Banana Pro        |       2 |
+| 8 s shot, 1080p            | Seedance 2.5           |     128 |
+| 8 s shot, 720p             | Seedance 2.5           |      56 |
+| 8 s draft, 480p            | Seedance 2.5           |      24 |
+| 8 s shot, 720p             | Seedance 2.0 fast      |      20 |
+| 8 s shot                   | Kling 4.0 Flash (720p) |      24 |
+| 8 s shot, standard         | Kling 3.0              |      12 |
+| Narration (about 60 words) | Seed Audio             |     2.2 |
+| Music bed, 65 s            | ElevenLabs Music v2.5  |    9.45 |
+
+Balance: about 718 credits (Plus plan). Seedance 2.5 at 1080p (seven shots ≈ 900 credits) does not fit even one film, so the pilot uses cheaper animation:
+
+| Pilot option                                                                           | Shots  | Estimated total |
+| -------------------------------------------------------------------------------------- | ------ | --------------: |
+| A · Kling 3.0 standard, two takes per shot, plus one Seedance 2.5 720p shot to compare | 14 + 1 |           ≈ 270 |
+| B · Seedance 2.0 fast 720p, two takes per shot                                         | 14     |           ≈ 325 |
+| C · Seedance 2.5 720p, a 480p draft then a final per shot                              | 7 + 7  |           ≈ 600 |
+
+All three include 14 stills (two tries per beat), narration with one retake, and the music bed. At option A's price the 14 films cost about 3,000 credits, so the series needs a credit top-up or a batch after the pilot.
+
 ### Budget and order
 
 - **Pilot (Elcano):** full pipeline once. Record credits per still, per clip second, per voice minute. Expect roughly 7 stills, 14 draft clips, 7 finals, one narration, one score.
