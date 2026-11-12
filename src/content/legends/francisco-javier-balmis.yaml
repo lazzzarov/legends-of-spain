@@ -25,6 +25,10 @@ hook: >-
   from Spain survived only by passing from arm to arm; if that chain broke, the whole voyage would
   have been for nothing.
 mainAchievement: Directed the Royal Philanthropic Vaccine Expedition, 1803–1806
+keyEvent:
+  year: 1803
+  label: The vaccine expedition sails from A Coruña
+  sources: [rah-balmis]
 portrait: portrait
 
 chapters:

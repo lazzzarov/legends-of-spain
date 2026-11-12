@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Filters from '../components/gallery/Filters.astro';
+import Timeline from '../components/timeline/Timeline.astro';
+import { getLegends } from '../lib/content';
+import { toTimeline } from '../lib/timeline';
+
+const legends = await getLegends();
+const items = toTimeline(legends);
+const first = items[0];
+const last = items.at(-1);
+---
+
+<BaseLayout
+  title="The Timeline"
+  description="Who came first? Every legend in the chronicle placed in time by their defining moment, from the fall of Tenochtitlan to the Peninsular War."
+>
+  <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+    <p class="eyebrow m-0">Who came first?</p>
+    <h1 class="mt-1 mb-4 font-display text-5xl font-normal text-umber">The Timeline</h1>
+    {first && last && (
+      <p class="mt-0 mb-8 max-w-3xl text-lg leading-relaxed">
+        Each legend is placed by the moment that defined them, from {first.eventYear} to{' '}
+        {last.eventYear}. The bar shows a lifetime; the seal marks the moment.
+      </p>
+    )}
+    {items.length > 1 && <Filters legends={legends} />}
+    <h2 class="sr-only">Legends in order of their defining moment</h2>
+    <Timeline legends={legends} />
+  </div>
+</BaseLayout>

@@ -15,6 +15,7 @@ const fixture = legendSchema.parse({
   ...template,
   name: { display: 'Fixture Legend', aka: ['Fixture'] },
   dates: { born: { year: 1487 }, died: { year: 1526, month: 8, day: 4 } },
+  keyEvent: { year: 1522, label: 'Fixture event', sources: ['source-b'] },
   sources: [
     { id: 'source-a', title: 'Source A', type: 'reference' },
     { id: 'source-b', title: 'Source B', type: 'primary' },

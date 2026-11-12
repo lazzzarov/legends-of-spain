@@ -5,6 +5,7 @@ const routes = [
   { path: './', heading: 'Legends Worthy of a Thousand Films' },
   { path: 'legends/', heading: 'The Legends' },
   { path: 'legends/juan-sebastian-elcano/', heading: 'Juan Sebastián Elcano' },
+  { path: 'timeline/', heading: 'The Timeline' },
   { path: 'why/', heading: 'Why We Tell These Stories' },
   { path: 'credits/', heading: 'Credits & Licenses' },
 ];
@@ -34,7 +35,7 @@ for (const { path, heading } of routes) {
 
 test('navigates from the home gallery to a legend and onward', async ({ page }) => {
   await page.goto('./');
-  await page.getByRole('link', { name: 'Juan Sebastián Elcano' }).click();
+  await page.getByRole('link', { name: 'Juan Sebastián Elcano', exact: true }).click();
   await expect(page).toHaveURL(/\/legends-of-spain\/legends\/juan-sebastian-elcano\/$/);
   await expect(page.getByRole('heading', { name: 'The Other Side of the Story' })).toBeVisible();
   await page.getByRole('link', { name: /Next chapter/ }).click();

@@ -22,6 +22,10 @@ hook: >-
   Mexico. They named the Philippines, not New Guinea. Andrés de Urdaneta, the expedition’s great
   navigator, had argued against that course and was deeply displeased.
 mainAchievement: Founded the Spanish settlements of Cebu (1565) and Manila (1571)
+keyEvent:
+  year: 1565
+  label: The return route across the Pacific is found
+  sources: [rah-urdaneta, rah-legazpi]
 portrait: portrait
 
 chapters:

@@ -21,6 +21,7 @@ import { isVisible, lifespan, showDrafts } from '../../lib/legends';
 import { legendPath, withBase } from '../../lib/paths';
 import StoryNavigator from '../../components/story/StoryNavigator.astro';
 import RelatedLegends from '../../components/story/RelatedLegends.astro';
+import TimelinePosition from '../../components/timeline/TimelinePosition.astro';
 import { CATEGORY_LABEL, CHAPTER_NUMERAL, VALUE_LABEL, centuryLabel } from '../../i18n/en';
 
 export const getStaticPaths = (async () => {
@@ -30,6 +31,7 @@ export const getStaticPaths = (async () => {
     params: { slug: legend.id },
     props: {
       legend,
+      all: legends,
       next: legends[(i + 1) % legends.length]!,
       // Only related legends that are visible in this build.
       related: legend.data.related.map((id) => byId.get(id)).filter((l): l is LegendEntry => !!l),
@@ -39,10 +41,11 @@ export const getStaticPaths = (async () => {
 
 interface Props {
   legend: LegendEntry;
+  all: LegendEntry[];
   next: LegendEntry;
   related: LegendEntry[];
 }
-const { legend, next, related } = Astro.props;
+const { legend, all, next, related } = Astro.props;
 const d = legend.data;
 const mediaById = new Map(d.media.map((m) => [m.id, m]));
 const portrait = mediaById.get(d.portrait)!;
@@ -155,6 +158,7 @@ const jsonLd = JSON.stringify(legendJsonLd(legend.id, d, Astro.site!));
       {d.places.length > 0 && <Places places={d.places} cite={cite} />}
       {d.sources.length > 0 && <SourcesList sources={d.sources} backlinks={backlinks} />}
       {related.length > 0 && <RelatedLegends legends={related} />}
+      <TimelinePosition legends={all} slug={legend.id} />
 
       {next.id !== legend.id && (
         <a

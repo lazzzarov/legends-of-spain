@@ -24,6 +24,10 @@ hook: >-
   ducats. Francisco de Sarmiento put it to his captains, and they to their officers. Two survivors
   later swore to the answer: they would rather die.
 mainAchievement: Held Castelnuovo against a far larger Ottoman force, July–August 1539
+keyEvent:
+  year: 1539
+  label: The last stand at Castelnuovo
+  sources: [rah-sarmiento]
 portrait: portrait
 
 chapters:

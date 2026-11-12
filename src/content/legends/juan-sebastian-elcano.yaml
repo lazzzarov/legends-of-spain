@@ -23,6 +23,10 @@ hook: >-
   by the Portuguese route, without calling at any port. Sixty men went aboard. Eighteen of them came
   home.
 mainAchievement: Captained the Victoria home to complete the first recorded circumnavigation, 1522
+keyEvent:
+  year: 1522
+  label: The Victoria returns to Sanlúcar
+  sources: [rah-elcano, pigafetta-stanley]
 portrait: portrait
 
 chapters:

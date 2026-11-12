@@ -5,6 +5,7 @@ import Corners from '../components/ornaments/Corners.astro';
 import Divider from '../components/ornaments/Divider.astro';
 import Gallery from '../components/gallery/Gallery.astro';
 import ValuesBand from '../components/gallery/ValuesBand.astro';
+import TimelineStrip from '../components/timeline/TimelineStrip.astro';
 import { getLegends } from '../lib/content';
 import { siteJsonLd } from '../lib/jsonld';
 import { withBase } from '../lib/paths';
@@ -55,6 +56,8 @@ const jsonLd = JSON.stringify(siteJsonLd(Astro.site!, description));
     </div>
     <Gallery legends={legends} />
   </section>
+
+  <TimelineStrip legends={legends} />
 
   <ValuesBand legends={legends} />
 

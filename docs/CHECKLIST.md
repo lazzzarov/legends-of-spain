@@ -84,16 +84,16 @@ P0 = must, P1 = should, P2 = nice to have.
 - [x] 6.6 SEO: sitemap lists all 18 pages, canonical + description + OG image on every page, JSON-LD on home and legends, no `noindex` in production, robots.txt points to sitemap · P0
 - [x] 6.7 Repo made public, Pages enabled (Source: GitHub Actions), first deploy 2026-11-10: https://lazzzarov.github.io/legends-of-spain/ · P0
 
-## V2 — proposed (see `docs/PLAN_V2.md`; waiting for approval)
+## V2 — approved 2026-11-12 (see `docs/PLAN_V2.md`)
 
-- [ ] D1–D5 Decisions: video look, self-hosted loops, pilot first, narrator, YouTube channel · P0 · **waiting on you**
+- [x] D1–D5 Decisions approved as recommended: painted (non-photoreal) look, self-hosted silent loops allowed, Elcano pilot first, one narrator, editor uploads to YouTube · P0
 
 ### Phase 7 — Timeline
 
-- [ ] 7.1 `keyEvent` (year, label, source) in the schema and all 14 legend files · P0
-- [ ] 7.2 `/timeline/` page: horizontal lanes on desktop, vertical on mobile, filters, links · P0
-- [ ] 7.3 Home strip and "where this sits" strip on legend pages · P1
-- [ ] 7.4 Tests: scale and lane maths, order, keyboard, axe, no overflow at 375 px · P0
+- [x] 7.1 `keyEvent` (year, label, sources) in the schema and all 14 legend files; must fall within the lifetime and cite a known source · P0
+- [x] 7.2 `/timeline/` page: one row per legend in order of key event, lifetime bar and seal on a shared axis, same layout stacked on mobile, gallery filters, links; added to the main navigation · P0
+- [x] 7.3 Home strip and "On the timeline" (before / after) on legend pages · P1
+- [x] 7.4 Tests: scale, order and neighbour maths (unit); order, links, keyboard, filters, axe, no overflow at 375 px (e2e) · P0
 
 ### Phase 8 — Story mode
 
@@ -105,7 +105,7 @@ P0 = must, P1 = should, P2 = nice to have.
 
 ### Phase 9 — Video scripts
 
-- [ ] 9.1 Script format and source-id checker; upgrade Elcano's brief · P0
+- [x] 9.1 Script format and checker (`tests/unit/video-scripts.test.ts`: 7 beats, known source per line, word count, disclosure, no dialogue); Elcano's brief upgraded to `video-script.md` · P0
 - [ ] 9.2 Scripts, shot lists and character sheets for the other 13 legends · P0
 - [ ] 9.3 Editor approval of each script · P0 · **waiting on you**
 

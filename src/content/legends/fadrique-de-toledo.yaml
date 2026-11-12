@@ -24,6 +24,10 @@ hook: >-
   1625, after 74 days at sea, Fadrique de Toledo led it into the Bay of All Saints — with a
   fortified enemy waiting ashore.
 mainAchievement: Recapture of Salvador da Bahia, 1625
+keyEvent:
+  year: 1625
+  label: Salvador da Bahia is retaken
+  sources: [rah-fadrique-de-toledo]
 portrait: portrait
 
 chapters:

@@ -25,6 +25,10 @@ hook: >-
   causeways. Now the rulers of Tlaxcala held his fate in their hands, and they demanded new, more
   favourable terms before they would feed him. Everything that followed depended on their decision.
 mainAchievement: Fall of Mexico-Tenochtitlan, 1521, as leader of the Spanish contingent in an Indigenous-led coalition
+keyEvent:
+  year: 1521
+  label: Tenochtitlan falls to the coalition
+  sources: [rah-cortes]
 portrait: portrait
 
 chapters:

@@ -25,6 +25,10 @@ hook: >-
   their chief, although he had never commanded anyone. Within weeks he had talked some four hundred
   more guerrillas into following him.
 mainAchievement: Built and led the Navarre Division against the French occupation, 1810–1814
+keyEvent:
+  year: 1811
+  label: The ambush at the Arlabán pass
+  sources: [rah-espoz-y-mina]
 portrait: portrait
 
 chapters:

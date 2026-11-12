@@ -19,6 +19,11 @@ values: [resilience]
 tagline: '[One sentence that makes a stranger want to read on.]'
 hook: '[Short intro paragraph (40–70 words). Open with a documented moment of tension — never an invented scene or dialogue.]'
 mainAchievement: '[One defining, documented achievement]'
+# Places the legend on the timeline: the year and a short label for the defining moment.
+keyEvent:
+  year: 1530
+  label: '[The defining moment in a few words]'
+  sources: [placeholder-source]
 portrait: portrait
 
 chapters:

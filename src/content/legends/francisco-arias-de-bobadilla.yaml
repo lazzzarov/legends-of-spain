@@ -24,6 +24,10 @@ hook: >-
   of food in the winter cold. Every attempt to break out failed. Then, on the night of 7 December,
   a hard frost set in.
 mainAchievement: Empel, 7–8 December 1585
+keyEvent:
+  year: 1585
+  label: The frozen night at Empel
+  sources: [bossche-encyclopedie-empel]
 portrait: portrait
 
 chapters:

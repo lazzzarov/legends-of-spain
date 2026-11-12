@@ -26,6 +26,10 @@ hook: >-
   Antonio de Leyva billeted his soldiers on the townspeople, melted down the churches’ silver and
   struck coins reading: “The Caesarians besieged in Pavia, 1524.”
 mainAchievement: Defence of Pavia, October 1524 – February 1525
+keyEvent:
+  year: 1525
+  label: The siege of Pavia is broken
+  sources: [rah-leiva]
 portrait: portrait
 
 chapters:

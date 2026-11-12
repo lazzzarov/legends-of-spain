@@ -1,0 +1,49 @@
+---
+import type { LegendEntry } from '../../lib/content';
+import { legendPath, withBase } from '../../lib/paths';
+import { neighbours, toTimeline } from '../../lib/timeline';
+
+/** Legend page: where this legend's defining moment sits between its neighbours in time. */
+interface Props {
+  legends: LegendEntry[];
+  slug: string;
+}
+const { legends, slug } = Astro.props;
+const items = toTimeline(legends);
+const { index, previous, next } = neighbours(items, slug);
+const current = items[index];
+---
+
+{current && (previous || next) && (
+  <section
+    aria-labelledby="timeline-position"
+    class="border border-sepia bg-cream p-6"
+    data-timeline-position
+  >
+    <p class="eyebrow m-0">On the timeline</p>
+    <h2 id="timeline-position" class="m-0 mb-4 font-display text-[28px] font-normal text-umber">
+      <span class="font-sc text-burgundy">{current.eventYear}</span> · {current.eventLabel}
+    </h2>
+    <ul class="m-0 flex list-none flex-wrap gap-x-10 gap-y-3 p-0 font-ui text-sm">
+      {previous && (
+        <li>
+          <span class="block text-burnt">Before</span>
+          <a href={legendPath(previous.slug)}>
+            {previous.eventYear} · {previous.name}
+          </a>
+        </li>
+      )}
+      {next && (
+        <li>
+          <span class="block text-burnt">After</span>
+          <a href={legendPath(next.slug)}>
+            {next.eventYear} · {next.name}
+          </a>
+        </li>
+      )}
+      <li class="self-end sm:ml-auto">
+        <a href={withBase('timeline/')}>See the full timeline →</a>
+      </li>
+    </ul>
+  </section>
+)}

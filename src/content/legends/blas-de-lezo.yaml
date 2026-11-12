@@ -24,6 +24,10 @@ hook: >-
   Spanish warships under Blas de Lezo, a few thousand regulars and militiamen, and a chain of forts.
   The siege would last two months.
 mainAchievement: Shared the defence of Cartagena de Indias, 1741
+keyEvent:
+  year: 1741
+  label: The siege of Cartagena de Indias is lifted
+  sources: [rah-lezo, rah-eslava]
 portrait: portrait
 
 chapters:

@@ -29,6 +29,10 @@ describe('legend content files', () => {
     expect(file).toMatch(/^[a-z0-9][a-z0-9-]*\.yaml$/);
   });
 
+  it.each(files)('%s has a key event for the timeline', (file) => {
+    expect(load(file).keyEvent?.year).toBeTypeOf('number');
+  });
+
   it('use unique book order', () => {
     const orders = files.map((f) => load(f).order);
     expect(new Set(orders).size).toBe(orders.length);

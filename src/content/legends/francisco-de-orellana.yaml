@@ -21,6 +21,10 @@ hook: >-
   wrote that they ate nothing but leather, belts and shoe soles boiled with herbs. The only way left
   was onward, wherever the river led.
 mainAchievement: Led the first recorded European descent of most of the Amazon, 1541–1542
+keyEvent:
+  year: 1542
+  label: Down the Amazon to the Atlantic
+  sources: [rah-orellana]
 portrait: portrait
 
 chapters:

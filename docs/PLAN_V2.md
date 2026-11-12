@@ -1,6 +1,6 @@
 # V2 plan: timeline, story mode and videos
 
-Status: **proposed, waiting for approval** (12 November 2026). Nothing here is built yet.
+Status: **approved 12 November 2026**, with the recommended decisions D1–D5. Work starts with Phases 7 and 9.
 
 V1 is live with 14 reviewed legends. V2 adds four things:
 
@@ -27,8 +27,7 @@ The content rules do not change: no invented history, dialogue or numbers; every
 
 - **Data:** add `keyEvent: { year, label, source }` to each legend file (for example Elcano: 1522, "The Victoria returns to Sanlúcar"). The year and label come from the legend's existing "moment" chapter, so no new research. Birth and death years are already in the files.
 - **Page `/timeline/`:**
-  - Desktop: a horizontal chronicle. Each legend is a bar from birth to death with a wax-seal marker at the key event. Century rules run behind. Bars are grouped in lanes so overlapping lives (Cortés, Elcano, Leyva, Pizarro) read clearly.
-  - Mobile: the same data as a vertical line, one legend per stop.
+  - As built: one row per legend, ordered by key event. Each row has the name, dates and event as text, and a lifetime bar with a seal on a shared axis. On mobile the same rows stack. Rows instead of packed lanes, because ten of the fourteen lives overlap in the 16th century and lanes hid the order.
   - Each bar links to the legend. Hover or focus shows portrait, dates and the one-line event.
   - The existing kind and value filters work here too.
 - **Home page:** a compact strip ("Fourteen lives, three and a half centuries") that links to the full timeline.

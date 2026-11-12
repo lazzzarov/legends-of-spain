@@ -44,6 +44,13 @@ export const histDateSchema = z.object({
   display: z.string().optional(),
 });
 
+/** The one event that places a legend on the timeline (taken from "The Defining Moment"). */
+export const keyEventSchema = z.object({
+  year: z.number().int(),
+  label: z.string().min(1).max(60),
+  sources: requiredSourceIds,
+});
+
 export const sourceSchema = z.object({
   id,
   title: z.string().min(1),
@@ -191,6 +198,7 @@ export const legendSchema = z
     tagline: z.string().min(1),
     hook: z.string().min(1),
     mainAchievement: z.string().min(1),
+    keyEvent: keyEventSchema.optional(),
     portrait: id,
     chapters: z.array(chapterSchema).length(5),
     facts: z.array(factSchema).default([]),
@@ -242,6 +250,12 @@ export const legendSchema = z
       checkSources(c.sources, ['chapters', i, 'sources']);
       checkMedia(c.image, ['chapters', i, 'image']);
     });
+    if (legend.keyEvent) {
+      checkSources(legend.keyEvent.sources, ['keyEvent', 'sources']);
+      const { year } = legend.keyEvent;
+      if (year < legend.dates.born.year || year > legend.dates.died.year)
+        issue('the key event must fall within the legend’s lifetime', ['keyEvent', 'year']);
+    }
     legend.facts.forEach((f, i) => checkSources(f.sources, ['facts', i, 'sources']));
     legend.myths.forEach((m, i) => checkSources(m.sources, ['myths', i, 'sources']));
     legend.places.forEach((p, i) => checkSources(p.sources, ['places', i, 'sources']));

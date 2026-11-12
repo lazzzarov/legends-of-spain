@@ -4,7 +4,7 @@ Working documents for media that is still being made. Nothing in this folder shi
 
 ```
 production/<slug>/
-  video-brief.md    narrative, scenes, voiceover outline, accuracy notes (Higgsfield)
+  video-script.md   60 s script: beats with source ids, shot list, character sheet (Higgsfield)
   comic-script.md   character sheet + panel-by-panel prompts matching the legend file
 ```
 

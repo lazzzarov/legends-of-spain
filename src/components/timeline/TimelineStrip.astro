@@ -1,0 +1,47 @@
+---
+import type { LegendEntry } from '../../lib/content';
+import { legendPath, withBase } from '../../lib/paths';
+import { toTimeline } from '../../lib/timeline';
+
+/** Home-page strip: every legend's defining year in order, linking to the full timeline. */
+interface Props {
+  legends: LegendEntry[];
+}
+const items = toTimeline(Astro.props.legends);
+---
+
+{items.length > 1 && (
+  <section class="mx-auto max-w-6xl px-4 pb-16 sm:px-6" aria-labelledby="timeline-strip-title">
+    <div class="mb-6 border-b border-sepia pb-4">
+      <p class="eyebrow m-0">Who came first?</p>
+      <h2
+        id="timeline-strip-title"
+        class="m-0 font-display text-[44px] leading-tight font-normal text-umber"
+      >
+        The Timeline
+      </h2>
+    </div>
+    <ol class="m-0 flex list-none flex-wrap gap-y-6 p-0" data-timeline-strip>
+      {items.map((item) => (
+        <li class="relative min-w-36 flex-1 border-t-2 border-caramel pt-4 pr-4">
+          <span
+            class="absolute -top-[7px] left-0 size-3 rounded-full bg-burgundy"
+            aria-hidden="true"
+          />
+          <a
+            href={legendPath(item.slug)}
+            class="flex flex-col gap-0.5 text-umber no-underline hover:text-burgundy"
+          >
+            <span class="font-sc text-xl text-burgundy">{item.eventYear}</span>
+            <span class="font-display text-lg leading-tight">{item.name}</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+    <p class="mt-8 mb-0">
+      <a href={withBase('timeline/')} class="btn-secondary">
+        See the full timeline <span aria-hidden="true">→</span>
+      </a>
+    </p>
+  </section>
+)}

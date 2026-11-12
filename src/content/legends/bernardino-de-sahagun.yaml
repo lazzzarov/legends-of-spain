@@ -25,6 +25,10 @@ hook: >-
   some thirty years he and Nahua scholars at Tlatelolco had been recording their world in Nahuatl.
   That same year their twelve illustrated books — today’s Florentine Codex — were completed.
 mainAchievement: The Florentine Codex (Historia general de las cosas de Nueva España), completed 1575–1577 with Nahua collaborators
+keyEvent:
+  year: 1577
+  label: The Florentine Codex is completed
+  sources: [getty-dfc-richter]
 portrait: portrait
 
 chapters:

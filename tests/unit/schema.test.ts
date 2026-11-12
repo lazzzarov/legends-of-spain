@@ -35,6 +35,16 @@ describe('legend schema guarantees', () => {
     expect(messages()).toContain('unknown source "does-not-exist"');
   });
 
+  it('rejects a key event outside the legend’s lifetime', () => {
+    legend.keyEvent.year = legend.dates.died.year + 1;
+    expect(messages()).toContain('the key event must fall within the legend’s lifetime');
+  });
+
+  it('rejects a key event without a source', () => {
+    legend.keyEvent.sources = [];
+    expect(messages()).toContain('at least one source is required');
+  });
+
   it('rejects an AI-generated portrait', () => {
     legend.media[0].kind = 'ai-generated';
     expect(messages()).toContain('an AI-generated image cannot be used as the portrait');

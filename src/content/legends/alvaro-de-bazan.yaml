@@ -26,6 +26,10 @@ hook: >-
   French flagship surrendered. The next year he came back with flat-bottomed landing barges
   whose bows dropped into ramps, and took Terceira from the sea.
 mainAchievement: Commanded the reserve at Lepanto (1571) and conquered the Azores (1582–1583)
+keyEvent:
+  year: 1583
+  label: The landing on Terceira, in the Azores
+  sources: [rah-bazan, rgm-gonzalez-molina]
 portrait: portrait
 
 chapters:

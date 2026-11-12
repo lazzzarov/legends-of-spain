@@ -25,6 +25,10 @@ hook: >-
   litter amid thousands of attendants. Within about half an hour, by the account of Pizarro’s own
   secretary, some two thousand of them lay dead and the Inca was a prisoner.
 mainAchievement: Capture of Atahualpa at Cajamarca, 1532; foundation of Lima, 1535
+keyEvent:
+  year: 1532
+  label: Atahualpa is seized at Cajamarca
+  sources: [xerez-relacion, rah-pizarro]
 portrait: portrait
 
 chapters:
